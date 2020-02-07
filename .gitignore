@@ -21,3 +21,13 @@
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+
+target/
+
+src/.DS_Store
+src/main/.DS_Store
+src/main/java/.DS_Store
+src/main/resources/log4j2.xml
+src/test/.DS_Store
+src/test/java/.DS_Store
+
