@@ -1,0 +1,136 @@
+@startuml
+!include _common.style
+
+title Takenoko (Structure)
+center footer project #2 - class diagram
+
+package uqam.inf5153.game{
+
+  package figurine{
+    abstract class Figurine{
+
+    }
+    class Panda {
+
+    }
+    class Jardinier{
+
+    }
+    Figurine *--> "1" Parcelle
+    Panda --|> Figurine
+    Jardinier --|> Figurine
+  }
+
+  package joueur{
+    class Joueur{
+      - score: int
+    }
+    class PlateauDuJoueur{
+
+    }
+    class TourDeJeu{
+      - numeroTour: int
+
+    }
+    Joueur *--> PlateauDuJoueur
+    TourDeJeu *--> Joueur
+    Joueur *--> Objectif
+  }
+
+  package parcelle{
+    abstract class Parcelle{
+
+    }
+    class ParcelleVerte{
+
+    }
+    class ParcelleJaune{
+
+    }
+    class ParcelleRose{
+
+    }
+    class ParcelleEtang{
+
+    }
+    class Bambou {
+
+    }
+    enum Couleur {
+      ROSE
+      JAUNE
+      VERT
+    }
+    ParcelleVerte --|> Parcelle
+    ParcelleJaune --|> Parcelle
+    ParcelleRose --|> Parcelle
+    ParcelleEtang --|> Parcelle
+    Parcelle *--> "1-4"Bambou
+    Bambou *--> "1" Couleur
+  }
+
+  package objectifs{
+    abstract class Objectif{
+      points : int
+    }
+    class ObjectifParcelle{
+
+    }
+    enum TypeObjectif{
+      PANDA
+      JARDINIER
+      PARCELLE
+      EMPEREUR
+    }
+    ObjectifParcelle --|> Objectif
+  }
+
+  package plateauDeJeu{
+    class PlateauDeJeu{
+      - canauxIrrigation: int
+    }
+    class Irrigation{
+
+    }
+
+    Irrigation *--> "2" Parcelle
+    PlateauDeJeu *--> Panda
+    PlateauDeJeu *--> Jardinier
+    PlateauDeJeu *--> "*" Irrigation
+  }
+
+  package actions{
+    abstract class Action{
+
+    }
+    abstract class Deplacement{
+
+    }
+    class PiocheParcelle{
+
+    }
+    class PlacementParcelle{
+
+    }
+    class PiocheIrrigation{
+
+    }
+    class PiocheObjectif{
+
+    }
+    class DeplacementJardinier{
+
+    }
+
+    Deplacement --|> Action
+    PiocheIrrigation --|> Action
+    PiocheObjectif --|> Action
+    PlacementParcelle --|> Action
+    PiocheParcelle --|> Action
+    DeplacementJardinier --|> Deplacement
+
+
+  }
+}
+
+@enduml
