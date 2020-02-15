@@ -17,7 +17,10 @@ i _ Le travail effectué par les membres et heures passés.
 
 3.
 
-4.
+4. Yazid Iharkane
+- Participer à la  concéption avec mon équipe, 6 heures.
+- Créer la classe PlateauDeJeu. Actuellement, elle permet de deposer les Parcelles sur le plateau, elle affiche les coordonnées des parcelles deposées et les positions possibles pour le prochain depot. 6h
+
 
 
 ii. Les objectifs que le projet est censé remplir

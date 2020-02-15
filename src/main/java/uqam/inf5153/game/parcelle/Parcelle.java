@@ -13,8 +13,12 @@ public abstract class Parcelle {
 
     }
 
-    public Parcelle(){
+    /*public Parcelle(){
 
+    }*/
+
+    public Coordonnees getCoordonnees(){
+        return this.coordonnees;
     }
-    
+
 }

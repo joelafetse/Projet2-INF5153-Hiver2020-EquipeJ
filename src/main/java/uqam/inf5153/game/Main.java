@@ -1,14 +1,11 @@
 package uqam.inf5153.game;
-
-
-
-
 /**
  * Crée par Imen Benzarti le 13/01/2020
  * Une classe qui joue le role de l'interface graphique du jeu.
  * Elle reçoit les actions des joueurs a partir de la ligne de commande.
  */
 public class Main {
+
 	public final static int NB_ACTIONS_PAR_TOUR = 2;
 	public final static int NB_TOTAL_JOUEUR =  2 ;
 	/* Une constante fictive pour représenter temporairement le dernier tour
@@ -17,7 +14,6 @@ public class Main {
 	 * La fin de partie est detecté à travers la méthode Partie
 	 */
 	public final static int nbTour = 3;
-
 	/*
 	 * numéro du tour actuel : vous avec le choix de garder ou non cette variable qui représente
 	 * le numéro du tour actuel.
@@ -39,14 +35,10 @@ public class Main {
 		do {
 			for (int i=1; i<=NB_TOTAL_JOUEUR; i++)
 				menuJoueur(i);
-
 		}while (Takenoko.finPartie(tourActuel, nbTour) );
 		System.out.println("Le gagnant est le joueur : "+ Takenoko.annoncerGagnant());
 	}
-
-
 	private static void menuJoueur(int numJoueur) {
-
 		int swValue;
 		System.out.println("\n\n\n==========================================================================");
 		System.out.println("|   TAKENOKO -- MENU JOUEUR " +numJoueur+ "                              ");
@@ -79,16 +71,14 @@ public class Main {
 	 * Actions
 	 */
 	private static void choixAction(int numJoueur) {
-
 		int nbActions = NB_ACTIONS_PAR_TOUR;
 		int swValue;
 		System.out.println("==========================================================================");
 		System.out.println("|   TAKENOKO MENU JOUEUR " +numJoueur+ " : Actions                       ");
 		System.out.println("==========================================================================");
-		System.out.println("|		Le joueur effectue deux actions par tour parmi les                  ");
-		System.out.println("|		5 actions disponibles                                                   ");
+		System.out.println("|     Le joueur effectue deux actions par tour parmi les                  ");
+		System.out.println("|     5 actions disponibles                                                   ");
 		System.out.println("==========================================================================");
-
 		while (nbActions > 0) {
 			System.out.println("\n\n--------------------------------------------------------------------------\n\n");
 			System.out.println("| Choix de l'action "+ (NB_ACTIONS_PAR_TOUR-nbActions + 1  ) +" :                                              ");
@@ -129,12 +119,8 @@ public class Main {
 			nbActions = nbActions - 1;
 		}
 		autresDecisions(numJoueur);
-
-
-
 	}
 	private static void choixParcelle(int numJoueur) {
-
 		System.out.println("===========================================================================");
 		System.out.println("|   TAKENOKO MENU JOUEUR " +numJoueur+ " : Action Parcelle                        ");
 		System.out.println("===========================================================================");
@@ -155,25 +141,20 @@ public class Main {
 			System.out.println("La parcelle est bien placée ");
 		else
 			System.out.println("La parcelle n'est pas placée");
-
 	}
 	private static void prendreIrrigation(int numJoueur) {
-
 		System.out.println("===========================================================================");
 		System.out.println("|   TAKENOKO MENU JOUEUR " +numJoueur+ " : Action Irrigation                        ");
 		System.out.println("===========================================================================");
 		Takenoko.piocherUneIrrigation(numJoueur);
 		System.out.println("|        Une irrigation est prise                                 ");
-
 		System.out.println("|        Voulez-vous la placer   ?                             ");
 		int reponse = Keyin.inChar(" réponse (O/N) : ");
 		if (reponse == 'o' || reponse == 'O' ) {
 			placerIrrigation(numJoueur);
 		}
-
 	}
 	private static void deplacerJardinier(int numJoueur) {
-
 		System.out.println("==========================================================================");
 		System.out.println("|   TAKENOKO MENU JOUEUR " +numJoueur+ " : Action Jardiner                        ");
 		System.out.println("==========================================================================");
@@ -183,25 +164,19 @@ public class Main {
 		int x = Keyin.inInt(" Entrer la position x : ");
 		int y = Keyin.inInt(" Entrer la position y : ");
 		Takenoko.PlacerJardinier(x,y, numJoueur );
-
-
-
 	}
 	private static void deplacerPanda(int numJoueur) {
-
 		System.out.println("==========================================================================");
 		System.out.println("|   TAKENOKO MENU JOUEUR " +numJoueur+ " : Action Panda                         ");
 		System.out.println("==========================================================================");
 		System.out.println("|        Afficher les parcelles du plateau  (les positions)                                   ");
 		Takenoko.afficherParcellesPlateau(numJoueur);
 		System.out.println("|        Précisier la nouvelle parcelle (position x,y) du Panda                   ");
-
 		int x = Keyin.inInt(" Entrer la position x : ");
 		int y = Keyin.inInt(" Entrer la position y : ");
 		Takenoko.PlacerPanda(x,y, numJoueur );
 	}
 	private static void piocherObjectif(int numJoueur) {
-
 		System.out.println("==========================================================================");
 		System.out.println("|   TAKENOKO MENU JOUEUR " +numJoueur+ " : Action Objectif                        ");
 		System.out.println("==========================================================================");
@@ -214,11 +189,9 @@ public class Main {
 		}
 		System.out.println("|        Si oui, appliquer l'objectif sur le plateau du joueur     ");
 	}
-
 	/*
 	 * Décisions
 	 */
-
 	private static void autresDecisions(int numJoueur) {
 		int swValue;
 		System.out.println("\n\n\n");
@@ -231,7 +204,6 @@ public class Main {
 			System.out.println("\n\n--------------------------------------------------------------------------\n\n");
 			System.out.println("| Choix de décision                                      ");
 			System.out.println("\n\n--------------------------------------------------------------------------\n\n");
-
 			System.out.println("|        1. Remplir un objectif                          ");
 			System.out.println("|        2. Placer des irrigations                       ");
 			System.out.println("|        3. Fin du tour                                  ");
@@ -258,7 +230,6 @@ public class Main {
 		System.out.println("=========================================================================");
 		System.out.println("|  TAKENOKO MENU JOUEUR " +numJoueur+ ": décide de placer une irrigation     ");
 		System.out.println("=========================================================================");
-
 		Takenoko.afficherParcellesPlateau(numJoueur);
 		System.out.println("|        Si oui, afficher les parcelles du plateau (les positions)     ");
 		System.out.println("|        Préciser les deux parcelles (x1,y1) et (x2, y2) séparés par l'irrigation ");
@@ -270,30 +241,22 @@ public class Main {
 			System.out.println("L'irrigation est bien placée");
 		else
 			System.out.println("l'irrigation n'est pas placée");
-
 	}
 	private static void remplirObjectif(int numJoueur) {
 		System.out.println("=========================================================================");
 		System.out.println("|  TAKENOKO MENU JOUEUR " +numJoueur+ ": décide de remplir un objectif");
 		System.out.println("=========================================================================");
-
 		System.out.println("|        Afficher les objectifs du jour");
 		String[] objectifs = Takenoko.afficherObjectifsJoueur (numJoueur);
 		System.out.println("|        Choisir un objectif à remplir ");
 		String objectif = Takenoko.selectionnerObjectifARemplir (objectifs);
 		remplirUnObjectif( numJoueur,  objectif);
-
 	}
 	private static void remplirUnObjectif(int numJoueur, String objectif) {
-
 		boolean estRempli = Takenoko.remplirObjectif (numJoueur, objectif);
 		if (estRempli)
 			System.out.println("Félicitations! objectif rempli");
 		else
 			System.out.println("Objectif irréalisable pour le moment");
-
 	}
-
-
-
 }
