@@ -12,8 +12,9 @@ i _ Le travail effectué par les membres et heures passés.
 - créer et implémenter le class bambou et enum Couleur, 2 heures.
 
 
-2.
-
+2. Kokou Eyram Joel Afetse
+- Participer à la  concéption avec mon équipe, 6 heures.
+- Début de l'implémentation de la fonctionnalité de la pioche des parcelles, en cours
 
 3.
 
