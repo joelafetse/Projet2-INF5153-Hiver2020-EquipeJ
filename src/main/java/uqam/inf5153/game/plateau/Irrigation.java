@@ -24,6 +24,7 @@ public class Irrigation {
         return parcelle2;
     }
 
+
     @Override
     public boolean equals (Object obj)
     {
