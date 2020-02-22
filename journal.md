@@ -1,6 +1,6 @@
 
 
-### Équipe J - prmière semaine
+### Équipe J - première semaine
 
 
 i _ Le travail effectué par les membres et heures passés :
@@ -11,9 +11,8 @@ i _ Le travail effectué par les membres et heures passés :
 
 
 2 -  Kokou Eyram Joel Afetse
-- Investiguer sur la fonctionnalité de placer les pioches.
-- fonctionnalité de pioche implémentée. 
-
+-  Participer à la concéption avec mon équipe, 6 heures.
+-  Début de conception de l'implémentation des pioches en cours.
 
 3 -  Mehdi Djohor
 - Participer à la concéption avec mon équipe.
@@ -52,7 +51,9 @@ i _ Le travail effectué par les membres et heures passés :
 
 
 2 -  Kokou Eyram Joel Afetse
-- Participer à la concéption avec mon équipe,  heures.
+- Investiguer sur la fonctionnalité de placer les irrigations.
+- fonctionnalité de pioche implémentée.
+
 
 3 -  Farahnaz kashandeh k. 
 - Participer à la concéption avec mon équipe, 3 heures.
