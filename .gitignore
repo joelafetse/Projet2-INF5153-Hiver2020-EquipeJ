@@ -34,3 +34,4 @@ src/test/java/.DS_Store
 *.iml
 
 .idea/
+target/*

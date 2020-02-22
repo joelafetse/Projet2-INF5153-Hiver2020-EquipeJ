@@ -7,10 +7,11 @@ import uqam.inf5153.game.parcelle.ParcelleVerte;
 
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 
 public class PlateauDeJeu {
 
-private ArrayList<Parcelle> plateau ;
+private List<Parcelle> plateau ;
 private HashSet<Coordonnees> candidat;
 
 
@@ -40,7 +41,7 @@ public void placerUneParcelle(int x, int y){
         candidat.removeIf(coord -> coord.equals(c));
 }
 
-public boolean positionOccupee(int x, int y){
+public boolean estPositionOccupee(int x, int y){
 boolean trouve =false;
 Coordonnees c=new Coordonnees(x,y);
 int i=0;
@@ -54,12 +55,12 @@ while(i <plateau.size() && !trouve) {
 }
 
 public void mettreAjourListePosiDisp(int x, int y){
-    if (!positionOccupee(x + 2, y + 1)) {candidat.add(new Coordonnees(x+2,y+1));};
-    if (!positionOccupee(x + 2, y - 1)) {candidat.add(new Coordonnees(x+2,y-1));};
-    if (!positionOccupee(x - 2, y - 1)) {candidat.add(new Coordonnees(x-2,y-1));};
-    if (!positionOccupee(x - 2, y + 1)) {candidat.add(new Coordonnees(x-2,y+1));};
-    if (!positionOccupee(x, y + 2)) {candidat.add(new Coordonnees(x,y+2));};
-    if (!positionOccupee(x, y - 2)) {candidat.add(new Coordonnees(x,y-2));};
+    if (!estPositionOccupee(x + 2, y + 1)) {candidat.add(new Coordonnees(x+2,y+1));};
+    if (!estPositionOccupee(x + 2, y - 1)) {candidat.add(new Coordonnees(x+2,y-1));};
+    if (!estPositionOccupee(x - 2, y - 1)) {candidat.add(new Coordonnees(x-2,y-1));};
+    if (!estPositionOccupee(x - 2, y + 1)) {candidat.add(new Coordonnees(x-2,y+1));};
+    if (!estPositionOccupee(x, y + 2)) {candidat.add(new Coordonnees(x,y+2));};
+    if (!estPositionOccupee(x, y - 2)) {candidat.add(new Coordonnees(x,y-2));};
 }
 
 
