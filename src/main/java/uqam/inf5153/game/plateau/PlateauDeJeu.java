@@ -1,4 +1,4 @@
-package uqam.inf5153.game;
+package uqam.inf5153.game.plateau;
 
 //import com.sun.istack.internal.NotNull;
 import uqam.inf5153.game.parcelle.Parcelle;
@@ -13,26 +13,37 @@ public class PlateauDeJeu {
 
     private List<Parcelle> parcelles;
     private HashSet<Coordonnees> positionsDisponibles;
+    private List<ReseauIrrigation> reseauxIrr;
+    private Parcelle parcelleEtang;
 
 
     public PlateauDeJeu() {
-        this.parcelles =new ArrayList<Parcelle>();
-        this.positionsDisponibles =new HashSet<Coordonnees>();
+        this.parcelles = new ArrayList<>();
+        this.positionsDisponibles = new HashSet<>();
+        this.reseauxIrr = new ArrayList<>();
+        this.parcelleEtang =  new ParcelleEtang(new Coordonnees(0,0));
     }
 
-    public int nbreElement(){
+    public int nbreDeParcelles(){
         return parcelles.size();
     }
 
     public void initialiserPlateauDeJeu(){
-        Parcelle p1= new ParcelleEtang(new Coordonnees(0,0));
-        parcelles.add(p1);
+        parcelles.add(parcelleEtang);
         positionsDisponibles.add(new Coordonnees(2,1));
         positionsDisponibles.add(new Coordonnees(2,-1));
         positionsDisponibles.add(new Coordonnees(-2,1));
         positionsDisponibles.add(new Coordonnees(-2, -1));
         positionsDisponibles.add(new Coordonnees(0,-2));
         positionsDisponibles.add(new Coordonnees(0,2));
+    }
+
+    public Parcelle getParcelleEtang() {
+        return parcelleEtang;
+    }
+
+    public List<ReseauIrrigation> getReseauxIrr(){
+        return reseauxIrr;
     }
 
     public void placerUneParcelle(int x, int y){
@@ -90,7 +101,9 @@ public class PlateauDeJeu {
             }
             i++;
         }
-
     }
 
+    public void ajouterNouveauReseauIrrigation(ReseauIrrigation nouveauReseau){
+        this.reseauxIrr.add(nouveauReseau);
+    }
 }

@@ -1,4 +1,4 @@
-package uqam.inf5153.game;
+package uqam.inf5153.game.plateau;
 
 public class Coordonnees {
 
