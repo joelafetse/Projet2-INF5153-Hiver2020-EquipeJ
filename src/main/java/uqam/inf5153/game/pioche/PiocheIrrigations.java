@@ -1,6 +1,6 @@
 package uqam.inf5153.game.pioche;
 
-import uqam.inf5153.game.Irrigation;
+import uqam.inf5153.game.plateau.Irrigation;
 import java.util.List;
 
 
