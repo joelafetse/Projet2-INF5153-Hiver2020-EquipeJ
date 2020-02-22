@@ -2,9 +2,7 @@ package uqam.inf5153.game;
 
 import uqam.inf5153.game.parcelle.*;
 
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 public class Irrigation {
 
@@ -36,8 +34,11 @@ public class Irrigation {
         this.parcelle2 = parcelle2;
     }
 
-    private Set<Parcelle> getParcelles ()  {
-        return new HashSet<>(Arrays.asList(this.parcelle1, this.parcelle2));
+    /*
+     * Cette méthode retourne une liste de la liste de deux parcelles.
+     */
+    private List<Parcelle> getParcelles ()  {
+        return new ArrayList<>(Arrays.asList(this.parcelle1, this.parcelle2));
     }
 
     @Override
