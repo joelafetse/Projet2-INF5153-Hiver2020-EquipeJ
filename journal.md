@@ -36,7 +36,7 @@ iii.Notre plan d'action pour la prochaine livraison
 
 
 iv.diagram de UML 
-![conception_semaine1](uml_tp2_v1.png)
+![conception_semaine1](img/class_diagramme_tp2_v1.png)
 
 
 *********************************
@@ -71,7 +71,8 @@ iii.Notre plan d'action pour la prochaine livraison
 
 
 iv.diagram de UML 
-![conception_semaine2]()
+
+![conception_semaine2](img/class_diagramme_tp2_v2.png)
 
 
 
