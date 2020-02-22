@@ -38,11 +38,11 @@ package uqam.inf5153.game{
 
     }
 
-    class BambouVerte{
+    class BambouVert{
 
     }
 
-    class BambouJaune {
+    class BambouRose {
 
     }
 
@@ -55,8 +55,9 @@ package uqam.inf5153.game{
     ParcelleRose --|> Parcelle
     ParcelleEtang --|> Parcelle
     Parcelle *--> "1-4"Bambou
+    Parcelle *--> Coordonnees
     BambouJaune --|> Bambou
-    BambouVerte --|> Bambou
+    BambouVert --|> Bambou
     BambouRose --|> Bambou
 
   }
@@ -71,6 +72,28 @@ package uqam.inf5153.game{
     ObjectifParcelle --|> Objectif
   }
 
+  package plateau{
+    class Coordonnees{
+
+    }
+
+    class Irrigation{
+
+    }
+
+    class PlateauDeJeu {
+
+    }
+
+    class ReseauIrrigation {
+    + this(irrDebut: Irrigation)
+    ----
+    + ajouterIrrigationAuReseau(irr: Irrigation): boolean
+    }
+
+    PlateauDeJeu *--> "n" ReseauIrrigation
+    ReseauIrrigation *--> "n" Irrigation
+  }
 
 }
 

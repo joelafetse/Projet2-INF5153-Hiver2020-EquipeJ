@@ -8,6 +8,7 @@ import java.util.Set;
 
 public class Irrigation {
 
+    private int id;
     private Parcelle parcelle1;
     private Parcelle parcelle2;
 
