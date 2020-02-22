@@ -1,7 +1,6 @@
 package uqam.inf5153.game.joueur;
 
 import uqam.inf5153.game.objectif.Objectif;
-import uqam.inf5153.game.parcelle.Bambou;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,7 +11,7 @@ import java.util.List;
 public class PlateauDeJoueur {
 
     // Bambous collectionnés via le panda
-    private List<Bambou> bambous;
+    //private List<Bambou> bambous;
 
     // Objectifs accomplis
     private List<Objectif> objectifsAccomplis;
@@ -22,7 +21,7 @@ public class PlateauDeJoueur {
 
 
     public PlateauDeJoueur(){
-        bambous = new ArrayList<>();
+        //bambous = new ArrayList<>();
         objectifsAccomplis = new ArrayList<>();
         irrigations = 0;
     }

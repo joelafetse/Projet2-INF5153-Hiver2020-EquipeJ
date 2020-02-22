@@ -6,5 +6,6 @@ public class BambouRose extends Bambou{
     @Override
     public Couleur getCouleur() {
         return Couleur.ROSE;
+
     }
 }
