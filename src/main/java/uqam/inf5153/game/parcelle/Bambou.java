@@ -1,4 +1,4 @@
 package uqam.inf5153.game.parcelle;
 
-public class Bambou {
+public abstract class Bambou {
 }

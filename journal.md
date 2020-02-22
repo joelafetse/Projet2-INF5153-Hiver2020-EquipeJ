@@ -1,7 +1,5 @@
 
 
-
-
 ### Équipe J - prmière semaine
 
 
@@ -33,12 +31,52 @@ ii. Les objectifs que le projet est censé remplir
 
 
 iii.Notre plan d'action pour la prochaine livraison
-- Compléter l'implémentation du plateau de jeu.
+- Continuer l'implémentation du plateau de jeu.
 - travailler sur les actions. 
 
 
 iv.diagram de UML 
 ![conception_semaine1](uml_tp2_v1.png)
+
+
+*********************************
+### Équipe J - Deuxième semaine
+*********************************
+
+
+i _ Le travail effectué par les membres et heures passés :
+
+1 -  Yazid Iharkane
+- Participer à la concéption avec mon équipe,   heures.
+
+
+2 -  Kokou Eyram Joel Afetse
+- Participer à la concéption avec mon équipe,  heures.
+
+3 -  Farahnaz kashandeh k. 
+- Participer à la concéption avec mon équipe, 3 heures.
+- Implementer la classe Irrigation, pioche de l'irrigation, corriger bambou ... 
+
+
+ii. Les objectifs que le projet est censé remplir 
+
+- Continuer l'implémentation du plateau de jeu.
+- initialisation les objectifs et le pioche d'objectifs, l'irrigation 
+- traviller sur les actions. 
+
+
+iii.Notre plan d'action pour la prochaine livraison
+- Continuer l'implémentation du plateau de jeu.
+- travailler sur les actions. 
+
+
+iv.diagram de UML 
+![conception_semaine2]()
+
+
+
+
+
 
 
 
