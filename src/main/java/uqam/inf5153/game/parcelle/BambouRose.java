@@ -1,9 +1,10 @@
 package uqam.inf5153.game.parcelle;
 
-public class BambouVert extends Bambou{
+public class BambouRose extends Bambou{
+
 
     @Override
     public Couleur getCouleur() {
-        return Couleur.VERT;
+        return Couleur.ROSE;
     }
 }
