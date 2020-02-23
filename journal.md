@@ -1,5 +1,4 @@
 
-
 ### Équipe J - première semaine
 
 
@@ -8,7 +7,6 @@ i _ Le travail effectué par les membres et heures passés :
 1 -  Farahnaz kashandeh k. 
 - Participer à la concéption avec mon équipe, 6 heures.
 - créer et implémenter le class bambou et enum Couleur, 2 heures.
-
 
 2 -  Kokou Eyram Joel Afetse
 -  Participer à la concéption avec mon équipe, 6 heures.
@@ -23,7 +21,6 @@ i _ Le travail effectué par les membres et heures passés :
 elle affiche les coordonnées des parcelles deposées et les positions possibles pour le prochain depot. 6h
 
 
-
 ii. Les objectifs que le projet est censé remplir
 
 - créer et implémenter les interface et les class parceles, et bambou.
@@ -34,7 +31,6 @@ iii.Notre plan d'action pour la prochaine livraison
 - Continuer l'implémentation du plateau de jeu.
 - travailler sur les actions. 
 
-
 iv.diagram de UML 
 ![conception_semaine1](img/class_diagramme_tp2_v1.png)
 
@@ -42,13 +38,15 @@ iv.diagram de UML
 *********************************
 ### Équipe J - Deuxième semaine
 *********************************
+i _ Le travail effectué par les membres heures passés:
 
-
-i _ Le travail effectué par les membres et heures passés :
+Tous les membres d'équies ont ensemple participé à la concéption  
+pendants 3 heures et ils ont mis des plusieurs heures chaqu'un de son coté
+pour implementer : 
 
 1 -  Yazid Iharkane
-- Participer à la concéption avec mon équipe,   heures.
-
+- Continuer ajouter des fonctionalités à la calasse PlateauDeJeu
+- Implementer le class ReseauIrrigation, ...
 
 2 -  Kokou Eyram Joel Afetse
 - Investiguer sur la fonctionnalité de placer les irrigations.
@@ -56,20 +54,20 @@ i _ Le travail effectué par les membres et heures passés :
 
 
 3 -  Farahnaz kashandeh k. 
-- Participer à la concéption avec mon équipe, 3 heures.
-- Implementer la classe Irrigation, pioche de l'irrigation, corriger bambou ... 
-
+- Implementer la classe Irrigation, pioche de l'irrigation.
+- corriger la classe bambou ...
 
 ii. Les objectifs que le projet est censé remplir 
 
 - Continuer l'implémentation du plateau de jeu.
 - initialisation les objectifs et le pioche d'objectifs, l'irrigation 
-- traviller sur les actions. 
+- traviller sur les actions, piocher 3 parcelles, piocher irrigation. 
 
 
 iii.Notre plan d'action pour la prochaine livraison
-- Continuer l'implémentation du plateau de jeu.
-- travailler sur les actions. 
+
+- Continuer travailler sur les actions, deplacer le jardinier,
+- travailler sur la prtie des décision.
 
 
 iv.diagram de UML 
