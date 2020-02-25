@@ -8,6 +8,8 @@ public class PiocheIrrigations extends Pioche<Irrigation>{
 
     @Override
     public Irrigation piocher(List<Irrigation> irrigations) {
+        int nbrCanauxIrrigationRestant = Irrigation.getNbrCanauxIrrigation() - 1;
+        Irrigation.setNbrCanauxIrrigation(nbrCanauxIrrigationRestant);
         return irrigations.get(0);
     }
 
