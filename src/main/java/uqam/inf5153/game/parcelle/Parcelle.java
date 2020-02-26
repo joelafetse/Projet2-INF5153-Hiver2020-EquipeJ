@@ -6,12 +6,16 @@ public abstract class Parcelle {
 
     protected Coordonnees coord;
 
-    public Parcelle(Coordonnees coordonnees){
+    public Parcelle(){
 
     }
 
     public Coordonnees getCoordonnees(){
         return this.coord;
+    }
+
+    public void setCoordonnees(Coordonnees coord) {
+        this.coord = coord;
     }
 
     public abstract Couleur getCouleur();
