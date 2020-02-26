@@ -26,12 +26,12 @@ public class Jeu {
         this.piocheObjectifs = new PiocheObjectifs();
         this.piocheParcelles = new PiocheParcelles();
         this.piocheIrrigations = new PiocheIrrigations();
-        //TODO melangerPioches()
+        this.melangerPioches();
     }
 
-    private void melangerPioches(List<Parcelle> parcelles, List<Objectif> objectifs){
-        this.piocheParcelles.melangerPioche(parcelles);
-        this.piocheObjectifs.melangerPioche(objectifs);
+    private void melangerPioches(){
+        this.piocheParcelles.melangerPioche();
+        this.piocheObjectifs.melangerPioche();
     }
 
 }
