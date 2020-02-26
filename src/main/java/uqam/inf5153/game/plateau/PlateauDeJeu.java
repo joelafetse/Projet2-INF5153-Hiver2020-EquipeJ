@@ -6,7 +6,6 @@ import uqam.inf5153.game.figurine.Jardinier;
 import uqam.inf5153.game.figurine.Panda;
 import uqam.inf5153.game.parcelle.Parcelle;
 import uqam.inf5153.game.parcelle.ParcelleEtang;
-import uqam.inf5153.game.parcelle.ParcelleVerte;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -53,9 +52,10 @@ public class PlateauDeJeu {
         return reseauxIrr;
     }
 
-    public void placerUneParcelle(int x, int y){
+    public void placerUneParcelle(Parcelle parcelle, int x, int y){
         Coordonnees c = new Coordonnees(x,y);
-        parcelles.add(new ParcelleVerte(c));
+        parcelle.setCoordonnees(c);
+        parcelles.add(parcelle);
         positionsDisponibles.removeIf(coord -> coord.equals(c));
     }
 
