@@ -16,6 +16,7 @@ public class Joueur {
 
     /* Méthode à déplacer eventuellement plus tard */
     public void placerIrrigation(PlateauDeJeu plateauDeJeu, Irrigation irr){
+
         if (irr.getParcelle1().estAdjacent(plateauDeJeu.getParcelleEtang()) &&
             irr.getParcelle2().estAdjacent(plateauDeJeu.getParcelleEtang())){
 

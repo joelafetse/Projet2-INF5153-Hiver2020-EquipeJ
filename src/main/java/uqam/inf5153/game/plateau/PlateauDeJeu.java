@@ -42,6 +42,14 @@ public class PlateauDeJeu {
         return parcelleEtang;
     }
 
+    public List<Parcelle> getParcelles() {
+        return parcelles;
+    }
+
+    arcelle getParcelle() {
+        return parcelles;
+    }
+
     public List<ReseauIrrigation> getReseauxIrr(){
         return reseauxIrr;
     }
