@@ -1,9 +1,11 @@
 package uqam.inf5153.game.plateau;
 
 //import com.sun.istack.internal.NotNull;
+import uqam.inf5153.game.figurine.Figurine;
+import uqam.inf5153.game.figurine.Jardinier;
+import uqam.inf5153.game.figurine.Panda;
 import uqam.inf5153.game.parcelle.Parcelle;
 import uqam.inf5153.game.parcelle.ParcelleEtang;
-import uqam.inf5153.game.parcelle.ParcelleVerte;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -14,6 +16,8 @@ public class PlateauDeJeu {
     private List<Parcelle> parcelles;
     private HashSet<Coordonnees> positionsDisponibles;
     private List<ReseauIrrigation> reseauxIrr;
+    private Figurine jardinier;
+    private Figurine panda;
     private Parcelle parcelleEtang;
 
 
@@ -21,6 +25,8 @@ public class PlateauDeJeu {
         this.parcelles = new ArrayList<>();
         this.positionsDisponibles = new HashSet<>();
         this.reseauxIrr = new ArrayList<>();
+        this.jardinier = new Jardinier();
+        this.panda = new Panda();
         this.parcelleEtang =  new ParcelleEtang(new Coordonnees(0,0));
     }
 
@@ -54,9 +60,10 @@ public class PlateauDeJeu {
         return reseauxIrr;
     }
 
-    public void placerUneParcelle(int x, int y){
+    public void placerUneParcelle(Parcelle parcelle, int x, int y){
         Coordonnees c = new Coordonnees(x,y);
-        parcelles.add(new ParcelleVerte(c));
+        parcelle.setCoordonnees(c);
+        parcelles.add(parcelle);
         positionsDisponibles.removeIf(coord -> coord.equals(c));
     }
 

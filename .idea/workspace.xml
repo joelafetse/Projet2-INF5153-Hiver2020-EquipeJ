@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="232a77c3-6063-4f72-92f6-d93d7fb7da83" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/uqam/inf5153/game/Jeu.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/uqam/inf5153/game/figurine/Figurine.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/uqam/inf5153/game/figurine/Jardinier.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/uqam/inf5153/game/figurine/Panda.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uqam/inf5153/game/joueur/Joueur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uqam/inf5153/game/joueur/Joueur.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uqam/inf5153/game/parcelle/Parcelle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uqam/inf5153/game/parcelle/Parcelle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uqam/inf5153/game/parcelle/ParcelleJaune.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uqam/inf5153/game/parcelle/ParcelleJaune.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uqam/inf5153/game/parcelle/ParcelleRose.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uqam/inf5153/game/parcelle/ParcelleRose.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uqam/inf5153/game/parcelle/ParcelleVerte.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uqam/inf5153/game/parcelle/ParcelleVerte.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uqam/inf5153/game/pioche/Pioche.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uqam/inf5153/game/pioche/Pioche.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uqam/inf5153/game/pioche/PiocheIrrigations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uqam/inf5153/game/pioche/PiocheIrrigations.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uqam/inf5153/game/pioche/PiocheParcelles.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uqam/inf5153/game/pioche/PiocheParcelles.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uqam/inf5153/game/plateau/Irrigation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uqam/inf5153/game/plateau/Irrigation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uqam/inf5153/game/plateau/PlateauDeJeu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uqam/inf5153/game/plateau/PlateauDeJeu.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1XokMLzwNtkNvpQwTVSLn4Riseo" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Java" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="uqam.inf5153.game" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true">
+      <option name="MAIN_CLASS_NAME" value="uqam.inf5153.game.Main" />
+      <module name="Takenoko" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="uqam.inf5153.game.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="232a77c3-6063-4f72-92f6-d93d7fb7da83" name="Default Changelist" comment="" />
+      <created>1581719785753</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1581719785753</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="418" y="177" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1581724650002">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="418" y="177" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1581724650002" />
+    <state x="768" y="238" width="374" height="557" key="#com.intellij.ide.util.MemberChooser" timestamp="1581750289479">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="768" y="238" width="374" height="557" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1581750289479" />
+    <state x="692" y="306" width="525" height="421" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1581724576659">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="692" y="306" width="525" height="421" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1581724576659" />
+    <state x="743" y="277" width="424" height="479" key="FileChooserDialogImpl" timestamp="1582487497665">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="743" y="277" width="424" height="479" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1582487497665" />
+    <state width="1878" height="276" key="GridCell.Tab.0.bottom" timestamp="1581797766364">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1878" height="276" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1581797766364" />
+    <state width="1878" height="276" key="GridCell.Tab.0.center" timestamp="1581797766363">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1878" height="276" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1581797766363" />
+    <state width="1878" height="276" key="GridCell.Tab.0.left" timestamp="1581797766363">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1878" height="276" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1581797766363" />
+    <state width="1878" height="276" key="GridCell.Tab.0.right" timestamp="1581797766364">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1878" height="276" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1581797766364" />
+    <state width="1878" height="341" key="GridCell.Tab.1.bottom" timestamp="1581727180908">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1878" height="341" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1581727180908" />
+    <state width="1878" height="341" key="GridCell.Tab.1.center" timestamp="1581727180907">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1878" height="341" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1581727180907" />
+    <state width="1878" height="341" key="GridCell.Tab.1.left" timestamp="1581727180907">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1878" height="341" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1581727180907" />
+    <state width="1878" height="341" key="GridCell.Tab.1.right" timestamp="1581727180907">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1878" height="341" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1581727180907" />
+    <state x="443" y="96" width="1024" height="840" key="SettingsEditor" timestamp="1581729592927">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="443" y="96" width="1024" height="840" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1581729592927" />
+    <state x="636" y="117" width="647" height="804" key="find.popup" timestamp="1581729410157">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="636" y="117" width="647" height="804" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1581729410157" />
+    <state x="623" y="228" key="search.everywhere.popup" timestamp="1581729406431">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="228" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1581729406431" />
+  </component>
+</project>

@@ -4,8 +4,8 @@ import uqam.inf5153.game.plateau.Coordonnees;
 
 public class ParcelleJaune extends Parcelle {
 
-        public ParcelleJaune(Coordonnees coordonnees) {
-            super(coordonnees);
+        public ParcelleJaune() {
+
         }
 
         @Override
