@@ -5,11 +5,13 @@ import java.util.List;
 
 public abstract class Pioche<T> {
 
-    public void melangerPioche(List<T> tList){
-        Collections.shuffle(tList);
+    protected List<T> objetsAPiocher;
+
+    public void melangerPioche(){
+        Collections.shuffle(objetsAPiocher);
     }
 
 
-    public abstract T piocher(List<T> tList);
-    public abstract List<T> piocher(int nbrAPiocher, List<T> tList);
+    public abstract T piocher();
+    public abstract List<T> piocher(int nbrAPiocher);
 }

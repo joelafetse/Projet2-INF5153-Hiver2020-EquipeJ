@@ -7,15 +7,15 @@ import java.util.List;
 public class PiocheIrrigations extends Pioche<Irrigation>{
 
     @Override
-    public Irrigation piocher(List<Irrigation> irrigations) {
+    public Irrigation piocher() {
         int nbrCanauxIrrigationRestant = Irrigation.getNbrCanauxIrrigation() - 1;
         Irrigation.setNbrCanauxIrrigation(nbrCanauxIrrigationRestant);
-        return irrigations.get(0);
+        return objetsAPiocher.get(0);
     }
 
 
     @Override
-    public List<Irrigation> piocher(int nbrAPiocher, List<Irrigation> irrigation){
+    public List<Irrigation> piocher(int nbrAPiocher){
         throw new UnsupportedOperationException("Vous ne pouvez pas piocher plusieurs irrigation à la fois.");
     }
 
