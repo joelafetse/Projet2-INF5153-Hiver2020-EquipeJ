@@ -2,19 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="232a77c3-6063-4f72-92f6-d93d7fb7da83" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/uqam/inf5153/game/Jeu.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uqam/inf5153/game/figurine/Figurine.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uqam/inf5153/game/figurine/Jardinier.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uqam/inf5153/game/figurine/Panda.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/uqam/inf5153/game/joueur/Joueur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uqam/inf5153/game/joueur/Joueur.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uqam/inf5153/game/objectif/ObjectifParcelle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uqam/inf5153/game/objectif/ObjectifParcelle.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/uqam/inf5153/game/parcelle/Parcelle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uqam/inf5153/game/parcelle/Parcelle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uqam/inf5153/game/parcelle/ParcelleJaune.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uqam/inf5153/game/parcelle/ParcelleJaune.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uqam/inf5153/game/parcelle/ParcelleRose.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uqam/inf5153/game/parcelle/ParcelleRose.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uqam/inf5153/game/parcelle/ParcelleVerte.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uqam/inf5153/game/parcelle/ParcelleVerte.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uqam/inf5153/game/pioche/Pioche.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uqam/inf5153/game/pioche/Pioche.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uqam/inf5153/game/pioche/PiocheIrrigations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uqam/inf5153/game/pioche/PiocheIrrigations.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uqam/inf5153/game/pioche/PiocheParcelles.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uqam/inf5153/game/pioche/PiocheParcelles.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uqam/inf5153/game/plateau/Irrigation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uqam/inf5153/game/plateau/Irrigation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uqam/inf5153/game/parcelle/ParcelleEtang.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uqam/inf5153/game/parcelle/ParcelleEtang.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uqam/inf5153/game/pioche/PiocheObjectifs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uqam/inf5153/game/pioche/PiocheObjectifs.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/uqam/inf5153/game/plateau/PlateauDeJeu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uqam/inf5153/game/plateau/PlateauDeJeu.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -105,22 +98,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="743" y="277" width="424" height="479" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1582487497665" />
-    <state width="1878" height="276" key="GridCell.Tab.0.bottom" timestamp="1581797766364">
+    <state width="1868" height="339" key="GridCell.Tab.0.bottom" timestamp="1582764202439">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1878" height="276" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1581797766364" />
-    <state width="1878" height="276" key="GridCell.Tab.0.center" timestamp="1581797766363">
+    <state width="1868" height="339" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1582764202439" />
+    <state width="1868" height="339" key="GridCell.Tab.0.center" timestamp="1582764202438">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1878" height="276" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1581797766363" />
-    <state width="1878" height="276" key="GridCell.Tab.0.left" timestamp="1581797766363">
+    <state width="1868" height="339" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1582764202438" />
+    <state width="1868" height="339" key="GridCell.Tab.0.left" timestamp="1582764202438">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1878" height="276" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1581797766363" />
-    <state width="1878" height="276" key="GridCell.Tab.0.right" timestamp="1581797766364">
+    <state width="1868" height="339" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1582764202438" />
+    <state width="1868" height="339" key="GridCell.Tab.0.right" timestamp="1582764202439">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1878" height="276" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1581797766364" />
+    <state width="1868" height="339" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1582764202439" />
     <state width="1878" height="341" key="GridCell.Tab.1.bottom" timestamp="1581727180908">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
