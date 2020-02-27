@@ -33,10 +33,11 @@ public abstract class Parcelle {
 
     public abstract Couleur getCouleur();
 
+
     @Override
     public boolean equals(Object obj) {
         return obj instanceof Parcelle &&
-                this.coord.equals(((Parcelle) obj).coord);
+                this.coord.equals(((Parcelle) obj).coord) && this.getCouleur() == ((Parcelle) obj).getCouleur();
     }
 
     public boolean estAdjacent(Parcelle p){

@@ -24,10 +24,13 @@ public class PlateauDeJeu {
         this.parcelles = new ArrayList<>();
         this.positionsDisponibles = new HashSet<>();
         this.reseauxIrr = new ArrayList<>();
-        this.jardinier = new Jardinier();
-        this.panda = new Panda();
+
+
         this.parcelleEtang =  new ParcelleEtang();
         this.parcelleEtang.setCoordonnees(new Coordonnees(0,0));
+        this.jardinier = new Jardinier(parcelleEtang);
+        this.panda = new Panda(parcelleEtang);
+
     }
 
     public int nbreDeParcelles(){

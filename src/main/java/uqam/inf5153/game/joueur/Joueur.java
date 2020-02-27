@@ -1,5 +1,7 @@
 package uqam.inf5153.game.joueur;
 
+import uqam.inf5153.game.figurine.Figurine;
+import uqam.inf5153.game.figurine.Jardinier;
 import uqam.inf5153.game.objectif.Objectif;
 import uqam.inf5153.game.parcelle.Parcelle;
 import uqam.inf5153.game.plateau.Irrigation;
@@ -16,9 +18,6 @@ public class Joueur {
 
 
     /* Méthode à déplacer eventuellement plus tard */
-
-
-
     public void placerIrrigation(PlateauDeJeu plateauDeJeu, Irrigation irr, Parcelle p1, Parcelle p2){
         irr.setParcelles(p1,p2);
         if (irr.getParcelle1().estAdjacent(plateauDeJeu.getParcelleEtang()) &&
@@ -41,5 +40,12 @@ public class Joueur {
         }
     }
 
+    public void deplacerJardinier(PlateauDeJeu plateau, Figurine jardinier, Parcelle parcelleDestination){
+        if (jardinier.estDeplaceableSur(parcelleDestination)){
+            jardinier.setParcelleDepart(parcelleDestination);
+        }else{
+            //TODO
+        }
+    }
 
 }
