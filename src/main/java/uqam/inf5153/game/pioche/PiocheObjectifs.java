@@ -8,12 +8,12 @@ public class PiocheObjectifs extends Pioche<Objectif> {
 
 
     @Override
-    public Objectif piocher(List<Objectif> objectifs) {
-        return objectifs.get(0);
+    public Objectif piocher() {
+        return objetsAPiocher.get(0);
     }
 
     @Override
-    public List<Objectif> piocher(int nbrAPiocher, List<Objectif> objectifs){
+    public List<Objectif> piocher(int nbrAPiocher){
         throw new UnsupportedOperationException("Vous ne pouvez pas piocher plusieurs objectifs à la fois.");
     }
 }
