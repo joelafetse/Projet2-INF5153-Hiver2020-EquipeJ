@@ -4,18 +4,7 @@
     <list default="true" id="232a77c3-6063-4f72-92f6-d93d7fb7da83" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uqam/inf5153/game/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uqam/inf5153/game/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uqam/inf5153/game/Takenoko.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uqam/inf5153/game/Takenoko.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uqam/inf5153/game/parcelle/Parcelle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uqam/inf5153/game/parcelle/Parcelle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uqam/inf5153/game/parcelle/ParcelleEtang.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uqam/inf5153/game/parcelle/ParcelleEtang.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uqam/inf5153/game/parcelle/ParcelleJaune.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uqam/inf5153/game/parcelle/ParcelleJaune.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uqam/inf5153/game/parcelle/ParcelleRose.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uqam/inf5153/game/parcelle/ParcelleRose.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uqam/inf5153/game/parcelle/ParcelleVerte.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uqam/inf5153/game/parcelle/ParcelleVerte.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uqam/inf5153/game/pioche/Pioche.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uqam/inf5153/game/pioche/Pioche.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uqam/inf5153/game/pioche/PiocheIrrigations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uqam/inf5153/game/pioche/PiocheIrrigations.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uqam/inf5153/game/pioche/PiocheObjectifs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uqam/inf5153/game/pioche/PiocheObjectifs.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uqam/inf5153/game/pioche/PiocheParcelles.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uqam/inf5153/game/pioche/PiocheParcelles.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/Takenoko.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uqam/inf5153/game/objectif/ObjectifParcelle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uqam/inf5153/game/objectif/ObjectifParcelle.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,10 +79,14 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="282" y="84" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1582909781508">
-      <screen x="67" y="27" width="1299" height="741" />
+    <state x="550" y="179" width="800" height="672" key="#Project_Structure" timestamp="1582980344129">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="418" y="177" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1581724650002" />
+    <state x="550" y="179" width="800" height="672" key="#Project_Structure/0.0.1920.1040@0.0.1920.1040" timestamp="1582980344129" />
+    <state x="418" y="177" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1582980616995">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="418" y="177" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1582980616995" />
     <state x="282" y="84" key="#com.intellij.execution.impl.EditConfigurationsDialog/67.27.1299.741@67.27.1299.741" timestamp="1582909781508" />
     <state x="931" y="283" width="343" height="397" key="#com.intellij.ide.util.MemberChooser" timestamp="1582944198694">
       <screen x="67" y="27" width="1299" height="741" />
