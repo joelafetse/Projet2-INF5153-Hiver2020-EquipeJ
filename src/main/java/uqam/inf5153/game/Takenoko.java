@@ -1,5 +1,12 @@
 package uqam.inf5153.game;
 
+import uqam.inf5153.game.parcelle.Parcelle;
+import uqam.inf5153.game.pioche.Pioche;
+import uqam.inf5153.game.pioche.PiocheParcelles;
+
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Crée par Imen Benzarti le 13/01/2020
  * une classe controlleur du jeu (voir le parton GRASP controlleur)
@@ -15,22 +22,25 @@ public class Takenoko {
 	/*
 	 * Piocher i parcelle de la pioche du joueur joueur
 	 */
-	public static String[] piocherParcelles(int i, int joueur) {
-		// TODO Auto-generated method stub
-		return null;
+	public static List<Parcelle> piocherParcelles(int i, int joueur) {
+		Pioche pp = new PiocheParcelles();
+		List<Parcelle> parcellesPiochees = pp.piocher(i);
+		return parcellesPiochees;
 	}
 	/*
 	 * selectionne uneParcelle parmi les parcelles piochés et retourne les autres à la pioche.
 	 */
-	public static void selectionnerParcelle(String[] parcelles, String uneParcelle ) {
+	//public static void selectionnerParcelle(String[] parcelles, String uneParcelle ) {}
+	public static void selectionnerParcelle(List<Parcelle>  parcelles, String uneParcelle ) {
 		// TODO Auto-generated method stub
 	}
 	/*
 	 * afficher un ensemble de parcelles
 	 */
-	public static void afficherParcelles(String[] parcelles) {
-		// TODO Auto-generated method stub
-
+	/*public static void afficherParcelles(String[] parcelles) {}*/
+	public static void afficherParcelles( List<Parcelle> list) {
+		PiocheParcelles pp = new PiocheParcelles();
+		pp.afficherParcelles(list);
 	}
 	/*
 	 * afficher les parcelles déposé dans le plateau du joueur joueur

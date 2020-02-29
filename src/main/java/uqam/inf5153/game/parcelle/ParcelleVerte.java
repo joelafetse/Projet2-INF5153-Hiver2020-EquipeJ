@@ -11,4 +11,10 @@ public class ParcelleVerte extends Parcelle {
         return Couleur.VERT;
     }
 
+    @Override
+    public int getParcelleId() {
+        return parcelleId;
+    }
+
+
 }

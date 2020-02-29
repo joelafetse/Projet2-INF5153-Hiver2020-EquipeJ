@@ -6,13 +6,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 public abstract class Parcelle {
+    //variable de classe
+    private static int compteur = 0;
 
+    //variables d'instances
+    protected int parcelleId;
     protected Coordonnees coord;
     protected boolean irriguee;
     protected ArrayList<Parcelle> voisins;
 
-    public Parcelle(){
 
+    public Parcelle(){
+        parcelleId = ++compteur;
     }
 
     public Coordonnees getCoordonnees(){
@@ -32,6 +37,7 @@ public abstract class Parcelle {
     }
 
     public abstract Couleur getCouleur();
+    public abstract int getParcelleId();
 
 
     @Override

@@ -11,4 +11,9 @@ public class ParcelleEtang extends Parcelle {
     public Couleur getCouleur(){
         return null;
     }
+
+    @Override
+    public int getParcelleId() {
+        return parcelleId;
+    }
 }
