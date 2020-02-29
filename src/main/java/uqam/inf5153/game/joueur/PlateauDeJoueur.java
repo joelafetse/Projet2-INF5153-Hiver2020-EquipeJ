@@ -10,13 +10,13 @@ import java.util.List;
  */
 public class PlateauDeJoueur {
 
-    // Bambous collectionnés via le panda
+    // Bambous collectionnés via le panda //TODO
     //private List<Bambou> bambous;
 
     // Objectifs accomplis
     private List<Objectif> objectifsAccomplis;
 
-    // Nombre d'irrigations collectionnés
+    // Nombre  de canaux d'irrigations collectionnés
     private int irrigations;
 
 
@@ -24,5 +24,13 @@ public class PlateauDeJoueur {
         //bambous = new ArrayList<>();
         objectifsAccomplis = new ArrayList<>();
         irrigations = 0;
+    }
+
+    public int getIrrigations() {
+        return irrigations;
+    }
+
+    public void ajouterIrrigations() {
+        this.irrigations++;
     }
 }

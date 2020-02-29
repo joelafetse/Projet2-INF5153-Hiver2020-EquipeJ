@@ -15,49 +15,45 @@ import java.util.List;
  */
 public class Takenoko {
 
+	private static Jeu jeu = new Jeu();
+
 	/**
 	 * les parcelles
 	 */
 
 	/*
-	 * Piocher i parcelle de la pioche du joueur joueur
+	 * Piocher nbrAPiocher parcelles de la pioche du joueur joueur
 	 */
-	public static List<Parcelle> piocherParcelles(int i, int joueur) {
-		Pioche pp = new PiocheParcelles();
-		List<Parcelle> parcellesPiochees = pp.piocher(i);
-		return parcellesPiochees;
+	public static List<Parcelle> piocherParcelles(int nbrAPiocher, int joueur) {
+		return jeu.effectuerActionPiocherParcelles(nbrAPiocher, joueur);
 	}
 	/*
 	 * selectionne uneParcelle parmi les parcelles piochés et retourne les autres à la pioche.
 	 */
 	//public static void selectionnerParcelle(String[] parcelles, String uneParcelle ) {}
-	public static void selectionnerParcelle(List<Parcelle>  parcelles, String uneParcelle ) {
-		// TODO Auto-generated method stub
+	public static Parcelle selectionnerParcelle(List<Parcelle>  parcelles, int indexParcelle ) {
+		return jeu.selectionnerParcelle(parcelles, indexParcelle);
 	}
 	/*
 	 * afficher un ensemble de parcelles
 	 */
 	/*public static void afficherParcelles(String[] parcelles) {}*/
 	public static void afficherParcelles( List<Parcelle> list) {
-		PiocheParcelles pp = new PiocheParcelles();
-		pp.afficherParcelles(list);
+        jeu.afficherParcelles(list);
 	}
 	/*
 	 * afficher les parcelles déposé dans le plateau du joueur joueur
 	 */
-	public static void afficherParcellesPlateau(int joueur) {
-		// TODO Auto-generated method stub
-
+	public static void afficherParcellesPlateau(){//int joueur) {
+		jeu.afficherParcellesDansPlateau();
 	}
 
 	/*
 	 * placer une parcelle dans la position (x,y) dans le plateau du joueur joueur.
 	 * retourne true si la parcelle est bien placée, sinon elle retourne false.
 	 */
-	public static boolean placerParcelleDansPlateau(String parcelle, int x, int y, int joueur) {
-		// TODO Auto-generated method stub
-		return true;
-
+	public static boolean placerParcelleDansPlateau(Parcelle parcelle, int x, int y, int joueur) {
+        return jeu.effectuerActionPlacerParcelleDansPlateau(parcelle,x,y,joueur);
 	}
 	/**
 	 * piocher une irrigation du joueur
@@ -68,16 +64,18 @@ public class Takenoko {
 	 *
 	 */
 	public static void piocherUneIrrigation(int joueur) {
-		// TODO Auto-generated method stub
-
+		jeu.effectuerActionPiocherIrrigation(joueur);
 	}
+
+	public static void garderIrrigation(int joueur){
+        jeu.effectuerActionGarderIrrigation(joueur);
+    }
 	/*
 	 * placer une irrigation entre les parcelles (x1,y1) et (x2, y2) dans le plateau du joueur joueur
 	 * retourne true si l'irrigation est bien placée
 	 */
 	public static boolean placerUneIrrigation( int x1, int y1, int x2, int y2, int joueur) {
-		// TODO Auto-generated method stub
-		return true;
+	    return jeu.effectuerActionPlacerIrrigation(x1,y1,x2,y2,joueur);
 	}
 	/**
 	 * objectifs

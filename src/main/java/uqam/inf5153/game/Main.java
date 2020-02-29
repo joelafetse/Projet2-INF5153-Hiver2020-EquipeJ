@@ -133,27 +133,37 @@ public class Main {
 		System.out.println("Étape 1 - Piocher 3 parcelles ");
 		////String[] parcelles = Takenoko.piocherParcelles(3, numJoueur);
 
-		List<Parcelle> parcelles = Takenoko.piocherParcelles(3, numJoueur);
+		List<Parcelle> parcellesPiochees = Takenoko.piocherParcelles(3, numJoueur);
 
 		System.out.println("Étape 2 - Vous avez pioché les parcelles suivantes : ");
 		///Takenoko.afficherParcelles(parcelles);
 
-		Takenoko.afficherParcelles(parcelles);
+		Takenoko.afficherParcelles(parcellesPiochees);
 
 		System.out.println("Étape 3 - Choisir une");
-		String parcelleChosie = Keyin.inString(" Entrer la parcelle choisie : ");
+		int parcelleChosie = Keyin.inInt(" Entrer le numéro de la parcelle choisie : ");
+		while(parcelleChosie > 3 || parcelleChosie < 1){
+			System.out.println("Vous devez choisir entre la parcelle 1 et 3");
+			parcelleChosie = Keyin.inInt(" Entrer le numéro de la parcelle choisie : ");
+		}
 		System.out.println("Étape 4 - Replacer les deux autres sous la pioche");
 		///Takenoko.selectionnerParcelle(parcelles, parcelleChosie );
-		Takenoko.selectionnerParcelle(parcelles, parcelleChosie );
+		Parcelle pSelectionnee = Takenoko.selectionnerParcelle(parcellesPiochees, parcelleChosie );
 		System.out.println("Étape 5 - Afficher les parcelles du plateau");
-		Takenoko.afficherParcellesPlateau(numJoueur);
+		Takenoko.afficherParcellesPlateau();//numJoueur);
 		System.out.println("Étape 6 - Placer une parcelle dans la position (x,y) ");
 		int x = Keyin.inInt(" Entrer la position x : ");
 		int y = Keyin.inInt(" Entrer la position y : ");
-		if (Takenoko.placerParcelleDansPlateau(parcelleChosie, x, y,  numJoueur))
-			System.out.println("La parcelle est bien placée ");
-		else
-			System.out.println("La parcelle n'est pas placée");
+		boolean estPlacee = Takenoko.placerParcelleDansPlateau(pSelectionnee, x, y,  numJoueur);
+		while (!estPlacee){
+			System.out.println("La parcelle n'est pas placée. Veuillez choisir une autre position");
+			System.out.println("Étape 6 - Placer une parcelle dans la position (x,y) ");
+			x = Keyin.inInt(" Entrer la position x : ");
+			y = Keyin.inInt(" Entrer la position y : ");
+			estPlacee = Takenoko.placerParcelleDansPlateau(pSelectionnee, x, y,  numJoueur);
+		}
+		System.out.println("La parcelle est bien placée ");
+
 	}
 	private static void prendreIrrigation(int numJoueur) {
 		System.out.println("===========================================================================");
@@ -165,6 +175,8 @@ public class Main {
 		int reponse = Keyin.inChar(" réponse (O/N) : ");
 		if (reponse == 'o' || reponse == 'O' ) {
 			placerIrrigation(numJoueur);
+		}else{
+			Takenoko.garderIrrigation(numJoueur);
 		}
 	}
 	private static void deplacerJardinier(int numJoueur) {
@@ -172,7 +184,7 @@ public class Main {
 		System.out.println("|   TAKENOKO MENU JOUEUR " +numJoueur+ " : Action Jardiner                        ");
 		System.out.println("==========================================================================");
 		System.out.println("|        Afficher les parcelles du plateau  (les positions)              ");
-		Takenoko.afficherParcellesPlateau(numJoueur);
+		Takenoko.afficherParcellesPlateau();//numJoueur);
 		System.out.println("|        Précisier la nouvelle parcelle (position x,y) du Jardinier      ");
 		int x = Keyin.inInt(" Entrer la position x : ");
 		int y = Keyin.inInt(" Entrer la position y : ");
@@ -183,7 +195,7 @@ public class Main {
 		System.out.println("|   TAKENOKO MENU JOUEUR " +numJoueur+ " : Action Panda                         ");
 		System.out.println("==========================================================================");
 		System.out.println("|        Afficher les parcelles du plateau  (les positions)                                   ");
-		Takenoko.afficherParcellesPlateau(numJoueur);
+		Takenoko.afficherParcellesPlateau();//numJoueur);
 		System.out.println("|        Précisier la nouvelle parcelle (position x,y) du Panda                   ");
 		int x = Keyin.inInt(" Entrer la position x : ");
 		int y = Keyin.inInt(" Entrer la position y : ");
@@ -243,17 +255,25 @@ public class Main {
 		System.out.println("=========================================================================");
 		System.out.println("|  TAKENOKO MENU JOUEUR " +numJoueur+ ": décide de placer une irrigation     ");
 		System.out.println("=========================================================================");
-		Takenoko.afficherParcellesPlateau(numJoueur);
+		Takenoko.afficherParcellesPlateau();//numJoueur);
 		System.out.println("|        Si oui, afficher les parcelles du plateau (les positions)     ");
 		System.out.println("|        Préciser les deux parcelles (x1,y1) et (x2, y2) séparés par l'irrigation ");
 		int x1 = Keyin.inInt(" Entrer la position x1 : ");
 		int y1 = Keyin.inInt(" Entrer la position y1 : ");
 		int x2 = Keyin.inInt(" Entrer la position x2 : ");
 		int y2 = Keyin.inInt(" Entrer la position y2 : ");
-		if (Takenoko.placerUneIrrigation ( x1, y1, x2, y2, numJoueur ))
-			System.out.println("L'irrigation est bien placée");
-		else
+		boolean estPlacee = Takenoko.placerUneIrrigation( x1, y1, x2, y2, numJoueur);
+		while(!estPlacee){
 			System.out.println("l'irrigation n'est pas placée");
+			System.out.println("Vous devez entrer des positions valides");
+			x1 = Keyin.inInt(" Entrer la position x1 : ");
+			y1 = Keyin.inInt(" Entrer la position y1 : ");
+			x2 = Keyin.inInt(" Entrer la position x2 : ");
+			y2 = Keyin.inInt(" Entrer la position y2 : ");
+			estPlacee = Takenoko.placerUneIrrigation( x1, y1, x2, y2, numJoueur);
+		}
+			System.out.println("L'irrigation est bien placée");
+
 	}
 	private static void remplirObjectif(int numJoueur) {
 		System.out.println("=========================================================================");

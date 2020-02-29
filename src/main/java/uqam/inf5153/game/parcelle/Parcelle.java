@@ -13,11 +13,15 @@ public abstract class Parcelle {
     protected int parcelleId;
     protected Coordonnees coord;
     protected boolean irriguee;
-    protected ArrayList<Parcelle> voisins;
+    protected List<Parcelle> voisins;
+
+    public Parcelle(Coordonnees coord){
+        this.coord = coord;
+    }
 
 
     public Parcelle(){
-        parcelleId = ++compteur;
+
     }
 
     public Coordonnees getCoordonnees(){
@@ -64,6 +68,14 @@ public abstract class Parcelle {
             if (voisins.get(i)!=null) parcellesAdjacentes[i]= voisins.get(i);
         }
         return parcellesAdjacentes;
+    }
+
+    @Override
+    public String toString(){
+        if (this.getCoordonnees().equals(new Coordonnees(0,0))){
+            return "Parcelle Étang ";
+        }
+        return "Parcelle de couleur "+ this.getCouleur();
     }
 
 }
