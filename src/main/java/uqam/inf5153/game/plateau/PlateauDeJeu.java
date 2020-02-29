@@ -1,6 +1,5 @@
 package uqam.inf5153.game.plateau;
 
-//import com.sun.istack.internal.NotNull;
 import uqam.inf5153.game.figurine.Figurine;
 import uqam.inf5153.game.figurine.Jardinier;
 import uqam.inf5153.game.figurine.Panda;
@@ -25,9 +24,13 @@ public class PlateauDeJeu {
         this.parcelles = new ArrayList<>();
         this.positionsDisponibles = new HashSet<>();
         this.reseauxIrr = new ArrayList<>();
-        this.jardinier = new Jardinier();
-        this.panda = new Panda();
-        this.parcelleEtang =  new ParcelleEtang(new Coordonnees(0,0));
+
+
+        this.parcelleEtang =  new ParcelleEtang();
+        this.parcelleEtang.setCoordonnees(new Coordonnees(0,0));
+        this.jardinier = new Jardinier(parcelleEtang);
+        this.panda = new Panda(parcelleEtang);
+
     }
 
     public int nbreDeParcelles(){
@@ -52,10 +55,6 @@ public class PlateauDeJeu {
         return parcelles;
     }
 
-    arcelle getParcelle() {
-        return parcelles;
-    }
-
     public List<ReseauIrrigation> getReseauxIrr(){
         return reseauxIrr;
     }
@@ -65,6 +64,30 @@ public class PlateauDeJeu {
         parcelle.setCoordonnees(c);
         parcelles.add(parcelle);
         positionsDisponibles.removeIf(coord -> coord.equals(c));
+        int i=positionParcelle(x-2,y+1);
+        if(i!=-1){
+            parcelle.setVoisins(parcelles.get(i));
+        }
+        i=positionParcelle(x,y+2);
+        if(i!=-1){
+            parcelle.setVoisins(parcelles.get(i));
+        }
+        i=positionParcelle(x+2,y+1);
+        if(i!=-1){
+            parcelle.setVoisins(parcelles.get(i));
+        }
+        i=positionParcelle(x+2,y-1);
+        if(i!=-1){
+            parcelle.setVoisins(parcelles.get(i));
+        }
+        i=positionParcelle(x,y-2);
+        if(i!=-1){
+            parcelle.setVoisins(parcelles.get(i));
+        }
+        i=positionParcelle(x-2,y-1);
+        if(i!=-1){
+            parcelle.setVoisins(parcelles.get(i));
+        }
     }
 
     public boolean estPositionOccupee(int x, int y){
@@ -82,6 +105,22 @@ public class PlateauDeJeu {
             i++;
         }
         return !trouve;
+    }
+
+    public int positionParcelle(int x, int y){
+        Coordonnees c=new Coordonnees(x,y);
+        int i=0;
+        Parcelle parcelle;
+        while(i < parcelles.size()) {
+            parcelle = parcelles.get(i);
+            if (parcelle != null &&
+                    parcelle.getCoordonnees()!=null &&
+                    parcelle.getCoordonnees().equals(c)) {
+                return i;
+            }
+            i++;
+        }
+        return -1;
     }
 
     public void mettreAjourListePosiDisp(int x, int y){

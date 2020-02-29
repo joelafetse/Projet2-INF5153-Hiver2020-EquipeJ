@@ -10,18 +10,21 @@ import java.util.List;
 
 public class PiocheParcelles extends Pioche<Parcelle> {
 
+
     public PiocheParcelles(){
         // 11 objetsAPiocher vertes
         for (int i=0; i < 11; i++)
-            this.objetsAPiocher.add(new ParcelleVerte());
+            super.objetsAPiocher.add(new ParcelleVerte());
 
         // 7 objetsAPiocher roses
         for (int i=0; i < 7; i++)
-            this.objetsAPiocher.add(new ParcelleRose());
+            super.objetsAPiocher.add(new ParcelleRose());
 
         // 9 objetsAPiocher jaunes
         for (int i=0; i < 9; i++)
-            this.objetsAPiocher.add(new ParcelleJaune());
+            super.objetsAPiocher.add(new ParcelleJaune());
+
+        melangerPioche();
     }
 
     @Override
@@ -33,8 +36,8 @@ public class PiocheParcelles extends Pioche<Parcelle> {
     public List<Parcelle> piocher(int nbrAPiocher){
         List<Parcelle> parcellesPiochees = new ArrayList<>();
         for (int i=0; i < nbrAPiocher; i++) {
-            parcellesPiochees.add(objetsAPiocher.get(i));
-            objetsAPiocher.remove(i);
+            parcellesPiochees.add(super.objetsAPiocher.get(i));
+            super.objetsAPiocher.remove(i);
         }
 
         return parcellesPiochees;
@@ -42,6 +45,17 @@ public class PiocheParcelles extends Pioche<Parcelle> {
 
     public void replacerParcellesNonChoisies(List<Parcelle> parcellesNonChoisies){
         for (Parcelle p: parcellesNonChoisies)
-            objetsAPiocher.add(p);
+            super.objetsAPiocher.add(p);
+    }
+
+
+    public void afficherParcelles(List<Parcelle> parcelles) {
+        int i=0;
+        while(i < parcelles.size()) {
+            if (parcelles.get(i)!=null) {
+                System.out.println(parcelles.get(i).getParcelleId()+ " " + parcelles.get(i).getCouleur().toString());
+            }
+            i++;
+        }
     }
 }

@@ -2,14 +2,22 @@ package uqam.inf5153.game.parcelle;
 
 import uqam.inf5153.game.plateau.Coordonnees;
 
-public abstract class Parcelle {
+import java.util.ArrayList;
+import java.util.List;
 
+public abstract class Parcelle {
+    //variable de classe
+    private static int compteur = 0;
+
+    //variables d'instances
+    protected int parcelleId;
     protected Coordonnees coord;
     protected boolean irriguee;
+    protected ArrayList<Parcelle> voisins;
 
 
     public Parcelle(){
-
+        parcelleId = ++compteur;
     }
 
     public Coordonnees getCoordonnees(){
@@ -20,12 +28,16 @@ public abstract class Parcelle {
         return irriguee;
     }
 
-
     public void setCoordonnees(Coordonnees coord) {
         this.coord = coord;
     }
 
+    public void setVoisins(Parcelle p) {
+        this.voisins.add(p);
+    }
+
     public abstract Couleur getCouleur();
+    public abstract int getParcelleId();
 
 
     @Override
@@ -41,6 +53,17 @@ public abstract class Parcelle {
                 (p.coord.getX() == this.coord.getX() - 2 && p.coord.getY() == this.coord.getY() - 1) ||
                 (p.coord.getX() == this.coord.getX() && p.coord.getY() == this.coord.getY() + 2) ||
                 (p.coord.getX() == this.coord.getX() && p.coord.getY() == this.coord.getY() - 2);
+    }
+
+
+
+
+    public Parcelle[] parcellesAdjacentes(){
+        Parcelle[] parcellesAdjacentes=new Parcelle[6];
+        for (int i=0; i<6; i++){
+            if (voisins.get(i)!=null) parcellesAdjacentes[i]= voisins.get(i);
+        }
+        return parcellesAdjacentes;
     }
 
 }

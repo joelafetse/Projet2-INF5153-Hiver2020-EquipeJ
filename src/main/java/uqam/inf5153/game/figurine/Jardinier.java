@@ -5,4 +5,8 @@ import uqam.inf5153.game.plateau.Coordonnees;
 
 public class Jardinier extends Figurine {
 
+    public Jardinier (Parcelle parcelle){
+        super(parcelle);
+    }
+
 }

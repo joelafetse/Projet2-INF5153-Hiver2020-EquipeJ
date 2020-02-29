@@ -1,26 +1,115 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="232a77c3-6063-4f72-92f6-d93d7fb7da83" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/uqam/inf5153/game/Jeu.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uqam/inf5153/game/figurine/Figurine.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uqam/inf5153/game/figurine/Jardinier.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uqam/inf5153/game/figurine/Panda.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uqam/inf5153/game/joueur/Joueur.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uqam/inf5153/game/joueur/Joueur.java" afterDir="false" />
+    <list default="true" id="232a77c3-6063-4f72-92f6-d93d7fb7da83" name="Default Changelist" comment="Merge branch 'master' of https://github.com/joelafetse/Projet2-INF5153-Hiver2020-EquipeJ&#10;&#10;# Conflicts:&#10;#&#9;.idea/misc.xml">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uqam/inf5153/game/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uqam/inf5153/game/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uqam/inf5153/game/Takenoko.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uqam/inf5153/game/Takenoko.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uqam/inf5153/game/figurine/Jardinier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uqam/inf5153/game/figurine/Jardinier.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uqam/inf5153/game/figurine/Panda.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uqam/inf5153/game/figurine/Panda.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uqam/inf5153/game/objectif/ObjectifParcelle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uqam/inf5153/game/objectif/ObjectifParcelle.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/uqam/inf5153/game/parcelle/Parcelle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uqam/inf5153/game/parcelle/Parcelle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uqam/inf5153/game/parcelle/ParcelleEtang.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uqam/inf5153/game/parcelle/ParcelleEtang.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/uqam/inf5153/game/parcelle/ParcelleJaune.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uqam/inf5153/game/parcelle/ParcelleJaune.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/uqam/inf5153/game/parcelle/ParcelleRose.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uqam/inf5153/game/parcelle/ParcelleRose.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/uqam/inf5153/game/parcelle/ParcelleVerte.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uqam/inf5153/game/parcelle/ParcelleVerte.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/uqam/inf5153/game/pioche/Pioche.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uqam/inf5153/game/pioche/Pioche.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/uqam/inf5153/game/pioche/PiocheIrrigations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uqam/inf5153/game/pioche/PiocheIrrigations.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uqam/inf5153/game/pioche/PiocheObjectifs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uqam/inf5153/game/pioche/PiocheObjectifs.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/uqam/inf5153/game/pioche/PiocheParcelles.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uqam/inf5153/game/pioche/PiocheParcelles.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uqam/inf5153/game/plateau/Irrigation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uqam/inf5153/game/plateau/Irrigation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/uqam/inf5153/game/plateau/PlateauDeJeu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uqam/inf5153/game/plateau/PlateauDeJeu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/Takenoko.kotlin_module" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/uqam/inf5153/game/pioche/PiocheParcelles.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="10">
+              <caret line="41" selection-start-line="41" selection-end-line="41" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="108">
+              <caret line="6" column="81" selection-start-line="6" selection-start-column="77" selection-end-line="6" selection-end-column="81" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/uqam/inf5153/game/Jeu.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="72">
+              <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/uqam/inf5153/game/figurine/Jardinier.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="5" column="41" selection-start-line="5" selection-start-column="41" selection-end-line="5" selection-end-column="41" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#211#212#0" expanded="true" />
+                <element signature="e#242#243#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/uqam/inf5153/game/figurine/Figurine.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="10" column="44" selection-start-line="10" selection-start-column="44" selection-end-line="10" selection-end-column="44" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#245#246#0" expanded="true" />
+                <element signature="e#296#297#0" expanded="true" />
+                <element signature="e#345#346#0" expanded="true" />
+                <element signature="e#397#398#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/uqam/inf5153/game/figurine/Panda.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="72">
+              <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+              <folding>
+                <element signature="e#155#156#0" expanded="true" />
+                <element signature="e#186#187#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/uqam/inf5153/game/joueur/Joueur.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="314">
+              <caret line="42" column="64" selection-start-line="42" selection-start-column="64" selection-end-line="42" selection-end-column="64" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -34,29 +123,94 @@
   </component>
   <component name="ProjectId" id="1XokMLzwNtkNvpQwTVSLn4Riseo" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
-    <ConfirmationsSetting value="2" id="Add" />
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Takenoko" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Projet2-INF5153-Hiver2020-EquipeJ" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Takenoko" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Projet2-INF5153-Hiver2020-EquipeJ" type="462c0819:PsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Takenoko" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Projet2-INF5153-Hiver2020-EquipeJ" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Takenoko" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Projet2-INF5153-Hiver2020-EquipeJ" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Takenoko" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Projet2-INF5153-Hiver2020-EquipeJ" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Takenoko" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Projet2-INF5153-Hiver2020-EquipeJ" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="game" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+    </panes>
   </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1582982750026" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Java" />
+    <property name="settings.editor.selected.configurable" value="preferences.editor.code.editing" />
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="uqam.inf5153.game" />
     </key>
   </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="11" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="uqam.inf5153.game.Main" />
       <module name="Takenoko" />
       <extension name="coverage">
@@ -88,15 +242,82 @@
     </task>
     <servers />
   </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="25" width="1366" height="696" extended-state="6" />
+    <layout>
+      <window_info id="Image Layers" />
+      <window_info id="Designer" />
+      <window_info id="UI Designer" />
+      <window_info id="Capture Tool" />
+      <window_info id="Favorites" side_tool="true" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22727273" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Version Control" />
+      <window_info anchor="bottom" id="Terminal" visible="true" weight="0.059964728" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" weight="0.329806" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.329806" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.4850088" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="right" id="Palette" order="0" />
+      <window_info anchor="right" id="Theme Preview" order="1" />
+      <window_info anchor="right" id="Maven" order="2" />
+      <window_info anchor="right" id="Capture Analysis" order="3" />
+      <window_info anchor="right" id="Palette&#9;" order="4" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="5" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="PlantUML" order="6" weight="0.28863636" />
+      <window_info anchor="right" id="Ant Build" order="7" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="8" weight="0.25" />
+    </layout>
+    <layout-to-restore>
+      <window_info id="Image Layers" order="0" />
+      <window_info id="Designer" order="1" />
+      <window_info id="UI Designer" order="2" />
+      <window_info id="Capture Tool" order="3" />
+      <window_info id="Favorites" order="4" side_tool="true" />
+      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.22727273" />
+      <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Version Control" order="0" />
+      <window_info anchor="bottom" id="Terminal" order="1" visible="true" weight="0.20282187" />
+      <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" order="3" weight="0.329806" />
+      <window_info anchor="bottom" id="Message" order="4" />
+      <window_info anchor="bottom" id="Find" order="5" weight="0.329806" />
+      <window_info anchor="bottom" id="Run" order="6" weight="0.4850088" />
+      <window_info anchor="bottom" id="Debug" order="7" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="10" />
+      <window_info anchor="right" id="Palette" order="0" />
+      <window_info anchor="right" id="Theme Preview" order="1" />
+      <window_info anchor="right" id="Maven" order="2" />
+      <window_info anchor="right" id="Capture Analysis" order="3" />
+      <window_info anchor="right" id="Palette&#9;" order="4" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="5" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="PlantUML" order="6" weight="0.28863636" />
+      <window_info anchor="right" id="Ant Build" order="7" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="8" weight="0.25" />
+    </layout-to-restore>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Merge branch 'master' of https://github.com/joelafetse/Projet2-INF5153-Hiver2020-EquipeJ&#10;&#10;# Conflicts:&#10;#&#9;.idea/misc.xml" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merge branch 'master' of https://github.com/joelafetse/Projet2-INF5153-Hiver2020-EquipeJ&#10;&#10;# Conflicts:&#10;#&#9;.idea/misc.xml" />
+  </component>
   <component name="WindowStateProjectService">
-    <state x="418" y="177" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1581724650002">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="282" y="84" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1582909781508">
+      <screen x="67" y="27" width="1299" height="741" />
     </state>
     <state x="418" y="177" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1581724650002" />
-    <state x="768" y="238" width="374" height="557" key="#com.intellij.ide.util.MemberChooser" timestamp="1581750289479">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="282" y="84" key="#com.intellij.execution.impl.EditConfigurationsDialog/67.27.1299.741@67.27.1299.741" timestamp="1582909781508" />
+    <state x="931" y="283" width="343" height="397" key="#com.intellij.ide.util.MemberChooser" timestamp="1582944198694">
+      <screen x="67" y="27" width="1299" height="741" />
     </state>
     <state x="768" y="238" width="374" height="557" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1581750289479" />
+    <state x="931" y="283" width="343" height="397" key="#com.intellij.ide.util.MemberChooser/67.27.1299.741@67.27.1299.741" timestamp="1582944198694" />
     <state x="692" y="306" width="525" height="421" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1581724576659">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -105,42 +326,47 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="743" y="277" width="424" height="479" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1582487497665" />
-    <state width="1878" height="276" key="GridCell.Tab.0.bottom" timestamp="1581797766364">
+    <state width="1253" height="140" key="GridCell.Tab.0.bottom" timestamp="1582944882153">
+      <screen x="67" y="27" width="1299" height="741" />
+    </state>
+    <state width="1868" height="89" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1582764821870" />
+    <state width="1253" height="140" key="GridCell.Tab.0.bottom/67.27.1299.741@67.27.1299.741" timestamp="1582944882153" />
+    <state width="1253" height="140" key="GridCell.Tab.0.center" timestamp="1582944882152">
+      <screen x="67" y="27" width="1299" height="741" />
+    </state>
+    <state width="1868" height="89" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1582764821870" />
+    <state width="1253" height="140" key="GridCell.Tab.0.center/67.27.1299.741@67.27.1299.741" timestamp="1582944882152" />
+    <state width="1253" height="140" key="GridCell.Tab.0.left" timestamp="1582944882152">
+      <screen x="67" y="27" width="1299" height="741" />
+    </state>
+    <state width="1868" height="89" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1582764821869" />
+    <state width="1253" height="140" key="GridCell.Tab.0.left/67.27.1299.741@67.27.1299.741" timestamp="1582944882152" />
+    <state width="1253" height="140" key="GridCell.Tab.0.right" timestamp="1582944882153">
+      <screen x="67" y="27" width="1299" height="741" />
+    </state>
+    <state width="1868" height="89" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1582764821870" />
+    <state width="1253" height="140" key="GridCell.Tab.0.right/67.27.1299.741@67.27.1299.741" timestamp="1582944882153" />
+    <state width="1868" height="89" key="GridCell.Tab.1.bottom" timestamp="1582764821674">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1878" height="276" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1581797766364" />
-    <state width="1878" height="276" key="GridCell.Tab.0.center" timestamp="1581797766363">
+    <state width="1868" height="89" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1582764821674" />
+    <state width="1868" height="89" key="GridCell.Tab.1.center" timestamp="1582764821674">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1878" height="276" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1581797766363" />
-    <state width="1878" height="276" key="GridCell.Tab.0.left" timestamp="1581797766363">
+    <state width="1868" height="89" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1582764821674" />
+    <state width="1868" height="89" key="GridCell.Tab.1.left" timestamp="1582764821674">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1878" height="276" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1581797766363" />
-    <state width="1878" height="276" key="GridCell.Tab.0.right" timestamp="1581797766364">
+    <state width="1868" height="89" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1582764821674" />
+    <state width="1868" height="89" key="GridCell.Tab.1.right" timestamp="1582764821674">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1878" height="276" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1581797766364" />
-    <state width="1878" height="341" key="GridCell.Tab.1.bottom" timestamp="1581727180908">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1878" height="341" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1581727180908" />
-    <state width="1878" height="341" key="GridCell.Tab.1.center" timestamp="1581727180907">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1878" height="341" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1581727180907" />
-    <state width="1878" height="341" key="GridCell.Tab.1.left" timestamp="1581727180907">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1878" height="341" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1581727180907" />
-    <state width="1878" height="341" key="GridCell.Tab.1.right" timestamp="1581727180907">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1878" height="341" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1581727180907" />
-    <state x="443" y="96" width="1024" height="840" key="SettingsEditor" timestamp="1581729592927">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="1868" height="89" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1582764821674" />
+    <state x="367" y="38" width="900" height="730" key="SettingsEditor" timestamp="1582909861650">
+      <screen x="67" y="27" width="1299" height="741" />
     </state>
     <state x="443" y="96" width="1024" height="840" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1581729592927" />
+    <state x="367" y="38" width="900" height="730" key="SettingsEditor/67.27.1299.741@67.27.1299.741" timestamp="1582909861650" />
     <state x="636" y="117" width="647" height="804" key="find.popup" timestamp="1581729410157">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -149,5 +375,95 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="623" y="228" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1581729406431" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/main/java/uqam/inf5153/game/pioche/PiocheIrrigations.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="13" column="29" selection-start-line="13" selection-start-column="29" selection-end-line="13" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/uqam/inf5153/game/pioche/PiocheObjectifs.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="12" column="37" selection-start-line="12" selection-start-column="37" selection-end-line="12" selection-end-column="37" />
+          <folding>
+            <element signature="e#250#251#0" expanded="true" />
+            <element signature="e#294#295#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/misc.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/uqam/inf5153/game/figurine/Panda.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+          <folding>
+            <element signature="e#155#156#0" expanded="true" />
+            <element signature="e#186#187#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/uqam/inf5153/game/figurine/Jardinier.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="5" column="41" selection-start-line="5" selection-start-column="41" selection-end-line="5" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#211#212#0" expanded="true" />
+            <element signature="e#242#243#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/uqam/inf5153/game/Keyin.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="5" column="6" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/uqam/inf5153/game/Jeu.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="14" column="5" lean-forward="true" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/uqam/inf5153/game/pioche/PiocheParcelles.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="10">
+          <caret line="41" selection-start-line="41" selection-end-line="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/img/class_diagramme_tp2_v1.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/img/class_diagramme_tp2_v2.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/uqam/inf5153/game/objectifenimage/objectif1.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="6" column="81" selection-start-line="6" selection-start-column="77" selection-end-line="6" selection-end-column="81" />
+        </state>
+      </provider>
+    </entry>
   </component>
 </project>

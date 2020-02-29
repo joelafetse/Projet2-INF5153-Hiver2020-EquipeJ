@@ -1,4 +1,10 @@
 package uqam.inf5153.game;
+
+import uqam.inf5153.game.parcelle.Parcelle;
+import uqam.inf5153.game.pioche.PiocheParcelles;
+
+import java.util.List;
+
 /**
  * Crée par Imen Benzarti le 13/01/2020
  * Une classe qui joue le role de l'interface graphique du jeu.
@@ -125,12 +131,19 @@ public class Main {
 		System.out.println("|   TAKENOKO MENU JOUEUR " +numJoueur+ " : Action Parcelle                        ");
 		System.out.println("===========================================================================");
 		System.out.println("Étape 1 - Piocher 3 parcelles ");
-		String[] parcelles = Takenoko.piocherParcelles(3, numJoueur);
+		////String[] parcelles = Takenoko.piocherParcelles(3, numJoueur);
+
+		List<Parcelle> parcelles = Takenoko.piocherParcelles(3, numJoueur);
+
 		System.out.println("Étape 2 - Vous avez pioché les parcelles suivantes : ");
+		///Takenoko.afficherParcelles(parcelles);
+
 		Takenoko.afficherParcelles(parcelles);
+
 		System.out.println("Étape 3 - Choisir une");
 		String parcelleChosie = Keyin.inString(" Entrer la parcelle choisie : ");
 		System.out.println("Étape 4 - Replacer les deux autres sous la pioche");
+		///Takenoko.selectionnerParcelle(parcelles, parcelleChosie );
 		Takenoko.selectionnerParcelle(parcelles, parcelleChosie );
 		System.out.println("Étape 5 - Afficher les parcelles du plateau");
 		Takenoko.afficherParcellesPlateau(numJoueur);
