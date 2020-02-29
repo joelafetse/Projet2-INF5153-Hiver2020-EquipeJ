@@ -3,7 +3,8 @@ package uqam.inf5153.game.parcelle;
 import uqam.inf5153.game.plateau.Coordonnees;
 
 public class ParcelleEtang extends Parcelle {
-    public ParcelleEtang() {
+    public ParcelleEtang(Coordonnees coord) {
+        super(coord);
     }
 
     /* Parcelle Étang n'a pas de couleur */
@@ -15,5 +16,10 @@ public class ParcelleEtang extends Parcelle {
     @Override
     public int getParcelleId() {
         return parcelleId;
+    }
+
+    @Override
+    public String toString(){
+        return "Parcelle Étang ";
     }
 }

@@ -12,7 +12,8 @@ public class ObjectifParcelle extends Objectif {
     }
 
 
-    public int appliquerObjectifPasrcelle(Joueur joueur, PlateauDeJeu plateau){
+    //retourne le nombre de points de l'objectifs.
+    public int appliquerObjectifParcelle(Joueur joueur, PlateauDeJeu plateau){
         switch (identifiant){
             case 1:
                 for (Parcelle parcelle : plateau.getParcelles()) {
