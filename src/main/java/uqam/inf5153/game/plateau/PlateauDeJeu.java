@@ -121,7 +121,7 @@ public class PlateauDeJeu {
             }
             i++;
         }
-        return estPositionOccupee;
+        return !estPositionOccupee;
     }
 
     public int positionParcelle(int x, int y){

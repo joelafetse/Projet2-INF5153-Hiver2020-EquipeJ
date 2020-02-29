@@ -72,9 +72,6 @@ public abstract class Parcelle {
 
     @Override
     public String toString(){
-        if (this.getCoordonnees().equals(new Coordonnees(0,0))){
-            return "Parcelle Étang ";
-        }
         return "Parcelle de couleur "+ this.getCouleur();
     }
 

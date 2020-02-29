@@ -17,4 +17,9 @@ public class ParcelleEtang extends Parcelle {
     public int getParcelleId() {
         return parcelleId;
     }
+
+    @Override
+    public String toString(){
+        return "Parcelle Étang ";
+    }
 }
