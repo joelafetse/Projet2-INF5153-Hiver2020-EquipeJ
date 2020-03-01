@@ -151,12 +151,14 @@ public class Main {
 		Parcelle pSelectionnee = Takenoko.selectionnerParcelle(parcellesPiochees, parcelleChosie );
 		System.out.println("Étape 5 - Afficher les parcelles du plateau");
 		Takenoko.afficherParcellesPlateau();//numJoueur);
+		Takenoko.afficherPositionsDisponibles();
 		System.out.println("Étape 6 - Placer une parcelle dans la position (x,y) ");
 		int x = Keyin.inInt(" Entrer la position x : ");
 		int y = Keyin.inInt(" Entrer la position y : ");
 		boolean estPlacee = Takenoko.placerParcelleDansPlateau(pSelectionnee, x, y,  numJoueur);
 		while (!estPlacee){
 			System.out.println("La parcelle n'est pas placée. Veuillez choisir une autre position");
+			Takenoko.afficherPositionsDisponibles();
 			System.out.println("Étape 6 - Placer une parcelle dans la position (x,y) ");
 			x = Keyin.inInt(" Entrer la position x : ");
 			y = Keyin.inInt(" Entrer la position y : ");

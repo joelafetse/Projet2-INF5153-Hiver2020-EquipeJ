@@ -33,6 +33,9 @@ Jeu {
         this.melangerPioches();
     }
 
+    public PlateauDeJeu getPlateauDeJeu(){
+        return plateauDeJeu;
+    }
 
     public List<Parcelle> effectuerActionPiocherParcelles(int nbrAPiocher, int indexJoueur){
         return piocheParcelles.piocher(nbrAPiocher);
@@ -54,10 +57,9 @@ Jeu {
 
     public boolean effectuerActionPlacerParcelleDansPlateau(Parcelle parcelle, int x, int y, int joueurIndex){
         Coordonnees coord = new Coordonnees(x,y);
-        //if (!plateauDeJeu.getPositionsDisponibles().contains(coord)){
-        if (!plateauDeJeu.estPositionOccupee(coord)){
+        if (!positionExiste(plateauDeJeu, coord))
             return false;
-        }
+
         Joueur joueur = getJoueurByIndex(joueurIndex);
         joueur.placerParcelleDansPlateau(plateauDeJeu,parcelle,x,y);
         return true;
@@ -96,6 +98,14 @@ Jeu {
         this.piocheObjectifs.melangerPioche();
     }
 
-
-
+    private boolean positionExiste(PlateauDeJeu plateauDeJeu, Coordonnees coord){
+        boolean positionExiste = false;
+        for (Coordonnees elem: plateauDeJeu.getPositionsDisponibles()){
+            if (elem.equals(coord)){
+                positionExiste = true;
+                break;
+            }
+        }
+        return positionExiste;
+    }
 }

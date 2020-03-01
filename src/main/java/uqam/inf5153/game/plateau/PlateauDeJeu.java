@@ -125,10 +125,12 @@ public class PlateauDeJeu {
 
 
     public void afficherLesPositionsDispo(){
+        System.out.println("POSITIONS DISPONIBLES : ");
         for(Coordonnees elem: positionsDisponibles)
         {
-            System.out.println ("( "+ elem.getX() +", " +elem.getY()+" )");
+            System.out.print (" ( "+ elem.getX() +", " +elem.getY()+" ) ");
         }
+        System.out.println();
 
     }
 

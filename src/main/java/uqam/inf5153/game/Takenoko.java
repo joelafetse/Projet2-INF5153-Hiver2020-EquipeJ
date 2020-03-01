@@ -48,6 +48,9 @@ public class Takenoko {
 		jeu.afficherParcellesDansPlateau();
 	}
 
+	public static void afficherPositionsDisponibles(){
+		jeu.getPlateauDeJeu().afficherLesPositionsDispo();
+	}
 	/*
 	 * placer une parcelle dans la position (x,y) dans le plateau du joueur joueur.
 	 * retourne true si la parcelle est bien placée, sinon elle retourne false.
