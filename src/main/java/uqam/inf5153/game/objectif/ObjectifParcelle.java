@@ -3,7 +3,6 @@ package uqam.inf5153.game.objectif;
 import uqam.inf5153.game.joueur.Joueur;
 import uqam.inf5153.game.parcelle.Couleur;
 import uqam.inf5153.game.parcelle.Parcelle;
-import uqam.inf5153.game.parcelle.ParcelleVerte;
 import uqam.inf5153.game.plateau.PlateauDeJeu;
 
 public class ObjectifParcelle extends Objectif {
@@ -166,6 +165,7 @@ public class ObjectifParcelle extends Objectif {
                     }
                 }
                 break;
+
         }
         return 0;
     }

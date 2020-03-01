@@ -21,6 +21,7 @@ public abstract class Parcelle {
 
 
     public Parcelle(){
+        this.voisins=new ArrayList<Parcelle>();
 
     }
 
@@ -38,6 +39,10 @@ public abstract class Parcelle {
 
     public void setVoisins(Parcelle p) {
         this.voisins.add(p);
+    }
+
+    public void setIrriguee(boolean irri) {
+        this.irriguee = irri;
     }
 
     public abstract Couleur getCouleur();

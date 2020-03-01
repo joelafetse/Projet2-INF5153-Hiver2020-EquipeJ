@@ -11,6 +11,8 @@ public class Irrigation {
     public Irrigation (Parcelle p1, Parcelle p2)  {
         this.parcelle1 = p1;
         this.parcelle2 = p2;
+        p1.setIrriguee(true);
+        p2.setIrriguee(true);
     }
 
     public Parcelle getParcelle1 ()  {
