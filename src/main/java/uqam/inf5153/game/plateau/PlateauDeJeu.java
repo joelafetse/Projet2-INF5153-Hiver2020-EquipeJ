@@ -61,37 +61,6 @@ public class PlateauDeJeu {
         return reseauxIrr;
     }
 
-    /*public void placerUneParcelle(Parcelle parcelle, int x, int y){
-        Coordonnees c = new Coordonnees(x,y);
-        parcelle.setCoordonnees(c);
-        parcelles.add(parcelle);
-        positionsDisponibles.removeIf(coord -> coord.equals(c));
-        int i=positionParcelle(x-2,y+1);
-        if(i!=-1){
-            parcelle.setVoisins(parcelles.get(i));
-        }
-        i=positionParcelle(x,y+2);
-        if(i!=-1){
-            parcelle.setVoisins(parcelles.get(i));
-        }
-        i=positionParcelle(x+2,y+1);
-        if(i!=-1){
-            parcelle.setVoisins(parcelles.get(i));
-        }
-        i=positionParcelle(x+2,y-1);
-        if(i!=-1){
-            parcelle.setVoisins(parcelles.get(i));
-        }
-        i=positionParcelle(x,y-2);
-        if(i!=-1){
-            parcelle.setVoisins(parcelles.get(i));
-        }
-        i=positionParcelle(x-2,y-1);
-        if(i!=-1){
-            parcelle.setVoisins(parcelles.get(i));
-        }
-    }*/
-
     public void ajouterParcelle(Parcelle p){
         this.parcelles.add(p);
     }

@@ -33,11 +33,7 @@ public class Joueur {
         parcelle.setCoordonnees(c);
         plateau.ajouterParcelle(parcelle);
         plateau.getPositionsDisponibles().removeIf(coordonnees -> coordonnees.equals(c));
-        int i = plateau.positionParcelle(x-2,y+1);
-        if(i!=-1){
-            parcelle.setVoisins(plateau.getParcelles().get(i));
-        }
-        i = plateau.positionParcelle(x,y+2);
+        int i = plateau.positionParcelle(x,y+2);
         if(i!=-1){
             parcelle.setVoisins(plateau.getParcelles().get(i));
         }
@@ -54,6 +50,10 @@ public class Joueur {
             parcelle.setVoisins(plateau.getParcelles().get(i));
         }
         i = plateau.positionParcelle(x-2,y-1);
+        if(i!=-1){
+            parcelle.setVoisins(plateau.getParcelles().get(i));
+        }
+        i = plateau.positionParcelle(x-2,y+1);
         if(i!=-1){
             parcelle.setVoisins(plateau.getParcelles().get(i));
         }

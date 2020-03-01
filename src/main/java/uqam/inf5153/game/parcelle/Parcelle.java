@@ -40,6 +40,10 @@ public abstract class Parcelle {
         this.voisins.add(p);
     }
 
+    public void setIrriguee(boolean irri) {
+        this.irriguee = irri;
+    }
+
     public abstract Couleur getCouleur();
     public abstract int getParcelleId();
 
