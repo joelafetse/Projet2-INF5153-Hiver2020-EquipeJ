@@ -12,7 +12,8 @@ import uqam.inf5153.game.plateau.PlateauDeJeu;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Jeu {
+public class
+Jeu {
 
     private final int NBRE_DE_JOUEURS = 2;
 
@@ -53,7 +54,8 @@ public class Jeu {
 
     public boolean effectuerActionPlacerParcelleDansPlateau(Parcelle parcelle, int x, int y, int joueurIndex){
         Coordonnees coord = new Coordonnees(x,y);
-        if (!plateauDeJeu.getPositionsDisponibles().contains(coord)){
+        //if (!plateauDeJeu.getPositionsDisponibles().contains(coord)){
+        if (!plateauDeJeu.estPositionOccupee(coord)){
             return false;
         }
         Joueur joueur = getJoueurByIndex(joueurIndex);

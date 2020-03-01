@@ -21,6 +21,7 @@ public abstract class Parcelle {
 
 
     public Parcelle(){
+        this.voisins=new ArrayList<Parcelle>();
 
     }
 
