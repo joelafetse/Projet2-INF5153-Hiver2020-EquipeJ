@@ -74,8 +74,17 @@ iv.diagram de UML
 
 ![conception_semaine2](img/class_diagramme_tp2_v2.png)
 
+*********************************
+### Équipe J - Troisième semaine
+*********************************
 
 
+1-Yazid Iharkane
+
+- Implementer la classe ObejctifParcelle.
+- Faire les modifications necessaires dans les autres classes (Parcelle, PalteauDeJeu, etc.) 
+   pour les adapter à la classe ObjectifParcelles.
+   
 
 
 
