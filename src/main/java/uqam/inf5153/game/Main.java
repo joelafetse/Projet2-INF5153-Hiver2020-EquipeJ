@@ -190,7 +190,14 @@ public class Main {
 		System.out.println("|        Précisier la nouvelle parcelle (position x,y) du Jardinier      ");
 		int x = Keyin.inInt(" Entrer la position x : ");
 		int y = Keyin.inInt(" Entrer la position y : ");
-		Takenoko.PlacerJardinier(x,y, numJoueur );
+		boolean estDeplace = Takenoko.PlacerJardinier(x,y, numJoueur );
+		while (!estDeplace){
+			System.out.println("Vous ne pouvez pas déplacer le jardinier sur cette parcelle");
+			System.out.println("|        Précisier la nouvelle parcelle (position x,y) du Jardinier      ");
+			x = Keyin.inInt(" Entrer la position x : ");
+			y = Keyin.inInt(" Entrer la position y : ");
+			estDeplace = Takenoko.PlacerJardinier(x,y, numJoueur );
+		}
 	}
 	private static void deplacerPanda(int numJoueur) {
 		System.out.println("==========================================================================");

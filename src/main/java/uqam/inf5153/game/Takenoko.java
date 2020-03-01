@@ -127,8 +127,7 @@ public class Takenoko {
 	 * retourne true si le jardinier est déplacé, sinon elle retourne false
 	 */
 	public static boolean PlacerJardinier(int x, int y, int joueur) {
-		// TODO Auto-generated method stub
-		return true;
+		return jeu.effectuerActionDeplacerJardinier(x,y,joueur);
 	}
 
 

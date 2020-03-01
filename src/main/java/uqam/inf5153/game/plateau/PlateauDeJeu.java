@@ -62,6 +62,10 @@ public class PlateauDeJeu {
         this.parcelles.add(p);
     }
 
+    public Figurine getJardinier(){
+        return jardinier;
+    }
+
     public Parcelle getParcelleAtPosition(Coordonnees position){
         Parcelle parcelle = null;
         for (Parcelle p: parcelles){

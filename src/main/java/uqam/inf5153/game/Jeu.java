@@ -88,8 +88,18 @@ Jeu {
         return true;
     }
 
+    public boolean effectuerActionDeplacerJardinier(int x, int y, int joueurIndex){
+        Coordonnees coord = new Coordonnees(x,y);
+        if (!plateauDeJeu.estPositionOccupee(coord)){
+            return false;
+        }
+        Parcelle parcelleDestination = plateauDeJeu.getParcelleAtPosition(coord);
+        Joueur joueur = getJoueurByIndex(joueurIndex);
+        joueur.deplacerJardinier(plateauDeJeu,plateauDeJeu.getJardinier(),parcelleDestination);
+        return true;
+    }
 
-    public Joueur getJoueurByIndex(int index){
+    private Joueur getJoueurByIndex(int index){
         return this.joueurs.get(index - 1);
     }
 
