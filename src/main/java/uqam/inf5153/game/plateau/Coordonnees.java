@@ -1,5 +1,7 @@
 package uqam.inf5153.game.plateau;
 
+import java.util.Objects;
+
 public class Coordonnees {
 
     private int x;
@@ -26,9 +28,14 @@ public class Coordonnees {
     @Override
     public boolean equals(Object obj){
         if (this == obj) return true;
-        if (obj == null || getClass() != obj.getClass()) return false;
+        if (!(obj instanceof Coordonnees)) return false;
 
         Coordonnees coord = (Coordonnees) obj;
         return x == coord.x && y == coord.y ;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(x, y);
     }
 }

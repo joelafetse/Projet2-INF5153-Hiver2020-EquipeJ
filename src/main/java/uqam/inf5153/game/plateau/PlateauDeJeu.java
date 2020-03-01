@@ -6,10 +6,7 @@ import uqam.inf5153.game.figurine.Panda;
 import uqam.inf5153.game.parcelle.Parcelle;
 import uqam.inf5153.game.parcelle.ParcelleEtang;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.List;
+import java.util.*;
 
 public class PlateauDeJeu {
 
@@ -36,7 +33,7 @@ public class PlateauDeJeu {
     }
 
     private void initialiserPlateauDeJeu(){
-        parcelles.add(parcelleEtang);
+        parcelles.add(this.parcelleEtang);
         positionsDisponibles.add(new Coordonnees(2,1));
         positionsDisponibles.add(new Coordonnees(2,-1));
         positionsDisponibles.add(new Coordonnees(-2,1));
@@ -80,17 +77,16 @@ public class PlateauDeJeu {
         boolean estPositionOccupee = false;
         int i=0;
         Parcelle parcelle;
-        while(i < parcelles.size()) {
+        while(i < parcelles.size() && !estPositionOccupee) {
             parcelle = parcelles.get(i);
             if (parcelle != null &&
                     parcelle.getCoordonnees()!=null &&
                     parcelle.getCoordonnees().equals(coordonnees)) {
                 estPositionOccupee = true;
-                break;
             }
             i++;
         }
-        return !estPositionOccupee;
+        return estPositionOccupee;
     }
 
     public int positionParcelle(int x, int y){
@@ -109,14 +105,14 @@ public class PlateauDeJeu {
         return -1;
     }
 
-    public void mettreAjourListePosiDisp(int x, int y){
+    public void mettreAjourListePosiDisp(Coordonnees coord){
         Coordonnees coordonnees[] = new Coordonnees[]
-                    {   new Coordonnees(x+2,y+1),
-                        new Coordonnees(x+2,y-1),
-                        new Coordonnees(x-2,y-1),
-                        new Coordonnees(x-2,y+1),
-                        new Coordonnees(x,y+2),
-                        new Coordonnees(x,y-2)  };
+                    {   new Coordonnees(coord.getX()+2,coord.getY()+1),
+                        new Coordonnees(coord.getX()+2,coord.getY()-1),
+                        new Coordonnees(coord.getX()-2,coord.getY()-1),
+                        new Coordonnees(coord.getX()-2,coord.getY()+1),
+                        new Coordonnees(coord.getX(),coord.getY()+2),
+                        new Coordonnees(coord.getX(),coord.getY()-2)  };
         for (int i=0; i < coordonnees.length; i++){
             if(!estPositionOccupee(coordonnees[i]))
                 positionsDisponibles.add(coordonnees[i]);

@@ -4,6 +4,7 @@ import uqam.inf5153.game.plateau.Coordonnees;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public abstract class Parcelle {
     //variable de classe
@@ -53,6 +54,11 @@ public abstract class Parcelle {
     public boolean equals(Object obj) {
         return obj instanceof Parcelle &&
                 this.coord.equals(((Parcelle) obj).coord) && this.getCouleur() == ((Parcelle) obj).getCouleur();
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(parcelleId, coord, irriguee);
     }
 
     public boolean estAdjacent(Parcelle p){

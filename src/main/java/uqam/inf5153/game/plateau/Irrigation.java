@@ -2,6 +2,8 @@ package uqam.inf5153.game.plateau;
 
 import uqam.inf5153.game.parcelle.*;
 
+import java.util.Objects;
+
 public class Irrigation {
 
     private Parcelle parcelle1;
@@ -42,4 +44,8 @@ public class Irrigation {
                 this.parcelle2.equals(irr.parcelle2);
     }
 
+    @Override
+    public int hashCode() {
+        return Objects.hash(parcelle1, parcelle2);
+    }
 }
