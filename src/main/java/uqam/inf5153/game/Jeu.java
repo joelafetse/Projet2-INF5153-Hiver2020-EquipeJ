@@ -12,8 +12,7 @@ import uqam.inf5153.game.plateau.PlateauDeJeu;
 import java.util.ArrayList;
 import java.util.List;
 
-public class
-Jeu {
+public class Jeu {
 
     private final int NBRE_DE_JOUEURS = 2;
 
