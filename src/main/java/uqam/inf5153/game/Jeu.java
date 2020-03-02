@@ -15,6 +15,7 @@ import java.util.List;
 public class Jeu {
 
     private final int NBRE_DE_JOUEURS = 2;
+    private final int NBRE_OBJECTIFS_GAGNANT = 9;
 
     private PlateauDeJeu plateauDeJeu;
     private List<Joueur> joueurs;
@@ -97,6 +98,14 @@ public class Jeu {
         Joueur joueur = getJoueurByIndex(joueurIndex);
         joueur.deplacerJardinier(plateauDeJeu,plateauDeJeu.getJardinier(),parcelleDestination);
         return true;
+    }
+
+    public boolean verifierFinPartie(int joueurIndex) {
+        Joueur joueur = getJoueurByIndex(joueurIndex);
+        if (joueur.getPlateauDeJoueur().getNombreObjectifsAccomplis() == NBRE_OBJECTIFS_GAGNANT){
+            return true;
+        }
+        return false;
     }
 
     // private methods

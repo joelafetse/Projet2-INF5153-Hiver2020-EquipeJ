@@ -34,6 +34,10 @@ public class PlateauDeJoueur {
         return irrigations;
     }
 
+    public int getNombreObjectifsAccomplis(){
+        return this.objectifsAccomplis.size();
+    }
+
     public void setObjectifsPioches(List<Objectif> objectifsPioches){
         this.objectifsPioches = objectifsPioches;
     }

@@ -38,10 +38,16 @@ public class Main {
 		do{
 			swValue = Keyin.inString();
 		}while (swValue.length() != 0 );
+		boolean estFinPartie;
 		do {
-			for (int i=1; i<=NB_TOTAL_JOUEUR; i++)
+			int i = 1;
+
+			while ( i < NB_TOTAL_JOUEUR) {
 				menuJoueur(i);
-		}while (Takenoko.finPartie(tourActuel, nbTour) );
+				i++;
+			}
+			estFinPartie = Takenoko.finPartie(i);
+		}while (estFinPartie);
 		System.out.println("Le gagnant est le joueur : "+ Takenoko.annoncerGagnant());
 	}
 	private static void menuJoueur(int numJoueur) {
