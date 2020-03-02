@@ -31,6 +31,7 @@ Jeu {
         this.piocheObjectifs = new PiocheObjectifs();
         this.piocheParcelles = new PiocheParcelles();
         this.melangerPioches();
+        piocherObjectifsPourChaqueJoueur();
     }
 
     public PlateauDeJeu getPlateauDeJeu(){
@@ -99,6 +100,7 @@ Jeu {
         return true;
     }
 
+    // private methods
     private Joueur getJoueurByIndex(int index){
         return this.joueurs.get(index - 1);
     }
@@ -117,5 +119,11 @@ Jeu {
             }
         }
         return positionExiste;
+    }
+
+    private void piocherObjectifsPourChaqueJoueur(){
+        for (Joueur joueur: joueurs)
+            joueur.getPlateauDeJoueur().setObjectifsPioches(this.piocheObjectifs.piocher(3));
+
     }
 }
