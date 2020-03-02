@@ -2,6 +2,7 @@ package uqam.inf5153.game.joueur;
 
 import uqam.inf5153.game.figurine.Figurine;
 import uqam.inf5153.game.objectif.Objectif;
+import uqam.inf5153.game.objectif.ObjectifParcelle;
 import uqam.inf5153.game.parcelle.Parcelle;
 import uqam.inf5153.game.pioche.PiocheObjectifs;
 import uqam.inf5153.game.plateau.Coordonnees;
@@ -72,6 +73,15 @@ public class Joueur {
             return pioche.piocher();
         }
         return null;
+    }
+
+    public boolean remplirObjectif(Objectif obj, PlateauDeJeu plateauDeJeu){
+        int points = obj.appliquerObjectifParcelle(plateauDeJeu);
+        if (points == 0){
+            return false;
+        }
+        score += obj.appliquerObjectifParcelle(plateauDeJeu);
+        return true;
     }
 
     /* Méthode à déplacer eventuellement plus tard */

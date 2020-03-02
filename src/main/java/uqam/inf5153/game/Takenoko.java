@@ -1,6 +1,7 @@
 package uqam.inf5153.game;
 
 import uqam.inf5153.game.objectif.Objectif;
+import uqam.inf5153.game.objectif.ObjectifParcelle;
 import uqam.inf5153.game.parcelle.Parcelle;
 import uqam.inf5153.game.pioche.Pioche;
 import uqam.inf5153.game.pioche.PiocheParcelles;
@@ -100,17 +101,15 @@ public class Takenoko {
 	 * retourne l'objectif selectionné
 	 */
 	public static Objectif selectionnerObjectifARemplir(List<Objectif> objectifs, int indexObjectif) {
-		// TODO Auto-generated method stub
-		return null;
+		return jeu.selectionnerObjectif(objectifs, indexObjectif);
 	}
 
 	/*
 	 * le joueur rempli un objectif
 	 * retourne true si l'objectif est rempli, sinon elle retourne false.
 	 */
-	public static boolean remplirObjectif(int joueur, Objectif objectif) {
-		// TODO Auto-generated method stub
-		return false;
+	public static boolean remplirObjectif(Objectif objectif, int joueur) {
+		return jeu.effectuerActionRemplirObjectif(objectif, joueur);
 	}
 
 	/*

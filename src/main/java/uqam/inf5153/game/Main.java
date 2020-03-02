@@ -1,6 +1,7 @@
 package uqam.inf5153.game;
 
 import uqam.inf5153.game.objectif.Objectif;
+import uqam.inf5153.game.objectif.ObjectifParcelle;
 import uqam.inf5153.game.parcelle.Parcelle;
 import uqam.inf5153.game.pioche.PiocheParcelles;
 
@@ -311,7 +312,7 @@ public class Main {
 		remplirUnObjectif( numJoueur,  objectif);
 	}
 	private static void remplirUnObjectif(int numJoueur, Objectif objectif) {
-		boolean estRempli = Takenoko.remplirObjectif (numJoueur, objectif);
+		boolean estRempli = Takenoko.remplirObjectif (objectif, numJoueur);
 		if (estRempli)
 			System.out.println("Félicitations! objectif rempli");
 		else

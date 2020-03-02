@@ -1,6 +1,7 @@
 package uqam.inf5153.game.joueur;
 
 import uqam.inf5153.game.objectif.Objectif;
+import uqam.inf5153.game.objectif.ObjectifParcelle;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,7 +17,7 @@ public class PlateauDeJoueur {
     //private List<Bambou> bambous;
 
     // Objectifs accomplis
-    private List<Objectif> objectifsAccomplis;
+    private List<ObjectifParcelle> objectifsAccomplis;
 
     // Objectifs piochés
     private List<Objectif> objectifsPioches;
@@ -43,7 +44,7 @@ public class PlateauDeJoueur {
         return objectifsPioches;
     }
 
-    public void ajouterObjectif(Objectif obj){
+    public void ajouterObjectif(ObjectifParcelle obj){
         this.objectifsPioches.add(obj);
     }
 

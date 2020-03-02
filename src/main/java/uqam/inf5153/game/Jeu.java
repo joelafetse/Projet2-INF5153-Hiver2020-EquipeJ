@@ -2,6 +2,7 @@ package uqam.inf5153.game;
 
 import uqam.inf5153.game.joueur.Joueur;
 import uqam.inf5153.game.objectif.Objectif;
+import uqam.inf5153.game.objectif.ObjectifParcelle;
 import uqam.inf5153.game.parcelle.Parcelle;
 import uqam.inf5153.game.pioche.Pioche;
 import uqam.inf5153.game.pioche.PiocheObjectifs;
@@ -105,6 +106,11 @@ public class Jeu {
         joueur.getPlateauDeJoueur().afficherObjectifsPioches();
     }
 
+    public Objectif selectionnerObjectif(List<Objectif> objectifsPioches, int indexObjectif){
+        Objectif objSelectionne = objectifsPioches.remove(indexObjectif - 1);
+        return objSelectionne;
+    }
+
     public List<Objectif> getObjectifsPioches(int joueurIndex){
         Joueur joueur = getJoueurByIndex(joueurIndex);
         return joueur.getPlateauDeJoueur().getObjectifsPioches();
@@ -113,6 +119,11 @@ public class Jeu {
     public Objectif piocherObjectif(int joueurIndex){
         Joueur joueur = getJoueurByIndex(joueurIndex);
         return joueur.prendreObjectif(piocheObjectifs,joueur.getPlateauDeJoueur());
+    }
+
+    public boolean effectuerActionRemplirObjectif(Objectif objectif, int joueurIndex){
+        Joueur joueur = getJoueurByIndex(joueurIndex);
+        return joueur.remplirObjectif(objectif, plateauDeJeu);
     }
 
     public boolean verifierFinPartie(int joueurIndex) {
