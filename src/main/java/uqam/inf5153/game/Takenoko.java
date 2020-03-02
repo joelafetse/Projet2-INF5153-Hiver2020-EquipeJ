@@ -1,5 +1,6 @@
 package uqam.inf5153.game;
 
+import uqam.inf5153.game.objectif.Objectif;
 import uqam.inf5153.game.parcelle.Parcelle;
 import uqam.inf5153.game.pioche.Pioche;
 import uqam.inf5153.game.pioche.PiocheParcelles;
@@ -87,16 +88,18 @@ public class Takenoko {
 	/*
 	 * retourne tous les objectis piochées par le joueur
 	 */
-	public static String[] afficherObjectifsJoueur(int joueur) {
-		// TODO Auto-generated method stub
-		return null;
+	public static void afficherObjectifsJoueur(int joueur) {
+		jeu.afficherObjectifsPioches(joueur);
 	}
 
+	public static List<Objectif> objectifsPioches(int joueur){
+		return jeu.getObjectifsPioches(joueur);
+	}
 	/*
 	 * selectionner un objectif un remplir parmi un ensemble d'objectif piochés
 	 * retourne l'objectif selectionné
 	 */
-	public static String selectionnerObjectifARemplir(String[] objectifs) {
+	public static Objectif selectionnerObjectifARemplir(List<Objectif> objectifs, int indexObjectif) {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -105,7 +108,7 @@ public class Takenoko {
 	 * le joueur rempli un objectif
 	 * retourne true si l'objectif est rempli, sinon elle retourne false.
 	 */
-	public static boolean remplirObjectif(int joueur, String objectif) {
+	public static boolean remplirObjectif(int joueur, Objectif objectif) {
 		// TODO Auto-generated method stub
 		return false;
 	}
@@ -113,7 +116,7 @@ public class Takenoko {
 	/*
 	 * piocher un objectif dans la pioche du joueur
 	 */
-	public static String piocherObjectif(int joueur) {
+	public static Objectif piocherObjectif(int joueur) {
 		// TODO Auto-generated method stub
 		return null;
 	}

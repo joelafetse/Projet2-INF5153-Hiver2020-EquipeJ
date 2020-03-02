@@ -1,5 +1,6 @@
 package uqam.inf5153.game;
 
+import uqam.inf5153.game.objectif.Objectif;
 import uqam.inf5153.game.parcelle.Parcelle;
 import uqam.inf5153.game.pioche.PiocheParcelles;
 
@@ -220,7 +221,7 @@ public class Main {
 		System.out.println("==========================================================================");
 		System.out.println("|   TAKENOKO MENU JOUEUR " +numJoueur+ " : Action Objectif                        ");
 		System.out.println("==========================================================================");
-		String objectif = Takenoko.piocherObjectif(numJoueur);
+		Objectif objectif = Takenoko.piocherObjectif(numJoueur);
 		System.out.println("|        Cet objectif est pioché                                  ");
 		System.out.println("|        Pouvez vous le remplir tout de suite (O/N)  ?         ");
 		int reponse = Keyin.inChar(" réponse (O/N) : ");
@@ -295,12 +296,18 @@ public class Main {
 		System.out.println("|  TAKENOKO MENU JOUEUR " +numJoueur+ ": décide de remplir un objectif");
 		System.out.println("=========================================================================");
 		System.out.println("|        Afficher les objectifs du jour");
-		String[] objectifs = Takenoko.afficherObjectifsJoueur (numJoueur);
+		Takenoko.afficherObjectifsJoueur (numJoueur);
+		List<Objectif> objectifsPioches = Takenoko.objectifsPioches(numJoueur);
 		System.out.println("|        Choisir un objectif à remplir ");
-		String objectif = Takenoko.selectionnerObjectifARemplir (objectifs);
+		int objectifChoisi = Keyin.inInt(" Entrer le numéro de l'objectif choisi : ");
+		while(objectifChoisi > objectifsPioches.size() || objectifChoisi < 1){
+			System.out.println("Vous devez choisir entre la objectif 1 et "+ objectifsPioches.size());
+			objectifChoisi = Keyin.inInt(" Entrer le numéro de l'objectif choisi : ");
+		}
+		Objectif objectif = Takenoko.selectionnerObjectifARemplir (objectifsPioches, objectifChoisi);
 		remplirUnObjectif( numJoueur,  objectif);
 	}
-	private static void remplirUnObjectif(int numJoueur, String objectif) {
+	private static void remplirUnObjectif(int numJoueur, Objectif objectif) {
 		boolean estRempli = Takenoko.remplirObjectif (numJoueur, objectif);
 		if (estRempli)
 			System.out.println("Félicitations! objectif rempli");

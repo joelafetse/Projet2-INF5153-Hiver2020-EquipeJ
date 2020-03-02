@@ -52,6 +52,16 @@ public class Jeu {
         piocheParcelles.afficherParcelles(parcelles);
     }
 
+    public void afficherObjectifsPioches(int joueurIndex) {
+        Joueur joueur = getJoueurByIndex(joueurIndex);
+        joueur.getPlateauDeJoueur().afficherObjectifsPioches();
+    }
+
+    public List<Objectif> getObjectifsPioches(int joueurIndex){
+        Joueur joueur = getJoueurByIndex(joueurIndex);
+        return joueur.getPlateauDeJoueur().getObjectifsPioches();
+    }
+
     public void afficherParcellesDansPlateau(){
         plateauDeJeu.afficherParcelleDeposees();
     }
