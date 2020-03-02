@@ -118,9 +118,26 @@ public class PlateauDeJeu {
                         new Coordonnees(coord.getX(),coord.getY()+2),
                         new Coordonnees(coord.getX(),coord.getY()-2)  };
         for (int i=0; i < coordonnees.length; i++){
-            if(!estPositionOccupee(coordonnees[i]))
+            if(!estPositionOccupee(coordonnees[i]) && nombreVoisinsOccupes(coordonnees[i])==2)
                 positionsDisponibles.add(coordonnees[i]);
         }
+    }
+
+    public int nombreVoisinsOccupes(Coordonnees coord){
+        if (coord.getX()>=-2 && coord.getX()<=2 && coord.getY()>=-2 && coord.getY()<=2 ) return 2;
+        int nbre=0;
+        Coordonnees coordonnees[] = new Coordonnees[]
+                {   new Coordonnees(coord.getX()+2,coord.getY()+1),
+                        new Coordonnees(coord.getX()+2,coord.getY()-1),
+                        new Coordonnees(coord.getX()-2,coord.getY()-1),
+                        new Coordonnees(coord.getX()-2,coord.getY()+1),
+                        new Coordonnees(coord.getX(),coord.getY()+2),
+                        new Coordonnees(coord.getX(),coord.getY()-2)  };
+        for (int i=0; i < coordonnees.length; i++){
+            if(estPositionOccupee(coordonnees[i]))
+                nbre++;
+        }
+        return nbre;
     }
 
 

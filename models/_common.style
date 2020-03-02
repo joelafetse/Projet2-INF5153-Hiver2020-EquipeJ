@@ -2,3 +2,5 @@ skinparam monochrome  false
 skinparam shadowing   false
 hide footbox
 hide empty members
+scale 102 width // 1024 pixels
+scale 768 height // 768 pixels
