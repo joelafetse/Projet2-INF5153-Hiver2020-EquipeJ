@@ -62,7 +62,7 @@ public class Jeu {
         if (!positionExiste(plateauDeJeu, coord))
             return false;
 
-        if (nombreVoisinsOccupés(plateauDeJeu,coord)!=2 ) return false;
+        if (nombreVoisinsOccupes(plateauDeJeu,coord)!=2 ) return false;
 
         Joueur joueur = getJoueurByIndex(joueurIndex);
         joueur.placerParcelleDansPlateau(plateauDeJeu,parcelle,x,y);
@@ -157,7 +157,7 @@ public class Jeu {
         return positionExiste;
     }
 
-   private int nombreVoisinsOccupés(PlateauDeJeu plateauDeJeu, Coordonnees coord){
+   private int nombreVoisinsOccupes(PlateauDeJeu plateauDeJeu, Coordonnees coord){
         if (coord.getX()>=-2 && coord.getX()<=2 && coord.getY()>=-2 && coord.getY()<=2 ) return 2;
         int nbre=0;
         Coordonnees coordonnees[] = new Coordonnees[]
