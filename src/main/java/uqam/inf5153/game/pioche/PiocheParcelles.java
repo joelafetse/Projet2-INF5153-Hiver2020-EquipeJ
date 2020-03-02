@@ -33,10 +33,10 @@ public class PiocheParcelles extends Pioche<Parcelle> {
     @Override
     public List<Parcelle> piocher(int nbrAPiocher){
         List<Parcelle> parcellesPiochees = new ArrayList<>();
-        for (int i=0; i < nbrAPiocher; i++) {
+        for (int i=0; i < nbrAPiocher; i++)
             parcellesPiochees.add(this.objetsAPiocher.get(i));
+        for (int i=0; i < nbrAPiocher; i++)
             this.objetsAPiocher.remove(i);
-        }
 
         return parcellesPiochees;
     }

@@ -12,8 +12,7 @@ import uqam.inf5153.game.plateau.PlateauDeJeu;
 import java.util.ArrayList;
 import java.util.List;
 
-public class
-Jeu {
+public class Jeu {
 
     private final int NBRE_DE_JOUEURS = 2;
 
@@ -31,6 +30,7 @@ Jeu {
         this.piocheObjectifs = new PiocheObjectifs();
         this.piocheParcelles = new PiocheParcelles();
         this.melangerPioches();
+        piocherObjectifsPourChaqueJoueur();
     }
 
     public PlateauDeJeu getPlateauDeJeu(){
@@ -88,8 +88,19 @@ Jeu {
         return true;
     }
 
+    public boolean effectuerActionDeplacerJardinier(int x, int y, int joueurIndex){
+        Coordonnees coord = new Coordonnees(x,y);
+        if (!plateauDeJeu.estPositionOccupee(coord)){
+            return false;
+        }
+        Parcelle parcelleDestination = plateauDeJeu.getParcelleAtPosition(coord);
+        Joueur joueur = getJoueurByIndex(joueurIndex);
+        joueur.deplacerJardinier(plateauDeJeu,plateauDeJeu.getJardinier(),parcelleDestination);
+        return true;
+    }
 
-    public Joueur getJoueurByIndex(int index){
+    // private methods
+    private Joueur getJoueurByIndex(int index){
         return this.joueurs.get(index - 1);
     }
 
@@ -107,5 +118,11 @@ Jeu {
             }
         }
         return positionExiste;
+    }
+
+    private void piocherObjectifsPourChaqueJoueur(){
+        for (Joueur joueur: joueurs)
+            joueur.getPlateauDeJoueur().setObjectifsPioches(this.piocheObjectifs.piocher(3));
+
     }
 }

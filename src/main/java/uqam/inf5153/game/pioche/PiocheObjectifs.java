@@ -4,6 +4,7 @@ import uqam.inf5153.game.objectif.Objectif;
 import uqam.inf5153.game.objectif.ObjectifParcelle;
 import uqam.inf5153.game.parcelle.Parcelle;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class PiocheObjectifs extends Pioche<Objectif> {
@@ -17,12 +18,18 @@ public class PiocheObjectifs extends Pioche<Objectif> {
 
     @Override
     public Objectif piocher() {
-        return objetsAPiocher.get(0);
+        return objetsAPiocher.remove(0);
     }
 
     @Override
     public List<Objectif> piocher(int nbrAPiocher){
-        throw new UnsupportedOperationException("Vous ne pouvez pas piocher plusieurs objectifs à la fois.");
+        List<Objectif> objectifsPioches = new ArrayList<>();
+        for (int i = 0; i < nbrAPiocher; i++)
+            objectifsPioches.add(objetsAPiocher.get(i));
+        for (int i = 0; i < nbrAPiocher; i++)
+            objetsAPiocher.remove(i);
+
+        return objectifsPioches;
     }
 
 

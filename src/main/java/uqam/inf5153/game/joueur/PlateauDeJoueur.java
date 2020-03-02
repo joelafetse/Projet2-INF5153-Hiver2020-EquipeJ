@@ -16,12 +16,16 @@ public class PlateauDeJoueur {
     // Objectifs accomplis
     private List<Objectif> objectifsAccomplis;
 
+    // Objectifs piochés
+    private List<Objectif> objectifsPioches;
+
     // Nombre  de canaux d'irrigations collectionnés
     private int irrigations;
 
 
     public PlateauDeJoueur(){
         //bambous = new ArrayList<>();
+        objectifsPioches = new ArrayList<>();
         objectifsAccomplis = new ArrayList<>();
         irrigations = 0;
     }
@@ -30,7 +34,11 @@ public class PlateauDeJoueur {
         return irrigations;
     }
 
+    public void setObjectifsPioches(List<Objectif> objectifsPioches){
+        this.objectifsPioches = objectifsPioches;
+    }
     public void ajouterIrrigations() {
         this.irrigations++;
     }
+    public void retirerIrrigation() { this.irrigations--; }
 }
