@@ -76,11 +76,11 @@ public class Joueur {
     }
 
     public boolean remplirObjectif(Objectif obj, PlateauDeJeu plateauDeJeu){
-        int points = obj.appliquerObjectifParcelle(plateauDeJeu);
+        int points = obj.appliquerObjectif(plateauDeJeu);
         if (points == 0){
             return false;
         }
-        score += obj.appliquerObjectifParcelle(plateauDeJeu);
+        score += obj.appliquerObjectif(plateauDeJeu);
         return true;
     }
 
