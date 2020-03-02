@@ -10,6 +10,8 @@ import java.util.List;
  */
 public class PlateauDeJoueur {
 
+
+    private final int NBRE_OBJECTIFS_PIOCHES_MAX = 5;
     // Bambous collectionnés via le panda //TODO
     //private List<Bambou> bambous;
 
@@ -39,6 +41,14 @@ public class PlateauDeJoueur {
     }
     public List<Objectif>  getObjectifsPioches(){
         return objectifsPioches;
+    }
+
+    public void ajouterObjectif(Objectif obj){
+        this.objectifsPioches.add(obj);
+    }
+
+    public boolean peutAjouterObjectif(){
+        return this.objectifsPioches.size() < NBRE_OBJECTIFS_PIOCHES_MAX;
     }
 
     public void setObjectifsPioches(List<Objectif> objectifsPioches){

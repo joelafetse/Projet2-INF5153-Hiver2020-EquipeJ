@@ -40,15 +40,14 @@ public class Main {
 			swValue = Keyin.inString();
 		}while (swValue.length() != 0 );
 		boolean estFinPartie;
+		int i = 1;
 		do {
-			int i = 1;
-
-			while ( i < NB_TOTAL_JOUEUR) {
+			while ( i <= NB_TOTAL_JOUEUR) {
 				menuJoueur(i);
 				i++;
 			}
 			estFinPartie = Takenoko.finPartie(i);
-		}while (estFinPartie);
+		}while (!estFinPartie);
 		System.out.println("Le gagnant est le joueur : "+ Takenoko.annoncerGagnant());
 	}
 	private static void menuJoueur(int numJoueur) {
@@ -222,13 +221,17 @@ public class Main {
 		System.out.println("|   TAKENOKO MENU JOUEUR " +numJoueur+ " : Action Objectif                        ");
 		System.out.println("==========================================================================");
 		Objectif objectif = Takenoko.piocherObjectif(numJoueur);
-		System.out.println("|        Cet objectif est pioché                                  ");
-		System.out.println("|        Pouvez vous le remplir tout de suite (O/N)  ?         ");
-		int reponse = Keyin.inChar(" réponse (O/N) : ");
-		if (reponse == 'o' || reponse == 'O' ) {
-			remplirUnObjectif(numJoueur, objectif);
+		if (objectif == null){
+			System.out.println("Vous ne pouvez pas piocher d'objectifs");
+		}else {
+			System.out.println("|        Cet objectif est pioché                                  ");
+			System.out.println("|        Pouvez vous le remplir tout de suite (O/N)  ?         ");
+			int reponse = Keyin.inChar(" réponse (O/N) : ");
+			if (reponse == 'o' || reponse == 'O') {
+				remplirUnObjectif(numJoueur, objectif);
+			}
+			System.out.println("|        Si oui, appliquer l'objectif sur le plateau du joueur     ");
 		}
-		System.out.println("|        Si oui, appliquer l'objectif sur le plateau du joueur     ");
 	}
 	/*
 	 * Décisions
