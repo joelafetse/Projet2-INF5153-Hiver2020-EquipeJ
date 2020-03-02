@@ -117,8 +117,7 @@ public class Takenoko {
 	 * piocher un objectif dans la pioche du joueur
 	 */
 	public static Objectif piocherObjectif(int joueur) {
-		// TODO Auto-generated method stub
-		return null;
+		return jeu.piocherObjectif(joueur);
 	}
 
 	/**

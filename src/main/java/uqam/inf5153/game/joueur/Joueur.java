@@ -3,6 +3,7 @@ package uqam.inf5153.game.joueur;
 import uqam.inf5153.game.figurine.Figurine;
 import uqam.inf5153.game.objectif.Objectif;
 import uqam.inf5153.game.parcelle.Parcelle;
+import uqam.inf5153.game.pioche.PiocheObjectifs;
 import uqam.inf5153.game.plateau.Coordonnees;
 import uqam.inf5153.game.plateau.Irrigation;
 import uqam.inf5153.game.plateau.PlateauDeJeu;
@@ -64,6 +65,13 @@ public class Joueur {
     public void prendreIrrigation() {
         int nbrCanauxIrrigationRestant = Irrigation.getNbrCanauxIrrigation() - 1;
         Irrigation.setNbrCanauxIrrigation(nbrCanauxIrrigationRestant);
+    }
+
+    public Objectif prendreObjectif(PiocheObjectifs pioche, PlateauDeJoueur plateauDeJoueur){
+        if (plateauDeJoueur.peutAjouterObjectif()){
+            return pioche.piocher();
+        }
+        return null;
     }
 
     /* Méthode à déplacer eventuellement plus tard */

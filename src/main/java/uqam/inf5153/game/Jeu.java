@@ -19,7 +19,7 @@ public class Jeu {
 
     private PlateauDeJeu plateauDeJeu;
     private List<Joueur> joueurs;
-    private Pioche<Objectif> piocheObjectifs;
+    private PiocheObjectifs piocheObjectifs;
     private PiocheParcelles piocheParcelles;
 
     //Constucteur
@@ -50,16 +50,6 @@ public class Jeu {
 
     public void afficherParcelles(List<Parcelle> parcelles){
         piocheParcelles.afficherParcelles(parcelles);
-    }
-
-    public void afficherObjectifsPioches(int joueurIndex) {
-        Joueur joueur = getJoueurByIndex(joueurIndex);
-        joueur.getPlateauDeJoueur().afficherObjectifsPioches();
-    }
-
-    public List<Objectif> getObjectifsPioches(int joueurIndex){
-        Joueur joueur = getJoueurByIndex(joueurIndex);
-        return joueur.getPlateauDeJoueur().getObjectifsPioches();
     }
 
     public void afficherParcellesDansPlateau(){
@@ -108,6 +98,21 @@ public class Jeu {
         Joueur joueur = getJoueurByIndex(joueurIndex);
         joueur.deplacerJardinier(plateauDeJeu,plateauDeJeu.getJardinier(),parcelleDestination);
         return true;
+    }
+
+    public void afficherObjectifsPioches(int joueurIndex) {
+        Joueur joueur = getJoueurByIndex(joueurIndex);
+        joueur.getPlateauDeJoueur().afficherObjectifsPioches();
+    }
+
+    public List<Objectif> getObjectifsPioches(int joueurIndex){
+        Joueur joueur = getJoueurByIndex(joueurIndex);
+        return joueur.getPlateauDeJoueur().getObjectifsPioches();
+    }
+
+    public Objectif piocherObjectif(int joueurIndex){
+        Joueur joueur = getJoueurByIndex(joueurIndex);
+        return joueur.prendreObjectif(piocheObjectifs,joueur.getPlateauDeJoueur());
     }
 
     public boolean verifierFinPartie(int joueurIndex) {
