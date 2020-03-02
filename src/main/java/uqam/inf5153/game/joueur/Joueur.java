@@ -31,33 +31,33 @@ public class Joueur {
     public boolean placerParcelleDansPlateau(PlateauDeJeu plateau, Parcelle parcelle, int x, int y){
         Coordonnees coordParcelle = new Coordonnees(x,y);
         parcelle.setCoordonnees(coordParcelle);
-        plateau.ajouterParcelle(parcelle);
-        plateau.getPositionsDisponibles().removeIf(coordonnees -> coordonnees.equals(coordParcelle));
-        int i = plateau.positionParcelle(x,y+2);
-        if(i!=-1){
-            parcelle.setVoisins(plateau.getParcelles().get(i));
-        }
-        i = plateau.positionParcelle(x+2,y+1);
-        if(i!=-1){
-            parcelle.setVoisins(plateau.getParcelles().get(i));
-        }
-        i = plateau.positionParcelle(x+2,y-1);
-        if(i!=-1){
-            parcelle.setVoisins(plateau.getParcelles().get(i));
-        }
-        i = plateau.positionParcelle(x,y-2);
-        if(i!=-1){
-            parcelle.setVoisins(plateau.getParcelles().get(i));
-        }
-        i = plateau.positionParcelle(x-2,y-1);
-        if(i!=-1){
-            parcelle.setVoisins(plateau.getParcelles().get(i));
-        }
-        i = plateau.positionParcelle(x-2,y+1);
-        if(i!=-1){
-            parcelle.setVoisins(plateau.getParcelles().get(i));
-        }
-        plateau.mettreAjourListePosiDisp(coordParcelle);
+            plateau.ajouterParcelle(parcelle);
+            plateau.getPositionsDisponibles().removeIf(coordonnees -> coordonnees.equals(coordParcelle));
+            int i = plateau.positionParcelle(x, y + 2);
+            if (i != -1) {
+                parcelle.setVoisins(plateau.getParcelles().get(i));
+            }
+            i = plateau.positionParcelle(x + 2, y + 1);
+            if (i != -1) {
+                parcelle.setVoisins(plateau.getParcelles().get(i));
+            }
+            i = plateau.positionParcelle(x + 2, y - 1);
+            if (i != -1) {
+                parcelle.setVoisins(plateau.getParcelles().get(i));
+            }
+            i = plateau.positionParcelle(x, y - 2);
+            if (i != -1) {
+                parcelle.setVoisins(plateau.getParcelles().get(i));
+            }
+            i = plateau.positionParcelle(x - 2, y - 1);
+            if (i != -1) {
+                parcelle.setVoisins(plateau.getParcelles().get(i));
+            }
+            i = plateau.positionParcelle(x - 2, y + 1);
+            if (i != -1) {
+                parcelle.setVoisins(plateau.getParcelles().get(i));
+            }
+            plateau.mettreAjourListePosiDisp(coordParcelle);
         return true;
     }
 
