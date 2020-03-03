@@ -1,0 +1,38 @@
+@startuml
+!include _common.style
+title Initialisation Takenoko (déroulement)
+
+participant "Takenoko" as T
+participant "jeu: Jeu" as J
+participant "pJeu: PlateauDeJeu" as PJeu
+participant "pJoueur: PlateauDeJoueur" as PJoueur
+participant "pObj: PiocheObjectifs" as pObj
+participant "pPar: PiocheParcelles" as pPar
+participant "joueur: Joueur" as Joueur
+
+activate T
+T -> J : this()
+loop for i = 0; i < 2; i++
+    activate J
+    J -> Joueur: this()
+    activate Joueur
+    Joueur -> PJoueur: this()
+    activate PJoueur
+end
+J -> PJeu: this()
+activate PJeu
+J -> pObj : this()
+activate pObj
+J -> pPar: this()
+activate pPar
+
+deactivate T
+deactivate J
+deactivate PJeu
+deactivate pObj
+deactivate pPar
+deactivate Joueur
+deactivate PJoueur
+
+center footer project #2 - initialisation sequence diagram
+@enduml

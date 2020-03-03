@@ -81,6 +81,7 @@ public class Joueur {
             return false;
         }
         score += obj.appliquerObjectif(plateauDeJeu);
+        plateauDeJoueur.ajouterObjectifAccomplis(obj);
         return true;
     }
 
@@ -107,7 +108,7 @@ public class Joueur {
         }
     }
 
-    public void deplacerJardinier(PlateauDeJeu plateau, Figurine jardinier, Parcelle parcelleDestination){
+    public void deplacerJardinier(Figurine jardinier, Parcelle parcelleDestination){
         if (jardinier.estDeplaceableSur(parcelleDestination)){
             jardinier.setParcelleDepart(parcelleDestination);
         }else{

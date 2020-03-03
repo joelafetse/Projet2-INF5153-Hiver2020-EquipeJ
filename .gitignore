@@ -36,3 +36,4 @@ src/test/java/.DS_Store
 .idea/
 target/*
 .idea/libraries/workspace.xml
+.metadata/

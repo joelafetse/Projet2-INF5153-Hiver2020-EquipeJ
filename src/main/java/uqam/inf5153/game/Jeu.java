@@ -99,7 +99,7 @@ public class Jeu {
         }
         Parcelle parcelleDestination = plateauDeJeu.getParcelleAtPosition(coord);
         Joueur joueur = getJoueurByIndex(joueurIndex);
-        joueur.deplacerJardinier(plateauDeJeu,plateauDeJeu.getJardinier(),parcelleDestination);
+        joueur.deplacerJardinier(plateauDeJeu.getJardinier(),parcelleDestination);
         return true;
     }
 

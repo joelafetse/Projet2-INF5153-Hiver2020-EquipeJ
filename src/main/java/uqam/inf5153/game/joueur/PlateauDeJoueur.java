@@ -17,7 +17,7 @@ public class PlateauDeJoueur {
     //private List<Bambou> bambous;
 
     // Objectifs accomplis
-    private List<ObjectifParcelle> objectifsAccomplis;
+    private List<Objectif> objectifsAccomplis;
 
     // Objectifs piochés
     private List<Objectif> objectifsPioches;
@@ -44,8 +44,12 @@ public class PlateauDeJoueur {
         return objectifsPioches;
     }
 
-    public void ajouterObjectif(ObjectifParcelle obj){
+    public void ajouterObjectif(Objectif obj){
         this.objectifsPioches.add(obj);
+    }
+
+    public void ajouterObjectifAccomplis(Objectif obj) {
+        this.objectifsAccomplis.add(obj);
     }
 
     public boolean peutAjouterObjectif(){
