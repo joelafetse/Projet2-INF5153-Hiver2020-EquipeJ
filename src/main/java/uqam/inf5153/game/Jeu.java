@@ -62,8 +62,6 @@ public class Jeu {
         if (!positionExiste(plateauDeJeu, coord))
             return false;
 
-        if (plateauDeJeu.nombreVoisinsOccupes(coord)!=2 ) return false;
-
         Joueur joueur = getJoueurByIndex(joueurIndex);
         joueur.placerParcelleDansPlateau(plateauDeJeu,parcelle,x,y);
         return true;
