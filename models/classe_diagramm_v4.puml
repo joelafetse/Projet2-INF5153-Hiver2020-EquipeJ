@@ -1,0 +1,223 @@
+@startuml
+!include _common.style
+
+title Takenoko (Structure)
+center footer project #2 - class diagram
+
+package uqam.inf5153.game{
+
+    class Takenoko {
+
+    }
+    class Jeu {      
+    } 
+
+    Takenoko --> Jeu 
+    Jeu "1" *--> "1"PlateauDeJeu  
+    Jeu "1" *--> "0..2"Joueur
+    Jeu "1"*--> "0..n" Pioche
+
+  
+    abstract class Parcelle{
+      # irriguee
+      --
+      +this (c: Coordonnees)
+      --
+      
+      +estIrrigue e(): boolean
+      +setVoisins (p:Parcelle)
+      +estAdjacent (p:Parcelle): boolean
+      +parcellesAdjacente s(): Parcelle[]
+
+    }
+    class ParcelleVerte{
+        
+    }
+    class ParcelleJaune{
+        
+    }
+    class ParcelleRose{
+       
+    }
+    class ParcelleEtang{
+       
+    }
+
+    Parcelle  <|-- ParcelleVerte
+    Parcelle  <|-- ParcelleJaune
+    Parcelle <|-- ParcelleRose
+    Parcelle  <|-- ParcelleEtang    
+    
+    
+
+
+  
+    abstract class Objectif{
+     # identifiant: int
+     --
+     +this ()
+     +this (identifiant: int)
+     --
+
+     +appliquerObjectif (p: PlateauDeJeu): int 
+
+    }
+    class ObjectifParcelle {
+      --
+      +this ()
+      --
+
+      +appliquerObjectif(p: PlateauDeJeu): int
+
+    }
+    
+
+   Objectif  <|-- ObjectifParcelle
+    
+
+  
+      class Joueur{
+        - score: int
+        - nombreActions: int
+        --
+        +this ()   
+        --
+
+        + placerParcelleDansPlateau (p:PlateauDeJeu,pa: Parcelle,x:int,y:int)
+        + prendreIrrigation (): void
+        + prendreObjectif (p:PiocheObjectifs,pl:PlateauDeJoueur):Objectif
+        + remplirObjectif (o:Objectif,pl:PlateauDeJeu): bool
+        + deplacerJardinier (pl:PlateauDeJeu,j:Figurine jardinier,pDst:Parcelle)
+      
+      }
+      class PlateauDuJoueur{
+        - NBRE_OBJECTIFS_PIOCHES_MAX: int
+        -irrigations: int
+        --
+        +this () 
+        --
+
+        +ajouterObjectif (o: ObjectifParcelle)
+        +ajouterObjectifAccomplis (o: Objectif)
+        +peutAjouterObjectif ():boolean
+        +ajouterIrrigations ()
+        +retirerIrrigation () 
+        +afficherObjectifsPioches ()
+
+      }
+      Joueur "0..1" *-->  "1" PlateauDuJoueur
+      Joueur "0..1" *-->  "0..5 " Objectif
+      PlateauDuJoueur "0..1" *-->  " 0..5 " Objectif
+      
+  
+  
+
+      abstract class Figurine {
+        --
+        +this (pEtang: Parcelle)
+        --
+
+        +estDeplaceableSur (pD: Parcelle)
+
+      }
+      class Jardinier {
+        --
+        +this (p: Parcelle)
+        --
+      }
+      
+      Jardinier --|> Figurine
+      Figurine "0..1" *--> "0..1 " Parcelle
+      
+
+  
+  
+    
+
+    class Irrigation{
+      -nbrCanauxIrrigation:int
+      --
+      +this (p1:Parcelle, p2:Parcelle) 
+
+    }
+    class PlateauDeJeu {
+      --
+      +this ()
+      --
+
+      +initialiserPlateauDeJeu()           
+      +ajouterParcelle (p:Parcelle)
+      +getParcelleAtPosition (c: Coordonnees) position:Parcelle
+      +mettreAjourListePosiDisp (c:Coordonnees)
+      +nombreVoisinsOccupes (c:Coordonnees)
+      +afficherLesPositionsDispo ()
+      +ajouterNouveauReseauIrrigation (nR: ReseauIrrigation)
+    
+    }
+
+    class ReseauIrrigation {
+    + this (irrDebut: Irrigation)
+    ----
+
+    + ajouterIrrigationAuReseau (irr: Irrigation): boolean
+
+    }
+
+    PlateauDeJeu "0..1"  *--> "0..n" Parcelle
+    PlateauDeJeu  "0..1" *--> "0..2" Figurine    
+   
+
+    PlateauDeJeu "0..1"  *--> "0..n" ReseauIrrigation
+    ReseauIrrigation "0..1"  *--> "0..n" Irrigation
+
+  
+
+
+
+
+  
+
+    abstract class Pioche {
+      # objetsAPiocher: List<T>
+      --
+
+      +melangerPioche()
+      +pioche():T
+      +piocher(nbr: int):List<T>
+
+    }
+    class PiocheObjectifs {
+      --
+      +this()
+      --
+
+      +piocher():Objectif
+      +piocher(nbr: int):List<Objectif>
+
+    }
+    class PiocheParcelles {
+      --
+      +this()
+      --
+
+      +piocher():Parcelle
+      +piocher(nbr: int):List<Parcelle>
+
+    }
+
+    Pioche <|-- PiocheObjectifs
+    Pioche <|-- PiocheParcelles
+
+  
+
+  
+  
+  
+
+
+
+
+
+}
+
+@enduml

@@ -13,7 +13,7 @@ i _ Le travail effectué par les membres et heures passés :
 -  Début de conception de l'implémentation des pioches en cours.
 
 3 -  Mehdi Djohor
-- Participer à la concéption avec mon équipe.
+- Participer à la concéption avec mon équipe 3.
 
 4 -  Yazid Iharkane
 - Participer à la concéption avec mon équipe, 6 heures.
@@ -26,14 +26,9 @@ ii. Les objectifs que le projet est censé remplir
 - créer et implémenter les interface et les class parceles, et bambou.
 - l’initialisation du plateau de jeu de chaque joueur
 
-
 iii.Notre plan d'action pour la prochaine livraison
 - Continuer l'implémentation du plateau de jeu.
 - travailler sur les actions. 
-
-iv.diagram de UML 
-![conception_semaine1](img/class_diagramme_tp2_v1.png)
-
 
 *********************************
 ### Équipe J - Deuxième semaine
@@ -61,33 +56,50 @@ ii. Les objectifs que le projet est censé remplir
 
 - Continuer l'implémentation du plateau de jeu.
 - initialisation les objectifs et le pioche d'objectifs, l'irrigation 
-- traviller sur les actions, piocher 3 parcelles, piocher irrigation. 
-
+- traviller sur les actions, piocher 3 parcelles, piocher irrigation.
 
 iii.Notre plan d'action pour la prochaine livraison
 
 - Continuer travailler sur les actions, deplacer le jardinier,
 - travailler sur la prtie des décision.
 
-
-iv.diagram de UML 
-
-![conception_semaine2](img/class_diagramme_tp2_v2.png)
-
 *********************************
 ### Équipe J - Troisième semaine
 *********************************
-
+Tous les membres ont participé à la concéption pendent 6 heures et et ils ont mis
+ des plusieurs heures chaqu'un de son coté pour implementer : 
 
 1-Yazid Iharkane
 
 - Implementer la classe ObejctifParcelle.
 - Faire les modifications necessaires dans les autres classes (Parcelle, PalteauDeJeu, etc.) 
    pour les adapter à la classe ObjectifParcelles.
-   
+- Implémenter agencement entre notre code et le controleur.
 
-2- Implémenter agencement entre notre code et le controleur.
+2-  Kokou Eyram Joel Afetse
+-Liéer le s codes de Taknoko aux codes intèrnes.
+-travailler sur le lusieurs modules.
 
+3- Farahnaz Kashandeh 
+- Deplacer Jardinier, le Jardinier liéer des méthodes Main et Takenoko à notre code ntèrne.
+
+ii. Les objectifs que le projet est censé remplir 
+- Continuer travailler sur les actions, deplacer le jardinier,
+- travailler sur la prtie des décision.
+iii.Notre plan d'action pour la prochaine livraison
+- finaliser le phase1
+
+
+*********************************
+### Équipe J - Troisième semaine
+*********************************
+
+Tous les membres ont participé à la concéption pendent 16 heures et et ils ont mis
+ des plusieurs heures chaqu'un de son coté pour finaliser le phase 1.
+ tous les membres ont participer à la concéption, à l'implémetation de code , écriture de rapport ,
+  
+ii. Les objectifs que le projet est censé remplir 
+- finaliser le phase1
 
 
 

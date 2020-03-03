@@ -16,7 +16,8 @@ loop for i = 0; i < 2; i++
     activate J
     J -> Joueur: this()
     activate Joueur
-    Joueur -> PJoueur: this()
+    Joueur --> PJoueur: this()
+    deactivate Joueur
     activate PJoueur
 end
 J -> PJeu: this()
@@ -26,13 +27,23 @@ activate pObj
 J -> pPar: this()
 activate pPar
 
-deactivate T
-deactivate J
-deactivate PJeu
-deactivate pObj
+
+pPar --> J
 deactivate pPar
-deactivate Joueur
+
+
+
+
+pObj --> J
+deactivate pObj
 deactivate PJoueur
+
+PJeu --> J
+deactivate PJeu
+J --> T
+deactivate J
+deactivate T
+
 
 center footer project #2 - initialisation sequence diagram
 @enduml
