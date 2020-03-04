@@ -105,8 +105,7 @@ package uqam.inf5153.game{
         +afficherObjectifsPioches ()
 
       }
-      Joueur "0..1" *-->  "1" PlateauDuJoueur
-      Joueur "0..1" *-->  "0..5 " Objectif
+      Joueur "0..1" *-->  "1" PlateauDuJoueur      
       PlateauDuJoueur "0..1" *-->  " 0..5 " Objectif
       
   
