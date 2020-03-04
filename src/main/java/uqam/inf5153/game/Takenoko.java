@@ -154,9 +154,9 @@ public class Takenoko {
 	 * retourne true si la partie est terminé.
 	 * Pour deux joueur une partie prend fin si un des joueur remplit son 9ème objectif
 	 */
-	public static boolean finPartie(int joueur) {
+	public static boolean finPartie() {
 		// code temporaire
-		return jeu.verifierFinPartie(joueur);
+		return jeu.verifierFinPartie();
 	}
 	/**
 	 *  Le gagnant

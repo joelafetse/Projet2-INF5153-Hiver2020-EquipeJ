@@ -47,7 +47,8 @@ public class Main {
 				menuJoueur(i);
 				i++;
 			}
-			estFinPartie = Takenoko.finPartie(i);
+			i = 1;
+			estFinPartie = Takenoko.finPartie();
 		}while (!estFinPartie);
 		System.out.println("Le gagnant est le joueur : "+ Takenoko.annoncerGagnant());
 	}
@@ -205,6 +206,7 @@ public class Main {
 			y = Keyin.inInt(" Entrer la position y : ");
 			estDeplace = Takenoko.PlacerJardinier(x,y, numJoueur );
 		}
+		System.out.println("Le Jardinier est bien déplacé");
 	}
 	private static void deplacerPanda(int numJoueur) {
 		System.out.println("==========================================================================");

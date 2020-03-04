@@ -126,10 +126,11 @@ public class Jeu {
         return joueur.remplirObjectif(objectif, plateauDeJeu);
     }
 
-    public boolean verifierFinPartie(int joueurIndex) {
-        Joueur joueur = getJoueurByIndex(joueurIndex);
-        if (joueur.getPlateauDeJoueur().getNombreObjectifsAccomplis() == NBRE_OBJECTIFS_GAGNANT){
-            return true;
+    public boolean verifierFinPartie() {
+        for (Joueur joueur: joueurs){
+            if (joueur.getPlateauDeJoueur().getNombreObjectifsAccomplis() == NBRE_OBJECTIFS_GAGNANT){
+                return true;
+            }
         }
         return false;
     }
