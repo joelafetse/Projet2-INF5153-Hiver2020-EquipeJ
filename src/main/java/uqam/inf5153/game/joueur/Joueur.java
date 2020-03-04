@@ -70,7 +70,9 @@ public class Joueur {
 
     public Objectif prendreObjectif(PiocheObjectifs pioche, PlateauDeJoueur plateauDeJoueur){
         if (plateauDeJoueur.peutAjouterObjectif()){
-            return pioche.piocher();
+            Objectif objectifPioche = pioche.piocher();
+            plateauDeJoueur.ajouterObjectif(objectifPioche);
+            return objectifPioche;
         }
         return null;
     }
