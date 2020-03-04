@@ -38,26 +38,31 @@ public class Joueur {
             int i = plateau.positionParcelle(x, y + 2);
             if (i != -1) {
                 parcelle.setVoisins(plateau.getParcelles().get(i));
-            }
+                plateau.getParcelles().get(i).setVoisins(parcelle);            }
             i = plateau.positionParcelle(x + 2, y + 1);
             if (i != -1) {
                 parcelle.setVoisins(plateau.getParcelles().get(i));
+                plateau.getParcelles().get(i).setVoisins(parcelle);
             }
             i = plateau.positionParcelle(x + 2, y - 1);
             if (i != -1) {
                 parcelle.setVoisins(plateau.getParcelles().get(i));
+                plateau.getParcelles().get(i).setVoisins(parcelle);
             }
             i = plateau.positionParcelle(x, y - 2);
             if (i != -1) {
                 parcelle.setVoisins(plateau.getParcelles().get(i));
+                plateau.getParcelles().get(i).setVoisins(parcelle);
             }
             i = plateau.positionParcelle(x - 2, y - 1);
             if (i != -1) {
                 parcelle.setVoisins(plateau.getParcelles().get(i));
+                plateau.getParcelles().get(i).setVoisins(parcelle);
             }
             i = plateau.positionParcelle(x - 2, y + 1);
             if (i != -1) {
                 parcelle.setVoisins(plateau.getParcelles().get(i));
+                plateau.getParcelles().get(i).setVoisins(parcelle);
             }
             plateau.mettreAjourListePosiDisp(coordParcelle);
         return true;
