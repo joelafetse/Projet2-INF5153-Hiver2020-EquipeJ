@@ -30,6 +30,10 @@ public abstract class Parcelle {
         return this.coord;
     }
 
+    public  List<Parcelle> getVoisins(){
+        return this.voisins;
+    }
+
     public boolean estIrriguee() {
         return irriguee;
     }
@@ -75,9 +79,11 @@ public abstract class Parcelle {
 
     public Parcelle[] parcellesAdjacentes(){
         Parcelle[] parcellesAdjacentes=new Parcelle[6];
-        for (int i=0; i<6; i++){
-            if (voisins.get(i)!=null) parcellesAdjacentes[i]= voisins.get(i);
-        }
+        int i=0;
+            while( i < voisins.size()) {
+                    parcellesAdjacentes[i] = voisins.get(i);
+                    i++;
+            }
         return parcellesAdjacentes;
     }
 

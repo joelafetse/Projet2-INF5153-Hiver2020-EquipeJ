@@ -87,7 +87,7 @@ public class ObjectifParcelle extends Objectif {
             case 8:
                 for (Parcelle parcelle : plateau.getParcelles()) {
                     if (parcelle.getCouleur()==Couleur.JAUNE){
-                        for (int i=0; i<6; i++){
+                        for (int i=0; i<6 ; i++){
                             Parcelle[] pAdj=parcelle.parcellesAdjacentes();
                             if (verifierParcelle(pAdj[i],Couleur.JAUNE) && verifierParcelle(pAdj[(i+2)%6], Couleur.JAUNE)) return 3;
                         }
