@@ -21,13 +21,26 @@ public abstract class Figurine {
 
 
     public boolean estDeplaceableSur(Parcelle parcelleDestination){
+        boolean estDeplaceable = false;
         Coordonnees coordDepart = parcelleDepart.getCoordonnees();
         Coordonnees coordDestination = parcelleDestination.getCoordonnees();
         double pente1 = 1/2;
         double pente2 = -1/2;
-        double coef = (coordDestination.getY() - coordDepart.getY()) /
-                (coordDestination.getX() - coordDepart.getX());
+        double denominateur = coordDestination.getX() - coordDepart.getX();
 
-        return coordDepart.getX() == coordDestination.getX() || coef == pente1 || coef == pente2;
+        double coef = 0;
+
+        if(denominateur == 0) {
+            estDeplaceable = true;
+        }else {
+            coef =  (coordDestination.getY() - coordDepart.getY()) /
+                    (coordDestination.getX() - coordDepart.getX());
+            return coef == pente1 || coef == pente2;
+        }
+        return estDeplaceable;
     }
+
+
 }
+
+
