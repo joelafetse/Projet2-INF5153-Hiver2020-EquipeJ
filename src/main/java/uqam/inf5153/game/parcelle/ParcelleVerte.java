@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 public class ParcelleVerte extends Parcelle {
     public ParcelleVerte() {
-        this.voisins=new ArrayList<Parcelle>();
+        //this.voisins=new ArrayList<Parcelle>();
 
     }
 

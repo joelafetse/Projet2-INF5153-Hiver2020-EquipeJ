@@ -36,6 +36,10 @@ public class Irrigation {
     @Override
     public boolean equals (Object obj)
     {
+
+        if(this == obj) {
+            return true;
+        }
         if (obj == null || !(obj instanceof Irrigation)) return false;
 
         Irrigation irr = (Irrigation) obj;

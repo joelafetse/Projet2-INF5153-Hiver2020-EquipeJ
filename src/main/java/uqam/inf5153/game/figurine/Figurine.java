@@ -7,8 +7,8 @@ public abstract class Figurine {
 
     protected Parcelle parcelleDepart;
 
-    public Figurine(Parcelle parcelleEtang){
-        this.parcelleDepart = parcelleEtang;
+    public Figurine(Parcelle parcelle){
+        this.parcelleDepart = parcelle;
     }
 
     public Parcelle getParcelleDepart() {
@@ -26,9 +26,12 @@ public abstract class Figurine {
         Coordonnees coordDestination = parcelleDestination.getCoordonnees();
         double pente1 = 1/2;
         double pente2 = -1/2;
+        double numerateur = coordDestination.getY() - coordDepart.getY();
         double denominateur = coordDestination.getX() - coordDepart.getX();
 
         double coef = 0;
+
+        if(numerateur==0){return false;}
 
         if(denominateur == 0) {
             estDeplaceable = true;
@@ -37,10 +40,15 @@ public abstract class Figurine {
                     (coordDestination.getX() - coordDepart.getX());
             return coef == pente1 || coef == pente2;
         }
+
         return estDeplaceable;
     }
 
 
 }
+
+
+
+
 
 

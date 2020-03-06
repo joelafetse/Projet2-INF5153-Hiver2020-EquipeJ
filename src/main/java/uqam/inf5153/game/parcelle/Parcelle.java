@@ -56,8 +56,13 @@ public abstract class Parcelle {
 
     @Override
     public boolean equals(Object obj) {
-        return obj instanceof Parcelle &&
-                this.coord.equals(((Parcelle) obj).coord) && this.getCouleur() == ((Parcelle) obj).getCouleur();
+        if(this == obj)
+            return true;
+        if(obj == null || obj.getClass()!= this.getClass())
+            return false;
+
+
+        return this.coord.equals(((Parcelle) obj).coord) && this.getCouleur() == ((Parcelle) obj).getCouleur();
     }
 
     @Override
