@@ -139,12 +139,9 @@ public class Main {
 		System.out.println("|   TAKENOKO MENU JOUEUR " +numJoueur+ " : Action Parcelle                        ");
 		System.out.println("===========================================================================");
 		System.out.println("Étape 1 - Piocher 3 parcelles ");
-		////String[] parcelles = Takenoko.piocherParcelles(3, numJoueur);
-
 		List<Parcelle> parcellesPiochees = Takenoko.piocherParcelles(3, numJoueur);
 
 		System.out.println("Étape 2 - Vous avez pioché les parcelles suivantes : ");
-		///Takenoko.afficherParcelles(parcelles);
 
 		Takenoko.afficherParcelles(parcellesPiochees);
 
@@ -155,7 +152,6 @@ public class Main {
 			parcelleChosie = Keyin.inInt(" Entrer le numéro de la parcelle choisie : ");
 		}
 		System.out.println("Étape 4 - Replacer les deux autres sous la pioche");
-		///Takenoko.selectionnerParcelle(parcelles, parcelleChosie );
 		Parcelle pSelectionnee = Takenoko.selectionnerParcelle(parcellesPiochees, parcelleChosie );
 		System.out.println("Étape 5 - Afficher les parcelles du plateau");
 		Takenoko.afficherParcellesPlateau();//numJoueur);

@@ -51,7 +51,7 @@ public class PiocheParcelles extends Pioche<Parcelle> {
         int i=0;
         while(i < parcelles.size()) {
             if (parcelles.get(i)!=null) {
-                System.out.println(parcelles.get(i));
+                System.out.println(i+1+". "+parcelles.get(i));
             }
             i++;
         }
