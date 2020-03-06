@@ -65,8 +65,10 @@ public class PlateauDeJoueur {
     public void retirerIrrigation() { this.irrigations--; }
 
     public void afficherObjectifsPioches(){
+        int i=1;
         for (Objectif obj: objectifsPioches){
-            System.out.println(obj);
+            System.out.println(i+". "+obj);
+            i++;
         }
     }
 }
