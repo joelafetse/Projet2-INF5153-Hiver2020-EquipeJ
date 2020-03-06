@@ -19,6 +19,15 @@ public class IrrigationTest {
     }
 
     @Test
+    public void testEquals() {
+        Parcelle p1 = new ParcelleVerte();
+        Parcelle p2 = new ParcelleVerte();
+        Irrigation irr1 = new Irrigation(p1, p2);
+        Irrigation irr2 = new Irrigation(p1, p2);
+        assertTrue(irr1.equals(irr2));
+    }
+
+    @Test
     public void getParcelle2() {
     }
 
@@ -31,14 +40,7 @@ public class IrrigationTest {
 
     }
 
-    @Test
-    public void testEquals() {
-        Parcelle p1 = new ParcelleVerte();
-        Parcelle p2 = new ParcelleVerte();
-        Irrigation irr1 = new Irrigation(p1, p2);
-        Irrigation irr2 = new Irrigation(p1, p2);
-        assertTrue(irr1.equals(irr2));
-    }
+
 
     @Test
     public void testHashCode() {

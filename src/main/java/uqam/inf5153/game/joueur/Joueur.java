@@ -119,7 +119,7 @@ public class Joueur {
         if (jardinier.estDeplaceableSur(parcelleDestination)){
             jardinier.setParcelleDepart(parcelleDestination);
         }else{
-            //TODO //afficher message qu'on ne peut pas déplacer le jardinier vers cettr destination.
+            System.out.println("On ne peut pas déplacer le jardinier vers cette destination.");
         }
     }
 
