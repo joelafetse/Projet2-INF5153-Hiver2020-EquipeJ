@@ -3,8 +3,7 @@ package uqam.inf5153.game.plateau;
 import uqam.inf5153.game.figurine.Figurine;
 import uqam.inf5153.game.figurine.Jardinier;
 import uqam.inf5153.game.figurine.Panda;
-import uqam.inf5153.game.parcelle.Parcelle;
-import uqam.inf5153.game.parcelle.ParcelleEtang;
+import uqam.inf5153.game.parcelle.*;
 
 import java.util.*;
 
@@ -58,8 +57,8 @@ public class PlateauDeJeu {
         return reseauxIrr;
     }
 
-    public void ajouterParcelle(Parcelle p){
-        this.parcelles.add(p);
+    public void ajouterParcelle(Parcelle parcelle){
+        this.parcelles.add(parcelle);
     }
 
     public Figurine getJardinier(){

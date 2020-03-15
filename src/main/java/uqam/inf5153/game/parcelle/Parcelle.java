@@ -7,11 +7,8 @@ import java.util.List;
 import java.util.Objects;
 
 public abstract class Parcelle {
-    //variable de classe
-    private static int compteur = 0;
 
-    //variables d'instances
-    protected int parcelleId;
+
     protected Coordonnees coord;
     protected boolean irriguee;
     protected List<Parcelle> voisins;
@@ -35,7 +32,7 @@ public abstract class Parcelle {
     }
 
     public boolean estIrriguee() {
-        return irriguee;
+        return irriguee == true;
     }
 
     public void setCoordonnees(Coordonnees coord) {
@@ -51,23 +48,21 @@ public abstract class Parcelle {
     }
 
     public abstract Couleur getCouleur();
-    public abstract int getParcelleId();
 
 
     @Override
     public boolean equals(Object obj) {
         if(this == obj)
             return true;
-        if(obj == null || obj.getClass()!= this.getClass())
-            return false;
-
+        if (!(obj instanceof Parcelle)) return false;
 
         return this.coord.equals(((Parcelle) obj).coord) && this.getCouleur() == ((Parcelle) obj).getCouleur();
     }
 
+
     @Override
     public int hashCode() {
-        return Objects.hash(parcelleId, coord, irriguee);
+        return Objects.hash(coord, this.getCouleur());
     }
 
     public boolean estAdjacent(Parcelle p){

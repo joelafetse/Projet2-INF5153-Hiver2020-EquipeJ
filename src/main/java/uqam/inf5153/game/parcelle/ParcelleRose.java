@@ -15,9 +15,6 @@ public class ParcelleRose extends Parcelle {
         return Couleur.ROSE;
     }
 
-    @Override
-    public int getParcelleId() {
-        return parcelleId;
-    }
+
 
 }

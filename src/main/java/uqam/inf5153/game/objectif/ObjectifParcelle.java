@@ -182,7 +182,7 @@ public class ObjectifParcelle extends Objectif {
             case 2:
                 return "Objectif " + identifiant + " : Diamant vert, Points: 3";
             case 3:
-                return "Objectif " + identifiant + " : Diamant jaune et rose, Points: 5";
+                return "3. Objectif " + identifiant + " : Diamant jaune et rose, Points: 5";
             case 4:
                 return "Objectif " + identifiant + " : Diamant rose et vert, Points: 4";
             case 5:

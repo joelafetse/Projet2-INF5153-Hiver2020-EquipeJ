@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 public class ParcelleVerte extends Parcelle {
     public ParcelleVerte() {
-        //this.voisins=new ArrayList<Parcelle>();
+        this.voisins=new ArrayList<Parcelle>();
 
     }
 
@@ -14,10 +14,7 @@ public class ParcelleVerte extends Parcelle {
         return Couleur.VERT;
     }
 
-    @Override
-    public int getParcelleId() {
-        return parcelleId;
-    }
+
 
 
 }

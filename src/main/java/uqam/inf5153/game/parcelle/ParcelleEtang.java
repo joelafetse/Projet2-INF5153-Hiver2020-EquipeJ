@@ -5,6 +5,7 @@ import uqam.inf5153.game.plateau.Coordonnees;
 import java.util.ArrayList;
 
 public class ParcelleEtang extends Parcelle {
+
     public ParcelleEtang(Coordonnees coord) {
         super(coord);
         super.voisins=new ArrayList<Parcelle>();
@@ -16,10 +17,7 @@ public class ParcelleEtang extends Parcelle {
         return null;
     }
 
-    @Override
-    public int getParcelleId() {
-        return parcelleId;
-    }
+
 
     @Override
     public String toString(){

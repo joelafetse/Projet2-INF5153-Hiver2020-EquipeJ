@@ -52,4 +52,20 @@ public class PlateauDeJeuTest {
         assertEquals(plateau.nombreVoisinsOccupes(c), 2);
 
     }
+
+    //---------- f
+    @Test
+    public void testEstPositionOccupee() {
+        PlateauDeJeu plateau = new PlateauDeJeu();
+        Parcelle p = new ParcelleVerte();
+        Coordonnees c1 = new Coordonnees(2,0);
+        p.setCoordonnees(c1);
+        plateau.ajouterParcelle(p);
+        Coordonnees c2 = new Coordonnees(2,1); //pas ajouter dans le parcelles
+        p.setCoordonnees(c1);
+        plateau.ajouterParcelle(p);
+        assertTrue(plateau.estPositionOccupee(c1));
+        assertFalse(plateau.estPositionOccupee(c2));
+
+    }
 }

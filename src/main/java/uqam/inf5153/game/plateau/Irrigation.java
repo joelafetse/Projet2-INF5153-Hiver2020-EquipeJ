@@ -11,10 +11,10 @@ public class Irrigation {
     private static int nbrCanauxIrrigation = 20;
 
     public Irrigation (Parcelle p1, Parcelle p2)  {
-        this.parcelle1 = p1;
-        this.parcelle2 = p2;
         p1.setIrriguee(true);
         p2.setIrriguee(true);
+        this.parcelle1 = p1;
+        this.parcelle2 = p2;
     }
 
     public Parcelle getParcelle1 ()  {

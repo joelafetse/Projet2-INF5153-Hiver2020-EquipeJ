@@ -3,7 +3,7 @@ package uqam.inf5153.game;
 import uqam.inf5153.game.joueur.Joueur;
 import uqam.inf5153.game.objectif.Objectif;
 import uqam.inf5153.game.objectif.ObjectifParcelle;
-import uqam.inf5153.game.parcelle.Parcelle;
+import uqam.inf5153.game.parcelle.*;
 import uqam.inf5153.game.pioche.Pioche;
 import uqam.inf5153.game.pioche.PiocheObjectifs;
 import uqam.inf5153.game.pioche.PiocheParcelles;
@@ -63,6 +63,15 @@ public class Jeu {
             return false;
 
         Joueur joueur = getJoueurByIndex(joueurIndex);
+
+        if(parcelle.getCouleur() == Couleur.VERT) {
+            parcelle = new ParcelleVerte();
+        }else if (parcelle.getCouleur() == Couleur.ROSE) {
+            parcelle = new ParcelleRose();
+        }else if (parcelle.getCouleur() == Couleur.JAUNE) {
+            parcelle = new ParcelleJaune();
+        }
+
         joueur.placerParcelleDansPlateau(plateauDeJeu,parcelle,x,y);
         return true;
     }
