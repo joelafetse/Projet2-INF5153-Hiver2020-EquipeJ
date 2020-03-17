@@ -36,30 +36,30 @@ public class ObjectifParcelle extends Objectif {
                 break;
             case 3:
                 for (Parcelle parcelle : plateau.getParcelles()) {
-                    if (parcelle.getCouleur()==Couleur.JAUNE){
+                    if (parcelle.getCouleur()==Couleur.ROSE){
                         for (int i=0; i<6; i++){
                             Parcelle[] pAdj=parcelle.parcellesAdjacentes();
-                            if (verifierParcelle(pAdj[i],Couleur.ROSE) && verifierParcelle(pAdj[(i+1)%6], Couleur.ROSE) && verifierParcelle(pAdj[(i+2)%6], Couleur.JAUNE)) return 5;
+                            if (verifierParcelle(pAdj[i],Couleur.JAUNE) && verifierParcelle(pAdj[(i+1)%6], Couleur.JAUNE) && verifierParcelle(pAdj[(i+2)%6], Couleur.ROSE)) return 5;
                         }
                     }
                 }
                 break;
             case 4:
                 for (Parcelle parcelle : plateau.getParcelles()) {
-                    if (parcelle.getCouleur()==Couleur.ROSE){
+                    if (parcelle.getCouleur()==Couleur.VERT){
                         for (int i=0; i<6; i++){
                             Parcelle[] pAdj=parcelle.parcellesAdjacentes();
-                            if (verifierParcelle(pAdj[i],Couleur.VERT) && verifierParcelle(pAdj[(i+1)%6], Couleur.VERT) && verifierParcelle(pAdj[(i+2)%6], Couleur.ROSE)) return 4;
+                            if (verifierParcelle(pAdj[i],Couleur.ROSE) && verifierParcelle(pAdj[(i+1)%6], Couleur.ROSE) && verifierParcelle(pAdj[(i+2)%6], Couleur.VERT)) return 4;
                         }
                     }
                 }
                 break;
             case 5:
                 for (Parcelle parcelle : plateau.getParcelles()) {
-                    if (parcelle.getCouleur()==Couleur.JAUNE){
+                    if (parcelle.getCouleur()==Couleur.VERT){
                         for (int i=0; i<6; i++){
                             Parcelle[] pAdj=parcelle.parcellesAdjacentes();
-                            if (verifierParcelle(pAdj[i],Couleur.VERT) && verifierParcelle(pAdj[(i+1)%6], Couleur.VERT) && verifierParcelle(pAdj[(i+2)%6], Couleur.JAUNE)) return 3;
+                            if (verifierParcelle(pAdj[i],Couleur.JAUNE) && verifierParcelle(pAdj[(i+1)%6], Couleur.JAUNE) && verifierParcelle(pAdj[(i+2)%6], Couleur.VERT)) return 3;
                         }
                     }
                 }
@@ -149,7 +149,7 @@ public class ObjectifParcelle extends Objectif {
                     if (parcelle.getCouleur()==Couleur.ROSE){
                         for (int i=0; i<6; i++){
                             Parcelle[] pAdj=parcelle.parcellesAdjacentes();
-                            if (verifierParcelle(pAdj[i],Couleur.ROSE) && verifierParcelle(pAdj[(i+1)%6], Couleur.JAUNE)) return 4;
+                            if (verifierParcelle(pAdj[i],Couleur.ROSE) && verifierParcelle(pAdj[(i+3)%6], Couleur.ROSE)) return 4;
                         }
                     }
                 }
@@ -182,7 +182,7 @@ public class ObjectifParcelle extends Objectif {
             case 2:
                 return "Objectif " + identifiant + " : Diamant vert, Points: 3";
             case 3:
-                return "3. Objectif " + identifiant + " : Diamant jaune et rose, Points: 5";
+                return "Objectif " + identifiant + " : Diamant jaune et rose, Points: 5";
             case 4:
                 return "Objectif " + identifiant + " : Diamant rose et vert, Points: 4";
             case 5:
