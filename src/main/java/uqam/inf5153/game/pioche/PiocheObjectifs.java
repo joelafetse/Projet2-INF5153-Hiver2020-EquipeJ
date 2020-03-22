@@ -11,7 +11,7 @@ public class PiocheObjectifs extends Pioche<Objectif> {
 
     public PiocheObjectifs(){
         for (int identifiant = 1; identifiant <= 15; identifiant++){
-            this.objetsAPiocher.add(new ObjectifParcelle(identifiant));
+            super.objetsAPiocher.add(new ObjectifParcelle(identifiant));
             //TODO pour les autres objectifs.
         }
     }

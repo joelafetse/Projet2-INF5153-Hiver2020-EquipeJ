@@ -170,7 +170,7 @@ public class ObjectifParcelle extends Objectif {
     }
 
     private boolean verifierParcelle(Parcelle p, Couleur col ){
-        return p!=null && p.estIrriguee() && p.getCouleur()==col;
+        return p!=null && p.getCouleur()==col;
     }
 
     @Override

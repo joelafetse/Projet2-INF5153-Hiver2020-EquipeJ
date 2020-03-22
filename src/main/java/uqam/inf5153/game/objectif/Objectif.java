@@ -13,6 +13,10 @@ public abstract class Objectif {
         this.identifiant= identifiant;
     }
 
+    public int getIdentifiant() {
+        return this.identifiant;
+    }
+
     //retourne le nombre de points de l'objectifs.
     public abstract int appliquerObjectif(PlateauDeJeu plateauDeJeu);
 

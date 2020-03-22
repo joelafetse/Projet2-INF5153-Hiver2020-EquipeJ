@@ -223,13 +223,15 @@ public class Main {
 		if (objectif == null){
 			System.out.println("Vous ne pouvez pas piocher d'objectifs");
 		}else {
-			System.out.println("|        Cet objectif est pioché                                  ");
+			System.out.println("|        Cet objectif est maintenant pioché                                  ");
+			System.out.println("         Et vous avez pioché: "+ objectif);
 			System.out.println("|        Pouvez vous le remplir tout de suite (O/N)  ?         ");
 			int reponse = Keyin.inChar(" réponse (O/N) : ");
 			if (reponse == 'o' || reponse == 'O') {
 				remplirUnObjectif(numJoueur, objectif);
 			}
 			System.out.println("|        Si oui, appliquer l'objectif sur le plateau du joueur     ");
+			// TODO appliquer???
 		}
 	}
 	/*
@@ -307,6 +309,7 @@ public class Main {
 			objectifChoisi = Keyin.inInt(" Entrer le numéro de l'objectif choisi : ");
 		}
 		Objectif objectif = Takenoko.selectionnerObjectifARemplir (objectifsPioches, objectifChoisi);
+		System.out.println(" Vous avez choisi : "+objectif);
 		remplirUnObjectif( numJoueur,  objectif);
 	}
 	private static void remplirUnObjectif(int numJoueur, Objectif objectif) {
