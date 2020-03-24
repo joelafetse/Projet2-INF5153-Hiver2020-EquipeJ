@@ -9,7 +9,7 @@ public class AmenagementEnclos extends Amenagement {
     }
 
     @Override
-    protected  int BambouSupplementaire(int nbrDeBambous) {
+    protected  int bambouSupplementaire(int nbrDeBambous) {
         return nbrDeBambous;
     }
 

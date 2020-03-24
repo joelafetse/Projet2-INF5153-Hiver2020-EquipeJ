@@ -6,12 +6,12 @@ public abstract class Amenagement implements ComposantParcelle {
 
     private ComposantParcelle composant;
 
-    protected   Amenagement (ComposantParcelle interne){
+    protected Amenagement (ComposantParcelle interne){
            this.composant = interne;
     }
     @Override
     public int getNombreDeBambous() {
-        return BambouSupplementaire (composant.getNombreDeBambous());
+        return bambouSupplementaire (composant.getNombreDeBambous());
     }
-    protected abstract int BambouSupplementaire(int nbrDeBambous);
+    protected abstract int bambouSupplementaire(int nbrDeBambous);
 }
