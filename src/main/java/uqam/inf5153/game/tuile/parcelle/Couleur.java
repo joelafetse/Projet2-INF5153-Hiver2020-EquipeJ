@@ -1,4 +1,4 @@
-package uqam.inf5153.game.parcelle;
+package uqam.inf5153.game.tuile.parcelle;
 
 public enum Couleur {
 

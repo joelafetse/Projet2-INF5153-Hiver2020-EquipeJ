@@ -1,8 +1,8 @@
 package uqam.inf5153.game.figurine;
 
 import org.junit.Test;
-import uqam.inf5153.game.parcelle.Parcelle;
-import uqam.inf5153.game.parcelle.ParcelleVerte;
+import uqam.inf5153.game.tuile.parcelle.Parcelle;
+import uqam.inf5153.game.tuile.parcelle.ParcelleVerte;
 import uqam.inf5153.game.plateau.Coordonnees;
 
 import static org.junit.Assert.*;

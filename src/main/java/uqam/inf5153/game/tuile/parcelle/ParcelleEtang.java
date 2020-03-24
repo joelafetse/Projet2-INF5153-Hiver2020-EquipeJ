@@ -1,4 +1,4 @@
-package uqam.inf5153.game.parcelle;
+package uqam.inf5153.game.tuile.parcelle;
 
 import uqam.inf5153.game.plateau.Coordonnees;
 
@@ -17,7 +17,10 @@ public class ParcelleEtang extends Parcelle {
         return null;
     }
 
-
+    @Override
+    public int getNombreDeBambous () {
+        return 0;
+    }
 
     @Override
     public String toString(){

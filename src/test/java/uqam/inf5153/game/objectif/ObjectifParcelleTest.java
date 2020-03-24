@@ -1,13 +1,11 @@
 package uqam.inf5153.game.objectif;
 
 import org.junit.Test;
-import uqam.inf5153.game.Jeu;
 import uqam.inf5153.game.joueur.Joueur;
-import uqam.inf5153.game.parcelle.ParcelleJaune;
-import uqam.inf5153.game.parcelle.ParcelleRose;
-import uqam.inf5153.game.parcelle.ParcelleVerte;
+import uqam.inf5153.game.tuile.parcelle.ParcelleJaune;
+import uqam.inf5153.game.tuile.parcelle.ParcelleRose;
+import uqam.inf5153.game.tuile.parcelle.ParcelleVerte;
 import uqam.inf5153.game.plateau.PlateauDeJeu;
-import uqam.inf5153.game.plateau.PlateauDeJeuTest;
 
 import static org.junit.Assert.*;
 

@@ -1,9 +1,9 @@
 package uqam.inf5153.game.pioche;
 
-import uqam.inf5153.game.parcelle.Parcelle;
-import uqam.inf5153.game.parcelle.ParcelleJaune;
-import uqam.inf5153.game.parcelle.ParcelleRose;
-import uqam.inf5153.game.parcelle.ParcelleVerte;
+import uqam.inf5153.game.tuile.parcelle.Parcelle;
+import uqam.inf5153.game.tuile.parcelle.ParcelleJaune;
+import uqam.inf5153.game.tuile.parcelle.ParcelleRose;
+import uqam.inf5153.game.tuile.parcelle.ParcelleVerte;
 
 import java.util.ArrayList;
 import java.util.List;

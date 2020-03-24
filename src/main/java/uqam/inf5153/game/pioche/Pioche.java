@@ -1,7 +1,5 @@
 package uqam.inf5153.game.pioche;
 
-import uqam.inf5153.game.parcelle.Parcelle;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;

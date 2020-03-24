@@ -1,17 +1,20 @@
-package uqam.inf5153.game.parcelle;
+package uqam.inf5153.game.tuile.parcelle;
 
+import uqam.inf5153.game.bambou.Bambou;
 import uqam.inf5153.game.plateau.Coordonnees;
+import uqam.inf5153.game.tuile.ComposantParcelle;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public abstract class Parcelle {
+public abstract class Parcelle implements ComposantParcelle {
 
 
     protected Coordonnees coord;
     protected boolean irriguee;
     protected List<Parcelle> voisins;
+    protected List<Bambou> bambous;
 
     public Parcelle(Coordonnees coord){
         this.coord = coord;
@@ -20,7 +23,7 @@ public abstract class Parcelle {
 
     public Parcelle(){
         this.voisins=new ArrayList<Parcelle>();
-
+        this.bambous=new ArrayList<Bambou>();
     }
 
     public Coordonnees getCoordonnees(){
@@ -48,6 +51,13 @@ public abstract class Parcelle {
     }
 
     public abstract Couleur getCouleur();
+
+    public void cultiverBambou (Bambou bambou){
+        if (this.irriguee==true) {
+           this.bambous.add(bambou);
+        }
+    }
+
 
 
     @Override

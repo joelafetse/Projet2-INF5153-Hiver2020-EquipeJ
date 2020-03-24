@@ -1,6 +1,6 @@
 package uqam.inf5153.game.plateau;
 
-import uqam.inf5153.game.parcelle.*;
+import uqam.inf5153.game.tuile.parcelle.Parcelle;
 
 import java.util.Objects;
 

@@ -1,12 +1,8 @@
 package uqam.inf5153.game;
 
 import uqam.inf5153.game.objectif.Objectif;
-import uqam.inf5153.game.objectif.ObjectifParcelle;
-import uqam.inf5153.game.parcelle.Parcelle;
-import uqam.inf5153.game.pioche.Pioche;
-import uqam.inf5153.game.pioche.PiocheParcelles;
+import uqam.inf5153.game.tuile.parcelle.Parcelle;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**

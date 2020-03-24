@@ -2,6 +2,8 @@ package uqam.inf5153.game.parcelle;
 
 import org.junit.Test;
 import uqam.inf5153.game.plateau.Coordonnees;
+import uqam.inf5153.game.tuile.parcelle.Parcelle;
+import uqam.inf5153.game.tuile.parcelle.ParcelleVerte;
 
 import static org.junit.Assert.*;
 

@@ -3,10 +3,9 @@ package uqam.inf5153.game.joueur;
 import org.junit.Test;
 import uqam.inf5153.game.figurine.Figurine;
 import uqam.inf5153.game.figurine.Jardinier;
-import uqam.inf5153.game.parcelle.Parcelle;
-import uqam.inf5153.game.parcelle.ParcelleVerte;
+import uqam.inf5153.game.tuile.parcelle.Parcelle;
+import uqam.inf5153.game.tuile.parcelle.ParcelleVerte;
 import uqam.inf5153.game.plateau.Coordonnees;
-import uqam.inf5153.game.plateau.Irrigation;
 import uqam.inf5153.game.plateau.PlateauDeJeu;
 
 import static org.junit.Assert.*;

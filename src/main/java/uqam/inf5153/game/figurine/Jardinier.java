@@ -1,7 +1,6 @@
 package uqam.inf5153.game.figurine;
 
-import uqam.inf5153.game.parcelle.Parcelle;
-import uqam.inf5153.game.plateau.Coordonnees;
+import uqam.inf5153.game.tuile.parcelle.Parcelle;
 
 public class Jardinier extends Figurine {
 

@@ -1,4 +1,4 @@
-package uqam.inf5153.game.parcelle;
+package uqam.inf5153.game.tuile.parcelle;
 
 
 import java.util.ArrayList;
@@ -12,6 +12,10 @@ public class ParcelleVerte extends Parcelle {
     @Override
     public Couleur getCouleur() {
         return Couleur.VERT;
+    }
+    @Override
+    public int getNombreDeBambous () {
+        return super.bambous.size();
     }
 
 

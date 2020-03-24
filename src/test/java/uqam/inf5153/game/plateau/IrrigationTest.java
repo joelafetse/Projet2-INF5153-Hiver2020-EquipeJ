@@ -1,8 +1,8 @@
 package uqam.inf5153.game.plateau;
 
 import org.junit.Test;
-import uqam.inf5153.game.parcelle.Parcelle;
-import uqam.inf5153.game.parcelle.ParcelleVerte;
+import uqam.inf5153.game.tuile.parcelle.Parcelle;
+import uqam.inf5153.game.tuile.parcelle.ParcelleVerte;
 
 import static org.junit.Assert.*;
 

@@ -2,13 +2,12 @@ package uqam.inf5153.game.joueur;
 
 import uqam.inf5153.game.figurine.Figurine;
 import uqam.inf5153.game.objectif.Objectif;
-import uqam.inf5153.game.objectif.ObjectifParcelle;
-import uqam.inf5153.game.parcelle.*;
 import uqam.inf5153.game.pioche.PiocheObjectifs;
 import uqam.inf5153.game.plateau.Coordonnees;
 import uqam.inf5153.game.plateau.Irrigation;
 import uqam.inf5153.game.plateau.PlateauDeJeu;
 import uqam.inf5153.game.plateau.ReseauIrrigation;
+import uqam.inf5153.game.tuile.parcelle.Parcelle;
 
 import java.util.ArrayList;
 import java.util.List;
