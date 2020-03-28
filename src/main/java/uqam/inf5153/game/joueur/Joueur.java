@@ -123,31 +123,34 @@ public class Joueur {
         }
     }
 
-    public void deplacerJardinier(Figurine jardinier, Parcelle parcelleDestination){
-        if (jardinier.estDeplaceableSur(parcelleDestination)){
+    public boolean deplacerJardinier(Figurine jardinier, Parcelle parcelleDestination){
+        if (!jardinier.estDeplaceableSur(parcelleDestination)) {
+            return false;
+        }else{
             jardinier.setParcelleDepart(parcelleDestination);
             if (parcelleDestination.estIrriguee() && parcelleDestination.getNombreDeBambous() <= 4) {
-                parcelleDestination.fairePousserBambou(new Bambou() {
+                parcelleDestination.fairePousserBambou(
+                        new Bambou() {
                     @Override
                     public Couleur getCouleur() {
                         return parcelleDestination.getCouleur();
                     }
                 });
             }
-        }else{
-            System.out.println("On ne peut pas déplacer le jardinier vers cette destination.");
         }
+        return true;
     }
 
-    public void deplacerPanda(Figurine panda, Parcelle parcelleDestination){
-        if (panda.estDeplaceableSur(parcelleDestination)){
+    public boolean deplacerPanda(Figurine panda, Parcelle parcelleDestination){
+        if (!panda.estDeplaceableSur(parcelleDestination)){
+            return false;
+        }else{
             panda.setParcelleDepart(parcelleDestination);
             if (parcelleDestination.getNombreDeBambous() != 0) {
                 parcelleDestination.mangerBambou();
             }
-        }else{
-            System.out.println("On ne peut pas déplacer le panda vers cette destination.");
         }
+        return true;
     }
 
     /*

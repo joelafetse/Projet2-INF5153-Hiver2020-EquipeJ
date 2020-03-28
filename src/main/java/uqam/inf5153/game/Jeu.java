@@ -104,8 +104,7 @@ public class Jeu {
         }
         Parcelle parcelleDestination = plateauDeJeu.getParcelleAtPosition(coord);
         Joueur joueur = getJoueurByIndex(joueurIndex);
-        joueur.deplacerJardinier(plateauDeJeu.getJardinier(),parcelleDestination);
-        return true;
+        return joueur.deplacerJardinier(plateauDeJeu.getJardinier(),parcelleDestination);
     }
     public boolean effectuerActionDeplacerPanda(int x, int y, int joueurIndex){
         Coordonnees coord = new Coordonnees(x,y);
@@ -114,8 +113,7 @@ public class Jeu {
         }
         Parcelle parcelleDestination = plateauDeJeu.getParcelleAtPosition(coord);
         Joueur joueur = getJoueurByIndex(joueurIndex);
-        joueur.deplacerPanda(plateauDeJeu.getPanda(),parcelleDestination);
-        return true;
+        return joueur.deplacerPanda(plateauDeJeu.getPanda(),parcelleDestination);
     }
 
     public void afficherObjectifsPioches(int joueurIndex) {

@@ -6,7 +6,8 @@ import uqam.inf5153.game.tuile.parcelle.Parcelle;
 import java.util.List;
 
 /**
- * Crée par Imen Benzarti le 13/01/2020
+ * Crée par Imen Benzarti le 13/01/2020 et l'Équipe J
+ *
  * Une classe qui joue le role de l'interface graphique du jeu.
  * Elle reçoit les actions des joueurs a partir de la ligne de commande.
  */
@@ -220,19 +221,20 @@ public class Main {
 		System.out.println("|   TAKENOKO MENU JOUEUR " +numJoueur+ " : Action Jardiner                        ");
 		System.out.println("==========================================================================");
 		System.out.println("|        Afficher les parcelles du plateau  (les positions)              ");
-		Takenoko.afficherParcellesPlateau();//numJoueur);
+		Takenoko.afficherParcellesPlateau();
 		System.out.println("|        Précisier la nouvelle parcelle (position x,y) du Jardinier      ");
 		int x = Keyin.inInt(" Entrer la position x : ");
 		int y = Keyin.inInt(" Entrer la position y : ");
 		boolean estDeplace = Takenoko.PlacerJardinier(x,y, numJoueur );
-		while (!estDeplace){
+		while (!estDeplace) {
 			System.out.println("Vous ne pouvez pas déplacer le jardinier sur cette parcelle");
 			System.out.println("|        Préciser la nouvelle parcelle (position x,y) du Jardinier      ");
 			x = Keyin.inInt(" Entrer la position x : ");
 			y = Keyin.inInt(" Entrer la position y : ");
-			estDeplace = Takenoko.PlacerJardinier(x,y, numJoueur );
+			estDeplace = Takenoko.PlacerJardinier(x, y, numJoueur);
 		}
-		System.out.println("Le Jardinier est bien déplacé");
+		System.out.println("Le Jardinier est bien déplacé.");
+
 	}
 	private static void deplacerPanda(int numJoueur) {
 		System.out.println("==========================================================================");
@@ -252,6 +254,7 @@ public class Main {
 			PandaEstDeplace = Takenoko.PlacerPanda(x,y, numJoueur );
 		}
 		System.out.println("Le Panda est bien déplacé.");
+
 	}
 	private static void piocherObjectif(int numJoueur) {
 		System.out.println("==========================================================================");

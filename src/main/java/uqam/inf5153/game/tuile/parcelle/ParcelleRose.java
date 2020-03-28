@@ -31,11 +31,6 @@ public class ParcelleRose extends Parcelle {
         return super.bambous.size();
     }
 
-    /*@Override
-    public void setBambous() {
-
-    }*/
-
     @Override
     public void fairePousserBambou(Bambou bambou) {
         if (this.irriguee) {
@@ -45,7 +40,6 @@ public class ParcelleRose extends Parcelle {
             }
         }
     }
-
 
 
 }

@@ -39,16 +39,10 @@ public class ParcelleJaune extends Parcelle {
         }
     }
 
-
     @Override
     public int getNombreDeBambous () {
         return super.bambous.size();
     }
-
-    /*@Override
-    public void setBambous() {
-
-    }*/
 
 
 }

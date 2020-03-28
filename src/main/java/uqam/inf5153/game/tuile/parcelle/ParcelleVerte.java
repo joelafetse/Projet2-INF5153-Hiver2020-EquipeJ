@@ -43,10 +43,6 @@ public class ParcelleVerte extends Parcelle {
         return super.bambous.size();
     }
 
-    /*@Override
-    public void setBambous() {
-
-    }*/
 
 
 }

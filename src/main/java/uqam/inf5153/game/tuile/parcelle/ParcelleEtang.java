@@ -37,10 +37,6 @@ public class ParcelleEtang extends Parcelle {
         return 0;
     }
 
-    /*@Override
-    public void setBambous() {
-
-    }*/
 
     @Override
     public String toString(){
