@@ -27,9 +27,9 @@ public class Main {
 	 */
 	static int tourActuel = 1;
 	public static void main(String[] args) {
-		bienvenue();
+		jouerJeuTakenoko();
 	}
-	private static void bienvenue() {
+	private static void jouerJeuTakenoko() {
 		String swValue;
 		System.out.println("==========================================================================");
 		System.out.println("|   Bienvenu au jeu TAKENOKO                                             ");
