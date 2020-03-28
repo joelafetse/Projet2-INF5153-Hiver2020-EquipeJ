@@ -9,9 +9,19 @@ public abstract class Amenagement implements ComposantParcelle {
     protected Amenagement (ComposantParcelle interne){
            this.composant = interne;
     }
+
+
+    /*
+     * pour appliquer le pattern Decorateur
+     */
     @Override
     public int getNombreDeBambous() {
         return bambouSupplementaire (composant.getNombreDeBambous());
     }
+
+    /*
+     * pour appliquer le pattern Decorateur
+     */
     protected abstract int bambouSupplementaire(int nbrDeBambous);
+
 }

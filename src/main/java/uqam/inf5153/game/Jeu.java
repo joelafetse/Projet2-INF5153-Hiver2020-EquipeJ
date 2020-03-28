@@ -107,6 +107,16 @@ public class Jeu {
         joueur.deplacerJardinier(plateauDeJeu.getJardinier(),parcelleDestination);
         return true;
     }
+    public boolean effectuerActionDeplacerPanda(int x, int y, int joueurIndex){
+        Coordonnees coord = new Coordonnees(x,y);
+        if (!plateauDeJeu.estPositionOccupee(coord)){
+            return false;
+        }
+        Parcelle parcelleDestination = plateauDeJeu.getParcelleAtPosition(coord);
+        Joueur joueur = getJoueurByIndex(joueurIndex);
+        joueur.deplacerPanda(plateauDeJeu.getPanda(),parcelleDestination);
+        return true;
+    }
 
     public void afficherObjectifsPioches(int joueurIndex) {
         Joueur joueur = getJoueurByIndex(joueurIndex);

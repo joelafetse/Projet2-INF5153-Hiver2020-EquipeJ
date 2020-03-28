@@ -13,8 +13,10 @@ public class PlateauDeJoueur {
 
 
     private final int NBRE_OBJECTIFS_PIOCHES_MAX = 5;
+    private  final int NBRE_CHAQUE_AMENAGEMENT = 3;
+
     // Bambous collectionnés via le panda //TODO
-    //private List<Bambou> bambous;
+    //private List<Bambou> bambousPanda;
 
     // Objectifs accomplis
     private List<Objectif> objectifsAccomplis;
@@ -24,6 +26,8 @@ public class PlateauDeJoueur {
 
     // Nombre  de canaux d'irrigations collectionnés
     private int irrigations;
+
+    private int amenagementBassins = NBRE_CHAQUE_AMENAGEMENT;
 
 
     public PlateauDeJoueur(){
@@ -71,4 +75,10 @@ public class PlateauDeJoueur {
             i++;
         }
     }
+
+
+    public void retirerAmenagementBassin(){
+        amenagementBassins--;
+    }
+
 }

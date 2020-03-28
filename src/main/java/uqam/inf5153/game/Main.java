@@ -65,6 +65,8 @@ public class Main {
 			case 1:
 				System.out.println("Déterminer les condition Climatiques");
 				System.out.println("Cette fonctionnalité sera réalisée dans la deuxième partie  du projet");
+				System.out.println("pour ce moment juste la condition climatique nuageuse est applicable");
+				nuages(numJoueur);
 				break;
 			case 2:
 				System.out.println("\n\n\nEffectuer des actions\n\n\n");
@@ -78,6 +80,36 @@ public class Main {
 				System.out.println("Selection invalide");
 				break;
 		}
+	}
+	private static  void nuages(int numJoueur) {
+		int swValue;
+		System.out.println("\n\n\n==========================================================================");
+		System.out.println("|   TAKENOKO -- MENU JOUEUR " +numJoueur+ "                              ");
+		System.out.println("|   Choisisez un amenagement   ");
+		System.out.println("==========================================================================");
+		System.out.println("| Options:                                                               ");
+		System.out.println("|        1. Aménagement Bassin                         ");
+		System.out.println("|        2. Aménagement Engrais                        ");
+		System.out.println("|        3. Aménagement Enclos                         ");
+		System.out.println("==========================================================================");
+		swValue = Keyin.inInt(" Selectionner une option: ");
+		switch (swValue) {
+			case 1:
+				choixAmenagementBassin();
+				break;
+			case 2:
+				//choixAmenagementEngrais();
+				break;
+			case 3:
+				//choixAmenagementEnclos();
+				break;
+			default:
+				System.out.println("Selection invalide");
+				break;
+		}
+	}
+	private static  void choixAmenagementBassin() {
+
 	}
 	/*
 	 * Actions
@@ -152,7 +184,7 @@ public class Main {
 		System.out.println("Étape 4 - Replacer les deux autres sous la pioche");
 		Parcelle pSelectionnee = Takenoko.selectionnerParcelle(parcellesPiochees, parcelleChosie );
 		System.out.println("Étape 5 - Afficher les parcelles du plateau");
-		Takenoko.afficherParcellesPlateau();//numJoueur);
+		Takenoko.afficherParcellesPlateau();
 		Takenoko.afficherPositionsDisponibles();
 		System.out.println("Étape 6 - Placer une parcelle dans la position (x,y) ");
 		int x = Keyin.inInt(" Entrer la position x : ");
@@ -195,7 +227,7 @@ public class Main {
 		boolean estDeplace = Takenoko.PlacerJardinier(x,y, numJoueur );
 		while (!estDeplace){
 			System.out.println("Vous ne pouvez pas déplacer le jardinier sur cette parcelle");
-			System.out.println("|        Précisier la nouvelle parcelle (position x,y) du Jardinier      ");
+			System.out.println("|        Préciser la nouvelle parcelle (position x,y) du Jardinier      ");
 			x = Keyin.inInt(" Entrer la position x : ");
 			y = Keyin.inInt(" Entrer la position y : ");
 			estDeplace = Takenoko.PlacerJardinier(x,y, numJoueur );
@@ -208,10 +240,18 @@ public class Main {
 		System.out.println("==========================================================================");
 		System.out.println("|        Afficher les parcelles du plateau  (les positions)                                   ");
 		Takenoko.afficherParcellesPlateau();//numJoueur);
-		System.out.println("|        Précisier la nouvelle parcelle (position x,y) du Panda                   ");
+		System.out.println("|        Préciser la nouvelle parcelle (position x,y) du Panda                   ");
 		int x = Keyin.inInt(" Entrer la position x : ");
 		int y = Keyin.inInt(" Entrer la position y : ");
-		Takenoko.PlacerPanda(x,y, numJoueur );
+		boolean PandaEstDeplace = Takenoko.PlacerPanda(x,y, numJoueur );
+		while (!PandaEstDeplace){
+			System.out.println("Vous ne pouvez pas déplacer le panda sur cette parcelle");
+			System.out.println("|        Préciser la nouvelle parcelle (position x,y) du panda      ");
+			x = Keyin.inInt(" Entrer la position x : ");
+			y = Keyin.inInt(" Entrer la position y : ");
+			PandaEstDeplace = Takenoko.PlacerPanda(x,y, numJoueur );
+		}
+		System.out.println("Le Panda est bien déplacé.");
 	}
 	private static void piocherObjectif(int numJoueur) {
 		System.out.println("==========================================================================");

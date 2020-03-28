@@ -14,7 +14,7 @@ public abstract class Parcelle implements ComposantParcelle {
     protected Coordonnees coord;
     protected boolean irriguee;
     protected List<Parcelle> voisins;
-    protected List<Bambou> bambous;
+    protected List<Bambou> bambous = new ArrayList<Bambou>();
 
     public Parcelle(Coordonnees coord){
         this.coord = coord;
@@ -23,16 +23,23 @@ public abstract class Parcelle implements ComposantParcelle {
 
     public Parcelle(){
         this.voisins=new ArrayList<Parcelle>();
-        this.bambous=new ArrayList<Bambou>();
+        this.bambous = new ArrayList<Bambou>();
     }
+
+    public abstract Couleur getCouleur();
+    public abstract void fairePousserBambou(Bambou bambou);
+    public abstract void prendreBambou();
+    public abstract int getNbSectionsDeBambou();
+
 
     public Coordonnees getCoordonnees(){
         return this.coord;
     }
 
-    public  List<Parcelle> getVoisins(){
+    public List<Parcelle> getVoisins(){
         return this.voisins;
     }
+    public  List<Bambou> getBambous () {return this.bambous; }
 
     public boolean estIrriguee() {
         return irriguee == true;
@@ -50,29 +57,13 @@ public abstract class Parcelle implements ComposantParcelle {
         this.irriguee = irri;
     }
 
-    public abstract Couleur getCouleur();
 
-    public void cultiverBambou (Bambou bambou){
-        if (this.irriguee==true) {
-           this.bambous.add(bambou);
-        }
-    }
+    /*public int getNombreDeBambous () {
+        return this.bambous.size();
+    }*/
 
-
-
-    @Override
-    public boolean equals(Object obj) {
-        if(this == obj)
-            return true;
-        if (!(obj instanceof Parcelle)) return false;
-
-        return this.coord.equals(((Parcelle) obj).coord) && this.getCouleur() == ((Parcelle) obj).getCouleur();
-    }
-
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(coord, this.getCouleur());
+    public void mangerBambou() {
+        this.bambous.remove(0);
     }
 
     public boolean estAdjacent(Parcelle p){
@@ -84,7 +75,19 @@ public abstract class Parcelle implements ComposantParcelle {
                 (p.coord.getX() == this.coord.getX() && p.coord.getY() == this.coord.getY() - 2);
     }
 
-
+    /*
+     * Cette méthode après sera utilisée pour faire une parcelle irriguée,
+     * et pour faire pousser un bambou
+     * si une parcelle est à côté de Etange çela deviendra irriguée.
+     */
+    public boolean estAdjacentAParcelleEtang(Parcelle p){
+        return (p.coord.getX() == 2 && p.coord.getY() == 1) ||
+                (p.coord.getX() == 2 && p.coord.getY() == - 1) ||
+                (p.coord.getX() == - 2 && p.coord.getY() == 1) ||
+                (p.coord.getX() == - 2 && p.coord.getY() == - 1) ||
+                (p.coord.getX() == 0 && p.coord.getY() == 2) ||
+                (p.coord.getX() == 0 && p.coord.getY() == - 2);
+    }
 
 
     public Parcelle[] parcellesAdjacentes(){
@@ -98,8 +101,23 @@ public abstract class Parcelle implements ComposantParcelle {
     }
 
     @Override
+    public boolean equals(Object obj) {
+        if(this == obj)
+            return true;
+        if (!(obj instanceof Parcelle)) return false;
+
+        return this.coord.equals(((Parcelle) obj).coord) && this.getCouleur() == ((Parcelle) obj).getCouleur();
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(coord, this.getCouleur());
+    }
+
+    @Override
     public String toString(){
-        return "Parcelle de couleur "+ this.getCouleur();
+        return "Parcelle de couleur "+ this.getCouleur()+
+                ", nombre de bambous: "+ getNombreDeBambous ();
     }
 
 }
