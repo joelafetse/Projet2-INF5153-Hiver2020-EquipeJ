@@ -26,9 +26,9 @@ public class Main {
 	 */
 	static int tourActuel = 1;
 	public static void main(String[] args) {
-		bienvenue();
+		jouerJeuTakenoko();
 	}
-	private static void bienvenue() {
+	private static void jouerJeuTakenoko() {
 		String swValue;
 		System.out.println("==========================================================================");
 		System.out.println("|   Bienvenu au jeu TAKENOKO                                             ");
@@ -56,21 +56,16 @@ public class Main {
 		System.out.println("|   TAKENOKO -- MENU JOUEUR " +numJoueur+ "                              ");
 		System.out.println("==========================================================================");
 		System.out.println("| Options:                                                               ");
-		System.out.println("|        1. Déterminer les condition Climatiques                         ");
-		System.out.println("|        2. Effectuer des actions                                        ");
-		System.out.println("|        3. Quitter le jeu                                        ");
+		System.out.println("|        1. Effectuer des actions                                        ");
+		System.out.println("|        2. Quitter le jeu                                        ");
 		System.out.println("==========================================================================");
 		swValue = Keyin.inInt(" Selectionner une option: ");
 		switch (swValue) {
 			case 1:
-				System.out.println("Déterminer les condition Climatiques");
-				System.out.println("Cette fonctionnalité sera réalisée dans la deuxième partie  du projet");
-				break;
-			case 2:
 				System.out.println("\n\n\nEffectuer des actions\n\n\n");
 				choixAction(numJoueur);
 				break;
-			case 3:
+			case 2:
 				System.out.println("\n\n\nFin du jeu\n\n\n");
 				System.exit(0);
 				break;

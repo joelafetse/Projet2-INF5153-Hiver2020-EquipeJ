@@ -16,7 +16,7 @@ public class Joueur {
 
     private PlateauDeJoueur plateauDeJoueur;
     private List<Objectif> objectifs;
-    private int nombreActions = 2;
+    private int NOMBRE_ACTIONS = 2;
     private int score;
 
     public Joueur(){
