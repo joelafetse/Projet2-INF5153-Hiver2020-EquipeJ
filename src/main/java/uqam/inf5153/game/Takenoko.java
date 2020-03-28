@@ -6,7 +6,8 @@ import uqam.inf5153.game.tuile.parcelle.Parcelle;
 import java.util.List;
 
 /**
- * Crée par Imen Benzarti le 13/01/2020
+ * Crée par Imen Benzarti le 13/01/2020 et par  équipe J
+ *
  * une classe controlleur du jeu (voir le parton GRASP controlleur)
  * Elle n'implémente aucune des méthodes : elle oriente les actions envoyées par les joueurs
  * vers les classes responsable de les implémenter.
@@ -138,8 +139,7 @@ public class Takenoko {
 	 * retourne true si le panda est déplacé, sinon elle retourne false
 	 */
 	public static boolean PlacerPanda(int x, int y, int joueur) {
-		// TODO Auto-generated method stub
-		return true;
+		return jeu.effectuerActionDeplacerPanda(x,y,joueur);
 	}
 
 	/**

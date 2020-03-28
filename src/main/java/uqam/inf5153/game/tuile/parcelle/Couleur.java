@@ -4,5 +4,6 @@ public enum Couleur {
 
     JAUNE,
     ROSE,
-    VERT
+    VERT,
+    NONE
 }

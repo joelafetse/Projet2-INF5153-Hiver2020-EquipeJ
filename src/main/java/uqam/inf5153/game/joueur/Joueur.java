@@ -1,5 +1,6 @@
 package uqam.inf5153.game.joueur;
 
+import uqam.inf5153.game.bambou.Bambou;
 import uqam.inf5153.game.figurine.Figurine;
 import uqam.inf5153.game.objectif.Objectif;
 import uqam.inf5153.game.pioche.PiocheObjectifs;
@@ -7,6 +8,7 @@ import uqam.inf5153.game.plateau.Coordonnees;
 import uqam.inf5153.game.plateau.Irrigation;
 import uqam.inf5153.game.plateau.PlateauDeJeu;
 import uqam.inf5153.game.plateau.ReseauIrrigation;
+import uqam.inf5153.game.tuile.parcelle.Couleur;
 import uqam.inf5153.game.tuile.parcelle.Parcelle;
 
 import java.util.ArrayList;
@@ -33,6 +35,8 @@ public class Joueur {
             Coordonnees coordParcelle = new Coordonnees(x,y);
 
             parcelle.setCoordonnees(coordParcelle);
+
+            planterBambouSurParcelleDeposee(parcelle);
 
             plateau.ajouterParcelle(parcelle);
 
@@ -122,9 +126,46 @@ public class Joueur {
     public void deplacerJardinier(Figurine jardinier, Parcelle parcelleDestination){
         if (jardinier.estDeplaceableSur(parcelleDestination)){
             jardinier.setParcelleDepart(parcelleDestination);
+            if (parcelleDestination.estIrriguee() && parcelleDestination.getNombreDeBambous() <= 4) {
+                parcelleDestination.fairePousserBambou(new Bambou() {
+                    @Override
+                    public Couleur getCouleur() {
+                        return parcelleDestination.getCouleur();
+                    }
+                });
+            }
         }else{
             System.out.println("On ne peut pas déplacer le jardinier vers cette destination.");
         }
+    }
+
+    public void deplacerPanda(Figurine panda, Parcelle parcelleDestination){
+        if (panda.estDeplaceableSur(parcelleDestination)){
+            panda.setParcelleDepart(parcelleDestination);
+            if (parcelleDestination.getNombreDeBambous() != 0) {
+                parcelleDestination.mangerBambou();
+            }
+        }else{
+            System.out.println("On ne peut pas déplacer le panda vers cette destination.");
+        }
+    }
+
+    /*
+     * Si une parcelle est adjacent à la parcelle Étang, ça deviendra irriguée.
+     * et on pourrait faire pousser une section de bambou sur cette parcelle.
+     */
+    public void planterBambouSurParcelleDeposee(Parcelle parcelle) {
+        if (parcelle.estAdjacentAParcelleEtang(parcelle)) {
+            parcelle.setIrriguee(true);
+            parcelle.fairePousserBambou(
+                    new Bambou() {
+                @Override
+                public Couleur getCouleur() {
+                    return parcelle.getCouleur();
+                }
+            });
+        }
+
     }
 
 }

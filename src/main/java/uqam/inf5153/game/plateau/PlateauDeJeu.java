@@ -65,6 +65,9 @@ public class PlateauDeJeu {
     public Figurine getJardinier(){
         return jardinier;
     }
+    public Figurine getPanda(){
+        return panda;
+    }
 
     public Parcelle getParcelleAtPosition(Coordonnees position){
         Parcelle parcelle = null;
