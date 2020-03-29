@@ -241,7 +241,7 @@ public class Main {
 		System.out.println("|   TAKENOKO MENU JOUEUR " +numJoueur+ " : Action Panda                         ");
 		System.out.println("==========================================================================");
 		System.out.println("|        Afficher les parcelles du plateau  (les positions)                                   ");
-		Takenoko.afficherParcellesPlateau();//numJoueur);
+		Takenoko.afficherParcellesPlateau();
 		System.out.println("|        Préciser la nouvelle parcelle (position x,y) du Panda                   ");
 		int x = Keyin.inInt(" Entrer la position x : ");
 		int y = Keyin.inInt(" Entrer la position y : ");

@@ -29,7 +29,7 @@ public class ParcelleVerte extends Parcelle {
     }
 
     @Override
-    public void fairePousserBambou(Bambou bambou) {
+    public void fairePousserBambou() {
        if (this.irriguee) {
            if(nbr_sections_bambou_vert > 0 && bambous.size() < 4 ) {
                super.bambous.add(new BambouVert());

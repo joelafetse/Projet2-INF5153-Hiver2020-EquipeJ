@@ -21,7 +21,7 @@ public class ParcelleEtang extends Parcelle {
 
     /* Faire pousser de bambou sur une parcelle Étang n'est pas possible. */
     @Override
-    public void fairePousserBambou(Bambou bambou) {}
+    public void fairePousserBambou() {}
 
     @Override
     public void prendreBambou() {}

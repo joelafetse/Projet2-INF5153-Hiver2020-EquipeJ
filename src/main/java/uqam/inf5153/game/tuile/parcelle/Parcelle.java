@@ -27,7 +27,8 @@ public abstract class Parcelle implements ComposantParcelle {
     }
 
     public abstract Couleur getCouleur();
-    public abstract void fairePousserBambou(Bambou bambou);
+    //public abstract void fairePousserBambou(Bambou bambou);
+    public abstract void fairePousserBambou();
     public abstract void prendreBambou();
     public abstract int getNbSectionsDeBambou();
 
@@ -57,10 +58,6 @@ public abstract class Parcelle implements ComposantParcelle {
         this.irriguee = irri;
     }
 
-
-    /*public int getNombreDeBambous () {
-        return this.bambous.size();
-    }*/
 
     public void mangerBambou() {
         this.bambous.remove(0);

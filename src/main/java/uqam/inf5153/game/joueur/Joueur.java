@@ -18,7 +18,7 @@ public class Joueur {
 
     private PlateauDeJoueur plateauDeJoueur;
     private List<Objectif> objectifs;
-    private int NOMBRE_ACTIONS = 2;
+    private final int NOMBRE_ACTIONS = 2;
     private int score;
 
     public Joueur(){
@@ -107,6 +107,7 @@ public class Joueur {
             irr.getParcelle2().estAdjacent(plateauDeJeu.getParcelleEtang())){
 
             plateauDeJeu.ajouterNouveauReseauIrrigation(new ReseauIrrigation(irr));
+
         }else {
             for (ReseauIrrigation reseau : plateauDeJeu.getReseauxIrr()) {
                 List<Irrigation> irrigationsDuReseau = reseau.getIrrigations();
@@ -116,6 +117,12 @@ public class Joueur {
                             irr.getParcelle2().equals(irrigation.getParcelle2())) {
 
                         reseau.ajouterIrragtionAuReseau(irr);
+                        if(irr.getParcelle1().getNombreDeBambous() == 0) {
+                            irr.getParcelle1().fairePousserBambou();
+                        }
+                        if(irr.getParcelle2().getNombreDeBambous() == 0) {
+                            irr.getParcelle2().fairePousserBambou();
+                        }
                         break;
                     }
                 }
@@ -129,13 +136,7 @@ public class Joueur {
         }else{
             jardinier.setParcelleDepart(parcelleDestination);
             if (parcelleDestination.estIrriguee() && parcelleDestination.getNombreDeBambous() <= 4) {
-                parcelleDestination.fairePousserBambou(
-                        new Bambou() {
-                    @Override
-                    public Couleur getCouleur() {
-                        return parcelleDestination.getCouleur();
-                    }
-                });
+                parcelleDestination.fairePousserBambou();
             }
         }
         return true;
@@ -160,13 +161,7 @@ public class Joueur {
     public void planterBambouSurParcelleDeposee(Parcelle parcelle) {
         if (parcelle.estAdjacentAParcelleEtang(parcelle)) {
             parcelle.setIrriguee(true);
-            parcelle.fairePousserBambou(
-                    new Bambou() {
-                @Override
-                public Couleur getCouleur() {
-                    return parcelle.getCouleur();
-                }
-            });
+            parcelle.fairePousserBambou();
         }
 
     }
