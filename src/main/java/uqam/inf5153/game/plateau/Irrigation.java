@@ -44,8 +44,8 @@ public class Irrigation {
 
         Irrigation irr = (Irrigation) obj;
 
-        return this.parcelle1.equals(irr.parcelle1) &&
-                this.parcelle2.equals(irr.parcelle2);
+        return (   (this.parcelle1.equals(irr.parcelle1) || this.parcelle1.equals(irr.parcelle2)) &&
+                   (this.parcelle2.equals(irr.parcelle1) || this.parcelle2.equals(irr.parcelle2)) );
     }
 
     @Override

@@ -2,6 +2,7 @@ package uqam.inf5153.game.tuile.parcelle;
 
 import uqam.inf5153.game.bambou.Bambou;
 import uqam.inf5153.game.plateau.Coordonnees;
+import uqam.inf5153.game.plateau.Irrigation;
 import uqam.inf5153.game.tuile.ComposantParcelle;
 
 import java.util.ArrayList;
@@ -27,7 +28,6 @@ public abstract class Parcelle implements ComposantParcelle {
     }
 
     public abstract Couleur getCouleur();
-    //public abstract void fairePousserBambou(Bambou bambou);
     public abstract void fairePousserBambou();
     public abstract void prendreBambou();
     public abstract int getNbSectionsDeBambou();
@@ -102,8 +102,9 @@ public abstract class Parcelle implements ComposantParcelle {
         if(this == obj)
             return true;
         if (!(obj instanceof Parcelle)) return false;
+        Parcelle objParcelle = (Parcelle) obj;
 
-        return this.coord.equals(((Parcelle) obj).coord) && this.getCouleur() == ((Parcelle) obj).getCouleur();
+        return this.coord.equals(objParcelle.coord) && this.getCouleur() == objParcelle.getCouleur();
     }
 
     @Override

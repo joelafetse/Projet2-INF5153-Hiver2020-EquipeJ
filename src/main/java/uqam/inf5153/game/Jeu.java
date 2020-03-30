@@ -93,8 +93,12 @@ public class Jeu {
         }
         Parcelle p1 = plateauDeJeu.getParcelleAtPosition(c1);
         Parcelle p2 = plateauDeJeu.getParcelleAtPosition(c2);
+        if (!p1.estAdjacent(p2)){
+            System.out.println("Choisissez deux positions adjacentes.");
+            return false;
+        }
         joueur.placerIrrigation(plateauDeJeu, p1, p2);
-        return true;
+        return joueur.placerIrrigation(plateauDeJeu, p1, p2);
     }
 
     public boolean effectuerActionDeplacerJardinier(int x, int y, int joueurIndex){

@@ -53,7 +53,7 @@ public class Main {
 	}
 	private static void menuJoueur(int numJoueur) {
 		int swValue;
-		System.out.println("\n\n\n==========================================================================");
+		System.out.println("==========================================================================");
 		System.out.println("|   TAKENOKO -- MENU JOUEUR " +numJoueur+ "                              ");
 		System.out.println("==========================================================================");
 		System.out.println("| Options:                                                               ");
@@ -70,11 +70,11 @@ public class Main {
 				nuages(numJoueur);
 				break;
 			case 2:
-				System.out.println("\n\n\nEffectuer des actions\n\n\n");
+				System.out.println("\nEffectuer des actions\n");
 				choixAction(numJoueur);
 				break;
 			case 3:
-				System.out.println("\n\n\nFin du jeu\n\n\n");
+				System.out.println("\nFin du jeu\n");
 				System.exit(0);
 				break;
 			default:
@@ -84,7 +84,7 @@ public class Main {
 	}
 	private static  void nuages(int numJoueur) {
 		int swValue;
-		System.out.println("\n\n\n==========================================================================");
+		System.out.println("\n=======================================================================");
 		System.out.println("|   TAKENOKO -- MENU JOUEUR " +numJoueur+ "                              ");
 		System.out.println("|   Choisisez un amenagement   ");
 		System.out.println("==========================================================================");
@@ -122,12 +122,12 @@ public class Main {
 		System.out.println("|   TAKENOKO MENU JOUEUR " +numJoueur+ " : Actions                       ");
 		System.out.println("==========================================================================");
 		System.out.println("|     Le joueur effectue deux actions par tour parmi les                  ");
-		System.out.println("|     5 actions disponibles                                                   ");
+		System.out.println("|     5 actions disponibles                                               ");
 		System.out.println("==========================================================================");
 		while (nbActions > 0) {
-			System.out.println("\n\n--------------------------------------------------------------------------\n\n");
+			System.out.println("\n--------------------------------------------------------------------------");
 			System.out.println("| Choix de l'action "+ (NB_ACTIONS_PAR_TOUR-nbActions + 1  ) +" :                                              ");
-			System.out.println("\n\n--------------------------------------------------------------------------\n\n");
+			System.out.println("--------------------------------------------------------------------------\n");
 			System.out.println("|        1. Parcelles                                                ");
 			System.out.println("|        2. Canal irrigation                                         ");
 			System.out.println("|        3. Jardinier                                                ");
@@ -137,23 +137,23 @@ public class Main {
 			swValue = Keyin.inInt(" Selectionner une option: ");
 			switch (swValue) {
 				case 1:
-					System.out.println("\n\n\nPiocher 3 parcelles et en choisir une\n\n\n");
+					System.out.println("\nPiocher 3 parcelles et en choisir une\n");
 					choixParcelle(numJoueur);
 					break;
 				case 2:
-					System.out.println("\n\n\nPrendre une irrigation\n\n\n");
+					System.out.println("\nPrendre une irrigation\n");
 					prendreIrrigation(numJoueur);
 					break;
 				case 3:
-					System.out.println("\n\n\nDéplacer le jardinier\n\n\n");
+					System.out.println("\nDéplacer le jardinier\n");
 					deplacerJardinier(numJoueur);
 					break;
 				case 4:
-					System.out.println("\n\n\nDéplacer le panda\n\n\n");
+					System.out.println("\nDéplacer le panda\n");
 					deplacerPanda(numJoueur);
 					break;
 				case 5:
-					System.out.println("\n\n\nPiocher une carte objectif\n\n\n");
+					System.out.println("\nPiocher une carte objectif\n");
 					piocherObjectif(numJoueur);
 					break;
 				default:
@@ -172,22 +172,22 @@ public class Main {
 		System.out.println("Étape 1 - Piocher 3 parcelles ");
 		List<Parcelle> parcellesPiochees = Takenoko.piocherParcelles(3, numJoueur);
 
-		System.out.println("Étape 2 - Vous avez pioché les parcelles suivantes : ");
+		System.out.println("Étape 2 - Vous avez pioché les parcelles suivantes : \n");
 
 		Takenoko.afficherParcelles(parcellesPiochees);
 
-		System.out.println("Étape 3 - Choisir une");
-		int parcelleChosie = Keyin.inInt(" Entrer le numéro de la parcelle choisie : ");
+		System.out.println("\nÉtape 3 - Choisissez une");
+		int parcelleChosie = Keyin.inInt("Entrez le numéro de la parcelle choisie : ");
 		while(parcelleChosie > 3 || parcelleChosie < 1){
 			System.out.println("Vous devez choisir entre la parcelle 1 et 3");
-			parcelleChosie = Keyin.inInt(" Entrer le numéro de la parcelle choisie : ");
+			parcelleChosie = Keyin.inInt("\nEntrez le numéro de la parcelle choisie : ");
 		}
 		System.out.println("Étape 4 - Replacer les deux autres sous la pioche");
 		Parcelle pSelectionnee = Takenoko.selectionnerParcelle(parcellesPiochees, parcelleChosie );
-		System.out.println("Étape 5 - Afficher les parcelles du plateau");
+		System.out.println("Étape 5 - Afficher les parcelles du plateau:\n");
 		Takenoko.afficherParcellesPlateau();
 		Takenoko.afficherPositionsDisponibles();
-		System.out.println("Étape 6 - Placer une parcelle dans la position (x,y) ");
+		System.out.println("\nÉtape 6 - Placer une parcelle dans la position (x,y) \n");
 		int x = Keyin.inInt(" Entrer la position x : ");
 		int y = Keyin.inInt(" Entrer la position y : ");
 		boolean estPlacee = Takenoko.placerParcelleDansPlateau(pSelectionnee, x, y,  numJoueur);
@@ -199,7 +199,7 @@ public class Main {
 			y = Keyin.inInt(" Entrer la position y : ");
 			estPlacee = Takenoko.placerParcelleDansPlateau(pSelectionnee, x, y,  numJoueur);
 		}
-		System.out.println("La parcelle est bien placée ");
+		System.out.println("\nLa parcelle est bien placée ");
 
 	}
 	private static void prendreIrrigation(int numJoueur) {
@@ -220,9 +220,9 @@ public class Main {
 		System.out.println("==========================================================================");
 		System.out.println("|   TAKENOKO MENU JOUEUR " +numJoueur+ " : Action Jardiner                        ");
 		System.out.println("==========================================================================");
-		System.out.println("|        Afficher les parcelles du plateau  (les positions)              ");
+		System.out.println("|        Afficher les parcelles du plateau (les positions):             \n");
 		Takenoko.afficherParcellesPlateau();
-		System.out.println("|        Précisier la nouvelle parcelle (position x,y) du Jardinier      ");
+		System.out.println("\n|        Précisier la nouvelle parcelle (position x,y) du Jardinier      ");
 		int x = Keyin.inInt(" Entrer la position x : ");
 		int y = Keyin.inInt(" Entrer la position y : ");
 		boolean estDeplace = Takenoko.PlacerJardinier(x,y, numJoueur );
@@ -280,31 +280,31 @@ public class Main {
 	 */
 	private static void autresDecisions(int numJoueur) {
 		int swValue;
-		System.out.println("\n\n\n");
+		System.out.println("\n");
 		System.out.println("=========================================================================");
 		System.out.println("|   TAKENOKO MENU JOUEUR " +numJoueur+ " : Autres Décisions       ");
 		System.out.println("=========================================================================");
 		System.out.println("|Pendant un tour un joueur peut prendre des décisions qui");
 		System.out.println("|ne comptent pas pour des actions                            ");
 		do{
-			System.out.println("\n\n--------------------------------------------------------------------------\n\n");
+			System.out.println("\n--------------------------------------------------------------------------");
 			System.out.println("| Choix de décision                                      ");
-			System.out.println("\n\n--------------------------------------------------------------------------\n\n");
+			System.out.println("--------------------------------------------------------------------------\n");
 			System.out.println("|        1. Remplir un objectif                          ");
 			System.out.println("|        2. Placer des irrigations                       ");
 			System.out.println("|        3. Fin du tour                                  ");
 			swValue = Keyin.inInt(" Selectionner une option: ");
 			switch (swValue) {
 				case 1:
-					System.out.println("\n\n\nRemplir un objectif\n\n\n");
+					System.out.println("\nRemplir un objectif\n");
 					remplirObjectif(numJoueur);
 					break;
 				case 2:
-					System.out.println("\n\n\nPlacer des irrigations\n\n\n");
+					System.out.println("\nPlacer des irrigations\n");
 					placerIrrigation(numJoueur);
 					break;
 				case 3:
-					System.out.println("Fin du tour");
+					System.out.println("\n\nFin du tour\n\n");
 					break;
 				default:
 					System.out.println("Selection invalide");
@@ -314,11 +314,11 @@ public class Main {
 	}
 	private static void placerIrrigation(int numJoueur) {
 		System.out.println("=========================================================================");
-		System.out.println("|  TAKENOKO MENU JOUEUR " +numJoueur+ ": décide de placer une irrigation     ");
-		System.out.println("=========================================================================");
-		Takenoko.afficherParcellesPlateau();//numJoueur);
-		System.out.println("|        Si oui, afficher les parcelles du plateau (les positions)     ");
-		System.out.println("|        Préciser les deux parcelles (x1,y1) et (x2, y2) séparés par l'irrigation ");
+		System.out.println("|  TAKENOKO MENU JOUEUR " +numJoueur+ ": décide de placer une irrigation ");
+		System.out.println("=========================================================================\n");
+		System.out.println("Les parcelles déposées sur le plateau de jeu sont: \n");
+		Takenoko.afficherParcellesPlateau();
+		System.out.println("\n|        Préciser les deux parcelles (x1,y1) et (x2, y2) séparés par l'irrigation ");
 		int x1 = Keyin.inInt(" Entrer la position x1 : ");
 		int y1 = Keyin.inInt(" Entrer la position y1 : ");
 		int x2 = Keyin.inInt(" Entrer la position x2 : ");
