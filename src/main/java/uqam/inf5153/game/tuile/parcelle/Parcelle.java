@@ -16,8 +16,7 @@ public abstract class Parcelle implements ComposantParcelle {
     protected Coordonnees coord;
     protected boolean irriguee;
     protected List<Parcelle> voisins;
-    //protected List<Bambou> bambous = new ArrayList<Bambou>();
-    Stack<Bambou> bambous = new Stack<Bambou>();
+    protected Stack<Bambou> bambous = new Stack<Bambou>();
 
     public Parcelle(Coordonnees coord){
         this.coord = coord;
@@ -26,7 +25,6 @@ public abstract class Parcelle implements ComposantParcelle {
 
     public Parcelle(){
         this.voisins=new ArrayList<Parcelle>();
-        //this.bambous = new ArrayList<Bambou>();
         this.bambous = new Stack<Bambou>();
     }
 
@@ -43,7 +41,6 @@ public abstract class Parcelle implements ComposantParcelle {
     public List<Parcelle> getVoisins(){
         return this.voisins;
     }
-    //public  List<Bambou> getBambous () {return this.bambous; }
     public  Stack<Bambou> getBambous () {return this.bambous; }
 
     public boolean estIrriguee() {
@@ -63,9 +60,6 @@ public abstract class Parcelle implements ComposantParcelle {
     }
 
 
-    /*public void mangerBambou() {
-        this.bambous.remove(0);
-    }*/
     public void mangerBambou() {
         this.bambous.pop();
     }
