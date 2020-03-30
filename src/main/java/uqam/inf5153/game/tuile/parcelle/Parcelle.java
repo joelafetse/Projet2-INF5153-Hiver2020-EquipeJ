@@ -8,6 +8,7 @@ import uqam.inf5153.game.tuile.ComposantParcelle;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+import java.util.Stack;
 
 public abstract class Parcelle implements ComposantParcelle {
 
@@ -15,7 +16,8 @@ public abstract class Parcelle implements ComposantParcelle {
     protected Coordonnees coord;
     protected boolean irriguee;
     protected List<Parcelle> voisins;
-    protected List<Bambou> bambous = new ArrayList<Bambou>();
+    //protected List<Bambou> bambous = new ArrayList<Bambou>();
+    Stack<Bambou> bambous = new Stack<Bambou>();
 
     public Parcelle(Coordonnees coord){
         this.coord = coord;
@@ -24,7 +26,8 @@ public abstract class Parcelle implements ComposantParcelle {
 
     public Parcelle(){
         this.voisins=new ArrayList<Parcelle>();
-        this.bambous = new ArrayList<Bambou>();
+        //this.bambous = new ArrayList<Bambou>();
+        this.bambous = new Stack<Bambou>();
     }
 
     public abstract Couleur getCouleur();
@@ -40,7 +43,8 @@ public abstract class Parcelle implements ComposantParcelle {
     public List<Parcelle> getVoisins(){
         return this.voisins;
     }
-    public  List<Bambou> getBambous () {return this.bambous; }
+    //public  List<Bambou> getBambous () {return this.bambous; }
+    public  Stack<Bambou> getBambous () {return this.bambous; }
 
     public boolean estIrriguee() {
         return irriguee == true;
@@ -59,8 +63,11 @@ public abstract class Parcelle implements ComposantParcelle {
     }
 
 
-    public void mangerBambou() {
+    /*public void mangerBambou() {
         this.bambous.remove(0);
+    }*/
+    public void mangerBambou() {
+        this.bambous.pop();
     }
 
     public boolean estAdjacent(Parcelle p){

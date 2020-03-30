@@ -240,9 +240,9 @@ public class Main {
 		System.out.println("==========================================================================");
 		System.out.println("|   TAKENOKO MENU JOUEUR " +numJoueur+ " : Action Panda                         ");
 		System.out.println("==========================================================================");
-		System.out.println("|        Afficher les parcelles du plateau  (les positions)                                   ");
+		System.out.println("|        Afficher les parcelles du plateau  (les positions)\n               ");
 		Takenoko.afficherParcellesPlateau();
-		System.out.println("|        Préciser la nouvelle parcelle (position x,y) du Panda                   ");
+		System.out.println("\n|        Préciser la nouvelle parcelle (position x,y) du Panda                   ");
 		int x = Keyin.inInt(" Entrer la position x : ");
 		int y = Keyin.inInt(" Entrer la position y : ");
 		boolean PandaEstDeplace = Takenoko.PlacerPanda(x,y, numJoueur );

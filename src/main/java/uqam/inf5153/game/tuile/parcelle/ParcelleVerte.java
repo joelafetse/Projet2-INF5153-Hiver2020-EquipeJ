@@ -32,7 +32,8 @@ public class ParcelleVerte extends Parcelle {
     public void fairePousserBambou() {
        if (this.irriguee) {
            if(nbr_sections_bambou_vert > 0 && bambous.size() < 4 ) {
-               super.bambous.add(new BambouVert());
+               //super.bambous.add(new BambouVert());
+               super.bambous.push(new BambouVert());
                prendreBambou();
            }
        }
