@@ -112,16 +112,8 @@ public class Joueur {
         }else {
             for (ReseauIrrigation reseau : plateauDeJeu.getReseauxIrr()) {
                 List<Irrigation> irrigationsDuReseau = reseau.getIrrigations();
-                if(irrigationsDuReseau.contains(irr)){
-                    System.out.println("Ici il y a déjà une canal d'irrigation");
-                    return false;
-                }
                 for (int i=0; i < irrigationsDuReseau.size(); i++) {
                     Irrigation uneIrrigationDeReseau = irrigationsDuReseau.get(i);
-                    /*if(irr.equals(uneIrrigationDeReseau)){
-                        System.out.println("Ici il y a déjà une canal d'irrigation");
-                        return false;
-                    }*/
                     if (
                             irr.getParcelle1().equals(uneIrrigationDeReseau.getParcelle1()) ||
                             irr.getParcelle1().equals(uneIrrigationDeReseau.getParcelle2()) ||
