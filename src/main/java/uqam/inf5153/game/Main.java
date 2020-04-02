@@ -66,8 +66,6 @@ public class Main {
 			case 1:
 				System.out.println("Déterminer les condition Climatiques");
 				System.out.println("Cette fonctionnalité sera réalisée dans la deuxième partie  du projet");
-				System.out.println("pour ce moment juste la condition climatique nuageuse est applicable");
-				nuages(numJoueur);
 				break;
 			case 2:
 				System.out.println("\nEffectuer des actions\n");
@@ -82,36 +80,7 @@ public class Main {
 				break;
 		}
 	}
-	private static  void nuages(int numJoueur) {
-		int swValue;
-		System.out.println("\n=======================================================================");
-		System.out.println("|   TAKENOKO -- MENU JOUEUR " +numJoueur+ "                              ");
-		System.out.println("|   Choisisez un amenagement   ");
-		System.out.println("==========================================================================");
-		System.out.println("| Options:                                                               ");
-		System.out.println("|        1. Aménagement Bassin                         ");
-		System.out.println("|        2. Aménagement Engrais                        ");
-		System.out.println("|        3. Aménagement Enclos                         ");
-		System.out.println("==========================================================================");
-		swValue = Keyin.inInt(" Selectionner une option: ");
-		switch (swValue) {
-			case 1:
-				choixAmenagementBassin();
-				break;
-			case 2:
-				//choixAmenagementEngrais();
-				break;
-			case 3:
-				//choixAmenagementEnclos();
-				break;
-			default:
-				System.out.println("Selection invalide");
-				break;
-		}
-	}
-	private static  void choixAmenagementBassin() {
 
-	}
 	/*
 	 * Actions
 	 */

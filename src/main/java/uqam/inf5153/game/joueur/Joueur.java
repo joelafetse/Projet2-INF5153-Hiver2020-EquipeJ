@@ -153,7 +153,8 @@ public class Joueur {
         }else{
             panda.setParcelleDepart(parcelleDestination);
             if (parcelleDestination.getNombreDeBambous() != 0) {
-                parcelleDestination.mangerBambou();
+                Bambou bambouMange = parcelleDestination.mangerBambou();
+                this.plateauDeJoueur.reserverBambousPanda(bambouMange);
             }
         }
         return true;

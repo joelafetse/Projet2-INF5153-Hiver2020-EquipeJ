@@ -1,5 +1,6 @@
 package uqam.inf5153.game.joueur;
 
+import uqam.inf5153.game.bambou.Bambou;
 import uqam.inf5153.game.objectif.Objectif;
 import uqam.inf5153.game.objectif.ObjectifParcelle;
 
@@ -14,8 +15,8 @@ public class PlateauDeJoueur {
 
     private final int NBRE_OBJECTIFS_PIOCHES_MAX = 5;
 
-    // Bambous collectionnés via le panda //TODO
-    //private List<Bambou> bambousPanda;
+    // Bambous qui sont manguées par le panda
+    private List<Bambou> bambousPanda;
 
     // Objectifs accomplis
     private List<Objectif> objectifsAccomplis;
@@ -30,6 +31,7 @@ public class PlateauDeJoueur {
     public PlateauDeJoueur(){
         objectifsPioches = new ArrayList<>();
         objectifsAccomplis = new ArrayList<>();
+        bambousPanda = new ArrayList<>();
         irrigations = 0;
     }
 
@@ -62,6 +64,10 @@ public class PlateauDeJoueur {
     public void ajouterIrrigations() {
         this.irrigations++;
     }
+    public void reserverBambousPanda(Bambou bambou){
+        this.bambousPanda.add(bambou);
+    }
+    public List<Bambou> getBambousPanda(){return this.bambousPanda;}
 
     public void afficherObjectifsPioches(){
         int i=1;

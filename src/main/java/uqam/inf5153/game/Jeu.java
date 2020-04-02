@@ -20,6 +20,7 @@ public class Jeu {
     private List<Joueur> joueurs;
     private PiocheObjectifs piocheObjectifs;
     private PiocheParcelles piocheParcelles;
+    private FabriqueParcelle fabriqueParcelle;
 
     //Constucteur
     public Jeu(){
@@ -31,6 +32,8 @@ public class Jeu {
         this.piocheParcelles = new PiocheParcelles();
         this.melangerPioches();
         piocherObjectifsPourChaqueJoueur();
+        this.fabriqueParcelle = new FabriqueParcelle();
+
     }
 
     public PlateauDeJeu getPlateauDeJeu(){
@@ -62,13 +65,7 @@ public class Jeu {
 
         Joueur joueur = getJoueurByIndex(joueurIndex);
 
-        if(parcelle.getCouleur() == Couleur.VERT) {
-            parcelle = new ParcelleVerte();
-        }else if (parcelle.getCouleur() == Couleur.ROSE) {
-            parcelle = new ParcelleRose();
-        }else if (parcelle.getCouleur() == Couleur.JAUNE) {
-            parcelle = new ParcelleJaune();
-        }
+        parcelle = fabriqueParcelle.getParcelle(parcelle.getCouleur());
 
         joueur.placerParcelleDansPlateau(plateauDeJeu,parcelle,x,y);
         return true;

@@ -60,8 +60,8 @@ public abstract class Parcelle implements ComposantParcelle {
     }
 
 
-    public void mangerBambou() {
-        this.bambous.pop();
+    public Bambou mangerBambou() {
+        return this.bambous.pop();
     }
 
     public boolean estAdjacent(Parcelle p){
