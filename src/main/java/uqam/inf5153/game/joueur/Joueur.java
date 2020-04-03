@@ -1,5 +1,6 @@
 package uqam.inf5153.game.joueur;
 
+import uqam.inf5153.game.actions.Action;
 import uqam.inf5153.game.bambou.Bambou;
 import uqam.inf5153.game.figurine.Figurine;
 import uqam.inf5153.game.objectif.Objectif;
@@ -18,6 +19,7 @@ public class Joueur {
 
     private PlateauDeJoueur plateauDeJoueur;
     private List<Objectif> objectifs;
+    private Action action;
     private final int NOMBRE_ACTIONS = 2;
     private int score;
 

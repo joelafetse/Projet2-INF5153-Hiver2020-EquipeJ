@@ -118,12 +118,7 @@ public class Main {
 	private static void choixAction(int numJoueur) {
 		int nbActions = NB_ACTIONS_PAR_TOUR;
 		int swValue;
-		System.out.println("==========================================================================");
-		System.out.println("|   TAKENOKO MENU JOUEUR " +numJoueur+ " : Actions                       ");
-		System.out.println("==========================================================================");
-		System.out.println("|     Le joueur effectue deux actions par tour parmi les                  ");
-		System.out.println("|     5 actions disponibles                                                   ");
-		System.out.println("==========================================================================");
+		afficherEnteteMenuAction(numJoueur);
 		while (nbActions > 0) {
 			System.out.println("\n\n--------------------------------------------------------------------------\n\n");
 			System.out.println("| Choix de l'action "+ (NB_ACTIONS_PAR_TOUR-nbActions + 1  ) +" :                                              ");
@@ -359,5 +354,14 @@ public class Main {
 			System.out.println("Félicitations! objectif rempli");
 		else
 			System.out.println("Objectif irréalisable pour le moment");
+	}
+
+	private static void afficherEnteteMenuAction(int numJoueur) {
+		System.out.println("==========================================================================");
+		System.out.println("|   TAKENOKO MENU JOUEUR " +numJoueur+ " : Actions                       ");
+		System.out.println("==========================================================================");
+		System.out.println("|     Le joueur effectue deux actions par tour parmi les                  ");
+		System.out.println("|     5 actions disponibles                                                   ");
+		System.out.println("==========================================================================");
 	}
 }

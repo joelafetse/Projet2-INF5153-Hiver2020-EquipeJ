@@ -62,13 +62,13 @@ public class Jeu {
 
         Joueur joueur = getJoueurByIndex(joueurIndex);
 
-        if(parcelle.getCouleur() == Couleur.VERT) {
+        /*if(parcelle.getCouleur() == Couleur.VERT) {
             parcelle = new ParcelleVerte();
         }else if (parcelle.getCouleur() == Couleur.ROSE) {
             parcelle = new ParcelleRose();
         }else if (parcelle.getCouleur() == Couleur.JAUNE) {
             parcelle = new ParcelleJaune();
-        }
+        }*/
 
         joueur.placerParcelleDansPlateau(plateauDeJeu,parcelle,x,y);
         return true;
