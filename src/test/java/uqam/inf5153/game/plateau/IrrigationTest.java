@@ -20,11 +20,15 @@ public class IrrigationTest {
 
     @Test
     public void testEquals() {
+        Coordonnees c1 = new Coordonnees(2, 1);
         Parcelle p1 = new ParcelleVerte();
+        p1.setCoordonnees(c1);
+        Coordonnees c2 = new Coordonnees(2, 2);
         Parcelle p2 = new ParcelleVerte();
+        p2.setCoordonnees(c2);
         Irrigation irr1 = new Irrigation(p1, p2);
         Irrigation irr2 = new Irrigation(p1, p2);
-        assertTrue(irr1.equals(irr2));
+        assertEquals(irr1, irr2);
     }
 
     @Test

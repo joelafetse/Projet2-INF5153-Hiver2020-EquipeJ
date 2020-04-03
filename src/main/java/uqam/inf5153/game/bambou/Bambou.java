@@ -7,4 +7,9 @@ public abstract class Bambou {
 
     public abstract Couleur getCouleur();
 
+
+    @Override
+    public String toString() {
+        return "Bambou "+ getCouleur();
+    }
 }

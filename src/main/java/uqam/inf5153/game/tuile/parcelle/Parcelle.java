@@ -2,11 +2,13 @@ package uqam.inf5153.game.tuile.parcelle;
 
 import uqam.inf5153.game.bambou.Bambou;
 import uqam.inf5153.game.plateau.Coordonnees;
+import uqam.inf5153.game.plateau.Irrigation;
 import uqam.inf5153.game.tuile.ComposantParcelle;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+import java.util.Stack;
 
 public abstract class Parcelle implements ComposantParcelle {
 
@@ -14,7 +16,7 @@ public abstract class Parcelle implements ComposantParcelle {
     protected Coordonnees coord;
     protected boolean irriguee;
     protected List<Parcelle> voisins;
-    protected List<Bambou> bambous = new ArrayList<Bambou>();
+    protected Stack<Bambou> bambous = new Stack<Bambou>();
 
     public Parcelle(Coordonnees coord){
         this.coord = coord;
@@ -23,11 +25,10 @@ public abstract class Parcelle implements ComposantParcelle {
 
     public Parcelle(){
         this.voisins=new ArrayList<Parcelle>();
-        this.bambous = new ArrayList<Bambou>();
+        this.bambous = new Stack<Bambou>();
     }
 
     public abstract Couleur getCouleur();
-    //public abstract void fairePousserBambou(Bambou bambou);
     public abstract void fairePousserBambou();
     public abstract void prendreBambou();
     public abstract int getNbSectionsDeBambou();
@@ -40,7 +41,7 @@ public abstract class Parcelle implements ComposantParcelle {
     public List<Parcelle> getVoisins(){
         return this.voisins;
     }
-    public  List<Bambou> getBambous () {return this.bambous; }
+    public  Stack<Bambou> getBambous () {return this.bambous; }
 
     public boolean estIrriguee() {
         return irriguee == true;
@@ -59,8 +60,8 @@ public abstract class Parcelle implements ComposantParcelle {
     }
 
 
-    public void mangerBambou() {
-        this.bambous.remove(0);
+    public Bambou mangerBambou() {
+        return this.bambous.pop();
     }
 
     public boolean estAdjacent(Parcelle p){
@@ -102,8 +103,9 @@ public abstract class Parcelle implements ComposantParcelle {
         if(this == obj)
             return true;
         if (!(obj instanceof Parcelle)) return false;
+        Parcelle objParcelle = (Parcelle) obj;
 
-        return this.coord.equals(((Parcelle) obj).coord) && this.getCouleur() == ((Parcelle) obj).getCouleur();
+        return this.coord.equals(objParcelle.coord) && this.getCouleur() == objParcelle.getCouleur();
     }
 
     @Override

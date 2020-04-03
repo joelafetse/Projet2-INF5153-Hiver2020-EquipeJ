@@ -103,21 +103,26 @@ public class Joueur {
     }
 
     /* Méthode à déplacer eventuellement plus tard */
-    public void placerIrrigation(PlateauDeJeu plateauDeJeu, Parcelle p1, Parcelle p2){
+    public boolean placerIrrigation(PlateauDeJeu plateauDeJeu, Parcelle p1, Parcelle p2){
+        boolean irrigationEstPlacee = false;
         Irrigation irr = new Irrigation(p1,p2);
         if (irr.getParcelle1().estAdjacent(plateauDeJeu.getParcelleEtang()) &&
-            irr.getParcelle2().estAdjacent(plateauDeJeu.getParcelleEtang())){
-
+            irr.getParcelle2().estAdjacent(plateauDeJeu.getParcelleEtang()))
+        {
             plateauDeJeu.ajouterNouveauReseauIrrigation(new ReseauIrrigation(irr));
-
+            irrigationEstPlacee = true;
         }else {
             for (ReseauIrrigation reseau : plateauDeJeu.getReseauxIrr()) {
                 List<Irrigation> irrigationsDuReseau = reseau.getIrrigations();
                 for (int i=0; i < irrigationsDuReseau.size(); i++) {
-                    Irrigation irrigation = irrigationsDuReseau.get(i);
-                    if (irr.getParcelle1().equals(irrigation.getParcelle1()) ||
-                            irr.getParcelle2().equals(irrigation.getParcelle2())) {
-
+                    Irrigation uneIrrigationDeReseau = irrigationsDuReseau.get(i);
+                    if (
+                            irr.getParcelle1().equals(uneIrrigationDeReseau.getParcelle1()) ||
+                            irr.getParcelle1().equals(uneIrrigationDeReseau.getParcelle2()) ||
+                            irr.getParcelle2().equals(uneIrrigationDeReseau.getParcelle1()) ||
+                            irr.getParcelle2().equals(uneIrrigationDeReseau.getParcelle2())
+                       )
+                    {
                         reseau.ajouterIrragtionAuReseau(irr);
                         if(irr.getParcelle1().getNombreDeBambous() == 0) {
                             irr.getParcelle1().fairePousserBambou();
@@ -125,11 +130,12 @@ public class Joueur {
                         if(irr.getParcelle2().getNombreDeBambous() == 0) {
                             irr.getParcelle2().fairePousserBambou();
                         }
-                        break;
+                        return true;
                     }
                 }
             }
         }
+        return irrigationEstPlacee;
     }
 
     public boolean deplacerJardinier(Figurine jardinier, Parcelle parcelleDestination){
@@ -150,7 +156,8 @@ public class Joueur {
         }else{
             panda.setParcelleDepart(parcelleDestination);
             if (parcelleDestination.getNombreDeBambous() != 0) {
-                parcelleDestination.mangerBambou();
+                Bambou bambouMange = parcelleDestination.mangerBambou();
+                this.plateauDeJoueur.reserverBambousPanda(bambouMange);
             }
         }
         return true;

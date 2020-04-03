@@ -145,7 +145,7 @@ public class PlateauDeJeu {
 
 
     public void afficherLesPositionsDispo(){
-        System.out.println("POSITIONS DISPONIBLES : ");
+        System.out.println("\nPOSITIONS DISPONIBLES : \n");
         for(Coordonnees elem: positionsDisponibles)
         {
             System.out.print (" ( "+ elem.getX() +", " +elem.getY()+" ) ");
@@ -158,7 +158,7 @@ public class PlateauDeJeu {
         int i=0;
         while(i < parcelles.size()) {
             if (parcelles.get(i)!=null && parcelles.get(i).getCoordonnees()!=null) {
-                System.out.println(parcelles.get(i) + " : Coordonnées" +
+                System.out.println(parcelles.get(i) + ", Coordonnées" +
                         parcelles.get(i).getCoordonnees());
             }
             i++;

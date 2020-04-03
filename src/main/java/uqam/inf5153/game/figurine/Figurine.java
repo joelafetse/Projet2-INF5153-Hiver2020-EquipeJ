@@ -31,7 +31,7 @@ public abstract class Figurine {
 
         double coef = 0;
 
-        if(numerateur==0){return false;}
+        if(numerateur == 0) {return false;}
 
         if(denominateur == 0) {
             estDeplaceable = true;

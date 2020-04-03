@@ -20,6 +20,7 @@ public class Jeu {
     private List<Joueur> joueurs;
     private PiocheObjectifs piocheObjectifs;
     private PiocheParcelles piocheParcelles;
+    private FabriqueParcelle fabriqueParcelle;
 
     //Constucteur
     public Jeu(){
@@ -31,6 +32,8 @@ public class Jeu {
         this.piocheParcelles = new PiocheParcelles();
         this.melangerPioches();
         piocherObjectifsPourChaqueJoueur();
+        this.fabriqueParcelle = new FabriqueParcelle();
+
     }
 
     public PlateauDeJeu getPlateauDeJeu(){
@@ -62,13 +65,7 @@ public class Jeu {
 
         Joueur joueur = getJoueurByIndex(joueurIndex);
 
-        /*if(parcelle.getCouleur() == Couleur.VERT) {
-            parcelle = new ParcelleVerte();
-        }else if (parcelle.getCouleur() == Couleur.ROSE) {
-            parcelle = new ParcelleRose();
-        }else if (parcelle.getCouleur() == Couleur.JAUNE) {
-            parcelle = new ParcelleJaune();
-        }*/
+        parcelle = fabriqueParcelle.getParcelle(parcelle.getCouleur());
 
         joueur.placerParcelleDansPlateau(plateauDeJeu,parcelle,x,y);
         return true;
@@ -93,8 +90,12 @@ public class Jeu {
         }
         Parcelle p1 = plateauDeJeu.getParcelleAtPosition(c1);
         Parcelle p2 = plateauDeJeu.getParcelleAtPosition(c2);
+        if (!p1.estAdjacent(p2)){
+            System.out.println("Choisissez deux positions adjacentes.");
+            return false;
+        }
         joueur.placerIrrigation(plateauDeJeu, p1, p2);
-        return true;
+        return joueur.placerIrrigation(plateauDeJeu, p1, p2);
     }
 
     public boolean effectuerActionDeplacerJardinier(int x, int y, int joueurIndex){

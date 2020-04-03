@@ -35,8 +35,8 @@ public class ParcelleRose extends Parcelle {
     public void fairePousserBambou() {
         if (this.irriguee) {
             if(nbr_sections_bambou_rose > 0 && bambous.size() < 4 ) {
-                super.bambous.add(new BambouRose());
                 prendreBambou();
+                super.bambous.push(new BambouRose());
             }
         }
     }
