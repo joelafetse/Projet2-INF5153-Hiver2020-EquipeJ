@@ -60,9 +60,9 @@ public class Jeu {
 //        piocheParcelles.afficherParcelles(parcelles);
 //    }
 //
-//    public void afficherParcellesDansPlateau(){
-//        plateauDeJeu.afficherParcelleDeposees();
-//    }
+    public void afficherParcellesDansPlateau(){
+        plateauDeJeu.afficherParcelleDeposees();
+    }
 //
 //    public boolean effectuerActionPlacerParcelleDansPlateau(Parcelle parcelle, int x, int y, int joueurIndex){
 //        Coordonnees coord = new Coordonnees(x,y);
@@ -77,32 +77,32 @@ public class Jeu {
 //        return true;
 //    }
 
-    public void effectuerActionPiocherIrrigation(int joueurIndex){
-        Joueur joueur = getJoueurByIndex(joueurIndex);
-        joueur.prendreIrrigation();
-    }
-
-    public void effectuerActionGarderIrrigation(int joueurIndex){
-        Joueur joueur = getJoueurByIndex(joueurIndex);
-        joueur.getPlateauDeJoueur().ajouterIrrigations();
-    }
-
-    public boolean effectuerActionPlacerIrrigation( int x1, int y1, int x2, int y2, int joueurIndex){
-        Joueur joueur = getJoueurByIndex(joueurIndex);
-        Coordonnees c1 = new Coordonnees(x1,y1);
-        Coordonnees c2 = new Coordonnees(x2,y2);
-        if (!plateauDeJeu.estPositionOccupee(c1) || !plateauDeJeu.estPositionOccupee(c2)){
-            return false;
-        }
-        Parcelle p1 = plateauDeJeu.getParcelleAtPosition(c1);
-        Parcelle p2 = plateauDeJeu.getParcelleAtPosition(c2);
-        if (!p1.estAdjacent(p2)){
-            System.out.println("Choisissez deux positions adjacentes.");
-            return false;
-        }
-        joueur.placerIrrigation(plateauDeJeu, p1, p2);
-        return joueur.placerIrrigation(plateauDeJeu, p1, p2);
-    }
+//    public void effectuerActionPiocherIrrigation(int joueurIndex){
+//        Joueur joueur = getJoueurByIndex(joueurIndex);
+//        joueur.prendreIrrigation();
+//    }
+//
+//    public void effectuerActionGarderIrrigation(int joueurIndex){
+//        Joueur joueur = getJoueurByIndex(joueurIndex);
+//        joueur.getPlateauDeJoueur().ajouterIrrigations();
+//    }
+//
+//    public boolean effectuerActionPlacerIrrigation( int x1, int y1, int x2, int y2, int joueurIndex){
+//        Joueur joueur = getJoueurByIndex(joueurIndex);
+//        Coordonnees c1 = new Coordonnees(x1,y1);
+//        Coordonnees c2 = new Coordonnees(x2,y2);
+//        if (!plateauDeJeu.estPositionOccupee(c1) || !plateauDeJeu.estPositionOccupee(c2)){
+//            return false;
+//        }
+//        Parcelle p1 = plateauDeJeu.getParcelleAtPosition(c1);
+//        Parcelle p2 = plateauDeJeu.getParcelleAtPosition(c2);
+//        if (!p1.estAdjacent(p2)){
+//            System.out.println("Choisissez deux positions adjacentes.");
+//            return false;
+//        }
+//        joueur.placerIrrigation(plateauDeJeu, p1, p2);
+//        return joueur.placerIrrigation(plateauDeJeu, p1, p2);
+//    }
 
     public boolean effectuerActionDeplacerJardinier(int x, int y, int joueurIndex){
         Coordonnees coord = new Coordonnees(x,y);

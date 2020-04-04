@@ -86,10 +86,10 @@ public class Joueur {
 //        return true;
 //    }
 
-    public void prendreIrrigation() {
-        int nbrCanauxIrrigationRestant = Irrigation.getNbrCanauxIrrigation() - 1;
-        Irrigation.setNbrCanauxIrrigation(nbrCanauxIrrigationRestant);
-    }
+//    public void prendreIrrigation() {
+//        int nbrCanauxIrrigationRestant = Irrigation.getNbrCanauxIrrigation() - 1;
+//        Irrigation.setNbrCanauxIrrigation(nbrCanauxIrrigationRestant);
+//    }
 
     public Objectif prendreObjectif(PiocheObjectifs pioche, PlateauDeJoueur plateauDeJoueur){
         if (plateauDeJoueur.peutAjouterObjectif()){
@@ -111,40 +111,40 @@ public class Joueur {
     }
 
     /* Méthode à déplacer eventuellement plus tard */
-    public boolean placerIrrigation(PlateauDeJeu plateauDeJeu, Parcelle p1, Parcelle p2){
-        boolean irrigationEstPlacee = false;
-        Irrigation irr = new Irrigation(p1,p2);
-        if (irr.getParcelle1().estAdjacent(plateauDeJeu.getParcelleEtang()) &&
-            irr.getParcelle2().estAdjacent(plateauDeJeu.getParcelleEtang()))
-        {
-            plateauDeJeu.ajouterNouveauReseauIrrigation(new ReseauIrrigation(irr));
-            irrigationEstPlacee = true;
-        }else {
-            for (ReseauIrrigation reseau : plateauDeJeu.getReseauxIrr()) {
-                List<Irrigation> irrigationsDuReseau = reseau.getIrrigations();
-                for (int i=0; i < irrigationsDuReseau.size(); i++) {
-                    Irrigation uneIrrigationDeReseau = irrigationsDuReseau.get(i);
-                    if (
-                            irr.getParcelle1().equals(uneIrrigationDeReseau.getParcelle1()) ||
-                            irr.getParcelle1().equals(uneIrrigationDeReseau.getParcelle2()) ||
-                            irr.getParcelle2().equals(uneIrrigationDeReseau.getParcelle1()) ||
-                            irr.getParcelle2().equals(uneIrrigationDeReseau.getParcelle2())
-                       )
-                    {
-                        reseau.ajouterIrragtionAuReseau(irr);
-                        if(irr.getParcelle1().getNombreDeBambous() == 0) {
-                            irr.getParcelle1().fairePousserBambou();
-                        }
-                        if(irr.getParcelle2().getNombreDeBambous() == 0) {
-                            irr.getParcelle2().fairePousserBambou();
-                        }
-                        return true;
-                    }
-                }
-            }
-        }
-        return irrigationEstPlacee;
-    }
+//    public boolean placerIrrigation(PlateauDeJeu plateauDeJeu, Parcelle p1, Parcelle p2){
+//        boolean irrigationEstPlacee = false;
+//        Irrigation irr = new Irrigation(p1,p2);
+//        if (irr.getParcelle1().estAdjacent(plateauDeJeu.getParcelleEtang()) &&
+//            irr.getParcelle2().estAdjacent(plateauDeJeu.getParcelleEtang()))
+//        {
+//            plateauDeJeu.ajouterNouveauReseauIrrigation(new ReseauIrrigation(irr));
+//            irrigationEstPlacee = true;
+//        }else {
+//            for (ReseauIrrigation reseau : plateauDeJeu.getReseauxIrr()) {
+//                List<Irrigation> irrigationsDuReseau = reseau.getIrrigations();
+//                for (int i=0; i < irrigationsDuReseau.size(); i++) {
+//                    Irrigation uneIrrigationDeReseau = irrigationsDuReseau.get(i);
+//                    if (
+//                            irr.getParcelle1().equals(uneIrrigationDeReseau.getParcelle1()) ||
+//                            irr.getParcelle1().equals(uneIrrigationDeReseau.getParcelle2()) ||
+//                            irr.getParcelle2().equals(uneIrrigationDeReseau.getParcelle1()) ||
+//                            irr.getParcelle2().equals(uneIrrigationDeReseau.getParcelle2())
+//                       )
+//                    {
+//                        reseau.ajouterIrragtionAuReseau(irr);
+//                        if(irr.getParcelle1().getNombreDeBambous() == 0) {
+//                            irr.getParcelle1().fairePousserBambou();
+//                        }
+//                        if(irr.getParcelle2().getNombreDeBambous() == 0) {
+//                            irr.getParcelle2().fairePousserBambou();
+//                        }
+//                        return true;
+//                    }
+//                }
+//            }
+//        }
+//        return irrigationEstPlacee;
+//    }
 
     public boolean deplacerJardinier(Figurine jardinier, Parcelle parcelleDestination){
         if (!jardinier.estDeplaceableSur(parcelleDestination)) {

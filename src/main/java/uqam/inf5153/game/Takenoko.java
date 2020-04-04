@@ -1,5 +1,6 @@
 package uqam.inf5153.game;
 
+import uqam.inf5153.game.actions.PlaceIrrigation;
 import uqam.inf5153.game.actions.PlaceParcelle;
 import uqam.inf5153.game.joueur.Joueur;
 import uqam.inf5153.game.objectif.Objectif;
@@ -54,9 +55,6 @@ public class Takenoko {
 //	/*
 //	 * afficher les parcelles déposé dans le plateau du joueur joueur
 //	 */
-//	public static void afficherParcellesPlateau(){//int joueur) {
-//		jeu.afficherParcellesDansPlateau();
-//	}
 //
 //	public static void afficherPositionsDisponibles(){
 //		jeu.getPlateauDeJeu().afficherLesPositionsDispo();
@@ -72,24 +70,29 @@ public class Takenoko {
 	 * piocher une irrigation du joueur
 	 */
 
-	/*
-	 * piocher une irrigation dans la pioche des irrigation du joueur
-	 *
-	 */
-	public static void piocherUneIrrigation(int joueur) {
-		jeu.effectuerActionPiocherIrrigation(joueur);
+	public static  void placerIrrigation(int numJoueur, boolean estDecision){
+		Joueur joueur = getJoueurByIndex(numJoueur);
+		joueur.setActionCourante(new PlaceIrrigation(jeu,estDecision));
+		joueur.effectuerAction(numJoueur);
 	}
-
-	public static void garderIrrigation(int joueur){
-        jeu.effectuerActionGarderIrrigation(joueur);
-    }
-	/*
-	 * placer une irrigation entre les parcelles (x1,y1) et (x2, y2) dans le plateau du joueur joueur
-	 * retourne true si l'irrigation est bien placée
-	 */
-	public static boolean placerUneIrrigation( int x1, int y1, int x2, int y2, int joueur) {
-	    return jeu.effectuerActionPlacerIrrigation(x1,y1,x2,y2,joueur);
-	}
+//	/*
+//	 * piocher une irrigation dans la pioche des irrigation du joueur
+//	 *
+//	 */
+//	public static void piocherUneIrrigation(int joueur) {
+//		jeu.effectuerActionPiocherIrrigation(joueur);
+//	}
+//
+//	public static void garderIrrigation(int joueur){
+//        jeu.effectuerActionGarderIrrigation(joueur);
+//    }
+//	/*
+//	 * placer une irrigation entre les parcelles (x1,y1) et (x2, y2) dans le plateau du joueur joueur
+//	 * retourne true si l'irrigation est bien placée
+//	 */
+//	public static boolean placerUneIrrigation( int x1, int y1, int x2, int y2, int joueur) {
+//	    return jeu.effectuerActionPlacerIrrigation(x1,y1,x2,y2,joueur);
+//	}
 	/**
 	 * objectifs
 	 */

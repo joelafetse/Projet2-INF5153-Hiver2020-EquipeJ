@@ -173,18 +173,19 @@ public class Main {
 
 	}
 	private static void prendreIrrigation(int numJoueur) {
-		System.out.println("===========================================================================");
-		System.out.println("|   TAKENOKO MENU JOUEUR " +numJoueur+ " : Action Irrigation                        ");
-		System.out.println("===========================================================================");
-		Takenoko.piocherUneIrrigation(numJoueur);
-		System.out.println("|        Une irrigation est prise                                 ");
-		System.out.println("|        Voulez-vous la placer   ?                             ");
-		int reponse = Keyin.inChar(" réponse (O/N) : ");
-		if (reponse == 'o' || reponse == 'O' ) {
-			placerIrrigation(numJoueur);
-		}else{
-			Takenoko.garderIrrigation(numJoueur);
-		}
+		Takenoko.placerIrrigation(numJoueur, false);
+//		System.out.println("===========================================================================");
+//		System.out.println("|   TAKENOKO MENU JOUEUR " +numJoueur+ " : Action Irrigation                        ");
+//		System.out.println("===========================================================================");
+//		Takenoko.piocherUneIrrigation(numJoueur);
+//		System.out.println("|        Une irrigation est prise                                 ");
+//		System.out.println("|        Voulez-vous la placer   ?                             ");
+//		int reponse = Keyin.inChar(" réponse (O/N) : ");
+//		if (reponse == 'o' || reponse == 'O' ) {
+//			placerIrrigation(numJoueur);
+//		}else{
+//			Takenoko.garderIrrigation(numJoueur);
+//		}
 	}
 	private static void deplacerJardinier(int numJoueur) {
 		System.out.println("==========================================================================");
@@ -271,7 +272,7 @@ public class Main {
 					break;
 				case 2:
 					System.out.println("\nPlacer des irrigations\n");
-					placerIrrigation(numJoueur);
+					Takenoko.placerIrrigation(numJoueur, true);
 					break;
 				case 3:
 					System.out.println("\n\nFin du tour\n\n");
@@ -282,30 +283,30 @@ public class Main {
 			}
 		}while (swValue != 3);
 	}
-	private static void placerIrrigation(int numJoueur) {
-		System.out.println("=========================================================================");
-		System.out.println("|  TAKENOKO MENU JOUEUR " +numJoueur+ ": décide de placer une irrigation ");
-		System.out.println("=========================================================================\n");
-		System.out.println("Les parcelles déposées sur le plateau de jeu sont: \n");
-		//Takenoko.afficherParcellesPlateau();
-		System.out.println("\n|        Préciser les deux parcelles (x1,y1) et (x2, y2) séparés par l'irrigation ");
-		int x1 = Keyin.inInt(" Entrer la position x1 : ");
-		int y1 = Keyin.inInt(" Entrer la position y1 : ");
-		int x2 = Keyin.inInt(" Entrer la position x2 : ");
-		int y2 = Keyin.inInt(" Entrer la position y2 : ");
-		boolean estPlacee = Takenoko.placerUneIrrigation( x1, y1, x2, y2, numJoueur);
-		while(!estPlacee){
-			System.out.println("l'irrigation n'est pas placée");
-			System.out.println("Vous devez entrer des positions valides");
-			x1 = Keyin.inInt(" Entrer la position x1 : ");
-			y1 = Keyin.inInt(" Entrer la position y1 : ");
-			x2 = Keyin.inInt(" Entrer la position x2 : ");
-			y2 = Keyin.inInt(" Entrer la position y2 : ");
-			estPlacee = Takenoko.placerUneIrrigation( x1, y1, x2, y2, numJoueur);
-		}
-			System.out.println("L'irrigation est bien placée");
-
-	}
+//	private static void placerIrrigation(int numJoueur) {
+//		System.out.println("=========================================================================");
+//		System.out.println("|  TAKENOKO MENU JOUEUR " +numJoueur+ ": décide de placer une irrigation ");
+//		System.out.println("=========================================================================\n");
+//		System.out.println("Les parcelles déposées sur le plateau de jeu sont: \n");
+//		//Takenoko.afficherParcellesPlateau();
+//		System.out.println("\n|        Préciser les deux parcelles (x1,y1) et (x2, y2) séparés par l'irrigation ");
+//		int x1 = Keyin.inInt(" Entrer la position x1 : ");
+//		int y1 = Keyin.inInt(" Entrer la position y1 : ");
+//		int x2 = Keyin.inInt(" Entrer la position x2 : ");
+//		int y2 = Keyin.inInt(" Entrer la position y2 : ");
+//		boolean estPlacee = Takenoko.placerUneIrrigation( x1, y1, x2, y2, numJoueur);
+//		while(!estPlacee){
+//			System.out.println("l'irrigation n'est pas placée");
+//			System.out.println("Vous devez entrer des positions valides");
+//			x1 = Keyin.inInt(" Entrer la position x1 : ");
+//			y1 = Keyin.inInt(" Entrer la position y1 : ");
+//			x2 = Keyin.inInt(" Entrer la position x2 : ");
+//			y2 = Keyin.inInt(" Entrer la position y2 : ");
+//			estPlacee = Takenoko.placerUneIrrigation( x1, y1, x2, y2, numJoueur);
+//		}
+//			System.out.println("L'irrigation est bien placée");
+//
+//	}
 	private static void remplirObjectif(int numJoueur) {
 		System.out.println("=========================================================================");
 		System.out.println("|  TAKENOKO MENU JOUEUR " +numJoueur+ ": décide de remplir un objectif");
