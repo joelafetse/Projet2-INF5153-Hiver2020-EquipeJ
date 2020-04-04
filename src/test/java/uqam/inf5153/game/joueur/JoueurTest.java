@@ -17,15 +17,15 @@ public class JoueurTest {
 
     }
 
-    @Test
-    public void placerParcelleDansPlateau() {
-        PlateauDeJeu plateau = new PlateauDeJeu();
-        Coordonnees c2 = new Coordonnees(2, -1);
-        Parcelle p2 = new ParcelleVerte();
-        p2.setCoordonnees(c2);
-        Joueur joueur = new Joueur();
-        assertTrue(joueur.placerParcelleDansPlateau(plateau, p2, 2, -1));
-    }
+//    @Test
+//    public void placerParcelleDansPlateau() {
+//        PlateauDeJeu plateau = new PlateauDeJeu();
+//        Coordonnees c2 = new Coordonnees(2, -1);
+//        Parcelle p2 = new ParcelleVerte();
+//        p2.setCoordonnees(c2);
+//        Joueur joueur = new Joueur();
+//        assertTrue(joueur.placerParcelleDansPlateau(plateau, p2, 2, -1));
+//    }
 
     @Test
     public void prendreIrrigation() {

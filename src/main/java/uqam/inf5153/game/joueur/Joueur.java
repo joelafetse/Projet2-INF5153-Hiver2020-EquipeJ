@@ -40,51 +40,51 @@ public class Joueur {
     public PlateauDeJoueur getPlateauDeJoueur() {
         return plateauDeJoueur;
     }
-
-    public boolean placerParcelleDansPlateau(PlateauDeJeu plateau, Parcelle parcelle, int x, int y){
-            Coordonnees coordParcelle = new Coordonnees(x,y);
-
-            parcelle.setCoordonnees(coordParcelle);
-
-            planterBambouSurParcelleDeposee(parcelle);
-
-            plateau.ajouterParcelle(parcelle);
-
-            plateau.getPositionsDisponibles().removeIf(coordonnees -> coordonnees.equals(coordParcelle));
-
-            int i = plateau.positionParcelle(x, y + 2);
-            if (i != -1) {
-                parcelle.setVoisins(plateau.getParcelles().get(i));
-                plateau.getParcelles().get(i).setVoisins(parcelle);            }
-            i = plateau.positionParcelle(x + 2, y + 1);
-            if (i != -1) {
-                parcelle.setVoisins(plateau.getParcelles().get(i));
-                plateau.getParcelles().get(i).setVoisins(parcelle);
-            }
-            i = plateau.positionParcelle(x + 2, y - 1);
-            if (i != -1) {
-                parcelle.setVoisins(plateau.getParcelles().get(i));
-                plateau.getParcelles().get(i).setVoisins(parcelle);
-            }
-            i = plateau.positionParcelle(x, y - 2);
-            if (i != -1) {
-                parcelle.setVoisins(plateau.getParcelles().get(i));
-                plateau.getParcelles().get(i).setVoisins(parcelle);
-            }
-            i = plateau.positionParcelle(x - 2, y - 1);
-            if (i != -1) {
-                parcelle.setVoisins(plateau.getParcelles().get(i));
-                plateau.getParcelles().get(i).setVoisins(parcelle);
-            }
-            i = plateau.positionParcelle(x - 2, y + 1);
-            if (i != -1) {
-                parcelle.setVoisins(plateau.getParcelles().get(i));
-                plateau.getParcelles().get(i).setVoisins(parcelle);
-            }
-
-            plateau.mettreAjourListePosiDisp(coordParcelle);
-        return true;
-    }
+//
+//    public boolean placerParcelleDansPlateau(PlateauDeJeu plateau, Parcelle parcelle, int x, int y){
+//            Coordonnees coordParcelle = new Coordonnees(x,y);
+//
+//            parcelle.setCoordonnees(coordParcelle);
+//
+//            planterBambouSurParcelleDeposee(parcelle);
+//
+//            plateau.ajouterParcelle(parcelle);
+//
+//            plateau.getPositionsDisponibles().removeIf(coordonnees -> coordonnees.equals(coordParcelle));
+//
+//            int i = plateau.positionParcelle(x, y + 2);
+//            if (i != -1) {
+//                parcelle.setVoisins(plateau.getParcelles().get(i));
+//                plateau.getParcelles().get(i).setVoisins(parcelle);            }
+//            i = plateau.positionParcelle(x + 2, y + 1);
+//            if (i != -1) {
+//                parcelle.setVoisins(plateau.getParcelles().get(i));
+//                plateau.getParcelles().get(i).setVoisins(parcelle);
+//            }
+//            i = plateau.positionParcelle(x + 2, y - 1);
+//            if (i != -1) {
+//                parcelle.setVoisins(plateau.getParcelles().get(i));
+//                plateau.getParcelles().get(i).setVoisins(parcelle);
+//            }
+//            i = plateau.positionParcelle(x, y - 2);
+//            if (i != -1) {
+//                parcelle.setVoisins(plateau.getParcelles().get(i));
+//                plateau.getParcelles().get(i).setVoisins(parcelle);
+//            }
+//            i = plateau.positionParcelle(x - 2, y - 1);
+//            if (i != -1) {
+//                parcelle.setVoisins(plateau.getParcelles().get(i));
+//                plateau.getParcelles().get(i).setVoisins(parcelle);
+//            }
+//            i = plateau.positionParcelle(x - 2, y + 1);
+//            if (i != -1) {
+//                parcelle.setVoisins(plateau.getParcelles().get(i));
+//                plateau.getParcelles().get(i).setVoisins(parcelle);
+//            }
+//
+//            plateau.mettreAjourListePosiDisp(coordParcelle);
+//        return true;
+//    }
 
     public void prendreIrrigation() {
         int nbrCanauxIrrigationRestant = Irrigation.getNbrCanauxIrrigation() - 1;
@@ -171,16 +171,16 @@ public class Joueur {
         return true;
     }
 
-    /*
-     * Si une parcelle est adjacent à la parcelle Étang, ça deviendra irriguée.
-     * et on pourrait faire pousser une section de bambou sur cette parcelle.
-     */
-    public void planterBambouSurParcelleDeposee(Parcelle parcelle) {
-        if (parcelle.estAdjacentAParcelleEtang(parcelle)) {
-            parcelle.setIrriguee(true);
-            parcelle.fairePousserBambou();
-        }
-
-    }
+//    /*
+//     * Si une parcelle est adjacent à la parcelle Étang, ça deviendra irriguée.
+//     * et on pourrait faire pousser une section de bambou sur cette parcelle.
+//     */
+//    public void planterBambouSurParcelleDeposee(Parcelle parcelle) {
+//        if (parcelle.estAdjacentAParcelleEtang(parcelle)) {
+//            parcelle.setIrriguee(true);
+//            parcelle.fairePousserBambou();
+//        }
+//
+//    }
 
 }

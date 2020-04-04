@@ -46,36 +46,36 @@ public class Jeu {
 
     public List<Joueur> getJoueurs() { return joueurs; }
 
-    public List<Parcelle> effectuerActionPiocherParcelles(int nbrAPiocher, int indexJoueur){
-        return piocheParcelles.piocher(nbrAPiocher);
-    }
-
-    public Parcelle selectionnerParcelle(List<Parcelle> parcellesPiochees, int indexParcelle){
-        Parcelle parcelleSelectionnee = parcellesPiochees.remove(indexParcelle - 1);
-        piocheParcelles.replacerParcellesNonChoisies(parcellesPiochees);
-        return parcelleSelectionnee;
-    }
-
-    public void afficherParcelles(List<Parcelle> parcelles){
-        piocheParcelles.afficherParcelles(parcelles);
-    }
-
-    public void afficherParcellesDansPlateau(){
-        plateauDeJeu.afficherParcelleDeposees();
-    }
-
-    public boolean effectuerActionPlacerParcelleDansPlateau(Parcelle parcelle, int x, int y, int joueurIndex){
-        Coordonnees coord = new Coordonnees(x,y);
-        if (!positionExiste(plateauDeJeu, coord))
-            return false;
-
-        Joueur joueur = getJoueurByIndex(joueurIndex);
-
-        parcelle = fabriqueParcelle.getParcelle(parcelle.getCouleur());
-
-        joueur.placerParcelleDansPlateau(plateauDeJeu,parcelle,x,y);
-        return true;
-    }
+//    public List<Parcelle> effectuerActionPiocherParcelles(int nbrAPiocher, int indexJoueur){
+//        return piocheParcelles.piocher(nbrAPiocher);
+//    }
+//
+//    public Parcelle selectionnerParcelle(List<Parcelle> parcellesPiochees, int indexParcelle){
+//        Parcelle parcelleSelectionnee = parcellesPiochees.remove(indexParcelle - 1);
+//        piocheParcelles.replacerParcellesNonChoisies(parcellesPiochees);
+//        return parcelleSelectionnee;
+//    }
+//
+//    public void afficherParcelles(List<Parcelle> parcelles){
+//        piocheParcelles.afficherParcelles(parcelles);
+//    }
+//
+//    public void afficherParcellesDansPlateau(){
+//        plateauDeJeu.afficherParcelleDeposees();
+//    }
+//
+//    public boolean effectuerActionPlacerParcelleDansPlateau(Parcelle parcelle, int x, int y, int joueurIndex){
+//        Coordonnees coord = new Coordonnees(x,y);
+//        if (!positionExiste(plateauDeJeu, coord))
+//            return false;
+//
+//        Joueur joueur = getJoueurByIndex(joueurIndex);
+//
+//        parcelle = fabriqueParcelle.getParcelle(parcelle.getCouleur());
+//
+//        joueur.placerParcelleDansPlateau(plateauDeJeu,parcelle,x,y);
+//        return true;
+//    }
 
     public void effectuerActionPiocherIrrigation(int joueurIndex){
         Joueur joueur = getJoueurByIndex(joueurIndex);

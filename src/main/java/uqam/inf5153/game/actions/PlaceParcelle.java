@@ -86,7 +86,53 @@ public class PlaceParcelle implements Action {
 
         Joueur joueur = jeu.getJoueurByIndex(joueurIndex);
 
-        joueur.placerParcelleDansPlateau(jeu.getPlateauDeJeu(),parcelle,x,y);
+        placerParcelleDansPlateau(jeu.getPlateauDeJeu(),parcelle,x,y);
+        return true;
+    }
+
+
+    public boolean placerParcelleDansPlateau(PlateauDeJeu plateau, Parcelle parcelle, int x, int y){
+        Coordonnees coordParcelle = new Coordonnees(x,y);
+
+        parcelle.setCoordonnees(coordParcelle);
+
+        planterBambouSurParcelleDeposee(parcelle);
+
+        plateau.ajouterParcelle(parcelle);
+
+        plateau.getPositionsDisponibles().removeIf(coordonnees -> coordonnees.equals(coordParcelle));
+
+        int i = plateau.positionParcelle(x, y + 2);
+        if (i != -1) {
+            parcelle.setVoisins(plateau.getParcelles().get(i));
+            plateau.getParcelles().get(i).setVoisins(parcelle);            }
+        i = plateau.positionParcelle(x + 2, y + 1);
+        if (i != -1) {
+            parcelle.setVoisins(plateau.getParcelles().get(i));
+            plateau.getParcelles().get(i).setVoisins(parcelle);
+        }
+        i = plateau.positionParcelle(x + 2, y - 1);
+        if (i != -1) {
+            parcelle.setVoisins(plateau.getParcelles().get(i));
+            plateau.getParcelles().get(i).setVoisins(parcelle);
+        }
+        i = plateau.positionParcelle(x, y - 2);
+        if (i != -1) {
+            parcelle.setVoisins(plateau.getParcelles().get(i));
+            plateau.getParcelles().get(i).setVoisins(parcelle);
+        }
+        i = plateau.positionParcelle(x - 2, y - 1);
+        if (i != -1) {
+            parcelle.setVoisins(plateau.getParcelles().get(i));
+            plateau.getParcelles().get(i).setVoisins(parcelle);
+        }
+        i = plateau.positionParcelle(x - 2, y + 1);
+        if (i != -1) {
+            parcelle.setVoisins(plateau.getParcelles().get(i));
+            plateau.getParcelles().get(i).setVoisins(parcelle);
+        }
+
+        plateau.mettreAjourListePosiDisp(coordParcelle);
         return true;
     }
 
@@ -99,5 +145,17 @@ public class PlaceParcelle implements Action {
             }
         }
         return positionExiste;
+    }
+
+    /*
+     * Si une parcelle est adjacent à la parcelle Étang, ça deviendra irriguée.
+     * et on pourrait faire pousser une section de bambou sur cette parcelle.
+     */
+    public void planterBambouSurParcelleDeposee(Parcelle parcelle) {
+        if (parcelle.estAdjacentAParcelleEtang(parcelle)) {
+            parcelle.setIrriguee(true);
+            parcelle.fairePousserBambou();
+        }
+
     }
 }
