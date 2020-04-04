@@ -40,6 +40,12 @@ public class Jeu {
         return plateauDeJeu;
     }
 
+    public PiocheParcelles getPiocheParcelles(){
+        return piocheParcelles;
+    }
+
+    public List<Joueur> getJoueurs() { return joueurs; }
+
     public List<Parcelle> effectuerActionPiocherParcelles(int nbrAPiocher, int indexJoueur){
         return piocheParcelles.piocher(nbrAPiocher);
     }
@@ -152,7 +158,7 @@ public class Jeu {
     }
 
     // private methods
-    private Joueur getJoueurByIndex(int index){
+    public Joueur getJoueurByIndex(int index){
         return this.joueurs.get(index - 1);
     }
 

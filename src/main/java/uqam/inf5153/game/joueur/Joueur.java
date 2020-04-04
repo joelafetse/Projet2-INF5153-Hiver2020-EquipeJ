@@ -19,7 +19,7 @@ public class Joueur {
 
     private PlateauDeJoueur plateauDeJoueur;
     private List<Objectif> objectifs;
-    private Action action;
+    private Action actionCourante;
     private final int NOMBRE_ACTIONS = 2;
     private int score;
 
@@ -27,6 +27,14 @@ public class Joueur {
         this.plateauDeJoueur = new PlateauDeJoueur();
         this.objectifs = new ArrayList<>();
         this.score = 0;
+    }
+
+    public boolean effectuerAction(int numJoueur){
+        return this.actionCourante.executerAction(numJoueur);
+    }
+
+    public void setActionCourante(Action nouvelleAction){
+        this.actionCourante = nouvelleAction;
     }
 
     public PlateauDeJoueur getPlateauDeJoueur() {

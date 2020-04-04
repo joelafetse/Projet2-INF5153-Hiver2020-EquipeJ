@@ -1,5 +1,7 @@
 package uqam.inf5153.game;
 
+import uqam.inf5153.game.actions.PlaceParcelle;
+import uqam.inf5153.game.joueur.Joueur;
 import uqam.inf5153.game.objectif.Objectif;
 import uqam.inf5153.game.tuile.parcelle.Parcelle;
 
@@ -16,47 +18,56 @@ public class Takenoko {
 
 	private static Jeu jeu = new Jeu();
 
+	public static Joueur getJoueurByIndex(int index){
+		return jeu.getJoueurs().get(index - 1);
+	}
+
 	/**
 	 * les parcelles
 	 */
 
-	/*
-	 * Piocher nbrAPiocher parcelles de la pioche du joueur joueur
-	 */
-	public static List<Parcelle> piocherParcelles(int nbrAPiocher, int joueur) {
-		return jeu.effectuerActionPiocherParcelles(nbrAPiocher, joueur);
+	public static void placerParcelle(int numJoueur){
+		Joueur joueur = getJoueurByIndex(numJoueur);
+		joueur.setActionCourante(new PlaceParcelle(jeu));
+		joueur.effectuerAction(numJoueur);
 	}
-	/*
-	 * selectionne uneParcelle parmi les parcelles piochés et retourne les autres à la pioche.
-	 */
-	//public static void selectionnerParcelle(String[] parcelles, String uneParcelle ) {}
-	public static Parcelle selectionnerParcelle(List<Parcelle>  parcelles, int indexParcelle ) {
-		return jeu.selectionnerParcelle(parcelles, indexParcelle);
-	}
-	/*
-	 * afficher un ensemble de parcelles
-	 */
-	/*public static void afficherParcelles(String[] parcelles) {}*/
-	public static void afficherParcelles( List<Parcelle> list) {
-        jeu.afficherParcelles(list);
-	}
-	/*
-	 * afficher les parcelles déposé dans le plateau du joueur joueur
-	 */
-	public static void afficherParcellesPlateau(){//int joueur) {
-		jeu.afficherParcellesDansPlateau();
-	}
-
-	public static void afficherPositionsDisponibles(){
-		jeu.getPlateauDeJeu().afficherLesPositionsDispo();
-	}
-	/*
-	 * placer une parcelle dans la position (x,y) dans le plateau du joueur joueur.
-	 * retourne true si la parcelle est bien placée, sinon elle retourne false.
-	 */
-	public static boolean placerParcelleDansPlateau(Parcelle parcelle, int x, int y, int joueur) {
-        return jeu.effectuerActionPlacerParcelleDansPlateau(parcelle,x,y,joueur);
-	}
+//	/*
+//	 * Piocher nbrAPiocher parcelles de la pioche du joueur joueur
+//	 */
+//	public static List<Parcelle> piocherParcelles(int nbrAPiocher, int joueur) {
+//		return jeu.effectuerActionPiocherParcelles(nbrAPiocher, joueur);
+//	}
+//	/*
+//	 * selectionne uneParcelle parmi les parcelles piochés et retourne les autres à la pioche.
+//	 */
+//	//public static void selectionnerParcelle(String[] parcelles, String uneParcelle ) {}
+//	public static Parcelle selectionnerParcelle(List<Parcelle>  parcelles, int indexParcelle ) {
+//		return jeu.selectionnerParcelle(parcelles, indexParcelle);
+//	}
+//	/*
+//	 * afficher un ensemble de parcelles
+//	 */
+//	/*public static void afficherParcelles(String[] parcelles) {}*/
+//	public static void afficherParcelles( List<Parcelle> list) {
+//        jeu.afficherParcelles(list);
+//	}
+//	/*
+//	 * afficher les parcelles déposé dans le plateau du joueur joueur
+//	 */
+//	public static void afficherParcellesPlateau(){//int joueur) {
+//		jeu.afficherParcellesDansPlateau();
+//	}
+//
+//	public static void afficherPositionsDisponibles(){
+//		jeu.getPlateauDeJeu().afficherLesPositionsDispo();
+//	}
+//	/*
+//	 * placer une parcelle dans la position (x,y) dans le plateau du joueur joueur.
+//	 * retourne true si la parcelle est bien placée, sinon elle retourne false.
+//	 */
+//	public static boolean placerParcelleDansPlateau(Parcelle parcelle, int x, int y, int joueur) {
+//        return jeu.effectuerActionPlacerParcelleDansPlateau(parcelle,x,y,joueur);
+//	}
 	/**
 	 * piocher une irrigation du joueur
 	 */
