@@ -113,15 +113,15 @@ public class Jeu {
 //        Joueur joueur = getJoueurByIndex(joueurIndex);
 //        return joueur.deplacerJardinier(plateauDeJeu.getJardinier(),parcelleDestination);
 //    }
-    public boolean effectuerActionDeplacerPanda(int x, int y, int joueurIndex){
-        Coordonnees coord = new Coordonnees(x,y);
-        if (!plateauDeJeu.estPositionOccupee(coord)){
-            return false;
-        }
-        Parcelle parcelleDestination = plateauDeJeu.getParcelleAtPosition(coord);
-        Joueur joueur = getJoueurByIndex(joueurIndex);
-        return joueur.deplacerPanda(plateauDeJeu.getPanda(),parcelleDestination);
-    }
+//    public boolean effectuerActionDeplacerPanda(int x, int y, int joueurIndex){
+//        Coordonnees coord = new Coordonnees(x,y);
+//        if (!plateauDeJeu.estPositionOccupee(coord)){
+//            return false;
+//        }
+//        Parcelle parcelleDestination = plateauDeJeu.getParcelleAtPosition(coord);
+//        Joueur joueur = getJoueurByIndex(joueurIndex);
+//        return joueur.deplacerPanda(plateauDeJeu.getPanda(),parcelleDestination);
+//    }
 
     public void afficherObjectifsPioches(int joueurIndex) {
         Joueur joueur = getJoueurByIndex(joueurIndex);

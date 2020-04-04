@@ -1,6 +1,7 @@
 package uqam.inf5153.game;
 
 import uqam.inf5153.game.actions.DeplaceJardinier;
+import uqam.inf5153.game.actions.DeplacePanda;
 import uqam.inf5153.game.actions.PlaceIrrigation;
 import uqam.inf5153.game.actions.PlaceParcelle;
 import uqam.inf5153.game.joueur.Joueur;
@@ -152,14 +153,19 @@ public class Takenoko {
 	/**
 	 * panda
 	 */
-
-	/*
-	 * placer le panda du joueur dans la parcelle dans la position (x,y)  de son plateau.
-	 * retourne true si le panda est déplacé, sinon elle retourne false
-	 */
-	public static boolean PlacerPanda(int x, int y, int joueur) {
-		return jeu.effectuerActionDeplacerPanda(x,y,joueur);
+	public static void deplacerPanda(int numJoueur){
+		Joueur joueur = getJoueurByIndex(numJoueur);
+		joueur.setActionCourante(new DeplacePanda(jeu));
+		joueur.effectuerAction(numJoueur);
 	}
+
+//	/*
+//	 * placer le panda du joueur dans la parcelle dans la position (x,y)  de son plateau.
+//	 * retourne true si le panda est déplacé, sinon elle retourne false
+//	 */
+//	public static boolean PlacerPanda(int x, int y, int joueur) {
+//		return jeu.effectuerActionDeplacerPanda(x,y,joueur);
+//	}
 
 	/**
 	 * fin DE partie

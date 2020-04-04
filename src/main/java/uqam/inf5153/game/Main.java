@@ -209,23 +209,24 @@ public class Main {
 
 	}
 	private static void deplacerPanda(int numJoueur) {
-		System.out.println("==========================================================================");
-		System.out.println("|   TAKENOKO MENU JOUEUR " +numJoueur+ " : Action Panda                         ");
-		System.out.println("==========================================================================");
-		System.out.println("|        Afficher les parcelles du plateau  (les positions)\n               ");
-		//Takenoko.afficherParcellesPlateau();
-		System.out.println("\n|        Préciser la nouvelle parcelle (position x,y) du Panda                   ");
-		int x = Keyin.inInt(" Entrer la position x : ");
-		int y = Keyin.inInt(" Entrer la position y : ");
-		boolean PandaEstDeplace = Takenoko.PlacerPanda(x,y, numJoueur );
-		while (!PandaEstDeplace){
-			System.out.println("Vous ne pouvez pas déplacer le panda sur cette parcelle");
-			System.out.println("|        Préciser la nouvelle parcelle (position x,y) du panda      ");
-			x = Keyin.inInt(" Entrer la position x : ");
-			y = Keyin.inInt(" Entrer la position y : ");
-			PandaEstDeplace = Takenoko.PlacerPanda(x,y, numJoueur );
-		}
-		System.out.println("Le Panda est bien déplacé.");
+		Takenoko.deplacerPanda(numJoueur);
+//		System.out.println("==========================================================================");
+//		System.out.println("|   TAKENOKO MENU JOUEUR " +numJoueur+ " : Action Panda                         ");
+//		System.out.println("==========================================================================");
+//		System.out.println("|        Afficher les parcelles du plateau  (les positions)\n               ");
+//		//Takenoko.afficherParcellesPlateau();
+//		System.out.println("\n|        Préciser la nouvelle parcelle (position x,y) du Panda                   ");
+//		int x = Keyin.inInt(" Entrer la position x : ");
+//		int y = Keyin.inInt(" Entrer la position y : ");
+//		boolean PandaEstDeplace = Takenoko.PlacerPanda(x,y, numJoueur );
+//		while (!PandaEstDeplace){
+//			System.out.println("Vous ne pouvez pas déplacer le panda sur cette parcelle");
+//			System.out.println("|        Préciser la nouvelle parcelle (position x,y) du panda      ");
+//			x = Keyin.inInt(" Entrer la position x : ");
+//			y = Keyin.inInt(" Entrer la position y : ");
+//			PandaEstDeplace = Takenoko.PlacerPanda(x,y, numJoueur );
+//		}
+//		System.out.println("Le Panda est bien déplacé.");
 
 	}
 	private static void piocherObjectif(int numJoueur) {

@@ -158,18 +158,18 @@ public class Joueur {
 //        return true;
 //    }
 
-    public boolean deplacerPanda(Figurine panda, Parcelle parcelleDestination){
-        if (!panda.estDeplaceableSur(parcelleDestination)){
-            return false;
-        }else{
-            panda.setParcelleDepart(parcelleDestination);
-            if (parcelleDestination.getNombreDeBambous() != 0) {
-                Bambou bambouMange = parcelleDestination.mangerBambou();
-                this.plateauDeJoueur.reserverBambousPanda(bambouMange);
-            }
-        }
-        return true;
-    }
+//    public boolean deplacerPanda(Figurine panda, Parcelle parcelleDestination){
+//        if (!panda.estDeplaceableSur(parcelleDestination)){
+//            return false;
+//        }else{
+//            panda.setParcelleDepart(parcelleDestination);
+//            if (parcelleDestination.getNombreDeBambous() != 0) {
+//                Bambou bambouMange = parcelleDestination.mangerBambou();
+//                this.plateauDeJoueur.reserverBambousPanda(bambouMange);
+//            }
+//        }
+//        return true;
+//    }
 
 //    /*
 //     * Si une parcelle est adjacent à la parcelle Étang, ça deviendra irriguée.
