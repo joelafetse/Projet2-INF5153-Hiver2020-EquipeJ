@@ -188,23 +188,24 @@ public class Main {
 //		}
 	}
 	private static void deplacerJardinier(int numJoueur) {
-		System.out.println("==========================================================================");
-		System.out.println("|   TAKENOKO MENU JOUEUR " +numJoueur+ " : Action Jardiner                        ");
-		System.out.println("==========================================================================");
-		System.out.println("|        Afficher les parcelles du plateau (les positions):             \n");
-		//Takenoko.afficherParcellesPlateau();
-		System.out.println("\n|        Précisier la nouvelle parcelle (position x,y) du Jardinier      ");
-		int x = Keyin.inInt(" Entrer la position x : ");
-		int y = Keyin.inInt(" Entrer la position y : ");
-		boolean estDeplace = Takenoko.PlacerJardinier(x,y, numJoueur );
-		while (!estDeplace) {
-			System.out.println("Vous ne pouvez pas déplacer le jardinier sur cette parcelle");
-			System.out.println("|        Préciser la nouvelle parcelle (position x,y) du Jardinier      ");
-			x = Keyin.inInt(" Entrer la position x : ");
-			y = Keyin.inInt(" Entrer la position y : ");
-			estDeplace = Takenoko.PlacerJardinier(x, y, numJoueur);
-		}
-		System.out.println("Le Jardinier est bien déplacé.");
+		Takenoko.deplacerJardinier(numJoueur);
+//		System.out.println("==========================================================================");
+//		System.out.println("|   TAKENOKO MENU JOUEUR " +numJoueur+ " : Action Jardiner                        ");
+//		System.out.println("==========================================================================");
+//		System.out.println("|        Afficher les parcelles du plateau (les positions):             \n");
+//		//Takenoko.afficherParcellesPlateau();
+//		System.out.println("\n|        Précisier la nouvelle parcelle (position x,y) du Jardinier      ");
+//		int x = Keyin.inInt(" Entrer la position x : ");
+//		int y = Keyin.inInt(" Entrer la position y : ");
+//		boolean estDeplace = Takenoko.PlacerJardinier(x,y, numJoueur );
+//		while (!estDeplace) {
+//			System.out.println("Vous ne pouvez pas déplacer le jardinier sur cette parcelle");
+//			System.out.println("|        Préciser la nouvelle parcelle (position x,y) du Jardinier      ");
+//			x = Keyin.inInt(" Entrer la position x : ");
+//			y = Keyin.inInt(" Entrer la position y : ");
+//			estDeplace = Takenoko.PlacerJardinier(x, y, numJoueur);
+//		}
+//		System.out.println("Le Jardinier est bien déplacé.");
 
 	}
 	private static void deplacerPanda(int numJoueur) {

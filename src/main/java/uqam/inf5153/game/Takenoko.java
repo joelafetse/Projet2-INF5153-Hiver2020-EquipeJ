@@ -1,5 +1,6 @@
 package uqam.inf5153.game;
 
+import uqam.inf5153.game.actions.DeplaceJardinier;
 import uqam.inf5153.game.actions.PlaceIrrigation;
 import uqam.inf5153.game.actions.PlaceParcelle;
 import uqam.inf5153.game.joueur.Joueur;
@@ -70,7 +71,7 @@ public class Takenoko {
 	 * piocher une irrigation du joueur
 	 */
 
-	public static  void placerIrrigation(int numJoueur, boolean estDecision){
+	public static void placerIrrigation(int numJoueur, boolean estDecision){
 		Joueur joueur = getJoueurByIndex(numJoueur);
 		joueur.setActionCourante(new PlaceIrrigation(jeu,estDecision));
 		joueur.effectuerAction(numJoueur);
@@ -133,14 +134,18 @@ public class Takenoko {
 	/**
 	 * jardinier
 	 */
-
-	/*
-	 * placer le jardinier du joueur dans la parcelle dans la position (x,y) de son plateau.
-	 * retourne true si le jardinier est déplacé, sinon elle retourne false
-	 */
-	public static boolean PlacerJardinier(int x, int y, int joueur) {
-		return jeu.effectuerActionDeplacerJardinier(x,y,joueur);
+	public static void deplacerJardinier(int numJoueur){
+		Joueur joueur = getJoueurByIndex(numJoueur);
+		joueur.setActionCourante(new DeplaceJardinier(jeu));
+		joueur.effectuerAction(numJoueur);
 	}
+//	/*
+//	 * placer le jardinier du joueur dans la parcelle dans la position (x,y) de son plateau.
+//	 * retourne true si le jardinier est déplacé, sinon elle retourne false
+//	 */
+//	public static boolean PlacerJardinier(int x, int y, int joueur) {
+//		return jeu.effectuerActionDeplacerJardinier(x,y,joueur);
+//	}
 
 
 

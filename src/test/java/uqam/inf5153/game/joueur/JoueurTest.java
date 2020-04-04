@@ -45,18 +45,18 @@ public class JoueurTest {
     public void placerIrrigation() {
     }
 
-    @Test
-    public void deplacerJardinier() {
-        Coordonnees c1 = new Coordonnees(2, 1);
-        Parcelle pDepart = new ParcelleVerte();
-        pDepart.setCoordonnees(c1);
-        Coordonnees c2 = new Coordonnees(2, -1);
-        Parcelle pDest = new ParcelleVerte();
-        pDest.setCoordonnees(c2);
-        Figurine jardinier = new Jardinier(pDepart);
-        Joueur j = new Joueur();
-        j.deplacerJardinier(jardinier, pDest);
-        assertTrue(jardinier.getParcelleDepart().equals(pDest));
-
-    }
+//    @Test
+//    public void deplacerJardinier() {
+//        Coordonnees c1 = new Coordonnees(2, 1);
+//        Parcelle pDepart = new ParcelleVerte();
+//        pDepart.setCoordonnees(c1);
+//        Coordonnees c2 = new Coordonnees(2, -1);
+//        Parcelle pDest = new ParcelleVerte();
+//        pDest.setCoordonnees(c2);
+//        Figurine jardinier = new Jardinier(pDepart);
+//        Joueur j = new Joueur();
+//        j.deplacerJardinier(jardinier, pDest);
+//        assertTrue(jardinier.getParcelleDepart().equals(pDest));
+//
+//    }
 }

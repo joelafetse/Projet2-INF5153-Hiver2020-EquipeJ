@@ -146,17 +146,17 @@ public class Joueur {
 //        return irrigationEstPlacee;
 //    }
 
-    public boolean deplacerJardinier(Figurine jardinier, Parcelle parcelleDestination){
-        if (!jardinier.estDeplaceableSur(parcelleDestination)) {
-            return false;
-        }else{
-            jardinier.setParcelleDepart(parcelleDestination);
-            if (parcelleDestination.estIrriguee() && parcelleDestination.getNombreDeBambous() <= 4) {
-                parcelleDestination.fairePousserBambou();
-            }
-        }
-        return true;
-    }
+//    public boolean deplacerJardinier(Figurine jardinier, Parcelle parcelleDestination){
+//        if (!jardinier.estDeplaceableSur(parcelleDestination)) {
+//            return false;
+//        }else{
+//            jardinier.setParcelleDepart(parcelleDestination);
+//            if (parcelleDestination.estIrriguee() && parcelleDestination.getNombreDeBambous() <= 4) {
+//                parcelleDestination.fairePousserBambou();
+//            }
+//        }
+//        return true;
+//    }
 
     public boolean deplacerPanda(Figurine panda, Parcelle parcelleDestination){
         if (!panda.estDeplaceableSur(parcelleDestination)){

@@ -104,15 +104,15 @@ public class Jeu {
 //        return joueur.placerIrrigation(plateauDeJeu, p1, p2);
 //    }
 
-    public boolean effectuerActionDeplacerJardinier(int x, int y, int joueurIndex){
-        Coordonnees coord = new Coordonnees(x,y);
-        if (!plateauDeJeu.estPositionOccupee(coord)){
-            return false;
-        }
-        Parcelle parcelleDestination = plateauDeJeu.getParcelleAtPosition(coord);
-        Joueur joueur = getJoueurByIndex(joueurIndex);
-        return joueur.deplacerJardinier(plateauDeJeu.getJardinier(),parcelleDestination);
-    }
+//    public boolean effectuerActionDeplacerJardinier(int x, int y, int joueurIndex){
+//        Coordonnees coord = new Coordonnees(x,y);
+//        if (!plateauDeJeu.estPositionOccupee(coord)){
+//            return false;
+//        }
+//        Parcelle parcelleDestination = plateauDeJeu.getParcelleAtPosition(coord);
+//        Joueur joueur = getJoueurByIndex(joueurIndex);
+//        return joueur.deplacerJardinier(plateauDeJeu.getJardinier(),parcelleDestination);
+//    }
     public boolean effectuerActionDeplacerPanda(int x, int y, int joueurIndex){
         Coordonnees coord = new Coordonnees(x,y);
         if (!plateauDeJeu.estPositionOccupee(coord)){
