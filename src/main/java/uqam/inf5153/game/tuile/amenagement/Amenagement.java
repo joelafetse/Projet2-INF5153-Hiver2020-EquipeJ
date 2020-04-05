@@ -11,17 +11,19 @@ public abstract class Amenagement implements ComposantParcelle {
     }
 
 
-    /*
-     * pour appliquer le pattern Decorateur
-     */
     @Override
     public int getNombreDeBambous() {
-        return bambouSupplementaire (composant.getNombreDeBambous());
+        return composant.getNombreDeBambous();
     }
 
     /*
      * pour appliquer le pattern Decorateur
      */
-    protected abstract int bambouSupplementaire(int nbrDeBambous);
+    @Override
+    public void fairePousserBambou(){
+        fairePousserBambouAmenagement(composant);
+    }
 
+
+    protected abstract void fairePousserBambouAmenagement(ComposantParcelle com);
 }

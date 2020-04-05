@@ -7,8 +7,7 @@ import java.util.List;
 
 public interface ComposantParcelle {
 
-    public int getNombreDeBambous ();
-    // TODO pour ajouter bambou suplementaire.!!!!!!!
-    //public void setBambous();
+    int getNombreDeBambous ();
+    void fairePousserBambou();
 
 }

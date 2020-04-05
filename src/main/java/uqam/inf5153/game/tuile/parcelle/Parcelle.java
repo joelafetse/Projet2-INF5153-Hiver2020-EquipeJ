@@ -29,7 +29,6 @@ public abstract class Parcelle implements ComposantParcelle {
     }
 
     public abstract Couleur getCouleur();
-    public abstract void fairePousserBambou();
     public abstract void prendreBambou();
     public abstract int getNbSectionsDeBambou();
 

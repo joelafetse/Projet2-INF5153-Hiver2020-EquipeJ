@@ -1,6 +1,7 @@
 package uqam.inf5153.game.tuile.amenagement;
 
 import uqam.inf5153.game.bambou.Bambou;
+import uqam.inf5153.game.tuile.ComposantParcelle;
 import uqam.inf5153.game.tuile.amenagement.Amenagement;
 import uqam.inf5153.game.tuile.parcelle.Parcelle;
 
@@ -13,14 +14,10 @@ public class AmenagementBassin extends Amenagement {
     }
 
     @Override
-    protected  int bambouSupplementaire(int nbrDeBambous) {
-
-        return nbrDeBambous + 1;
+    protected void fairePousserBambouAmenagement(ComposantParcelle com){
+        if (com != null && com instanceof Parcelle){
+            ((Parcelle) com).setIrriguee(true);
+            com.fairePousserBambou();
+        }
     }
-
-    /*
-    @Override
-    public void setBambous() {
-
-    }*/
 }

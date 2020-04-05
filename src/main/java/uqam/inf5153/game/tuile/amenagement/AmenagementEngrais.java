@@ -1,5 +1,6 @@
 package uqam.inf5153.game.tuile.amenagement;
 
+import uqam.inf5153.game.tuile.ComposantParcelle;
 import uqam.inf5153.game.tuile.amenagement.Amenagement;
 
 public class AmenagementEngrais extends Amenagement {
@@ -8,8 +9,11 @@ public class AmenagementEngrais extends Amenagement {
         super(interne);
     }
 
+
     @Override
-    protected  int bambouSupplementaire(int nbrDeBambous) {
-        return nbrDeBambous + 2;
+    protected void fairePousserBambouAmenagement(ComposantParcelle com){
+        com.fairePousserBambou();
+        com.fairePousserBambou();
+        com.fairePousserBambou();
     }
 }
