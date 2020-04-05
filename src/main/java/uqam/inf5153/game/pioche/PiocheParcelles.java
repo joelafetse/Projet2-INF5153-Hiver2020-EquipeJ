@@ -52,7 +52,7 @@ public class PiocheParcelles extends Pioche<ComposantParcelle> {
         for (int i=0; i < nbrAPiocher; i++)
             parcellesPiochees.add(this.objetsAPiocher.get(i));
         for (int i=0; i < nbrAPiocher; i++)
-            this.objetsAPiocher.remove(i);
+            this.objetsAPiocher.remove(0);
 
         return parcellesPiochees;
     }

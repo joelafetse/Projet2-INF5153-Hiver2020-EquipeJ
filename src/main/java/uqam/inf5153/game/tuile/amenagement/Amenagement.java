@@ -37,7 +37,7 @@ public abstract class Amenagement implements ComposantParcelle {
 
     @Override
     public String toString(){
-        return "Parcelle de couleur "+ this.composant.getCouleur()+  " Avec " + this.getClass().getSimpleName();
-               // ", nombre de bambous: "+ getNombreDeBambous ();
+        return "Parcelle de couleur "+ this.composant.getCouleur()+  " Avec " + this.getClass().getSimpleName()+
+                ", nombre de bambous: "+ getNombreDeBambous ();
     }
 }
