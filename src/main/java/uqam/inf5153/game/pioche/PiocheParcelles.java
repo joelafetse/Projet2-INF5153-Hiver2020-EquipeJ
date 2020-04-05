@@ -1,5 +1,7 @@
 package uqam.inf5153.game.pioche;
 
+import uqam.inf5153.game.tuile.ComposantParcelle;
+import uqam.inf5153.game.tuile.amenagement.AmenagementBassin;
 import uqam.inf5153.game.tuile.parcelle.Parcelle;
 import uqam.inf5153.game.tuile.parcelle.ParcelleJaune;
 import uqam.inf5153.game.tuile.parcelle.ParcelleRose;
@@ -12,6 +14,7 @@ public class PiocheParcelles extends Pioche<Parcelle> {
 
 
     public PiocheParcelles(){
+
         // 11 parcelles vertes
         for (int i=0; i < 11; i++)
             this.objetsAPiocher.add(new ParcelleVerte());
@@ -24,6 +27,11 @@ public class PiocheParcelles extends Pioche<Parcelle> {
         for (int i=0; i < 9; i++)
             this.objetsAPiocher.add(new ParcelleJaune());
     }
+
+
+
+
+
 
     @Override
     public Parcelle piocher() {

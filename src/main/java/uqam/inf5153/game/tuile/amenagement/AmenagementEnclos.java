@@ -5,7 +5,7 @@ import uqam.inf5153.game.tuile.amenagement.Amenagement;
 
 public class AmenagementEnclos extends Amenagement {
 
-    public AmenagementEnclos (Amenagement interne) {
+    public AmenagementEnclos (ComposantParcelle interne) {
         super(interne);
     }
 

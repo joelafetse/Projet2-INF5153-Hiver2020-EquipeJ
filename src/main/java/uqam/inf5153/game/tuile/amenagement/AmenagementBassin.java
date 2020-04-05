@@ -9,7 +9,7 @@ import java.util.List;
 
 public class AmenagementBassin extends Amenagement {
 
-    public AmenagementBassin (Amenagement interne) {
+    public AmenagementBassin (ComposantParcelle interne) {
         super(interne);
     }
 
