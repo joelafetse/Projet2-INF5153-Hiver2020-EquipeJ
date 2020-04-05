@@ -5,6 +5,8 @@ import uqam.inf5153.game.Keyin;
 import uqam.inf5153.game.joueur.Joueur;
 import uqam.inf5153.game.plateau.Coordonnees;
 import uqam.inf5153.game.plateau.PlateauDeJeu;
+import uqam.inf5153.game.tuile.ComposantParcelle;
+import uqam.inf5153.game.tuile.amenagement.Amenagement;
 import uqam.inf5153.game.tuile.parcelle.Parcelle;
 
 import java.util.List;
@@ -27,7 +29,7 @@ public class PlaceParcelle implements Action {
         System.out.println("|   TAKENOKO MENU JOUEUR " +numJoueur+ " : Action Parcelle                        ");
         System.out.println("===========================================================================");
         System.out.println("Étape 1 - Piocher 3 parcelles ");
-        List<Parcelle> parcellesPiochees = effectuerActionPiocherParcelles(3, numJoueur);
+        List<ComposantParcelle> parcellesPiochees = effectuerActionPiocherParcelles(3, numJoueur);
 
         System.out.println("Étape 2 - Vous avez pioché les parcelles suivantes : \n");
 
@@ -40,7 +42,7 @@ public class PlaceParcelle implements Action {
             parcelleChosie = Keyin.inInt("\nEntrez le numéro de la parcelle choisie : ");
         }
         System.out.println("Étape 4 - Replacer les deux autres sous la pioche");
-        Parcelle pSelectionnee = selectionnerParcelle(parcellesPiochees, parcelleChosie );
+        ComposantParcelle pSelectionnee = selectionnerParcelle(parcellesPiochees, parcelleChosie );
         System.out.println("Étape 5 - Afficher les parcelles du plateau:\n");
         afficherParcellesDansPlateau();
         jeu.getPlateauDeJeu().afficherLesPositionsDispo();
@@ -61,17 +63,17 @@ public class PlaceParcelle implements Action {
         return estPlacee;
     }
 
-    public List<Parcelle> effectuerActionPiocherParcelles(int nbrAPiocher, int indexJoueur){
+    public List<ComposantParcelle> effectuerActionPiocherParcelles(int nbrAPiocher, int indexJoueur){
         return jeu.getPiocheParcelles().piocher(nbrAPiocher);
     }
 
-    public Parcelle selectionnerParcelle(List<Parcelle> parcellesPiochees, int indexParcelle){
-        Parcelle parcelleSelectionnee = parcellesPiochees.remove(indexParcelle - 1);
+    public ComposantParcelle selectionnerParcelle(List<ComposantParcelle> parcellesPiochees, int indexParcelle){
+        ComposantParcelle parcelleSelectionnee = parcellesPiochees.remove(indexParcelle - 1);
         jeu.getPiocheParcelles().replacerParcellesNonChoisies(parcellesPiochees);
         return parcelleSelectionnee;
     }
 
-    public void afficherParcelles(List<Parcelle> parcelles){
+    public void afficherParcelles(List<ComposantParcelle> parcelles){
         jeu.getPiocheParcelles().afficherParcelles(parcelles);
     }
 
@@ -79,7 +81,7 @@ public class PlaceParcelle implements Action {
         jeu.getPlateauDeJeu().afficherParcelleDeposees();
     }
 
-    public boolean effectuerActionPlacerParcelleDansPlateau(Parcelle parcelle, int x, int y, int joueurIndex){
+    public boolean effectuerActionPlacerParcelleDansPlateau(ComposantParcelle parcelle, int x, int y, int joueurIndex){
         Coordonnees coord = new Coordonnees(x,y);
         if (!positionExiste(jeu.getPlateauDeJeu(), coord))
             return false;
@@ -91,8 +93,14 @@ public class PlaceParcelle implements Action {
     }
 
 
-    public boolean placerParcelleDansPlateau(PlateauDeJeu plateau, Parcelle parcelle, int x, int y){
+    public boolean placerParcelleDansPlateau(PlateauDeJeu plateau, ComposantParcelle p, int x, int y){
         Coordonnees coordParcelle = new Coordonnees(x,y);
+        Parcelle parcelle;
+        if(p instanceof Amenagement){
+            parcelle=((Amenagement) p).getComposant();
+        } else {
+            parcelle=(Parcelle)p;
+        }
 
         parcelle.setCoordonnees(coordParcelle);
 

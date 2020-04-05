@@ -9,15 +9,13 @@ import java.util.List;
 
 public class AmenagementBassin extends Amenagement {
 
-    public AmenagementBassin (ComposantParcelle interne) {
+    public AmenagementBassin (Parcelle interne) {
         super(interne);
     }
 
     @Override
-    protected void fairePousserBambouAmenagement(ComposantParcelle com){
-        if (com != null && com instanceof Parcelle){
-            ((Parcelle) com).setIrriguee(true);
+    protected void fairePousserBambouAmenagement(Parcelle com){
+            com.setIrriguee(true);
             com.fairePousserBambou();
-        }
     }
 }

@@ -1,12 +1,13 @@
 package uqam.inf5153.game.tuile.amenagement;
 
 import uqam.inf5153.game.tuile.ComposantParcelle;
+import uqam.inf5153.game.tuile.parcelle.Parcelle;
 
 public abstract class Amenagement implements ComposantParcelle {
 
-    private ComposantParcelle composant;
+    private Parcelle composant;
 
-    protected Amenagement (ComposantParcelle interne){
+    protected Amenagement (Parcelle interne){
            this.composant = interne;
     }
 
@@ -14,6 +15,10 @@ public abstract class Amenagement implements ComposantParcelle {
     @Override
     public int getNombreDeBambous() {
         return composant.getNombreDeBambous();
+    }
+    
+    public Parcelle getComposant() {
+        return composant;
     }
 
     /*
@@ -25,5 +30,14 @@ public abstract class Amenagement implements ComposantParcelle {
     }
 
 
-    protected abstract void fairePousserBambouAmenagement(ComposantParcelle com);
+    protected abstract void fairePousserBambouAmenagement(Parcelle com);
+
+
+
+
+    @Override
+    public String toString(){
+        return "Parcelle de couleur "+ this.composant.getCouleur()+  " Avec " + this.getClass().getSimpleName();
+               // ", nombre de bambous: "+ getNombreDeBambous ();
+    }
 }
