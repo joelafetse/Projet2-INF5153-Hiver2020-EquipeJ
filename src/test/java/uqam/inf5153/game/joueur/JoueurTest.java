@@ -17,15 +17,15 @@ public class JoueurTest {
 
     }
 
-    @Test
-    public void placerParcelleDansPlateau() {
-        PlateauDeJeu plateau = new PlateauDeJeu();
-        Coordonnees c2 = new Coordonnees(2, -1);
-        Parcelle p2 = new ParcelleVerte();
-        p2.setCoordonnees(c2);
-        Joueur joueur = new Joueur();
-        assertTrue(joueur.placerParcelleDansPlateau(plateau, p2, 2, -1));
-    }
+//    @Test
+//    public void placerParcelleDansPlateau() {
+//        PlateauDeJeu plateau = new PlateauDeJeu();
+//        Coordonnees c2 = new Coordonnees(2, -1);
+//        Parcelle p2 = new ParcelleVerte();
+//        p2.setCoordonnees(c2);
+//        Joueur joueur = new Joueur();
+//        assertTrue(joueur.placerParcelleDansPlateau(plateau, p2, 2, -1));
+//    }
 
     @Test
     public void prendreIrrigation() {
@@ -45,18 +45,18 @@ public class JoueurTest {
     public void placerIrrigation() {
     }
 
-    @Test
-    public void deplacerJardinier() {
-        Coordonnees c1 = new Coordonnees(2, 1);
-        Parcelle pDepart = new ParcelleVerte();
-        pDepart.setCoordonnees(c1);
-        Coordonnees c2 = new Coordonnees(2, -1);
-        Parcelle pDest = new ParcelleVerte();
-        pDest.setCoordonnees(c2);
-        Figurine jardinier = new Jardinier(pDepart);
-        Joueur j = new Joueur();
-        j.deplacerJardinier(jardinier, pDest);
-        assertTrue(jardinier.getParcelleDepart().equals(pDest));
-
-    }
+//    @Test
+//    public void deplacerJardinier() {
+//        Coordonnees c1 = new Coordonnees(2, 1);
+//        Parcelle pDepart = new ParcelleVerte();
+//        pDepart.setCoordonnees(c1);
+//        Coordonnees c2 = new Coordonnees(2, -1);
+//        Parcelle pDest = new ParcelleVerte();
+//        pDest.setCoordonnees(c2);
+//        Figurine jardinier = new Jardinier(pDepart);
+//        Joueur j = new Joueur();
+//        j.deplacerJardinier(jardinier, pDest);
+//        assertTrue(jardinier.getParcelleDepart().equals(pDest));
+//
+//    }
 }

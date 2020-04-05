@@ -3,7 +3,7 @@ package uqam.inf5153.game;
 /**
  * une classe utilitaires pour les saisis au clavier.
  */
-class Keyin {
+public class Keyin {
 
 	//*******************************
 	//   support methods
