@@ -1,16 +1,9 @@
 package uqam.inf5153.game.joueur;
 
 import uqam.inf5153.game.actions.Action;
-import uqam.inf5153.game.bambou.Bambou;
-import uqam.inf5153.game.figurine.Figurine;
 import uqam.inf5153.game.objectif.Objectif;
-import uqam.inf5153.game.pioche.PiocheObjectifs;
-import uqam.inf5153.game.plateau.Coordonnees;
-import uqam.inf5153.game.plateau.Irrigation;
 import uqam.inf5153.game.plateau.PlateauDeJeu;
-import uqam.inf5153.game.plateau.ReseauIrrigation;
-import uqam.inf5153.game.tuile.parcelle.Couleur;
-import uqam.inf5153.game.tuile.parcelle.Parcelle;
+
 
 import java.util.ArrayList;
 import java.util.List;
@@ -40,65 +33,6 @@ public class Joueur {
     public PlateauDeJoueur getPlateauDeJoueur() {
         return plateauDeJoueur;
     }
-//
-//    public boolean placerParcelleDansPlateau(PlateauDeJeu plateau, Parcelle parcelle, int x, int y){
-//            Coordonnees coordParcelle = new Coordonnees(x,y);
-//
-//            parcelle.setCoordonnees(coordParcelle);
-//
-//            planterBambouSurParcelleDeposee(parcelle);
-//
-//            plateau.ajouterParcelle(parcelle);
-//
-//            plateau.getPositionsDisponibles().removeIf(coordonnees -> coordonnees.equals(coordParcelle));
-//
-//            int i = plateau.positionParcelle(x, y + 2);
-//            if (i != -1) {
-//                parcelle.setVoisins(plateau.getParcelles().get(i));
-//                plateau.getParcelles().get(i).setVoisins(parcelle);            }
-//            i = plateau.positionParcelle(x + 2, y + 1);
-//            if (i != -1) {
-//                parcelle.setVoisins(plateau.getParcelles().get(i));
-//                plateau.getParcelles().get(i).setVoisins(parcelle);
-//            }
-//            i = plateau.positionParcelle(x + 2, y - 1);
-//            if (i != -1) {
-//                parcelle.setVoisins(plateau.getParcelles().get(i));
-//                plateau.getParcelles().get(i).setVoisins(parcelle);
-//            }
-//            i = plateau.positionParcelle(x, y - 2);
-//            if (i != -1) {
-//                parcelle.setVoisins(plateau.getParcelles().get(i));
-//                plateau.getParcelles().get(i).setVoisins(parcelle);
-//            }
-//            i = plateau.positionParcelle(x - 2, y - 1);
-//            if (i != -1) {
-//                parcelle.setVoisins(plateau.getParcelles().get(i));
-//                plateau.getParcelles().get(i).setVoisins(parcelle);
-//            }
-//            i = plateau.positionParcelle(x - 2, y + 1);
-//            if (i != -1) {
-//                parcelle.setVoisins(plateau.getParcelles().get(i));
-//                plateau.getParcelles().get(i).setVoisins(parcelle);
-//            }
-//
-//            plateau.mettreAjourListePosiDisp(coordParcelle);
-//        return true;
-//    }
-
-//    public void prendreIrrigation() {
-//        int nbrCanauxIrrigationRestant = Irrigation.getNbrCanauxIrrigation() - 1;
-//        Irrigation.setNbrCanauxIrrigation(nbrCanauxIrrigationRestant);
-//    }
-
-//    public Objectif prendreObjectif(PiocheObjectifs pioche, PlateauDeJoueur plateauDeJoueur){
-//        if (plateauDeJoueur.peutAjouterObjectif()){
-//            Objectif objectifPioche = pioche.piocher();
-//            plateauDeJoueur.ajouterObjectif(objectifPioche);
-//            return objectifPioche;
-//        }
-//        return null;
-//    }
 
     public boolean remplirObjectif(Objectif obj, PlateauDeJeu plateauDeJeu){
         int points = obj.appliquerObjectif(plateauDeJeu);
@@ -109,78 +43,5 @@ public class Joueur {
         plateauDeJoueur.ajouterObjectifAccomplis(obj);
         return true;
     }
-
-    /* Méthode à déplacer eventuellement plus tard */
-//    public boolean placerIrrigation(PlateauDeJeu plateauDeJeu, Parcelle p1, Parcelle p2){
-//        boolean irrigationEstPlacee = false;
-//        Irrigation irr = new Irrigation(p1,p2);
-//        if (irr.getParcelle1().estAdjacent(plateauDeJeu.getParcelleEtang()) &&
-//            irr.getParcelle2().estAdjacent(plateauDeJeu.getParcelleEtang()))
-//        {
-//            plateauDeJeu.ajouterNouveauReseauIrrigation(new ReseauIrrigation(irr));
-//            irrigationEstPlacee = true;
-//        }else {
-//            for (ReseauIrrigation reseau : plateauDeJeu.getReseauxIrr()) {
-//                List<Irrigation> irrigationsDuReseau = reseau.getIrrigations();
-//                for (int i=0; i < irrigationsDuReseau.size(); i++) {
-//                    Irrigation uneIrrigationDeReseau = irrigationsDuReseau.get(i);
-//                    if (
-//                            irr.getParcelle1().equals(uneIrrigationDeReseau.getParcelle1()) ||
-//                            irr.getParcelle1().equals(uneIrrigationDeReseau.getParcelle2()) ||
-//                            irr.getParcelle2().equals(uneIrrigationDeReseau.getParcelle1()) ||
-//                            irr.getParcelle2().equals(uneIrrigationDeReseau.getParcelle2())
-//                       )
-//                    {
-//                        reseau.ajouterIrragtionAuReseau(irr);
-//                        if(irr.getParcelle1().getNombreDeBambous() == 0) {
-//                            irr.getParcelle1().fairePousserBambou();
-//                        }
-//                        if(irr.getParcelle2().getNombreDeBambous() == 0) {
-//                            irr.getParcelle2().fairePousserBambou();
-//                        }
-//                        return true;
-//                    }
-//                }
-//            }
-//        }
-//        return irrigationEstPlacee;
-//    }
-
-//    public boolean deplacerJardinier(Figurine jardinier, Parcelle parcelleDestination){
-//        if (!jardinier.estDeplaceableSur(parcelleDestination)) {
-//            return false;
-//        }else{
-//            jardinier.setParcelleDepart(parcelleDestination);
-//            if (parcelleDestination.estIrriguee() && parcelleDestination.getNombreDeBambous() <= 4) {
-//                parcelleDestination.fairePousserBambou();
-//            }
-//        }
-//        return true;
-//    }
-
-//    public boolean deplacerPanda(Figurine panda, Parcelle parcelleDestination){
-//        if (!panda.estDeplaceableSur(parcelleDestination)){
-//            return false;
-//        }else{
-//            panda.setParcelleDepart(parcelleDestination);
-//            if (parcelleDestination.getNombreDeBambous() != 0) {
-//                Bambou bambouMange = parcelleDestination.mangerBambou();
-//                this.plateauDeJoueur.reserverBambousPanda(bambouMange);
-//            }
-//        }
-//        return true;
-//    }
-
-//    /*
-//     * Si une parcelle est adjacent à la parcelle Étang, ça deviendra irriguée.
-//     * et on pourrait faire pousser une section de bambou sur cette parcelle.
-//     */
-//    public void planterBambouSurParcelleDeposee(Parcelle parcelle) {
-//        if (parcelle.estAdjacentAParcelleEtang(parcelle)) {
-//            parcelle.setIrriguee(true);
-//            parcelle.fairePousserBambou();
-//        }
-//
-//    }
 
 }
