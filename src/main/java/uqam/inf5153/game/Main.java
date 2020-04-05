@@ -230,23 +230,23 @@ public class Main {
 
 	}
 	private static void piocherObjectif(int numJoueur) {
-		System.out.println("==========================================================================");
-		System.out.println("|   TAKENOKO MENU JOUEUR " +numJoueur+ " : Action Objectif                        ");
-		System.out.println("==========================================================================");
-		Objectif objectif = Takenoko.piocherObjectif(numJoueur);
-		if (objectif == null){
-			System.out.println("Vous ne pouvez pas piocher d'objectifs");
-		}else {
-			System.out.println("|        Cet objectif est maintenant pioché                                  ");
-			System.out.println("         Et vous avez pioché: "+ objectif);
-			System.out.println("|        Pouvez vous le remplir tout de suite (O/N)  ?         ");
-			int reponse = Keyin.inChar(" réponse (O/N) : ");
-			if (reponse == 'o' || reponse == 'O') {
-				remplirUnObjectif(numJoueur, objectif);
-			}
-			System.out.println("|        Si oui, appliquer l'objectif sur le plateau du joueur     ");
-			// TODO appliquer???
-		}
+		Takenoko.traiterActionObjectif(numJoueur, false);
+//		System.out.println("==========================================================================");
+//		System.out.println("|   TAKENOKO MENU JOUEUR " +numJoueur+ " : Action Objectif                        ");
+//		System.out.println("==========================================================================");
+//		Objectif objectif = Takenoko.piocherObjectif(numJoueur);
+//		if (objectif == null){
+//			System.out.println("Vous ne pouvez pas piocher d'objectifs");
+//		}else {
+//			System.out.println("|        Cet objectif est maintenant pioché                                  ");
+//			System.out.println("         Et vous avez pioché: "+ objectif);
+//			System.out.println("|        Pouvez vous le remplir tout de suite (O/N)  ?         ");
+//            System.out.println("|        Si oui, appliquer l'objectif sur le plateau du joueur     ");
+//			int reponse = Keyin.inChar(" réponse (O/N) : ");
+//			if (reponse == 'o' || reponse == 'O') {
+//				remplirUnObjectif(numJoueur, objectif);
+//			}
+//		}
 	}
 	/*
 	 * Décisions
@@ -270,7 +270,7 @@ public class Main {
 			switch (swValue) {
 				case 1:
 					System.out.println("\nRemplir un objectif\n");
-					remplirObjectif(numJoueur);
+					Takenoko.traiterActionObjectif(numJoueur, true);
 					break;
 				case 2:
 					System.out.println("\nPlacer des irrigations\n");
@@ -309,30 +309,30 @@ public class Main {
 //			System.out.println("L'irrigation est bien placée");
 //
 //	}
-	private static void remplirObjectif(int numJoueur) {
-		System.out.println("=========================================================================");
-		System.out.println("|  TAKENOKO MENU JOUEUR " +numJoueur+ ": décide de remplir un objectif");
-		System.out.println("=========================================================================");
-		System.out.println("|        Afficher les objectifs du jour");
-		Takenoko.afficherObjectifsJoueur (numJoueur);
-		List<Objectif> objectifsPioches = Takenoko.objectifsPioches(numJoueur);
-		System.out.println("|        Choisir un objectif à remplir ");
-		int objectifChoisi = Keyin.inInt(" Entrer le numéro de l'objectif choisi : ");
-		while(objectifChoisi > objectifsPioches.size() || objectifChoisi < 1){
-			System.out.println("Vous devez choisir entre la objectif 1 et "+ objectifsPioches.size());
-			objectifChoisi = Keyin.inInt(" Entrer le numéro de l'objectif choisi : ");
-		}
-		Objectif objectif = Takenoko.selectionnerObjectifARemplir (objectifsPioches, objectifChoisi);
-		System.out.println(" Vous avez choisi : "+objectif);
-		remplirUnObjectif( numJoueur,  objectif);
-	}
-	private static void remplirUnObjectif(int numJoueur, Objectif objectif) {
-		boolean estRempli = Takenoko.remplirObjectif (objectif, numJoueur);
-		if (estRempli)
-			System.out.println("Félicitations! objectif rempli");
-		else
-			System.out.println("Objectif irréalisable pour le moment");
-	}
+//	private static void remplirObjectif(int numJoueur) {
+//		System.out.println("=========================================================================");
+//		System.out.println("|  TAKENOKO MENU JOUEUR " +numJoueur+ ": décide de remplir un objectif");
+//		System.out.println("=========================================================================");
+//		System.out.println("|        Afficher les objectifs du jour");
+//		Takenoko.afficherObjectifsJoueur (numJoueur);
+//		List<Objectif> objectifsPioches = Takenoko.objectifsPioches(numJoueur);
+//		System.out.println("|        Choisir un objectif à remplir ");
+//		int objectifChoisi = Keyin.inInt(" Entrer le numéro de l'objectif choisi : ");
+//		while(objectifChoisi > objectifsPioches.size() || objectifChoisi < 1){
+//			System.out.println("Vous devez choisir entre la objectif 1 et "+ objectifsPioches.size());
+//			objectifChoisi = Keyin.inInt(" Entrer le numéro de l'objectif choisi : ");
+//		}
+//		Objectif objectif = Takenoko.selectionnerObjectifARemplir (objectifsPioches, objectifChoisi);
+//		System.out.println(" Vous avez choisi : "+objectif);
+//		remplirUnObjectif( numJoueur,  objectif);
+//	}
+//	private static void remplirUnObjectif(int numJoueur, Objectif objectif) {
+//		boolean estRempli = Takenoko.remplirObjectif (objectif, numJoueur);
+//		if (estRempli)
+//			System.out.println("Félicitations! objectif rempli");
+//		else
+//			System.out.println("Objectif irréalisable pour le moment");
+//	}
 
 	private static void afficherEnteteMenuAction(int numJoueur) {
 		System.out.println("==========================================================================");

@@ -44,6 +44,8 @@ public class Jeu {
         return piocheParcelles;
     }
 
+    public PiocheObjectifs getPiocheObjectifs() { return piocheObjectifs; }
+
     public List<Joueur> getJoueurs() { return joueurs; }
 
 //    public List<Parcelle> effectuerActionPiocherParcelles(int nbrAPiocher, int indexJoueur){
@@ -128,25 +130,25 @@ public class Jeu {
         joueur.getPlateauDeJoueur().afficherObjectifsPioches();
     }
 
-    public Objectif selectionnerObjectif(List<Objectif> objectifsPioches, int indexObjectif){
-        Objectif objSelectionne = objectifsPioches.remove(indexObjectif - 1);
-        return objSelectionne;
-    }
+//    public Objectif selectionnerObjectif(List<Objectif> objectifsPioches, int indexObjectif){
+//        Objectif objSelectionne = objectifsPioches.remove(indexObjectif - 1);
+//        return objSelectionne;
+//    }
+//
+//    public List<Objectif> getObjectifsPioches(int joueurIndex){
+//        Joueur joueur = getJoueurByIndex(joueurIndex);
+//        return joueur.getPlateauDeJoueur().getObjectifsPioches();
+//    }
+//
+//    public Objectif piocherObjectif(int joueurIndex){
+//        Joueur joueur = getJoueurByIndex(joueurIndex);
+//        return joueur.prendreObjectif(piocheObjectifs,joueur.getPlateauDeJoueur());
+//    }
 
-    public List<Objectif> getObjectifsPioches(int joueurIndex){
-        Joueur joueur = getJoueurByIndex(joueurIndex);
-        return joueur.getPlateauDeJoueur().getObjectifsPioches();
-    }
-
-    public Objectif piocherObjectif(int joueurIndex){
-        Joueur joueur = getJoueurByIndex(joueurIndex);
-        return joueur.prendreObjectif(piocheObjectifs,joueur.getPlateauDeJoueur());
-    }
-
-    public boolean effectuerActionRemplirObjectif(Objectif objectif, int joueurIndex){
-        Joueur joueur = getJoueurByIndex(joueurIndex);
-        return joueur.remplirObjectif(objectif, plateauDeJeu);
-    }
+//    public boolean effectuerActionRemplirObjectif(Objectif objectif, int joueurIndex){
+//        Joueur joueur = getJoueurByIndex(joueurIndex);
+//        return joueur.remplirObjectif(objectif, plateauDeJeu);
+//    }
 
     public boolean verifierFinPartie() {
         for (Joueur joueur: joueurs){

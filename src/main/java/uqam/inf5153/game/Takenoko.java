@@ -1,9 +1,6 @@
 package uqam.inf5153.game;
 
-import uqam.inf5153.game.actions.DeplaceJardinier;
-import uqam.inf5153.game.actions.DeplacePanda;
-import uqam.inf5153.game.actions.PlaceIrrigation;
-import uqam.inf5153.game.actions.PlaceParcelle;
+import uqam.inf5153.game.actions.*;
 import uqam.inf5153.game.joueur.Joueur;
 import uqam.inf5153.game.objectif.Objectif;
 import uqam.inf5153.game.tuile.parcelle.Parcelle;
@@ -99,38 +96,43 @@ public class Takenoko {
 	 * objectifs
 	 */
 
+	public static void traiterActionObjectif(int numJoueur, boolean estDecision){
+		Joueur joueur = getJoueurByIndex(numJoueur);
+		joueur.setActionCourante(new RemplitObjectif(jeu,estDecision));
+		joueur.effectuerAction(numJoueur);
+	}
 	/*
 	 * retourne tous les objectis piochées par le joueur
 	 */
-	public static void afficherObjectifsJoueur(int joueur) {
-		jeu.afficherObjectifsPioches(joueur);
-	}
+//	public static void afficherObjectifsJoueur(int joueur) {
+//		jeu.afficherObjectifsPioches(joueur);
+//	}
 
-	public static List<Objectif> objectifsPioches(int joueur){
-		return jeu.getObjectifsPioches(joueur);
-	}
+//	public static List<Objectif> objectifsPioches(int joueur){
+//		return jeu.getObjectifsPioches(joueur);
+//	}
 	/*
 	 * selectionner un objectif un remplir parmi un ensemble d'objectif piochés
 	 * retourne l'objectif selectionné
 	 */
-	public static Objectif selectionnerObjectifARemplir(List<Objectif> objectifs, int indexObjectif) {
-		return jeu.selectionnerObjectif(objectifs, indexObjectif);
-	}
+//	public static Objectif selectionnerObjectifARemplir(List<Objectif> objectifs, int indexObjectif) {
+//		return jeu.selectionnerObjectif(objectifs, indexObjectif);
+//	}
 
 	/*
 	 * le joueur rempli un objectif
 	 * retourne true si l'objectif est rempli, sinon elle retourne false.
 	 */
-	public static boolean remplirObjectif(Objectif objectif, int joueur) {
-		return jeu.effectuerActionRemplirObjectif(objectif, joueur);
-	}
-
-	/*
-	 * piocher un objectif dans la pioche du joueur
-	 */
-	public static Objectif piocherObjectif(int joueur) {
-		return jeu.piocherObjectif(joueur);
-	}
+//	public static boolean remplirObjectif(Objectif objectif, int joueur) {
+//		return jeu.effectuerActionRemplirObjectif(objectif, joueur);
+//	}
+//
+//	/*
+//	 * piocher un objectif dans la pioche du joueur
+//	 */
+//	public static Objectif piocherObjectif(int joueur) {
+//		return jeu.piocherObjectif(joueur);
+//	}
 
 	/**
 	 * jardinier

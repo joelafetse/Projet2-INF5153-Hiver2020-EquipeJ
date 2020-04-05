@@ -91,14 +91,14 @@ public class Joueur {
 //        Irrigation.setNbrCanauxIrrigation(nbrCanauxIrrigationRestant);
 //    }
 
-    public Objectif prendreObjectif(PiocheObjectifs pioche, PlateauDeJoueur plateauDeJoueur){
-        if (plateauDeJoueur.peutAjouterObjectif()){
-            Objectif objectifPioche = pioche.piocher();
-            plateauDeJoueur.ajouterObjectif(objectifPioche);
-            return objectifPioche;
-        }
-        return null;
-    }
+//    public Objectif prendreObjectif(PiocheObjectifs pioche, PlateauDeJoueur plateauDeJoueur){
+//        if (plateauDeJoueur.peutAjouterObjectif()){
+//            Objectif objectifPioche = pioche.piocher();
+//            plateauDeJoueur.ajouterObjectif(objectifPioche);
+//            return objectifPioche;
+//        }
+//        return null;
+//    }
 
     public boolean remplirObjectif(Objectif obj, PlateauDeJeu plateauDeJeu){
         int points = obj.appliquerObjectif(plateauDeJeu);
