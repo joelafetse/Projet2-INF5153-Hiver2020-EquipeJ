@@ -31,40 +31,7 @@ public class Takenoko {
 		joueur.setActionCourante(new PlaceParcelle(jeu));
 		joueur.effectuerAction(numJoueur);
 	}
-//	/*
-//	 * Piocher nbrAPiocher parcelles de la pioche du joueur joueur
-//	 */
-//	public static List<Parcelle> piocherParcelles(int nbrAPiocher, int joueur) {
-//		return jeu.effectuerActionPiocherParcelles(nbrAPiocher, joueur);
-//	}
-//	/*
-//	 * selectionne uneParcelle parmi les parcelles piochés et retourne les autres à la pioche.
-//	 */
-//	//public static void selectionnerParcelle(String[] parcelles, String uneParcelle ) {}
-//	public static Parcelle selectionnerParcelle(List<Parcelle>  parcelles, int indexParcelle ) {
-//		return jeu.selectionnerParcelle(parcelles, indexParcelle);
-//	}
-//	/*
-//	 * afficher un ensemble de parcelles
-//	 */
-//	/*public static void afficherParcelles(String[] parcelles) {}*/
-//	public static void afficherParcelles( List<Parcelle> list) {
-//        jeu.afficherParcelles(list);
-//	}
-//	/*
-//	 * afficher les parcelles déposé dans le plateau du joueur joueur
-//	 */
-//
-//	public static void afficherPositionsDisponibles(){
-//		jeu.getPlateauDeJeu().afficherLesPositionsDispo();
-//	}
-//	/*
-//	 * placer une parcelle dans la position (x,y) dans le plateau du joueur joueur.
-//	 * retourne true si la parcelle est bien placée, sinon elle retourne false.
-//	 */
-//	public static boolean placerParcelleDansPlateau(Parcelle parcelle, int x, int y, int joueur) {
-//        return jeu.effectuerActionPlacerParcelleDansPlateau(parcelle,x,y,joueur);
-//	}
+
 	/**
 	 * piocher une irrigation du joueur
 	 */
@@ -74,24 +41,7 @@ public class Takenoko {
 		joueur.setActionCourante(new PlaceIrrigation(jeu,estDecision));
 		joueur.effectuerAction(numJoueur);
 	}
-//	/*
-//	 * piocher une irrigation dans la pioche des irrigation du joueur
-//	 *
-//	 */
-//	public static void piocherUneIrrigation(int joueur) {
-//		jeu.effectuerActionPiocherIrrigation(joueur);
-//	}
-//
-//	public static void garderIrrigation(int joueur){
-//        jeu.effectuerActionGarderIrrigation(joueur);
-//    }
-//	/*
-//	 * placer une irrigation entre les parcelles (x1,y1) et (x2, y2) dans le plateau du joueur joueur
-//	 * retourne true si l'irrigation est bien placée
-//	 */
-//	public static boolean placerUneIrrigation( int x1, int y1, int x2, int y2, int joueur) {
-//	    return jeu.effectuerActionPlacerIrrigation(x1,y1,x2,y2,joueur);
-//	}
+
 	/**
 	 * objectifs
 	 */
@@ -101,38 +51,6 @@ public class Takenoko {
 		joueur.setActionCourante(new RemplitObjectif(jeu,estDecision));
 		joueur.effectuerAction(numJoueur);
 	}
-	/*
-	 * retourne tous les objectis piochées par le joueur
-	 */
-//	public static void afficherObjectifsJoueur(int joueur) {
-//		jeu.afficherObjectifsPioches(joueur);
-//	}
-
-//	public static List<Objectif> objectifsPioches(int joueur){
-//		return jeu.getObjectifsPioches(joueur);
-//	}
-	/*
-	 * selectionner un objectif un remplir parmi un ensemble d'objectif piochés
-	 * retourne l'objectif selectionné
-	 */
-//	public static Objectif selectionnerObjectifARemplir(List<Objectif> objectifs, int indexObjectif) {
-//		return jeu.selectionnerObjectif(objectifs, indexObjectif);
-//	}
-
-	/*
-	 * le joueur rempli un objectif
-	 * retourne true si l'objectif est rempli, sinon elle retourne false.
-	 */
-//	public static boolean remplirObjectif(Objectif objectif, int joueur) {
-//		return jeu.effectuerActionRemplirObjectif(objectif, joueur);
-//	}
-//
-//	/*
-//	 * piocher un objectif dans la pioche du joueur
-//	 */
-//	public static Objectif piocherObjectif(int joueur) {
-//		return jeu.piocherObjectif(joueur);
-//	}
 
 	/**
 	 * jardinier
@@ -142,15 +60,6 @@ public class Takenoko {
 		joueur.setActionCourante(new DeplaceJardinier(jeu));
 		joueur.effectuerAction(numJoueur);
 	}
-//	/*
-//	 * placer le jardinier du joueur dans la parcelle dans la position (x,y) de son plateau.
-//	 * retourne true si le jardinier est déplacé, sinon elle retourne false
-//	 */
-//	public static boolean PlacerJardinier(int x, int y, int joueur) {
-//		return jeu.effectuerActionDeplacerJardinier(x,y,joueur);
-//	}
-
-
 
 	/**
 	 * panda
@@ -160,14 +69,6 @@ public class Takenoko {
 		joueur.setActionCourante(new DeplacePanda(jeu));
 		joueur.effectuerAction(numJoueur);
 	}
-
-//	/*
-//	 * placer le panda du joueur dans la parcelle dans la position (x,y)  de son plateau.
-//	 * retourne true si le panda est déplacé, sinon elle retourne false
-//	 */
-//	public static boolean PlacerPanda(int x, int y, int joueur) {
-//		return jeu.effectuerActionDeplacerPanda(x,y,joueur);
-//	}
 
 	/**
 	 * fin DE partie

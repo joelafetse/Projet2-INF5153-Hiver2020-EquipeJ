@@ -33,7 +33,6 @@ public class Jeu {
         this.melangerPioches();
         piocherObjectifsPourChaqueJoueur();
         this.fabriqueParcelle = new FabriqueParcelle();
-
     }
 
     public PlateauDeJeu getPlateauDeJeu(){
@@ -48,107 +47,14 @@ public class Jeu {
 
     public List<Joueur> getJoueurs() { return joueurs; }
 
-//    public List<Parcelle> effectuerActionPiocherParcelles(int nbrAPiocher, int indexJoueur){
-//        return piocheParcelles.piocher(nbrAPiocher);
-//    }
-//
-//    public Parcelle selectionnerParcelle(List<Parcelle> parcellesPiochees, int indexParcelle){
-//        Parcelle parcelleSelectionnee = parcellesPiochees.remove(indexParcelle - 1);
-//        piocheParcelles.replacerParcellesNonChoisies(parcellesPiochees);
-//        return parcelleSelectionnee;
-//    }
-//
-//    public void afficherParcelles(List<Parcelle> parcelles){
-//        piocheParcelles.afficherParcelles(parcelles);
-//    }
-//
     public void afficherParcellesDansPlateau(){
         plateauDeJeu.afficherParcelleDeposees();
     }
-//
-//    public boolean effectuerActionPlacerParcelleDansPlateau(Parcelle parcelle, int x, int y, int joueurIndex){
-//        Coordonnees coord = new Coordonnees(x,y);
-//        if (!positionExiste(plateauDeJeu, coord))
-//            return false;
-//
-//        Joueur joueur = getJoueurByIndex(joueurIndex);
-//
-//        parcelle = fabriqueParcelle.getParcelle(parcelle.getCouleur());
-//
-//        joueur.placerParcelleDansPlateau(plateauDeJeu,parcelle,x,y);
-//        return true;
-//    }
-
-//    public void effectuerActionPiocherIrrigation(int joueurIndex){
-//        Joueur joueur = getJoueurByIndex(joueurIndex);
-//        joueur.prendreIrrigation();
-//    }
-//
-//    public void effectuerActionGarderIrrigation(int joueurIndex){
-//        Joueur joueur = getJoueurByIndex(joueurIndex);
-//        joueur.getPlateauDeJoueur().ajouterIrrigations();
-//    }
-//
-//    public boolean effectuerActionPlacerIrrigation( int x1, int y1, int x2, int y2, int joueurIndex){
-//        Joueur joueur = getJoueurByIndex(joueurIndex);
-//        Coordonnees c1 = new Coordonnees(x1,y1);
-//        Coordonnees c2 = new Coordonnees(x2,y2);
-//        if (!plateauDeJeu.estPositionOccupee(c1) || !plateauDeJeu.estPositionOccupee(c2)){
-//            return false;
-//        }
-//        Parcelle p1 = plateauDeJeu.getParcelleAtPosition(c1);
-//        Parcelle p2 = plateauDeJeu.getParcelleAtPosition(c2);
-//        if (!p1.estAdjacent(p2)){
-//            System.out.println("Choisissez deux positions adjacentes.");
-//            return false;
-//        }
-//        joueur.placerIrrigation(plateauDeJeu, p1, p2);
-//        return joueur.placerIrrigation(plateauDeJeu, p1, p2);
-//    }
-
-//    public boolean effectuerActionDeplacerJardinier(int x, int y, int joueurIndex){
-//        Coordonnees coord = new Coordonnees(x,y);
-//        if (!plateauDeJeu.estPositionOccupee(coord)){
-//            return false;
-//        }
-//        Parcelle parcelleDestination = plateauDeJeu.getParcelleAtPosition(coord);
-//        Joueur joueur = getJoueurByIndex(joueurIndex);
-//        return joueur.deplacerJardinier(plateauDeJeu.getJardinier(),parcelleDestination);
-//    }
-//    public boolean effectuerActionDeplacerPanda(int x, int y, int joueurIndex){
-//        Coordonnees coord = new Coordonnees(x,y);
-//        if (!plateauDeJeu.estPositionOccupee(coord)){
-//            return false;
-//        }
-//        Parcelle parcelleDestination = plateauDeJeu.getParcelleAtPosition(coord);
-//        Joueur joueur = getJoueurByIndex(joueurIndex);
-//        return joueur.deplacerPanda(plateauDeJeu.getPanda(),parcelleDestination);
-//    }
 
     public void afficherObjectifsPioches(int joueurIndex) {
         Joueur joueur = getJoueurByIndex(joueurIndex);
         joueur.getPlateauDeJoueur().afficherObjectifsPioches();
     }
-
-//    public Objectif selectionnerObjectif(List<Objectif> objectifsPioches, int indexObjectif){
-//        Objectif objSelectionne = objectifsPioches.remove(indexObjectif - 1);
-//        return objSelectionne;
-//    }
-//
-//    public List<Objectif> getObjectifsPioches(int joueurIndex){
-//        Joueur joueur = getJoueurByIndex(joueurIndex);
-//        return joueur.getPlateauDeJoueur().getObjectifsPioches();
-//    }
-//
-//    public Objectif piocherObjectif(int joueurIndex){
-//        Joueur joueur = getJoueurByIndex(joueurIndex);
-//        return joueur.prendreObjectif(piocheObjectifs,joueur.getPlateauDeJoueur());
-//    }
-
-//    public boolean effectuerActionRemplirObjectif(Objectif objectif, int joueurIndex){
-//        Joueur joueur = getJoueurByIndex(joueurIndex);
-//        return joueur.remplirObjectif(objectif, plateauDeJeu);
-//    }
 
     public boolean verifierFinPartie() {
         for (Joueur joueur: joueurs){
@@ -169,22 +75,8 @@ public class Jeu {
         this.piocheObjectifs.melangerPioche();
     }
 
-    private boolean positionExiste(PlateauDeJeu plateauDeJeu, Coordonnees coord){
-        boolean positionExiste = false;
-        for (Coordonnees elem: plateauDeJeu.getPositionsDisponibles()){
-            if (elem.equals(coord)){
-                positionExiste = true;
-                break;
-            }
-        }
-        return positionExiste;
-    }
-
-
-
     private void piocherObjectifsPourChaqueJoueur(){
         for (Joueur joueur: joueurs)
             joueur.getPlateauDeJoueur().setObjectifsPioches(this.piocheObjectifs.piocher(3));
-
     }
 }
