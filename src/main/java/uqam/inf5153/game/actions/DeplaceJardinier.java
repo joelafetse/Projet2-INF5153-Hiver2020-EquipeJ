@@ -37,9 +37,20 @@ public class DeplaceJardinier implements Action {
             jardinier.setParcelleDepart(parcelleDestination);
             if (parcelleDestination.estIrriguee() && parcelleDestination.getNombreDeBambous() <= 4) {
                 parcelleDestination.fairePousserBambou();
+                Parcelle[] parcellesAdjacentes = parcelleDestination.parcellesAdjacentes();
+                for(int i = 0; i < 6; i++) {
+                    if( estIrrigeeEtDeMemeCouleur(parcelleDestination, parcellesAdjacentes[i]) ) {
+                        parcellesAdjacentes[i].fairePousserBambou();
+                    }
+                }
             }
         }
         return true;
+    }
+
+    private boolean estIrrigeeEtDeMemeCouleur(Parcelle parcelleDest, Parcelle parcelleAdj) {
+        return (parcelleAdj!= null) && parcelleAdj.estIrriguee() &&
+                (parcelleDest.getCouleur() == parcelleAdj.getCouleur());
     }
 
     private boolean deplacerJardinier(int numJoueur){

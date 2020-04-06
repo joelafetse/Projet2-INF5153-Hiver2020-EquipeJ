@@ -20,7 +20,7 @@ public class Jeu {
     private List<Joueur> joueurs;
     private PiocheObjectifs piocheObjectifs;
     private PiocheParcelles piocheParcelles;
-    private FabriqueParcelle fabriqueParcelle;
+
 
     //Constucteur
     public Jeu(){
@@ -32,7 +32,7 @@ public class Jeu {
         this.piocheParcelles = new PiocheParcelles();
         this.melangerPioches();
         piocherObjectifsPourChaqueJoueur();
-        this.fabriqueParcelle = new FabriqueParcelle();
+
     }
 
     public PlateauDeJeu getPlateauDeJeu(){
