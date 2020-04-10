@@ -37,6 +37,10 @@ public abstract class Parcelle implements ComposantParcelle {
         return this.coord;
     }
 
+    public Parcelle getComposant() {
+        return this;
+    }
+
     public List<Parcelle> getVoisins(){
         return this.voisins;
     }

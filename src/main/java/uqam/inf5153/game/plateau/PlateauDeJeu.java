@@ -3,6 +3,7 @@ package uqam.inf5153.game.plateau;
 import uqam.inf5153.game.figurine.Figurine;
 import uqam.inf5153.game.figurine.Jardinier;
 import uqam.inf5153.game.figurine.Panda;
+import uqam.inf5153.game.tuile.ComposantParcelle;
 import uqam.inf5153.game.tuile.parcelle.Parcelle;
 import uqam.inf5153.game.tuile.parcelle.ParcelleEtang;
 
@@ -10,7 +11,7 @@ import java.util.*;
 
 public class PlateauDeJeu {
 
-    private List<Parcelle> parcelles;
+    private List<ComposantParcelle> parcelles;
     private HashSet<Coordonnees> positionsDisponibles;
     private List<ReseauIrrigation> reseauxIrr;
     private Figurine jardinier;
@@ -46,7 +47,7 @@ public class PlateauDeJeu {
         return parcelleEtang;
     }
 
-    public List<Parcelle> getParcelles() {
+    public List<ComposantParcelle> getParcelles() {
         return parcelles;
     }
 
@@ -58,7 +59,7 @@ public class PlateauDeJeu {
         return reseauxIrr;
     }
 
-    public void ajouterParcelle(Parcelle parcelle){
+    public void ajouterParcelle(ComposantParcelle parcelle){
         this.parcelles.add(parcelle);
     }
 
@@ -69,10 +70,10 @@ public class PlateauDeJeu {
         return panda;
     }
 
-    public Parcelle getParcelleAtPosition(Coordonnees position){
-        Parcelle parcelle = null;
-        for (Parcelle p: parcelles){
-            if (p.getCoordonnees().equals(position)){
+    public ComposantParcelle getParcelleAtPosition(Coordonnees position){
+        ComposantParcelle parcelle = null;
+        for (ComposantParcelle p: parcelles){
+            if (p.getComposant().getCoordonnees().equals(position)){
                 parcelle = p;
                 break;
             }
@@ -83,12 +84,12 @@ public class PlateauDeJeu {
     public boolean estPositionOccupee(Coordonnees coordonnees){
         boolean estPositionOccupee = false;
         int i=0;
-        Parcelle parcelle;
+        ComposantParcelle parcelle;
         while(i < parcelles.size() && !estPositionOccupee) {
             parcelle = parcelles.get(i);
             if (parcelle != null &&
-                    parcelle.getCoordonnees()!=null &&
-                    parcelle.getCoordonnees().equals(coordonnees)) {
+                    parcelle.getComposant().getCoordonnees()!=null &&
+                    parcelle.getComposant().getCoordonnees().equals(coordonnees)) {
                 estPositionOccupee = true;
             }
             i++;
@@ -99,12 +100,12 @@ public class PlateauDeJeu {
     public int positionParcelle(int x, int y){
         Coordonnees c=new Coordonnees(x,y);
         int i=0;
-        Parcelle parcelle;
+        ComposantParcelle parcelle;
         while(i < parcelles.size()) {
             parcelle = parcelles.get(i);
             if (parcelle != null &&
-                    parcelle.getCoordonnees()!=null &&
-                    parcelle.getCoordonnees().equals(c)) {
+                    parcelle.getComposant().getCoordonnees()!=null &&
+                    parcelle.getComposant().getCoordonnees().equals(c)) {
                 return i;
             }
             i++;
@@ -157,9 +158,8 @@ public class PlateauDeJeu {
     public void afficherParcelleDeposees() {
         int i=0;
         while(i < parcelles.size()) {
-            if (parcelles.get(i)!=null && parcelles.get(i).getCoordonnees()!=null) {
-                System.out.println(parcelles.get(i) + ", Coordonnées" +
-                        parcelles.get(i).getCoordonnees());
+            if (parcelles.get(i)!=null && parcelles.get(i).getComposant()!=null && parcelles.get(i).getComposant().getCoordonnees()!=null) {
+                System.out.println(parcelles.get(i).toString() + ", Coordonnées " + parcelles.get(i).getComposant().getCoordonnees());
             }
             i++;
         }

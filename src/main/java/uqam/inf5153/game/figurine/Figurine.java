@@ -1,29 +1,30 @@
 package uqam.inf5153.game.figurine;
 
+import uqam.inf5153.game.tuile.ComposantParcelle;
 import uqam.inf5153.game.tuile.parcelle.Parcelle;
 import uqam.inf5153.game.plateau.Coordonnees;
 
 public abstract class Figurine {
 
-    protected Parcelle parcelleDepart;
+    protected ComposantParcelle comParcelleDepart;
 
-    public Figurine(Parcelle parcelle){
-        this.parcelleDepart = parcelle;
+    public Figurine(ComposantParcelle comParcelle){
+        this.comParcelleDepart = comParcelle;
     }
 
-    public Parcelle getParcelleDepart() {
-        return parcelleDepart;
+    public ComposantParcelle getParcelleDepart() {
+        return comParcelleDepart;
     }
 
-    public void setParcelleDepart(Parcelle parcelleDepart) {
-        this.parcelleDepart = parcelleDepart;
+    public void setParcelleDepart(ComposantParcelle comParcelleDepart) {
+        this.comParcelleDepart = comParcelleDepart;
     }
 
 
-    public boolean estDeplaceableSur(Parcelle parcelleDestination){
+    public boolean estDeplaceableSur(ComposantParcelle comParcelleDestination){
         boolean estDeplaceable = false;
-        Coordonnees coordDepart = parcelleDepart.getCoordonnees();
-        Coordonnees coordDestination = parcelleDestination.getCoordonnees();
+        Coordonnees coordDepart = comParcelleDepart.getComposant().getCoordonnees();
+        Coordonnees coordDestination = comParcelleDestination.getComposant().getCoordonnees();
         double pente1 = 1/2;
         double pente2 = -1/2;
         double numerateur = coordDestination.getY() - coordDepart.getY();

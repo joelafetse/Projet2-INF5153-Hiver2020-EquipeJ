@@ -7,6 +7,7 @@ import uqam.inf5153.game.plateau.Coordonnees;
 import uqam.inf5153.game.plateau.Irrigation;
 import uqam.inf5153.game.plateau.PlateauDeJeu;
 import uqam.inf5153.game.plateau.ReseauIrrigation;
+import uqam.inf5153.game.tuile.ComposantParcelle;
 import uqam.inf5153.game.tuile.parcelle.Parcelle;
 
 import java.util.List;
@@ -65,13 +66,13 @@ public class PlaceIrrigation  implements  Action {
         if (!jeu.getPlateauDeJeu().estPositionOccupee(c1) || !jeu.getPlateauDeJeu().estPositionOccupee(c2)){
             return false;
         }
-        Parcelle p1 = jeu.getPlateauDeJeu().getParcelleAtPosition(c1);
-        Parcelle p2 = jeu.getPlateauDeJeu().getParcelleAtPosition(c2);
-        if (!p1.estAdjacent(p2)){
+        ComposantParcelle p1 = jeu.getPlateauDeJeu().getParcelleAtPosition(c1);
+        ComposantParcelle p2 = jeu.getPlateauDeJeu().getParcelleAtPosition(c2);
+        if (!p1.getComposant().estAdjacent(p2.getComposant())){
             System.out.println("Choisissez deux positions adjacentes.");
             return false;
         }
-        return placerIrrigation(jeu.getPlateauDeJeu(), p1, p2);
+        return placerIrrigation(jeu.getPlateauDeJeu(), p1.getComposant(), p2.getComposant());
     }
 
     private void prendreIrrigation() {

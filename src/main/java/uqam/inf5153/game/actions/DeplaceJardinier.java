@@ -5,6 +5,7 @@ import uqam.inf5153.game.Keyin;
 import uqam.inf5153.game.figurine.Figurine;
 import uqam.inf5153.game.joueur.Joueur;
 import uqam.inf5153.game.plateau.Coordonnees;
+import uqam.inf5153.game.tuile.ComposantParcelle;
 import uqam.inf5153.game.tuile.parcelle.Parcelle;
 
 public class DeplaceJardinier implements Action {
@@ -25,21 +26,22 @@ public class DeplaceJardinier implements Action {
         if (!jeu.getPlateauDeJeu().estPositionOccupee(coord)){
             return false;
         }
-        Parcelle parcelleDestination = jeu.getPlateauDeJeu().getParcelleAtPosition(coord);
+        ComposantParcelle parcelleDestination = jeu.getPlateauDeJeu().getParcelleAtPosition(coord);
         Joueur joueur = jeu.getJoueurByIndex(joueurIndex);
         return deplacerJardinier(jeu.getPlateauDeJeu().getJardinier(),parcelleDestination);
     }
 
-    private boolean deplacerJardinier(Figurine jardinier, Parcelle parcelleDestination){
-        if (!jardinier.estDeplaceableSur(parcelleDestination)) {
+    private boolean deplacerJardinier(Figurine jardinier, ComposantParcelle comParcelleDestination){
+
+        if (!jardinier.estDeplaceableSur(comParcelleDestination)) {
             return false;
         }else{
-            jardinier.setParcelleDepart(parcelleDestination);
-            if (parcelleDestination.estIrriguee() && parcelleDestination.getNombreDeBambous() <= 4) {
-                parcelleDestination.fairePousserBambou();
-                Parcelle[] parcellesAdjacentes = parcelleDestination.parcellesAdjacentes();
+            jardinier.setParcelleDepart(comParcelleDestination);
+            if (comParcelleDestination.getComposant().estIrriguee() && comParcelleDestination.getNombreDeBambous() <= 4) {
+                comParcelleDestination.fairePousserBambou();
+                Parcelle[] parcellesAdjacentes = comParcelleDestination.getComposant().parcellesAdjacentes();
                 for(int i = 0; i < 6; i++) {
-                    if( estIrrigeeEtDeMemeCouleur(parcelleDestination, parcellesAdjacentes[i]) ) {
+                    if( estIrrigeeEtDeMemeCouleur(comParcelleDestination.getComposant(), parcellesAdjacentes[i]) ) {
                         parcellesAdjacentes[i].fairePousserBambou();
                     }
                 }

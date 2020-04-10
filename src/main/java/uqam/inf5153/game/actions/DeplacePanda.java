@@ -6,6 +6,7 @@ import uqam.inf5153.game.bambou.Bambou;
 import uqam.inf5153.game.figurine.Figurine;
 import uqam.inf5153.game.joueur.Joueur;
 import uqam.inf5153.game.plateau.Coordonnees;
+import uqam.inf5153.game.tuile.ComposantParcelle;
 import uqam.inf5153.game.tuile.parcelle.Parcelle;
 
 public class DeplacePanda implements Action{
@@ -48,18 +49,18 @@ public class DeplacePanda implements Action{
         if (!jeu.getPlateauDeJeu().estPositionOccupee(coord)){
             return false;
         }
-        Parcelle parcelleDestination = jeu.getPlateauDeJeu().getParcelleAtPosition(coord);
+        ComposantParcelle parcelleDestination = jeu.getPlateauDeJeu().getParcelleAtPosition(coord);
         Joueur joueur = jeu.getJoueurByIndex(joueurIndex);
         return deplacerPanda(jeu.getPlateauDeJeu().getPanda(), joueur, parcelleDestination);
     }
 
-    private boolean deplacerPanda(Figurine panda, Joueur joueur, Parcelle parcelleDestination){
+    private boolean deplacerPanda(Figurine panda, Joueur joueur, ComposantParcelle parcelleDestination){
         if (!panda.estDeplaceableSur(parcelleDestination)){
             return false;
         }else{
             panda.setParcelleDepart(parcelleDestination);
             if (parcelleDestination.getNombreDeBambous() != 0) {
-                Bambou bambouMange = parcelleDestination.mangerBambou();
+                Bambou bambouMange = parcelleDestination.getComposant().mangerBambou();
                 joueur.getPlateauDeJoueur().reserverBambousPanda(bambouMange);
             }
         }

@@ -11,8 +11,6 @@ public abstract class Amenagement implements ComposantParcelle {
            this.composant = interne;
     }
 
-
-    @Override
     public int getNombreDeBambous() {
         return composant.getNombreDeBambous();
     }
@@ -30,12 +28,7 @@ public abstract class Amenagement implements ComposantParcelle {
 
     protected abstract void fairePousserBambouAmenagement(Parcelle com);
 
-
-
-
-    @Override
     public String toString(){
-
         return "Parcelle de couleur "+
                 this.composant.getCouleur()+  " Avec " +
                 this.getClass().getSimpleName()+

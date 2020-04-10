@@ -93,18 +93,12 @@ public class PlaceParcelle implements Action {
     }
 
 
-    public boolean placerParcelleDansPlateau(PlateauDeJeu plateau, ComposantParcelle p, int x, int y){
+    public boolean placerParcelleDansPlateau(PlateauDeJeu plateau, ComposantParcelle parcelle, int x, int y){
         Coordonnees coordParcelle = new Coordonnees(x,y);
-        Parcelle parcelle;
-        if(p instanceof Amenagement){
-            parcelle=((Amenagement) p).getComposant();
-        } else {
-            parcelle=(Parcelle)p;
-        }
 
-        parcelle.setCoordonnees(coordParcelle);
+        parcelle.getComposant().setCoordonnees(coordParcelle);
 
-        planterBambouSurParcelleDeposee(parcelle);
+        planterBambouSurParcelleDeposee(parcelle.getComposant());
 
         plateau.ajouterParcelle(parcelle);
 
@@ -112,32 +106,32 @@ public class PlaceParcelle implements Action {
 
         int i = plateau.positionParcelle(x, y + 2);
         if (i != -1) {
-            parcelle.setVoisins(plateau.getParcelles().get(i));
-            plateau.getParcelles().get(i).setVoisins(parcelle);            }
+            parcelle.getComposant().setVoisins(plateau.getParcelles().get(i).getComposant());
+            plateau.getParcelles().get(i).getComposant().setVoisins(parcelle.getComposant());            }
         i = plateau.positionParcelle(x + 2, y + 1);
         if (i != -1) {
-            parcelle.setVoisins(plateau.getParcelles().get(i));
-            plateau.getParcelles().get(i).setVoisins(parcelle);
+            parcelle.getComposant().setVoisins(plateau.getParcelles().get(i).getComposant());
+            plateau.getParcelles().get(i).getComposant().setVoisins(parcelle.getComposant());
         }
         i = plateau.positionParcelle(x + 2, y - 1);
         if (i != -1) {
-            parcelle.setVoisins(plateau.getParcelles().get(i));
-            plateau.getParcelles().get(i).setVoisins(parcelle);
+            parcelle.getComposant().setVoisins(plateau.getParcelles().get(i).getComposant());
+            plateau.getParcelles().get(i).getComposant().setVoisins(parcelle.getComposant());
         }
         i = plateau.positionParcelle(x, y - 2);
         if (i != -1) {
-            parcelle.setVoisins(plateau.getParcelles().get(i));
-            plateau.getParcelles().get(i).setVoisins(parcelle);
+            parcelle.getComposant().setVoisins(plateau.getParcelles().get(i).getComposant());
+            plateau.getParcelles().get(i).getComposant().setVoisins(parcelle.getComposant());
         }
         i = plateau.positionParcelle(x - 2, y - 1);
         if (i != -1) {
-            parcelle.setVoisins(plateau.getParcelles().get(i));
-            plateau.getParcelles().get(i).setVoisins(parcelle);
+            parcelle.getComposant().setVoisins(plateau.getParcelles().get(i).getComposant());
+            plateau.getParcelles().get(i).getComposant().setVoisins(parcelle.getComposant());
         }
         i = plateau.positionParcelle(x - 2, y + 1);
         if (i != -1) {
-            parcelle.setVoisins(plateau.getParcelles().get(i));
-            plateau.getParcelles().get(i).setVoisins(parcelle);
+            parcelle.getComposant().setVoisins(plateau.getParcelles().get(i).getComposant());
+            plateau.getParcelles().get(i).getComposant().setVoisins(parcelle.getComposant());
         }
 
         plateau.mettreAjourListePosiDisp(coordParcelle);
@@ -164,6 +158,5 @@ public class PlaceParcelle implements Action {
             parcelle.setIrriguee(true);
             parcelle.fairePousserBambou();
         }
-
     }
 }
