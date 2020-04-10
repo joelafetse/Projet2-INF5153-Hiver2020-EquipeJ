@@ -83,13 +83,27 @@ package uqam.inf5153.game{
         +this ()   
         --
 
-        + placerParcelleDansPlateau (p:PlateauDeJeu,pa: Parcelle,x:int,y:int)
-        + prendreIrrigation (): void
-        + prendreObjectif (p:PiocheObjectifs,pl:PlateauDeJoueur):Objectif
-        + remplirObjectif (o:Objectif,pl:PlateauDeJeu): bool
-        + deplacerJardinier (pl:PlateauDeJeu,j:Figurine jardinier,pDst:Parcelle)
-      
+        + effectuerAction(numJoueur :int): boolean
       }
+      interface Action {
+        + {abstract} executer(numJoueur :int): boolean
+      }
+      class PlaceParcelle {
+         + executerAction(numJoueur :int): boolean
+      }
+      class PlaceIrrigation {
+        + executer(numJoueur:int): boolean
+      }
+      class DeplacePanda {
+        + executer(numJoueur:int): boolean
+      }
+      class DeplaceJardinier {
+        + executer(numJoueur:int): boolean
+      }
+      class RemplitObjectif {
+        + executer(numJoueur:int): boolean
+      }
+
       class PlateauDuJoueur{
         - NBRE_OBJECTIFS_PIOCHES_MAX: int
         -irrigations: int
@@ -103,12 +117,16 @@ package uqam.inf5153.game{
         +ajouterIrrigations ()
         +retirerIrrigation () 
         +afficherObjectifsPioches ()
-
       }
-      Joueur "0..1" *-->  "1" PlateauDuJoueur      
+      PlaceParcelle ..|> Action
+      PlaceIrrigation ..|> Action
+      DeplaceJardinier ..|> Action
+      DeplacePanda ..|> Action
+      RemplitObjectif ..|> Action
+      Joueur "0..1" *-->  "1" PlateauDuJoueur
+      Joueur  *--> "1" Action
       PlateauDuJoueur "0..1" *-->  " 0..5 " Objectif
-      
-  
+
   
 
       abstract class Figurine {

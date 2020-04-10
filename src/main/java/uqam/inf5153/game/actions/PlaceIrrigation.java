@@ -24,7 +24,7 @@ public class PlaceIrrigation  implements  Action {
     }
 
     @Override
-    public boolean executerAction(int numJoueur){
+    public boolean executer(int numJoueur){
         if (estDecision)
             return placerIrrigation(numJoueur);
 
@@ -33,7 +33,7 @@ public class PlaceIrrigation  implements  Action {
 
 
 
-    public boolean traiterIrrigation(int numJoueur){
+    private boolean traiterIrrigation(int numJoueur){
         System.out.println("===========================================================================");
         System.out.println("|   TAKENOKO MENU JOUEUR " +numJoueur+ " : Action Irrigation                        ");
         System.out.println("===========================================================================");
@@ -49,12 +49,12 @@ public class PlaceIrrigation  implements  Action {
         return true;
     }
 
-    public void effectuerActionPiocherIrrigation(int joueurIndex){
+    private void effectuerActionPiocherIrrigation(int joueurIndex){
         Joueur joueur = jeu.getJoueurByIndex(joueurIndex);
         prendreIrrigation();
     }
 
-    public void effectuerActionGarderIrrigation(int joueurIndex){
+    private void effectuerActionGarderIrrigation(int joueurIndex){
         Joueur joueur = jeu.getJoueurByIndex(joueurIndex);
         joueur.getPlateauDeJoueur().ajouterIrrigations();
     }

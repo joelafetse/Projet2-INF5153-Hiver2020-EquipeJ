@@ -23,7 +23,7 @@ public class Joueur {
     }
 
     public boolean effectuerAction(int numJoueur){
-        return this.actionCourante.executerAction(numJoueur);
+        return this.actionCourante.executer(numJoueur);
     }
 
     public void setActionCourante(Action nouvelleAction){

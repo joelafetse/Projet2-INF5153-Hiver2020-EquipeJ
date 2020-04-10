@@ -17,7 +17,7 @@ public class DeplaceJardinier implements Action {
     }
 
     @Override
-    public boolean executerAction(int numJoueur){
+    public boolean executer(int numJoueur){
         return deplacerJardinier(numJoueur);
     }
 

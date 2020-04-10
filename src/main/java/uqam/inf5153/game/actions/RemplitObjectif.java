@@ -22,7 +22,7 @@ public class RemplitObjectif implements Action {
     }
 
     @Override
-    public boolean executerAction(int numJoueur){
+    public boolean executer(int numJoueur){
         if (estDecision)
             return remplirObjectifSurDecision(numJoueur);
 

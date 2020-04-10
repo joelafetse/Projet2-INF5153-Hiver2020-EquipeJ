@@ -4,5 +4,5 @@ import uqam.inf5153.game.Jeu;
 
 public interface Action {
 
-    public boolean executerAction(int numJoueur);
+    public boolean executer(int numJoueur);
 }
