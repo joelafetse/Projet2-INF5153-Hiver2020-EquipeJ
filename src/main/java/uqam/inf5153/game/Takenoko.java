@@ -79,7 +79,6 @@ public class Takenoko {
 	 * Pour deux joueur une partie prend fin si un des joueur remplit son 9ème objectif
 	 */
 	public static boolean finPartie() {
-		// code temporaire
 		return jeu.verifierFinPartie();
 	}
 	/**
@@ -91,8 +90,7 @@ public class Takenoko {
 	 * et ce en calclant le total des points des objectifs remplis.
 	 */
 	public static int annoncerGagnant() {
-
-		return 1;
+		return jeu.annoncerGagnant();
 	}
 
 

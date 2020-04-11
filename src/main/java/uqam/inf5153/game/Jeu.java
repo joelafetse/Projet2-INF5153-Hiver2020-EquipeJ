@@ -58,11 +58,22 @@ public class Jeu {
 
     public boolean verifierFinPartie() {
         for (Joueur joueur: joueurs){
-            if (joueur.getPlateauDeJoueur().getNombreObjectifsAccomplis() == NBRE_OBJECTIFS_GAGNANT){
+            boolean aGagneLaPartie = joueur.aGagneLaPartie(NBRE_OBJECTIFS_GAGNANT);
+            if (aGagneLaPartie){
                 return true;
             }
         }
         return false;
+    }
+
+    public int annoncerGagnant(){
+        for (Joueur joueur: joueurs){
+            boolean aGagneLaPartie = joueur.aGagneLaPartie(NBRE_OBJECTIFS_GAGNANT);
+            if (aGagneLaPartie){
+                return joueurs.indexOf(joueur) + 1;
+            }
+        }
+        return -1;
     }
 
     // private methods

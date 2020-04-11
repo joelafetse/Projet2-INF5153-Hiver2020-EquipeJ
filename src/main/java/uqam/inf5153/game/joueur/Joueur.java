@@ -34,6 +34,10 @@ public class Joueur {
         return plateauDeJoueur;
     }
 
+    public boolean aGagneLaPartie(int nbrObjectifsGagnant){
+        return plateauDeJoueur.getNombreObjectifsAccomplis() == nbrObjectifsGagnant;
+    }
+
     public boolean remplirObjectif(Objectif obj, PlateauDeJeu plateauDeJeu){
         int points = obj.appliquerObjectif(plateauDeJeu);
         if (points == 0){
