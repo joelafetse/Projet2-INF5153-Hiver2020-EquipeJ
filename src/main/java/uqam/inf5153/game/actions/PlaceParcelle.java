@@ -21,7 +21,7 @@ public class PlaceParcelle implements Action {
     }
 
     @Override
-    public boolean executerAction(int numJoueur){
+    public boolean executer(int numJoueur){
         return placerParcelle(numJoueur);
     }
 

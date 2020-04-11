@@ -23,7 +23,7 @@ public class Joueur {
     }
 
     public boolean effectuerAction(int numJoueur){
-        return this.actionCourante.executerAction(numJoueur);
+        return this.actionCourante.executer(numJoueur);
     }
 
     public void setActionCourante(Action nouvelleAction){
@@ -32,6 +32,10 @@ public class Joueur {
 
     public PlateauDeJoueur getPlateauDeJoueur() {
         return plateauDeJoueur;
+    }
+
+    public boolean aGagneLaPartie(int nbrObjectifsGagnant){
+        return plateauDeJoueur.getNombreObjectifsAccomplis() == nbrObjectifsGagnant;
     }
 
     public boolean remplirObjectif(Objectif obj, PlateauDeJeu plateauDeJeu){

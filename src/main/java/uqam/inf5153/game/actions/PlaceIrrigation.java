@@ -24,7 +24,7 @@ public class PlaceIrrigation  implements  Action {
     }
 
     @Override
-    public boolean executerAction(int numJoueur){
+    public boolean executer(int numJoueur){
         if (estDecision)
             return placerIrrigation(numJoueur);
 
@@ -33,7 +33,7 @@ public class PlaceIrrigation  implements  Action {
 
 
 
-    public boolean traiterIrrigation(int numJoueur){
+    private boolean traiterIrrigation(int numJoueur){
         System.out.println("===========================================================================");
         System.out.println("|   TAKENOKO MENU JOUEUR " +numJoueur+ " : Action Irrigation                        ");
         System.out.println("===========================================================================");
@@ -49,12 +49,12 @@ public class PlaceIrrigation  implements  Action {
         return true;
     }
 
-    public void effectuerActionPiocherIrrigation(int joueurIndex){
+    private void effectuerActionPiocherIrrigation(int joueurIndex){
         Joueur joueur = jeu.getJoueurByIndex(joueurIndex);
         prendreIrrigation();
     }
 
-    public void effectuerActionGarderIrrigation(int joueurIndex){
+    private void effectuerActionGarderIrrigation(int joueurIndex){
         Joueur joueur = jeu.getJoueurByIndex(joueurIndex);
         joueur.getPlateauDeJoueur().ajouterIrrigations();
     }
@@ -93,13 +93,11 @@ public class PlaceIrrigation  implements  Action {
                 List<Irrigation> irrigationsDuReseau = reseau.getIrrigations();
                 for (int i=0; i < irrigationsDuReseau.size(); i++) {
                     Irrigation uneIrrigationDeReseau = irrigationsDuReseau.get(i);
-                    if (
-                            irr.getParcelle1().equals(uneIrrigationDeReseau.getParcelle1()) ||
-                                    irr.getParcelle1().equals(uneIrrigationDeReseau.getParcelle2()) ||
-                                    irr.getParcelle2().equals(uneIrrigationDeReseau.getParcelle1()) ||
-                                    irr.getParcelle2().equals(uneIrrigationDeReseau.getParcelle2())
-                    )
-                    {
+                    if(uneIrrigationDeReseau.equals(irr)){
+                      System.out.println("Ici déjà il y a une irrigation, choisissez autre parcelles");
+                      return false;
+                    }
+                    if (irrigationEstVerifiee(irr, uneIrrigationDeReseau)) {
                         reseau.ajouterIrragtionAuReseau(irr);
                         if(irr.getParcelle1().getNombreDeBambous() == 0) {
                             p1.fairePousserBambou();
@@ -113,6 +111,12 @@ public class PlaceIrrigation  implements  Action {
             }
         }
         return irrigationEstPlacee;
+    }
+    private boolean irrigationEstVerifiee(Irrigation irr1, Irrigation irr2) {
+        return irr1.getParcelle1().equals(irr2.getParcelle1()) ||
+                irr1.getParcelle1().equals(irr2.getParcelle2()) ||
+                irr1.getParcelle2().equals(irr2.getParcelle1()) ||
+                irr1.getParcelle2().equals(irr2.getParcelle2());
     }
 
     private boolean placerIrrigation(int numJoueur) {
@@ -136,7 +140,7 @@ public class PlaceIrrigation  implements  Action {
             y2 = Keyin.inInt(" Entrer la position y2 : ");
             estPlacee = effectuerActionPlacerIrrigation( x1, y1, x2, y2, numJoueur);
         }
-        System.out.println("L'irrigation est bien placée");
+        System.out.println("L'irrigation est bien placée entre les parcelles de coordonnées ("+ x1 +","+y1+") et ("+ x2 +"," + y2 +").");
 
         return estPlacee;
     }

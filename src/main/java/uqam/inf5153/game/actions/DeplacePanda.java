@@ -18,11 +18,11 @@ public class DeplacePanda implements Action{
     }
 
     @Override
-    public boolean executerAction(int numJoueur){
+    public boolean executer(int numJoueur){
         return deplacerPanda(numJoueur);
     }
 
-    public boolean deplacerPanda(int numJoueur){
+    private boolean deplacerPanda(int numJoueur){
         System.out.println("==========================================================================");
         System.out.println("|   TAKENOKO MENU JOUEUR " +numJoueur+ " : Action Panda                         ");
         System.out.println("==========================================================================");
@@ -40,7 +40,7 @@ public class DeplacePanda implements Action{
             y = Keyin.inInt(" Entrer la position y : ");
             pandaEstDeplace = effectuerActionDeplacerPanda(x,y, numJoueur );
         }
-        System.out.println("Le Panda est bien déplacé.");
+        System.out.println("Le Panda est bien déplacé (" + x + "," + y + ").");
 
         return pandaEstDeplace;
     }
