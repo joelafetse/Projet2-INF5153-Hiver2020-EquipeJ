@@ -40,11 +40,6 @@ public class ParcelleVerteTest {
     @Test
     public void testEquals() {
     }
-
-    @Test
-    public void testHashCode() {
-    }
-
     @Test
     public void estAdjacent() {
     }
@@ -53,16 +48,8 @@ public class ParcelleVerteTest {
     public void parcellesAdjacentes() {
     }
 
-    @Test
-    public void testToString() {
-    }
 
-    @Test
-    public void getCouleur() {
-    }
 
-    @Test
-    public void getParcelleId() {
-    }
+
 
 }
