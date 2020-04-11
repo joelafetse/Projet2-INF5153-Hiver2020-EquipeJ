@@ -39,7 +39,7 @@ public class DeplacePanda implements Action{
             y = Keyin.inInt(" Entrer la position y : ");
             pandaEstDeplace = effectuerActionDeplacerPanda(x,y, numJoueur );
         }
-        System.out.println("Le Panda est bien déplacé.");
+        System.out.println("Le Panda est bien déplacé (" + x + "," + y + ").");
 
         return pandaEstDeplace;
     }

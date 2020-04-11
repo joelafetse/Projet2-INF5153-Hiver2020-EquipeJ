@@ -72,7 +72,7 @@ public class DeplaceJardinier implements Action {
             y = Keyin.inInt(" Entrer la position y : ");
             estDeplace = effectuerActionDeplacerJardinier(x, y, numJoueur);
         }
-        System.out.println("Le Jardinier est bien déplacé.");
+        System.out.println("Le Jardinier est bien déplacé à la position (" + x + "," + y + ").");
 
         return estDeplace;
     }

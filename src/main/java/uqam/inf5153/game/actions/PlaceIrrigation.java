@@ -140,7 +140,7 @@ public class PlaceIrrigation  implements  Action {
             y2 = Keyin.inInt(" Entrer la position y2 : ");
             estPlacee = effectuerActionPlacerIrrigation( x1, y1, x2, y2, numJoueur);
         }
-        System.out.println("L'irrigation est bien placée");
+        System.out.println("L'irrigation est bien placée entre les parcelles de coordonnées ("+ x1 +","+y1+") et ("+ x2 +"," + y2 +").");
 
         return estPlacee;
     }
