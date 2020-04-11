@@ -61,7 +61,7 @@ public class DeplacePanda implements Action{
         }else{
             panda.setParcelleDepart(parcelleDestination);
             if (parcelleDestination.getNombreDeBambous() != 0) {
-                Bambou bambouMange = parcelleDestination.getComposant().mangerBambou();
+                Bambou bambouMange = parcelleDestination.mangerBambou();
                 joueur.getPlateauDeJoueur().reserverBambousPanda(bambouMange);
             }
         }
