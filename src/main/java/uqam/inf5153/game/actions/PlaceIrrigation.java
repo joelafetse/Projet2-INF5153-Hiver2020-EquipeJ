@@ -72,7 +72,7 @@ public class PlaceIrrigation  implements  Action {
             System.out.println("Choisissez deux positions adjacentes.");
             return false;
         }
-        return placerIrrigation(jeu.getPlateauDeJeu(), p1.getComposant(), p2.getComposant());
+        return placerIrrigation(jeu.getPlateauDeJeu(), p1, p2);
     }
 
     private void prendreIrrigation() {
@@ -80,9 +80,9 @@ public class PlaceIrrigation  implements  Action {
         Irrigation.setNbrCanauxIrrigation(nbrCanauxIrrigationRestant);
     }
 
-    private boolean placerIrrigation(PlateauDeJeu plateauDeJeu, Parcelle p1, Parcelle p2){
+    private boolean placerIrrigation(PlateauDeJeu plateauDeJeu, ComposantParcelle p1, ComposantParcelle p2){
         boolean irrigationEstPlacee = false;
-        Irrigation irr = new Irrigation(p1,p2);
+        Irrigation irr = new Irrigation(p1.getComposant(),p2.getComposant());
         if (irr.getParcelle1().estAdjacent(plateauDeJeu.getParcelleEtang()) &&
                 irr.getParcelle2().estAdjacent(plateauDeJeu.getParcelleEtang()))
         {
@@ -102,10 +102,10 @@ public class PlaceIrrigation  implements  Action {
                     {
                         reseau.ajouterIrragtionAuReseau(irr);
                         if(irr.getParcelle1().getNombreDeBambous() == 0) {
-                            irr.getParcelle1().fairePousserBambou();
+                            p1.fairePousserBambou();
                         }
                         if(irr.getParcelle2().getNombreDeBambous() == 0) {
-                            irr.getParcelle2().fairePousserBambou();
+                            p2.fairePousserBambou();
                         }
                         return true;
                     }

@@ -165,6 +165,18 @@ public class PlateauDeJeu {
         }
     }
 
+    public void afficherPositionPanda(){
+
+        System.out.println("\nActuellement, le Panda se trouve à la position: "+this.panda.getParcelleDepart().getComposant().getCoordonnees());
+    }
+
+
+    public void afficherPositionJardinier(){
+
+        System.out.println("\nActuellement, le Jardinier se trouve à la position: "+this.jardinier.getParcelleDepart().getComposant().getCoordonnees());
+    }
+
+
     public void ajouterNouveauReseauIrrigation(ReseauIrrigation nouveauReseau){
         this.reseauxIrr.add(nouveauReseau);
     }

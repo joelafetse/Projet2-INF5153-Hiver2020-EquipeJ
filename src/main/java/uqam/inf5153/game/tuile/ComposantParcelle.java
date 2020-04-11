@@ -10,6 +10,7 @@ public interface ComposantParcelle {
 
     int getNombreDeBambous ();
     void fairePousserBambou();
+    Bambou mangerBambou();
     Parcelle getComposant();
 
 }

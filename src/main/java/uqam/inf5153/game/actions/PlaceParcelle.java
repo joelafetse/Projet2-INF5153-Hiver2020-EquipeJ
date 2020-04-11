@@ -7,6 +7,7 @@ import uqam.inf5153.game.plateau.Coordonnees;
 import uqam.inf5153.game.plateau.PlateauDeJeu;
 import uqam.inf5153.game.tuile.ComposantParcelle;
 import uqam.inf5153.game.tuile.amenagement.Amenagement;
+import uqam.inf5153.game.tuile.amenagement.AmenagementBassin;
 import uqam.inf5153.game.tuile.parcelle.Parcelle;
 
 import java.util.List;
@@ -98,7 +99,7 @@ public class PlaceParcelle implements Action {
 
         parcelle.getComposant().setCoordonnees(coordParcelle);
 
-        planterBambouSurParcelleDeposee(parcelle.getComposant());
+        planterBambouSurParcelleDeposee(parcelle);
 
         plateau.ajouterParcelle(parcelle);
 
@@ -153,10 +154,10 @@ public class PlaceParcelle implements Action {
      * Si une parcelle est adjacent à la parcelle Étang, ça deviendra irriguée.
      * et on pourrait faire pousser une section de bambou sur cette parcelle.
      */
-    public void planterBambouSurParcelleDeposee(Parcelle parcelle) {
-        if (parcelle.estAdjacentAParcelleEtang(parcelle)) {
-            parcelle.setIrriguee(true);
-            parcelle.fairePousserBambou();
+    public void planterBambouSurParcelleDeposee(ComposantParcelle comParcelle) {
+        if (comParcelle.getComposant().estAdjacentAParcelleEtang() || comParcelle instanceof AmenagementBassin) {
+            comParcelle.getComposant().setIrriguee(true);
+            comParcelle.fairePousserBambou();
         }
     }
 }

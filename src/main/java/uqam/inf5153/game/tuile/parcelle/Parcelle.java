@@ -81,13 +81,13 @@ public abstract class Parcelle implements ComposantParcelle {
      * et pour faire pousser un bambou
      * si une parcelle est à côté de Etange çela deviendra irriguée.
      */
-    public boolean estAdjacentAParcelleEtang(Parcelle p){
-        return (p.coord.getX() == 2 && p.coord.getY() == 1) ||
-                (p.coord.getX() == 2 && p.coord.getY() == - 1) ||
-                (p.coord.getX() == - 2 && p.coord.getY() == 1) ||
-                (p.coord.getX() == - 2 && p.coord.getY() == - 1) ||
-                (p.coord.getX() == 0 && p.coord.getY() == 2) ||
-                (p.coord.getX() == 0 && p.coord.getY() == - 2);
+    public boolean estAdjacentAParcelleEtang(){
+        return (this.coord.getX() == 2 && this.coord.getY() == 1) ||
+                (this.coord.getX() == 2 && this.coord.getY() == - 1) ||
+                (this.coord.getX() == - 2 && this.coord.getY() == 1) ||
+                (this.coord.getX() == - 2 && this.coord.getY() == - 1) ||
+                (this.coord.getX() == 0 && this.coord.getY() == 2) ||
+                (this.coord.getX() == 0 && this.coord.getY() == - 2);
     }
 
 

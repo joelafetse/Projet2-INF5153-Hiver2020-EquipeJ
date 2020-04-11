@@ -61,6 +61,7 @@ public class DeplaceJardinier implements Action {
         System.out.println("==========================================================================");
         System.out.println("|        Afficher les parcelles du plateau (les positions):             \n");
         jeu.afficherParcellesDansPlateau();
+        jeu.afficherPositionJardinier();
         System.out.println("\n|        Précisier la nouvelle parcelle (position x,y) du Jardinier      ");
         int x = Keyin.inInt(" Entrer la position x : ");
         int y = Keyin.inInt(" Entrer la position y : ");

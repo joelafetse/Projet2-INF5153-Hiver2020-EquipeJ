@@ -28,6 +28,7 @@ public class DeplacePanda implements Action{
         System.out.println("==========================================================================");
         System.out.println("|        Afficher les parcelles du plateau  (les positions)\n               ");
         jeu.afficherParcellesDansPlateau();
+        jeu.afficherPositionPanda();
         System.out.println("\n|        Préciser la nouvelle parcelle (position x,y) du Panda                   ");
         int x = Keyin.inInt(" Entrer la position x : ");
         int y = Keyin.inInt(" Entrer la position y : ");

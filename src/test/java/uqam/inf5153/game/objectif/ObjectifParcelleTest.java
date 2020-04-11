@@ -2,6 +2,7 @@ package uqam.inf5153.game.objectif;
 
 import org.junit.Test;
 import uqam.inf5153.game.joueur.Joueur;
+import uqam.inf5153.game.tuile.ComposantParcelle;
 import uqam.inf5153.game.tuile.parcelle.ParcelleJaune;
 import uqam.inf5153.game.tuile.parcelle.ParcelleRose;
 import uqam.inf5153.game.tuile.parcelle.ParcelleVerte;
@@ -15,12 +16,12 @@ public class ObjectifParcelleTest {
 //    public void testAppliquerObjectif_1() {
 //        //Triangle vert point=2
 //        PlateauDeJeu plateau =new PlateauDeJeu();
-//        ParcelleVerte p1=new ParcelleVerte();
-//        p1.setIrriguee(true);
-//        ParcelleVerte p2=new ParcelleVerte();
-//        p2.setIrriguee(true);
-//        ParcelleVerte p3=new ParcelleVerte();
-//        p3.setIrriguee(true);
+//        ComposantParcelle p1=new ParcelleVerte();
+//        p1.getComposant().setIrriguee(true);
+//        ComposantParcelle p2=new ParcelleVerte();
+//        p2.getComposant().setIrriguee(true);
+//        ComposantParcelle p3=new ParcelleVerte();
+//        p3.getComposant().setIrriguee(true);
 //        Joueur joueur =new Joueur();
 //        joueur.placerParcelleDansPlateau(plateau,p1,2,1);
 //        joueur.placerParcelleDansPlateau(plateau,p2,0,2);
@@ -29,7 +30,7 @@ public class ObjectifParcelleTest {
 //        assertEquals(objectif.appliquerObjectif(plateau), 2);
 //
 //    }
-
+//
 //    @Test
 //    public void testAppliquerObjectif_2() {
 //        //Diamant vert point=3
@@ -50,7 +51,7 @@ public class ObjectifParcelleTest {
 //        ObjectifParcelle objectif =new ObjectifParcelle(2);
 //        assertEquals(objectif.appliquerObjectif(plateau), 3);
 //    }
-    //------------f
+//    ------------f
 //    @Test
 //    public void testAppliquerObjectif_3() {
 //        //Diamant Jaune et Rose point=5
@@ -72,7 +73,7 @@ public class ObjectifParcelleTest {
 //        assertEquals(5, objectif.appliquerObjectif(plateau));
 //
 //    }
-
+//
 //    @Test
 //    public void testAppliquerObjectif_4() {
 //        //Diamant Jaune et Vert point=5
@@ -93,7 +94,7 @@ public class ObjectifParcelleTest {
 //        ObjectifParcelle objectif =new ObjectifParcelle(5);
 //        assertEquals(3, objectif.appliquerObjectif(plateau));
 //    }
-
+//
 //    @Test
 //    public void testAppliquerObjectif_5() {
 //        //Diamant Rose et Vert point=5
@@ -138,7 +139,7 @@ public class ObjectifParcelleTest {
 //        ObjectifParcelle objectif8 =new ObjectifParcelle(8);
 //        assertEquals(3, objectif8.appliquerObjectif(plateau));
 //    }
-
+//
 //    @Test
 //    public void testAppliquerObjectif_7() {
 //        //Diamant Jaune point=4
@@ -225,7 +226,7 @@ public class ObjectifParcelleTest {
 //        assertEquals(4, objectif12.appliquerObjectif(plateau));
 //
 //    }
-
+//
 //    @Test
 //    public void testAppliquerObjectif_13() {
 //        //Diamant rose point=5
@@ -262,8 +263,8 @@ public class ObjectifParcelleTest {
 //        joueur.placerParcelleDansPlateau(plateau,p3,2,3);
 //        ObjectifParcelle objectif =new ObjectifParcelle(15);
 //        assertEquals(3, objectif.appliquerObjectif(plateau));
-//
-//    }
+
+    //}
     @Test
     public void testAppliquerObjectif16() {
         PlateauDeJeu plateau =new PlateauDeJeu();

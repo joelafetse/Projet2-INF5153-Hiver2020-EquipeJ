@@ -1,5 +1,6 @@
 package uqam.inf5153.game.tuile.amenagement;
 
+import uqam.inf5153.game.bambou.Bambou;
 import uqam.inf5153.game.tuile.ComposantParcelle;
 import uqam.inf5153.game.tuile.parcelle.Parcelle;
 
@@ -25,8 +26,15 @@ public abstract class Amenagement implements ComposantParcelle {
         fairePousserBambouAmenagement(composant);
     }
 
+    @Override
+    public Bambou mangerBambou(){
+        return mangerBambouAmenagement(composant);
+    }
 
     protected abstract void fairePousserBambouAmenagement(Parcelle com);
+
+    protected abstract Bambou mangerBambouAmenagement(Parcelle com);
+
 
     public String toString(){
         return "Parcelle de couleur "+

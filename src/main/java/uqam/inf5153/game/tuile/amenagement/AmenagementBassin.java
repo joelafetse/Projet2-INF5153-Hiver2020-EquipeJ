@@ -18,4 +18,9 @@ public class AmenagementBassin extends Amenagement {
             com.setIrriguee(true);
             com.fairePousserBambou();
     }
+
+    @Override
+    protected Bambou mangerBambouAmenagement(Parcelle com){
+        return com.mangerBambou();
+    }
 }

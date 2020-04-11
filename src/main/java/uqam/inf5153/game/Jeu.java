@@ -50,6 +50,13 @@ public class Jeu {
     public void afficherParcellesDansPlateau(){
         plateauDeJeu.afficherParcelleDeposees();
     }
+    public void afficherPositionPanda(){
+        plateauDeJeu.afficherPositionPanda();
+    }
+    public void afficherPositionJardinier(){
+        plateauDeJeu.afficherPositionJardinier();
+    }
+
 
     public void afficherObjectifsPioches(int joueurIndex) {
         Joueur joueur = getJoueurByIndex(joueurIndex);
