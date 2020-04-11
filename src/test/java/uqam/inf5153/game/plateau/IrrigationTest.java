@@ -31,22 +31,5 @@ public class IrrigationTest {
         assertEquals(irr1, irr2);
     }
 
-    @Test
-    public void getParcelle2() {
-    }
 
-    @Test
-    public void getNbrCanauxIrrigation() {
-    }
-
-    @Test
-    public void setNbrCanauxIrrigation() {
-
-    }
-
-
-
-    @Test
-    public void testHashCode() {
-    }
 }

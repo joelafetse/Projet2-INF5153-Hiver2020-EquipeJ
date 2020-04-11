@@ -67,4 +67,27 @@ public class FigurineTest {
         Figurine jardinier = new Jardinier(p1);
         assertFalse(jardinier.estDeplaceableSur(p2));
     }
+    @Test
+    public void pandaEstDeplaceableSur1() {
+        Coordonnees c1 = new Coordonnees(0, 0);
+        Parcelle p1 = new ParcelleVerte();
+        p1.setCoordonnees(c1);
+        Coordonnees c2 = new Coordonnees(4, 0);
+        Parcelle p2 = new ParcelleVerte();
+        p2.setCoordonnees(c2);
+        Figurine panda = new Panda(p1);
+        assertFalse(panda.estDeplaceableSur(p2));
+    }
+
+    @Test
+    public void pandaEstDeplaceableSur2() {
+        Coordonnees c1 = new Coordonnees(2, -1);
+        Parcelle p1 = new ParcelleVerte();
+        p1.setCoordonnees(c1);
+        Coordonnees c2 = new Coordonnees(0, -2);
+        Parcelle p2 = new ParcelleVerte();
+        p2.setCoordonnees(c2);
+        Figurine panda = new Panda(p1);
+        assertTrue(panda.estDeplaceableSur(p2));
+    }
 }
