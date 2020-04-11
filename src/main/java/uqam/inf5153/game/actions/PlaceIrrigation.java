@@ -93,6 +93,10 @@ public class PlaceIrrigation  implements  Action {
                 List<Irrigation> irrigationsDuReseau = reseau.getIrrigations();
                 for (int i=0; i < irrigationsDuReseau.size(); i++) {
                     Irrigation uneIrrigationDeReseau = irrigationsDuReseau.get(i);
+                    if(uneIrrigationDeReseau.equals(irr)){
+                      System.out.println("Ici déjà il y a une irrigation, choisissez autre parcelles");
+                      return false;
+                    }
                     if (irrigationEstVerifiee(irr, uneIrrigationDeReseau)) {
                         reseau.ajouterIrragtionAuReseau(irr);
                         if(irr.getParcelle1().getNombreDeBambous() == 0) {
