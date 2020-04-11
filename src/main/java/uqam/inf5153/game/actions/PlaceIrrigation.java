@@ -93,13 +93,7 @@ public class PlaceIrrigation  implements  Action {
                 List<Irrigation> irrigationsDuReseau = reseau.getIrrigations();
                 for (int i=0; i < irrigationsDuReseau.size(); i++) {
                     Irrigation uneIrrigationDeReseau = irrigationsDuReseau.get(i);
-                    if (
-                            irr.getParcelle1().equals(uneIrrigationDeReseau.getParcelle1()) ||
-                                    irr.getParcelle1().equals(uneIrrigationDeReseau.getParcelle2()) ||
-                                    irr.getParcelle2().equals(uneIrrigationDeReseau.getParcelle1()) ||
-                                    irr.getParcelle2().equals(uneIrrigationDeReseau.getParcelle2())
-                    )
-                    {
+                    if (irrigationEstVerifiee(irr, uneIrrigationDeReseau)) {
                         reseau.ajouterIrragtionAuReseau(irr);
                         if(irr.getParcelle1().getNombreDeBambous() == 0) {
                             irr.getParcelle1().fairePousserBambou();
@@ -113,6 +107,12 @@ public class PlaceIrrigation  implements  Action {
             }
         }
         return irrigationEstPlacee;
+    }
+    private boolean irrigationEstVerifiee(Irrigation irr1, Irrigation irr2) {
+        return irr1.getParcelle1().equals(irr2.getParcelle1()) ||
+                irr1.getParcelle1().equals(irr2.getParcelle2()) ||
+                irr1.getParcelle2().equals(irr2.getParcelle1()) ||
+                irr1.getParcelle2().equals(irr2.getParcelle2());
     }
 
     private boolean placerIrrigation(int numJoueur) {

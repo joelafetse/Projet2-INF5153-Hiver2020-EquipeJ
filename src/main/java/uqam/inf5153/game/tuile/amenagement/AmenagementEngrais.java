@@ -15,6 +15,6 @@ public class AmenagementEngrais extends Amenagement {
     protected void fairePousserBambouAmenagement(Parcelle com){
         com.fairePousserBambou();
         com.fairePousserBambou();
-        com.fairePousserBambou();
+
     }
 }
