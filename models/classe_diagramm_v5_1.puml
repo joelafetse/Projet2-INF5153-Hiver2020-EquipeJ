@@ -42,18 +42,17 @@ package uqam.inf5153.game{
     class AmenagementEnclos { 
       --
       # this(Parcelle interne)
-      -- 
+      --
       #fairePousserBambouAmenagement(c: Parcelle)        
-      #mangerBambouAmenagement(Parcelle com):Bambou        
+      #mangerBambouAmenagement(Parcelle com):Bambou         
     }
     class AmenagementBassin { 
       --
       # this(Parcelle interne)
-      -- 
+      --
       #fairePousserBambouAmenagement(c: Parcelle)        
-      #mangerBambouAmenagement(Parcelle com):Bambou        
+      #mangerBambouAmenagement(Parcelle com):Bambou         
     }
-        
 
         
 
@@ -181,7 +180,7 @@ package uqam.inf5153.game{
 
       +initialiserPlateauDeJeu()           
       +ajouterParcelle (p:Parcelle)
-      +getParcelleAtPosition (c: Coordonnees) position:Parcelle
+      +getParcelleAtPosition (c: Coordonnees): ComposantParcelle
       +mettreAjourListePosiDisp (c:Coordonnees)
       +nombreVoisinsOccupes (c:Coordonnees)
       +afficherLesPositionsDispo ()
