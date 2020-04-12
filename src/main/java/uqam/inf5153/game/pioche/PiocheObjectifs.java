@@ -30,7 +30,7 @@ public class PiocheObjectifs extends Pioche<Objectif> {
         for (int i = 0; i < nbrAPiocher; i++)
             objectifsPioches.add(objetsAPiocher.get(i));
         for (int i = 0; i < nbrAPiocher; i++)
-            objetsAPiocher.remove(i);
+            objetsAPiocher.remove(0);
 
         return objectifsPioches;
     }

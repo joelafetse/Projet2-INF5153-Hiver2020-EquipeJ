@@ -1,0 +1,135 @@
+@startuml
+!include _common.style
+
+title Takenoko (Structure)
+center footer project #2 - class diagram
+
+package uqam.inf5153.game{
+
+    class Takenoko {
+
+    }
+    class Jeu {      
+    } 
+
+    Takenoko --> Jeu     
+    Jeu "1" *--> "0..2"Joueur
+   
+
+  
+    
+    
+
+
+  
+    abstract class Objectif{
+     # identifiant: int
+     --
+     +this ()
+     +this (identifiant: int)
+     --
+
+     +appliquerObjectif (p: PlateauDeJeu): int 
+
+    }
+    class ObjectifParcelle {
+      --
+      +this ()
+      --
+
+      +appliquerObjectif(p: PlateauDeJeu): int
+
+    }
+    class ObjectifPanda {
+      --
+      +this ()
+      --
+
+      +appliquerObjectif(p: PlateauDeJeu): int
+
+    }
+    class ObjectifJardinier {
+      --
+      +this ()
+      --
+
+      +appliquerObjectif(p: PlateauDeJeu): int
+
+    }
+    class ObjectifEmpereur {
+      --
+      +this ()
+      --
+
+      +appliquerObjectif(p: PlateauDeJeu): int
+
+    }
+    
+    
+
+   Objectif  <|-- ObjectifParcelle
+   Objectif  <|-- ObjectifPanda
+   Objectif  <|-- ObjectifJardinier
+   Objectif  <|-- ObjectifEmpereur
+    
+
+  
+      class Joueur{
+        - score: int        
+        --
+        +this ()   
+        --
+
+        + effectuerAction(numJoueur :int): boolean
+        + aGagneLaPartie(nbrObjectifsGagnant: int):boolean
+        
+      }
+      interface Action {
+        + {abstract} executer(numJoueur :int): boolean
+      }
+      class PlaceParcelle {
+         + executerAction(numJoueur :int): boolean
+      }
+      class PlaceIrrigation {
+        + executer(numJoueur:int): boolean
+      }
+      class DeplacePanda {
+        + executer(numJoueur:int): boolean
+      }
+      class DeplaceJardinier {
+        + executer(numJoueur:int): boolean
+      }
+      class RemplitObjectif {
+        + executer(numJoueur:int): boolean
+      }
+
+      class PlateauDuJoueur{
+        - NBRE_OBJECTIFS_PIOCHES_MAX: int
+        -irrigations: int
+        --
+        +this () 
+        --
+
+        +ajouterObjectif (o: ObjectifParcelle)
+        +ajouterObjectifAccomplis (o: Objectif)
+        +peutAjouterObjectif ():boolean
+        +ajouterIrrigations ()
+        +retirerIrrigation () 
+        +afficherObjectifsPioches ()
+      }
+      Action <|..  PlaceParcelle
+      Action <|..  PlaceIrrigation 
+      Action <|..  DeplaceJardinier 
+      Action <|..  DeplacePanda 
+      Action <|..  RemplitObjectif 
+      Joueur "0..1" *-->  "1" PlateauDuJoueur
+      Joueur  *--> "1" Action
+      PlateauDuJoueur "0..1" *-->  " 0..5 " Objectif  
+
+
+
+
+
+}
+
+@enduml
