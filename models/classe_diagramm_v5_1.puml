@@ -102,9 +102,7 @@ package uqam.inf5153.game{
       --
       +this (c: Coordonnees)
       -- 
-      +prendreBambou()
-      +fairePousserBambou() 
-      +getNombreDeBambous(): int
+      
     }
 
         
