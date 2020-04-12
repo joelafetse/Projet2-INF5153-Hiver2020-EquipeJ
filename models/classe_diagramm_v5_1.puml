@@ -1,0 +1,257 @@
+@startuml
+!include _common.style
+
+title Takenoko (Structure)
+center footer project #2 - class diagram
+
+package uqam.inf5153.game{
+
+    class Takenoko {
+
+    }
+    class Jeu {      
+    } 
+
+    Takenoko --> Jeu 
+    Jeu "1" *--> "1"PlateauDeJeu    
+    Jeu "1"*--> "0..n" Pioche
+
+    
+    interface ComposantParcelle{
+        +getNombreDeBambous (): int
+        +fairePousserBambou()
+        +mangerBambou(): Bambou
+        +getComposant(): Parcelle
+     }
+     abstract class Amenagement {
+      --
+      # this(Parcelle interne)
+      --
+      +fairePousserBambou()
+      +mangerBambou(): Bambou
+      #fairePousserBambouAmenagement(c: Parcelle)        
+      #mangerBambouAmenagement(Parcelle com):Bambou
+    }
+    class AmenagementEngrais { 
+      --
+      # this(Parcelle interne)
+      --
+      #fairePousserBambouAmenagement(c: Parcelle)        
+      #mangerBambouAmenagement(Parcelle com):Bambou         
+    }
+    class AmenagementEnclos { 
+      --
+      # this(Parcelle interne)
+      -- 
+      #fairePousserBambouAmenagement(c: Parcelle)        
+      #mangerBambouAmenagement(Parcelle com):Bambou        
+    }
+    class AmenagementBassin { 
+      --
+      # this(Parcelle interne)
+      -- 
+      #fairePousserBambouAmenagement(c: Parcelle)        
+      #mangerBambouAmenagement(Parcelle com):Bambou        
+    }
+        
+
+        
+
+    abstract class Parcelle{
+      # irriguee
+      --
+      +this (c: Coordonnees)
+      --
+         
+      +estIrrigue e(): boolean
+      +setVoisins (p:Parcelle)
+      +estAdjacent (p:Parcelle): boolean
+      +parcellesAdjacente s(): Parcelle[]
+      +getComposant():Parcelle
+      +prendreBambou()
+      +mangerBambou():Bambou
+
+    }        
+    class ParcelleVerte{ 
+      -nbr_sections_bambou_vert:int 
+      --
+      +this ()
+      --
+      +prendreBambou()
+      +mangerBambou():Bambou
+      +getNombreDeBambous(): int
+    }
+    class ParcelleJaune{ 
+      -nbr_sections_bambou_jaune:int
+      --
+      +this ()
+      --
+      +prendreBambou()
+      +fairePousserBambou()
+      +getNombreDeBambous(): int 
+    }
+    class ParcelleRose{
+      -nbr_sections_bambou_rose:int
+      --
+      +this ()
+      --
+      +prendreBambou()
+      +fairePousserBambou()
+      +getNombreDeBambous(): int 
+    }
+    class ParcelleEtang{
+      --
+      +this (c: Coordonnees)
+      -- 
+      +prendreBambou()
+      +fairePousserBambou() 
+      +getNombreDeBambous(): int
+    }
+
+        
+
+        ComposantParcelle <|.. Parcelle
+        ComposantParcelle <|..  Amenagement
+        Amenagement  <|-- AmenagementBassin
+        Amenagement  <|-- AmenagementEngrais
+        Amenagement  <|-- AmenagementEnclos
+        Parcelle  <|-- ParcelleVerte
+        Parcelle  <|-- ParcelleJaune
+        Parcelle <|-- ParcelleRose
+        Parcelle  <|-- ParcelleEtang  
+
+    
+    abstract class Bambou {
+    }  
+    class BambouVert {
+    } 
+    class BambouJaune {
+
+    }
+    class BambouRose {
+      
+    }
+    ParcelleVerte "1" *--> "0..4" Bambou
+    ParcelleJaune "1" *--> "0..4" Bambou
+    ParcelleRose "1" *--> "0..4" Bambou
+    Bambou  <|-- BambouVert
+    Bambou  <|-- BambouJaune
+    Bambou  <|-- BambouRose
+
+  
+
+      abstract class Figurine {
+        --
+        +this (pEtang: Parcelle)
+        --
+
+        +estDeplaceableSur (pD: Parcelle)
+
+      }
+      class Jardinier {
+        --
+        +this (p: ComposantParcelle)
+        --
+      }
+      class Panda {
+        --
+        +this (p: ComposantParcelle)
+        --
+      }
+      
+      Figurine  <|-- Jardinier
+      Figurine  <|-- Panda
+      Figurine "0..1" *--> "0..1 " ComposantParcelle
+      
+
+  
+  
+    
+
+    class Irrigation{
+      -nbrCanauxIrrigation:int
+      --
+      +this (p1:Parcelle, p2:Parcelle) 
+
+    }
+    class PlateauDeJeu {
+      --
+      +this ()
+      --
+
+      +initialiserPlateauDeJeu()           
+      +ajouterParcelle (p:Parcelle)
+      +getParcelleAtPosition (c: Coordonnees) position:Parcelle
+      +mettreAjourListePosiDisp (c:Coordonnees)
+      +nombreVoisinsOccupes (c:Coordonnees)
+      +afficherLesPositionsDispo ()
+      +ajouterNouveauReseauIrrigation (nR: ReseauIrrigation)
+    
+    }
+
+    class ReseauIrrigation {
+    + this (irrDebut: Irrigation)
+    ----
+
+    + ajouterIrrigationAuReseau (irr: Irrigation): boolean
+
+    }
+
+    PlateauDeJeu "0..1"  *--> "0..n" ComposantParcelle
+    PlateauDeJeu  "0..1" *--> "0..2" Figurine    
+   
+
+    PlateauDeJeu "0..1"  *--> "0..n" ReseauIrrigation
+    ReseauIrrigation "0..1"  *--> "0..n" Irrigation
+
+  
+
+
+
+
+  
+
+    abstract class Pioche {
+      # objetsAPiocher: List<T>
+      --
+
+      +melangerPioche()
+      +pioche():T
+      +piocher(nbr: int):List<T>
+
+    }
+    class PiocheObjectifs {
+      --
+      +this()
+      --
+
+      +piocher():Objectif
+      +piocher(nbr: int):List<Objectif>
+
+    }
+    class PiocheParcelles {
+      --
+      +this()
+      --
+
+      +piocher():Parcelle
+      +piocher(nbr: int):List<Parcelle>
+
+    }
+
+    Pioche <|-- PiocheObjectifs
+    Pioche <|-- PiocheParcelles
+
+  
+
+  
+  
+  
+
+
+
+
+
+}
+
+@enduml
