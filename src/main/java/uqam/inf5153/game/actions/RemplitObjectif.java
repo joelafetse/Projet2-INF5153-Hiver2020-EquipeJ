@@ -37,8 +37,8 @@ public class RemplitObjectif implements Action {
         if (objectif == null){
             System.out.println("Vous ne pouvez pas piocher d'objectifs");
         }else {
-            System.out.println("|        Cet objectif est maintenant pioché                                  ");
-            System.out.println("         Et vous avez pioché: "+ objectif);
+            System.out.println("|        Un objectif est maintenant pioché                                  ");
+            System.out.println("         Et vous avez pioché:  "+ objectif);
             System.out.println("|        Pouvez vous le remplir tout de suite (O/N)  ?         ");
             System.out.println("|        Si oui, appliquer l'objectif sur le plateau du joueur     ");
             int reponse = Keyin.inChar(" réponse (O/N) : ");

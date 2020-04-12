@@ -1,6 +1,7 @@
 package uqam.inf5153.game.pioche;
 
 import uqam.inf5153.game.objectif.Objectif;
+import uqam.inf5153.game.objectif.ObjectifJardinier;
 import uqam.inf5153.game.objectif.ObjectifParcelle;
 
 import java.util.ArrayList;
@@ -11,8 +12,11 @@ public class PiocheObjectifs extends Pioche<Objectif> {
     public PiocheObjectifs(){
         for (int identifiant = 1; identifiant <= 15; identifiant++){
             super.objetsAPiocher.add(new ObjectifParcelle(identifiant));
-            //TODO pour les autres objectifs.
         }
+        for (int identifiant = 16; identifiant <= 30; identifiant++){
+            super.objetsAPiocher.add(new ObjectifJardinier(identifiant));
+        }
+
     }
 
     @Override
