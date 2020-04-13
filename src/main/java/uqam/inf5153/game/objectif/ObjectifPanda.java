@@ -22,7 +22,7 @@ public class ObjectifPanda extends Objectif {
         int nbrBambousRosePanda = nbrBambousPanda[2];
 
 
-        // pour test il faut l'effacer après
+        // pour le test il faut l'effacer après
         System.out.println("test1 nbrBambousVertPanda = "+nbrBambousVertPanda);
         System.out.println("test2 nbrBambousJaunePanda = "+nbrBambousJaunePanda);
         System.out.println("test3 nbrBambousRosePanda = "+nbrBambousRosePanda);

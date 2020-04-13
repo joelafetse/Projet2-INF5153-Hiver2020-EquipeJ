@@ -96,8 +96,8 @@ public class PlateauDeJoueur {
             }
         }
         nombreBambouspanda[0] = nbrBambousVertPanda;
-        nombreBambouspanda[1] = nbrBambousVertPanda;
-        nombreBambouspanda[2] = nbrBambousVertPanda;
+        nombreBambouspanda[1] = nbrBambousJaunePanda;
+        nombreBambouspanda[2] = nbrBambousRosePanda;
 
         return nombreBambouspanda;
     }
