@@ -2,6 +2,7 @@ package uqam.inf5153.game.joueur;
 
 import uqam.inf5153.game.actions.Action;
 import uqam.inf5153.game.objectif.Objectif;
+import uqam.inf5153.game.objectif.ObjectifPanda;
 import uqam.inf5153.game.plateau.PlateauDeJeu;
 
 
@@ -40,6 +41,10 @@ public class Joueur {
 
     public boolean remplirObjectif(Objectif obj, PlateauDeJeu plateauDeJeu){
         int points = obj.appliquerObjectif(plateauDeJeu);
+        //----------
+        if(obj instanceof ObjectifPanda) {
+            points = obj.appliquerObjectif(plateauDeJoueur);
+        }
         if (points == 0){
             return false;
         }

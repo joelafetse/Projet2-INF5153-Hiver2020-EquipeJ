@@ -10,7 +10,7 @@ public class ObjectifPanda extends Objectif {
 
 
 
-    private Joueur joueur= new Joueur();
+    //private Joueur joueur= new Joueur();
 
 
     public ObjectifPanda(int identifiant){
@@ -18,13 +18,16 @@ public class ObjectifPanda extends Objectif {
     }
 
     @Override
-    public int appliquerObjectif(PlateauDeJeu plateauDeJeu){
+    public int appliquerObjectif(PlateauDeJeu plateauDeJeu){ return 0;}
+
+    @Override
+    public int appliquerObjectif(PlateauDeJoueur plateauDeJoueur) {
 
         int nbrBambousVertPanda = 0;
         int nbrBambousJaunePanda = 0;
         int nbrBambousRosePanda = 0;
 
-        for (Bambou bambou : joueur.getPlateauDeJoueur().getBambousPanda()) {
+        for (Bambou bambou : plateauDeJoueur.getBambousPanda()) {
             if (bambou.getCouleur() == Couleur.VERT){
                 nbrBambousVertPanda++;
             } else if (bambou.getCouleur() == Couleur.JAUNE){

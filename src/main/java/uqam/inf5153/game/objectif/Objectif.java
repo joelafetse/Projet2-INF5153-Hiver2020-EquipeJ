@@ -19,5 +19,8 @@ public abstract class Objectif {
     //retourne le nombre de points de l'objectifs.
     public abstract int appliquerObjectif(PlateauDeJeu plateauDeJeu);
 
+     // pour l'objectif panda
+    public abstract int appliquerObjectif(PlateauDeJoueur plateauDeJoueur);
+
 
 }

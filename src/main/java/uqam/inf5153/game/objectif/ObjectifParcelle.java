@@ -1,5 +1,6 @@
 package uqam.inf5153.game.objectif;
 
+import uqam.inf5153.game.joueur.PlateauDeJoueur;
 import uqam.inf5153.game.tuile.ComposantParcelle;
 import uqam.inf5153.game.tuile.parcelle.Couleur;
 import uqam.inf5153.game.tuile.parcelle.Parcelle;
@@ -166,6 +167,11 @@ public class ObjectifParcelle extends Objectif {
                 break;
 
         }
+        return 0;
+    }
+
+    @Override
+    public int appliquerObjectif(PlateauDeJoueur plateauDeJoueur) {
         return 0;
     }
 
