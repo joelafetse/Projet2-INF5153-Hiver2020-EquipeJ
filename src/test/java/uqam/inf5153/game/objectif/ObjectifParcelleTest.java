@@ -23,7 +23,7 @@ public class ObjectifParcelleTest {
         p2.getComposant().setIrriguee(true);
         ComposantParcelle p3=new ParcelleVerte();
         p3.getComposant().setIrriguee(true);
-        Jeu jeu=new Jeu();
+        Jeu jeu=new Jeu(2);
         PlaceParcelle placeParcelle=new PlaceParcelle(jeu);
         placeParcelle.placerParcelleDansPlateau(plateau,p1,2,1);
         placeParcelle.placerParcelleDansPlateau(plateau,p2,0,2);
@@ -45,7 +45,7 @@ public class ObjectifParcelleTest {
         p3.getComposant().setIrriguee(true);
         ComposantParcelle p4=new ParcelleVerte();
         p4.getComposant().setIrriguee(true);
-        Jeu jeu=new Jeu();
+        Jeu jeu=new Jeu(2);
         PlaceParcelle placeParcelle=new PlaceParcelle(jeu);
         placeParcelle.placerParcelleDansPlateau(plateau,p1,2,1);
         placeParcelle.placerParcelleDansPlateau(plateau,p2,0,2);
@@ -67,7 +67,7 @@ public class ObjectifParcelleTest {
         p3.getComposant().setIrriguee(true);
         ComposantParcelle p4=new ParcelleRose();
         p4.getComposant().setIrriguee(true);
-        Jeu jeu=new Jeu();
+        Jeu jeu=new Jeu(2);
         PlaceParcelle placeParcelle=new PlaceParcelle(jeu);
         placeParcelle.placerParcelleDansPlateau(plateau,p3,2,1);
         placeParcelle.placerParcelleDansPlateau(plateau,p1,0,2);//jaune
@@ -90,7 +90,7 @@ public class ObjectifParcelleTest {
         p3.getComposant().setIrriguee(true);
         ComposantParcelle p4=new ParcelleVerte();
         p4.getComposant().setIrriguee(true);
-        Jeu jeu=new Jeu();
+        Jeu jeu=new Jeu(2);
         PlaceParcelle placeParcelle=new PlaceParcelle(jeu);
         placeParcelle.placerParcelleDansPlateau(plateau,p3,2,1);
         placeParcelle.placerParcelleDansPlateau(plateau,p1,0,2);//jaune
@@ -112,7 +112,7 @@ public class ObjectifParcelleTest {
         p3.getComposant().setIrriguee(true);
         ComposantParcelle p4=new ParcelleVerte();
         p4.getComposant().setIrriguee(true);
-        Jeu jeu=new Jeu();
+        Jeu jeu=new Jeu(2);
         PlaceParcelle placeParcelle=new PlaceParcelle(jeu);
         placeParcelle.placerParcelleDansPlateau(plateau,p3,2,1);
         placeParcelle.placerParcelleDansPlateau(plateau,p1,0,2);//rose
@@ -133,7 +133,7 @@ public class ObjectifParcelleTest {
         p3.getComposant().setIrriguee(true);
         ComposantParcelle p4=new ParcelleJaune();
         p4.getComposant().setIrriguee(true);
-        Jeu jeu=new Jeu();
+        Jeu jeu=new Jeu(2);
         PlaceParcelle placeParcelle=new PlaceParcelle(jeu);
         //p1,p2 et p3  produit un ligne curbé jaune (objectif8)
         placeParcelle.placerParcelleDansPlateau(plateau,p1,-2,1);
@@ -159,7 +159,7 @@ public class ObjectifParcelleTest {
         p3.getComposant().setIrriguee(true);
         ComposantParcelle p4=new ParcelleJaune();
         p4.getComposant().setIrriguee(true);
-        Jeu jeu=new Jeu();
+        Jeu jeu=new Jeu(2);
         PlaceParcelle placeParcelle=new PlaceParcelle(jeu);
         placeParcelle.placerParcelleDansPlateau(plateau,p1,2,1);
         placeParcelle.placerParcelleDansPlateau(plateau,p2,0,2);
@@ -180,7 +180,7 @@ public class ObjectifParcelleTest {
         p3.getComposant().setIrriguee(true);
         ComposantParcelle p4=new ParcelleVerte();
         p4.getComposant().setIrriguee(true);
-        Jeu jeu=new Jeu();
+        Jeu jeu=new Jeu(2);
         PlaceParcelle placeParcelle=new PlaceParcelle(jeu);
         //p1,p2 et p3  produit un ligne curbé vert (objectif
         placeParcelle.placerParcelleDansPlateau(plateau,p1,-2,1);
@@ -205,7 +205,7 @@ public class ObjectifParcelleTest {
         p3.getComposant().setIrriguee(true);
         ComposantParcelle p4=new ParcelleRose();
         p4.getComposant().setIrriguee(true);
-        Jeu jeu=new Jeu();
+        Jeu jeu=new Jeu(2);
         PlaceParcelle placeParcelle=new PlaceParcelle(jeu);
         //p1,p2 et p3  produit un ligne curbé rose (objectif
         placeParcelle.placerParcelleDansPlateau(plateau,p1,-2,1);
@@ -228,7 +228,7 @@ public class ObjectifParcelleTest {
         p2.getComposant().setIrriguee(true);
         ComposantParcelle p3=new ParcelleRose();
         p3.getComposant().setIrriguee(true);
-        Jeu jeu=new Jeu();
+        Jeu jeu=new Jeu(2);
         PlaceParcelle placeParcelle=new PlaceParcelle(jeu);
         placeParcelle.placerParcelleDansPlateau(plateau,p1,2,1);
         placeParcelle.placerParcelleDansPlateau(plateau,p2,0,2);
@@ -250,7 +250,7 @@ public class ObjectifParcelleTest {
         p3.getComposant().setIrriguee(true);
         ComposantParcelle p4=new ParcelleRose();
         p4.getComposant().setIrriguee(true);
-        Jeu jeu=new Jeu();
+        Jeu jeu=new Jeu(2);
         PlaceParcelle placeParcelle=new PlaceParcelle(jeu);
         placeParcelle.placerParcelleDansPlateau(plateau,p1,2,1);
         placeParcelle.placerParcelleDansPlateau(plateau,p2,0,2);
@@ -269,7 +269,7 @@ public class ObjectifParcelleTest {
         p2.getComposant().setIrriguee(true);
         ComposantParcelle p3=new ParcelleJaune();
         p3.getComposant().setIrriguee(true);
-        Jeu jeu=new Jeu();
+        Jeu jeu=new Jeu(2);
         PlaceParcelle placeParcelle=new PlaceParcelle(jeu);
         placeParcelle.placerParcelleDansPlateau(plateau,p1,2,1);
         placeParcelle.placerParcelleDansPlateau(plateau,p2,0,2);

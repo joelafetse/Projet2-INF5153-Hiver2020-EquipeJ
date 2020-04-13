@@ -22,8 +22,8 @@ public class Jeu {
 
 
     //Constucteur
-    public Jeu(){
-        this.nbrJoueurs = choisirNbrJoueurs();
+    public Jeu(int nbrJoueurs){
+        this.nbrJoueurs = nbrJoueurs;
         this.joueurs = new ArrayList<>();
         for (int i=0; i < this.nbrJoueurs; i++)
             this.joueurs.add(new Joueur());
@@ -98,16 +98,6 @@ public class Jeu {
     private void piocherObjectifsPourChaqueJoueur(){
         for (Joueur joueur: joueurs)
             joueur.getPlateauDeJoueur().setObjectifsPioches(this.piocheObjectifs.piocher(3));
-    }
-
-    private static int choisirNbrJoueurs(){
-        int nbrDeJoueurs;
-        nbrDeJoueurs = Keyin.inInt("Entrez le nombre de joueurs voulant jouer à la partie : ");
-        while (nbrDeJoueurs < 2 || nbrDeJoueurs > 4){
-            System.err.println("Le nombre de joueurs est invalide. Recommencez");
-            nbrDeJoueurs = Keyin.inInt("Entrez le nombre de joueurs voulant jouer à la partie : ");
-        }
-        return nbrDeJoueurs;
     }
 
     private static int nbrObjectifsGagnant(int nbrJoueurs){

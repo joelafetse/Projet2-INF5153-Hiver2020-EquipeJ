@@ -16,21 +16,19 @@ import java.util.List;
  */
 public class Takenoko {
 
-	private static Jeu jeu = new Jeu();
-
-	public static Joueur getJoueurByIndex(int index){
+	public static Joueur getJoueurByIndex(Jeu jeu, int index){
 		return jeu.getJoueurs().get(index - 1);
 	}
 
-	public static int nbrJoueurs(){
+	public static int nbrJoueurs(Jeu jeu){
 		return jeu.getNbreJoueurs();
 	}
 	/**
 	 * les parcelles
 	 */
 
-	public static void placerParcelle(int numJoueur){
-		Joueur joueur = getJoueurByIndex(numJoueur);
+	public static void placerParcelle(Jeu jeu, int numJoueur){
+		Joueur joueur = getJoueurByIndex(jeu, numJoueur);
 		joueur.setActionCourante(new PlaceParcelle(jeu));
 		joueur.effectuerAction(numJoueur);
 	}
@@ -39,8 +37,8 @@ public class Takenoko {
 	 * piocher une irrigation du joueur
 	 */
 
-	public static void placerIrrigation(int numJoueur, boolean estDecision){
-		Joueur joueur = getJoueurByIndex(numJoueur);
+	public static void placerIrrigation(Jeu jeu, int numJoueur, boolean estDecision){
+		Joueur joueur = getJoueurByIndex(jeu, numJoueur);
 		joueur.setActionCourante(new PlaceIrrigation(jeu,estDecision));
 		joueur.effectuerAction(numJoueur);
 	}
@@ -49,8 +47,8 @@ public class Takenoko {
 	 * objectifs
 	 */
 
-	public static void traiterActionObjectif(int numJoueur, boolean estDecision){
-		Joueur joueur = getJoueurByIndex(numJoueur);
+	public static void traiterActionObjectif(Jeu jeu, int numJoueur, boolean estDecision){
+		Joueur joueur = getJoueurByIndex(jeu, numJoueur);
 		joueur.setActionCourante(new RemplitObjectif(jeu,estDecision));
 		joueur.effectuerAction(numJoueur);
 	}
@@ -58,8 +56,8 @@ public class Takenoko {
 	/**
 	 * jardinier
 	 */
-	public static void deplacerJardinier(int numJoueur){
-		Joueur joueur = getJoueurByIndex(numJoueur);
+	public static void deplacerJardinier(Jeu jeu, int numJoueur){
+		Joueur joueur = getJoueurByIndex(jeu,numJoueur);
 		joueur.setActionCourante(new DeplaceJardinier(jeu));
 		joueur.effectuerAction(numJoueur);
 	}
@@ -67,8 +65,8 @@ public class Takenoko {
 	/**
 	 * panda
 	 */
-	public static void deplacerPanda(int numJoueur){
-		Joueur joueur = getJoueurByIndex(numJoueur);
+	public static void deplacerPanda(Jeu jeu, int numJoueur){
+		Joueur joueur = getJoueurByIndex(jeu, numJoueur);
 		joueur.setActionCourante(new DeplacePanda(jeu));
 		joueur.effectuerAction(numJoueur);
 	}
@@ -81,7 +79,7 @@ public class Takenoko {
 	 * retourne true si la partie est terminé.
 	 * Pour deux joueur une partie prend fin si un des joueur remplit son 9ème objectif
 	 */
-	public static boolean finPartie() {
+	public static boolean finPartie(Jeu jeu) {
 		return jeu.verifierFinPartie();
 	}
 	/**
@@ -92,7 +90,7 @@ public class Takenoko {
 	 * annonce la gagnant à la fin de la partie.
 	 * et ce en calclant le total des points des objectifs remplis.
 	 */
-	public static int annoncerGagnant() {
+	public static int annoncerGagnant(Jeu jeu) {
 		return jeu.annoncerGagnant();
 	}
 

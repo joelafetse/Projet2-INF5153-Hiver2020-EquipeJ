@@ -40,20 +40,21 @@ public class Main {
 		do{
 			swValue = Keyin.inString();
 		}while (swValue.length() != 0 );
-		nbrTotalJoueurs = Takenoko.nbrJoueurs();
+		nbrTotalJoueurs = choisirNbrJoueurs();
+		jeu = new Jeu(nbrTotalJoueurs);
 		boolean estFinPartie;
 		int i = 1;
 		do {
 			while ( i <= nbrTotalJoueurs) {
-				menuJoueur(i);
+				menuJoueur(jeu, i);
 				i++;
 			}
 			i = 1;
-			estFinPartie = Takenoko.finPartie();
+			estFinPartie = Takenoko.finPartie(jeu);
 		}while (!estFinPartie);
-		System.out.println("Le gagnant est le joueur : "+ Takenoko.annoncerGagnant());
+		System.out.println("Le gagnant est le joueur : "+ Takenoko.annoncerGagnant(jeu));
 	}
-	private static void menuJoueur(int numJoueur) {
+	private static void menuJoueur(Jeu jeu, int numJoueur) {
 		int swValue;
 		System.out.println("==========================================================================");
 		System.out.println("|   TAKENOKO -- MENU JOUEUR " +numJoueur+ "                              ");
@@ -71,7 +72,7 @@ public class Main {
 				break;
 			case 2:
 				System.out.println("\nEffectuer des actions\n");
-				choixAction(numJoueur);
+				choixAction(jeu, numJoueur);
 				break;
 			case 3:
 				System.out.println("\nFin du jeu\n");
@@ -86,7 +87,7 @@ public class Main {
 	/*
 	 * Actions
 	 */
-	private static void choixAction(int numJoueur) {
+	private static void choixAction(Jeu jeu, int numJoueur) {
 		int nbActions = NB_ACTIONS_PAR_TOUR;
 		int swValue;
 		afficherEnteteMenuAction(numJoueur);
@@ -104,23 +105,23 @@ public class Main {
 			switch (swValue) {
 				case 1:
 					System.out.println("\nPiocher 3 parcelles et en choisir une\n");
-					choixParcelle(numJoueur);
+					choixParcelle(jeu, numJoueur);
 					break;
 				case 2:
 					System.out.println("\nPrendre une irrigation\n");
-					prendreIrrigation(numJoueur);
+					prendreIrrigation(jeu, numJoueur);
 					break;
 				case 3:
 					System.out.println("\nDéplacer le jardinier\n");
-					deplacerJardinier(numJoueur);
+					deplacerJardinier(jeu, numJoueur);
 					break;
 				case 4:
 					System.out.println("\nDéplacer le panda\n");
-					deplacerPanda(numJoueur);
+					deplacerPanda(jeu, numJoueur);
 					break;
 				case 5:
 					System.out.println("\nPiocher une carte objectif\n");
-					piocherObjectif(numJoueur);
+					piocherObjectif(jeu, numJoueur);
 					break;
 				default:
 					System.out.println("Selection invalide");
@@ -129,28 +130,28 @@ public class Main {
 			}
 			nbActions = nbActions - 1;
 		}
-		autresDecisions(numJoueur);
+		autresDecisions(jeu, numJoueur);
 	}
-	private static void choixParcelle(int numJoueur) {
-		Takenoko.placerParcelle(numJoueur);
+	private static void choixParcelle(Jeu jeu, int numJoueur) {
+		Takenoko.placerParcelle(jeu, numJoueur);
 	}
-	private static void prendreIrrigation(int numJoueur) {
-		Takenoko.placerIrrigation(numJoueur, false);
+	private static void prendreIrrigation(Jeu jeu, int numJoueur) {
+		Takenoko.placerIrrigation(jeu, numJoueur, false);
 	}
-	private static void deplacerJardinier(int numJoueur) {
-		Takenoko.deplacerJardinier(numJoueur);
+	private static void deplacerJardinier(Jeu jeu, int numJoueur) {
+		Takenoko.deplacerJardinier(jeu, numJoueur);
 	}
-	private static void deplacerPanda(int numJoueur) {
-		Takenoko.deplacerPanda(numJoueur);
+	private static void deplacerPanda(Jeu jeu, int numJoueur) {
+		Takenoko.deplacerPanda(jeu, numJoueur);
 	}
-	private static void piocherObjectif(int numJoueur) {
-		Takenoko.traiterActionObjectif(numJoueur, false);
+	private static void piocherObjectif(Jeu jeu, int numJoueur) {
+		Takenoko.traiterActionObjectif(jeu, numJoueur, false);
 	}
 
 	/*
 	 * Décisions
 	 */
-	private static void autresDecisions(int numJoueur) {
+	private static void autresDecisions(Jeu jeu, int numJoueur) {
 		int swValue;
 		System.out.println("\n");
 		System.out.println("=========================================================================");
@@ -169,11 +170,11 @@ public class Main {
 			switch (swValue) {
 				case 1:
 					System.out.println("\nRemplir un objectif\n");
-					Takenoko.traiterActionObjectif(numJoueur, true);
+					Takenoko.traiterActionObjectif(jeu, numJoueur, true);
 					break;
 				case 2:
 					System.out.println("\nPlacer des irrigations\n");
-					Takenoko.placerIrrigation(numJoueur, true);
+					Takenoko.placerIrrigation(jeu, numJoueur, true);
 					break;
 				case 3:
 					System.out.println("\n\nFin du tour\n\n");
@@ -192,6 +193,16 @@ public class Main {
 		System.out.println("|     Le joueur effectue deux actions par tour parmi les                  ");
 		System.out.println("|     5 actions disponibles                                                   ");
 		System.out.println("==========================================================================");
+	}
+
+	private static int choisirNbrJoueurs(){
+		int nbrDeJoueurs;
+		nbrDeJoueurs = Keyin.inInt("Entrez le nombre de joueurs voulant jouer à la partie : ");
+		while (nbrDeJoueurs < 2 || nbrDeJoueurs > 4){
+			System.err.println("Le nombre de joueurs est invalide. Recommencez");
+			nbrDeJoueurs = Keyin.inInt("Entrez le nombre de joueurs voulant jouer à la partie : ");
+		}
+		return nbrDeJoueurs;
 	}
 
 }
