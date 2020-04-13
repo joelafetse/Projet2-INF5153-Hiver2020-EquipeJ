@@ -22,6 +22,9 @@ public class Takenoko {
 		return jeu.getJoueurs().get(index - 1);
 	}
 
+	public static int nbrJoueurs(){
+		return jeu.getNbreJoueurs();
+	}
 	/**
 	 * les parcelles
 	 */

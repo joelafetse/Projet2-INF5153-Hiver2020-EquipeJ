@@ -13,26 +13,26 @@ import java.util.List;
 
 public class Jeu {
 
-    private final int NBRE_DE_JOUEURS = 2;
-    private final int NBRE_OBJECTIFS_GAGNANT = 9;
-
     private PlateauDeJeu plateauDeJeu;
     private List<Joueur> joueurs;
     private PiocheObjectifs piocheObjectifs;
     private PiocheParcelles piocheParcelles;
+    private int nbrJoueurs;
+    private int nbrObjectifsGagnant;
 
 
     //Constucteur
     public Jeu(){
+        this.nbrJoueurs = choisirNbrJoueurs();
         this.joueurs = new ArrayList<>();
-        for (int i=0; i < NBRE_DE_JOUEURS; i++)
+        for (int i=0; i < this.nbrJoueurs; i++)
             this.joueurs.add(new Joueur());
         this.plateauDeJeu = new PlateauDeJeu();
         this.piocheObjectifs = new PiocheObjectifs();
         this.piocheParcelles = new PiocheParcelles();
         this.melangerPioches();
         piocherObjectifsPourChaqueJoueur();
-
+        this.nbrObjectifsGagnant = nbrObjectifsGagnant(this.nbrJoueurs);
     }
 
     public PlateauDeJeu getPlateauDeJeu(){
@@ -46,6 +46,8 @@ public class Jeu {
     public PiocheObjectifs getPiocheObjectifs() { return piocheObjectifs; }
 
     public List<Joueur> getJoueurs() { return joueurs; }
+
+    public int getNbreJoueurs() { return nbrJoueurs; }
 
     public void afficherParcellesDansPlateau(){
         plateauDeJeu.afficherParcelleDeposees();
@@ -65,7 +67,7 @@ public class Jeu {
 
     public boolean verifierFinPartie() {
         for (Joueur joueur: joueurs){
-            boolean aGagneLaPartie = joueur.aGagneLaPartie(NBRE_OBJECTIFS_GAGNANT);
+            boolean aGagneLaPartie = joueur.aGagneLaPartie(this.nbrObjectifsGagnant);
             if (aGagneLaPartie){
                 return true;
             }
@@ -75,7 +77,7 @@ public class Jeu {
 
     public int annoncerGagnant(){
         for (Joueur joueur: joueurs){
-            boolean aGagneLaPartie = joueur.aGagneLaPartie(NBRE_OBJECTIFS_GAGNANT);
+            boolean aGagneLaPartie = joueur.aGagneLaPartie(this.nbrObjectifsGagnant);
             if (aGagneLaPartie){
                 return joueurs.indexOf(joueur) + 1;
             }
@@ -96,5 +98,34 @@ public class Jeu {
     private void piocherObjectifsPourChaqueJoueur(){
         for (Joueur joueur: joueurs)
             joueur.getPlateauDeJoueur().setObjectifsPioches(this.piocheObjectifs.piocher(3));
+    }
+
+    private static int choisirNbrJoueurs(){
+        int nbrDeJoueurs;
+        nbrDeJoueurs = Keyin.inInt("Entrez le nombre de joueurs voulant jouer à la partie : ");
+        while (nbrDeJoueurs < 2 || nbrDeJoueurs > 4){
+            System.err.println("Le nombre de joueurs est invalide. Recommencez");
+            nbrDeJoueurs = Keyin.inInt("Entrez le nombre de joueurs voulant jouer à la partie : ");
+        }
+        return nbrDeJoueurs;
+    }
+
+    private static int nbrObjectifsGagnant(int nbrJoueurs){
+        int nbrObjectifsGagnant;
+        switch (nbrJoueurs) {
+            case 2:
+                nbrObjectifsGagnant = 9;
+                break;
+            case 3:
+                nbrObjectifsGagnant = 8;
+                break;
+            case 4:
+                nbrObjectifsGagnant = 7;
+                break;
+            default:
+                nbrObjectifsGagnant = -1;
+                break;
+        }
+        return nbrObjectifsGagnant;
     }
 }

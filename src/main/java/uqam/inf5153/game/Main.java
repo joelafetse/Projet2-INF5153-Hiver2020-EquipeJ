@@ -14,7 +14,8 @@ import java.util.List;
 public class Main {
 
 	public final static int NB_ACTIONS_PAR_TOUR = 2;
-	public final static int NB_TOTAL_JOUEUR =  2 ;
+	public static int nbrTotalJoueurs;
+	private static Jeu jeu;
 	/* Une constante fictive pour représenter temporairement le dernier tour
 	 * Sinon vous devez implémenter le jeu tel que la partie prend fin lorsqu’un joueur atteint
 	 * son 9e objectif s
@@ -39,10 +40,11 @@ public class Main {
 		do{
 			swValue = Keyin.inString();
 		}while (swValue.length() != 0 );
+		nbrTotalJoueurs = Takenoko.nbrJoueurs();
 		boolean estFinPartie;
 		int i = 1;
 		do {
-			while ( i <= NB_TOTAL_JOUEUR) {
+			while ( i <= nbrTotalJoueurs) {
 				menuJoueur(i);
 				i++;
 			}
@@ -191,4 +193,5 @@ public class Main {
 		System.out.println("|     5 actions disponibles                                                   ");
 		System.out.println("==========================================================================");
 	}
+
 }
