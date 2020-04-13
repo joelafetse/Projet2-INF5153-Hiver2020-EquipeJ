@@ -10,7 +10,7 @@ public class ObjectifPanda extends Objectif {
 
 
 
-    //private Joueur joueur= new Joueur();
+
 
 
     public ObjectifPanda(int identifiant){
