@@ -1,5 +1,6 @@
 package uqam.inf5153.game.objectif;
 
+import uqam.inf5153.game.joueur.PlateauDeJoueur;
 import uqam.inf5153.game.plateau.PlateauDeJeu;
 
 public abstract class Objectif {

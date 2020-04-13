@@ -12,4 +12,5 @@ public class ObjectifEmpereur extends Objectif {
     public int appliquerObjectif(PlateauDeJeu plateauDeJeu){
         return 0;
     }
+
 }
