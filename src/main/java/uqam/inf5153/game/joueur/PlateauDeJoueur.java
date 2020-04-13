@@ -3,6 +3,7 @@ package uqam.inf5153.game.joueur;
 import uqam.inf5153.game.bambou.Bambou;
 import uqam.inf5153.game.objectif.Objectif;
 import uqam.inf5153.game.objectif.ObjectifParcelle;
+import uqam.inf5153.game.tuile.parcelle.Couleur;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -77,7 +78,29 @@ public class PlateauDeJoueur {
         }
     }
 
+    public int[] calculerNbrBambousPanda(){
+        int[] nombreBambouspanda = new int[3];
+        int nbrBambousVertPanda = 0;
+        int nbrBambousJaunePanda = 0;
+        int nbrBambousRosePanda = 0;
 
+
+        for (Bambou bambou : bambousPanda) {
+            if (bambou.getCouleur() == Couleur.VERT){
+                nbrBambousVertPanda++;
+
+            } else if (bambou.getCouleur() == Couleur.JAUNE){
+                nbrBambousJaunePanda++;
+            } else if (bambou.getCouleur() == Couleur.ROSE){
+                nbrBambousRosePanda++;
+            }
+        }
+        nombreBambouspanda[0] = nbrBambousVertPanda;
+        nombreBambouspanda[1] = nbrBambousVertPanda;
+        nombreBambouspanda[2] = nbrBambousVertPanda;
+
+        return nombreBambouspanda;
+    }
 
 
 }

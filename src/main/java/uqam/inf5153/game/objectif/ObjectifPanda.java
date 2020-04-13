@@ -1,16 +1,9 @@
 package uqam.inf5153.game.objectif;
 
-import uqam.inf5153.game.bambou.Bambou;
-import uqam.inf5153.game.joueur.Joueur;
 import uqam.inf5153.game.joueur.PlateauDeJoueur;
 import uqam.inf5153.game.plateau.PlateauDeJeu;
-import uqam.inf5153.game.tuile.parcelle.Couleur;
 
 public class ObjectifPanda extends Objectif {
-
-
-
-
 
 
     public ObjectifPanda(int identifiant){
@@ -23,19 +16,12 @@ public class ObjectifPanda extends Objectif {
     @Override
     public int appliquerObjectif(PlateauDeJoueur plateauDeJoueur) {
 
-        int nbrBambousVertPanda = 0;
-        int nbrBambousJaunePanda = 0;
-        int nbrBambousRosePanda = 0;
+        int[] nbrBambousPanda = plateauDeJoueur.calculerNbrBambousPanda();
+        int nbrBambousVertPanda = nbrBambousPanda[0];
+        int nbrBambousJaunePanda = nbrBambousPanda[1];
+        int nbrBambousRosePanda = nbrBambousPanda[2];
 
-        for (Bambou bambou : plateauDeJoueur.getBambousPanda()) {
-            if (bambou.getCouleur() == Couleur.VERT){
-                nbrBambousVertPanda++;
-            } else if (bambou.getCouleur() == Couleur.JAUNE){
-                nbrBambousJaunePanda++;
-            } else if (bambou.getCouleur() == Couleur.ROSE){
-                nbrBambousRosePanda++;
-            }
-        }
+
         // pour test il faut l'effacer après
         System.out.println("test1 nbrBambousVertPanda = "+nbrBambousVertPanda);
         System.out.println("test2 nbrBambousJaunePanda = "+nbrBambousJaunePanda);
