@@ -1,6 +1,7 @@
 package uqam.inf5153.game.objectif;
 
 import uqam.inf5153.game.bambou.Bambou;
+import uqam.inf5153.game.joueur.Joueur;
 import uqam.inf5153.game.joueur.PlateauDeJoueur;
 import uqam.inf5153.game.plateau.PlateauDeJeu;
 import uqam.inf5153.game.tuile.parcelle.Couleur;
@@ -8,7 +9,9 @@ import uqam.inf5153.game.tuile.parcelle.Couleur;
 public class ObjectifPanda extends Objectif {
 
 
-    private PlateauDeJoueur plateauDeJoueur = new PlateauDeJoueur();
+
+    private Joueur joueur= new Joueur();
+
 
     public ObjectifPanda(int identifiant){
         super(identifiant);
@@ -21,7 +24,7 @@ public class ObjectifPanda extends Objectif {
         int nbrBambousJaunePanda = 0;
         int nbrBambousRosePanda = 0;
 
-        for (Bambou bambou : plateauDeJoueur.getBambousPanda()) {
+        for (Bambou bambou : joueur.getPlateauDeJoueur().getBambousPanda()) {
             if (bambou.getCouleur() == Couleur.VERT){
                 nbrBambousVertPanda++;
             } else if (bambou.getCouleur() == Couleur.JAUNE){
