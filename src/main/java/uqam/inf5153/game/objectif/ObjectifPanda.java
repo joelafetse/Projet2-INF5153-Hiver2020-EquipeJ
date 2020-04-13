@@ -36,9 +36,10 @@ public class ObjectifPanda extends Objectif {
                 nbrBambousRosePanda++;
             }
         }
-        System.out.println("test1 nbrBambousVertPanda"+nbrBambousVertPanda);
-        System.out.println("test2 nbrBambousJaunePanda"+nbrBambousJaunePanda);
-        System.out.println("test3 nbrBambousRosePanda"+nbrBambousRosePanda);
+        // pour test il faut l'effacer après
+        System.out.println("test1 nbrBambousVertPanda = "+nbrBambousVertPanda);
+        System.out.println("test2 nbrBambousJaunePanda = "+nbrBambousJaunePanda);
+        System.out.println("test3 nbrBambousRosePanda = "+nbrBambousRosePanda);
 
         switch (identifiant) {
             case 31:
