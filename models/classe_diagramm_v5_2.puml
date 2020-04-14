@@ -45,7 +45,7 @@ package uqam.inf5153.game{
       +this ()
       --
 
-      +appliquerObjectif(p: PlateauDeJeu): int
+      +appliquerObjectif(p: PlateauDeJoueur): int
 
     }
     class ObjectifJardinier {

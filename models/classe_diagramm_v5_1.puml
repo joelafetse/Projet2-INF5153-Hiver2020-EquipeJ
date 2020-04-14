@@ -101,11 +101,9 @@ package uqam.inf5153.game{
     class ParcelleEtang{
       --
       +this (c: Coordonnees)
-      -- 
-      
-    }
+      --
 
-        
+    }
 
         ComposantParcelle <|.. Parcelle
         ComposantParcelle <|..  Amenagement
