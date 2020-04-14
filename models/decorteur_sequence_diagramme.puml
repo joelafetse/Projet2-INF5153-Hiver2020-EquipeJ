@@ -1,0 +1,33 @@
+@startuml
+!include _common.style
+
+
+title Decorateur Amenagement
+
+
+participant "ab: AmenagementBassin" as AB
+participant "ab: AmenagementEngrais" as AE
+participant "pv: ParcelleVert" as PV
+
+
+-> AB : fairePousserBambou()
+activate AB
+
+
+AB -> AE : fairePousserBambou()
+activate AE
+
+
+AE -> PV : fairePousserBambou()
+activate PV
+PV --> AE
+deactivate PV
+AE -> AE : fairePousserBambouAmenagement()
+
+AE -->AB
+deactivate AE
+AB -> AB : fairePousserBambouAmenagement()
+<--AB
+
+center footer project #2 - diagramme de sequence de decorateur
+@enduml
