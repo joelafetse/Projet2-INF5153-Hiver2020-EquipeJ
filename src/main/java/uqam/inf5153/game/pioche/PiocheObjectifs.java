@@ -17,7 +17,7 @@ public class PiocheObjectifs extends Pioche<Objectif> {
         for (int identifiant = 16; identifiant <= 30; identifiant++){
             super.objetsAPiocher.add(new ObjectifJardinier(identifiant));
         }
-        for (int identifiant = 31; identifiant <= 34; identifiant++){
+        for (int identifiant = 31; identifiant <= 45; identifiant++){
             super.objetsAPiocher.add(new ObjectifPanda(identifiant));
         }
 

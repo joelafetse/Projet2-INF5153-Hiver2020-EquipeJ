@@ -2,16 +2,15 @@ package uqam.inf5153.game.objectif;
 
 import uqam.inf5153.game.joueur.PlateauDeJoueur;
 import uqam.inf5153.game.plateau.PlateauDeJeu;
+import uqam.inf5153.game.tuile.parcelle.Couleur;
 
 public class ObjectifPanda extends Objectif {
-
 
     public ObjectifPanda(int identifiant){
         super(identifiant);
     }
 
-    @Override
-    public int appliquerObjectif(PlateauDeJeu plateauDeJeu){ return 0;}
+    public int appliquerObjectif(PlateauDeJeu plateauDeJeu){return 0;};
 
     @Override
     public int appliquerObjectif(PlateauDeJoueur plateauDeJoueur) {
@@ -22,51 +21,53 @@ public class ObjectifPanda extends Objectif {
         int nbrBambousRosePanda = nbrBambousPanda[2];
 
 
-        // pour le test il faut l'effacer après
-        System.out.println("test1 nbrBambousVertPanda = "+nbrBambousVertPanda);
-        System.out.println("test2 nbrBambousJaunePanda = "+nbrBambousJaunePanda);
-        System.out.println("test3 nbrBambousRosePanda = "+nbrBambousRosePanda);
-
-        switch (identifiant) {
-            case 31:
-                if (nbrBambousVertPanda >= 2) return 3;
-                break;
-            case 32:
-                if (nbrBambousJaunePanda >= 2) return 4;
-                break;
-            case 33:
-                if (nbrBambousRosePanda >= 2) return 5;
-                break;
-            case 34:
-                if (
-                    nbrBambousVertPanda >= 1 &&
-                    nbrBambousJaunePanda >= 1 &&
-                    nbrBambousRosePanda >= 1
-                    ) return 5;
-                break;
+        if(identifiant>=31 && identifiant <36){
+            if (nbrBambousVertPanda >= 2) {
+                plateauDeJoueur.retirerBambousPanda(Couleur.VERT);
+                plateauDeJoueur.retirerBambousPanda(Couleur.VERT);
+                return 3;
+            }
+        } else {
+            if(identifiant>=36 && identifiant <40){
+                if (nbrBambousJaunePanda >= 2) {
+                    plateauDeJoueur.retirerBambousPanda(Couleur.JAUNE);
+                    plateauDeJoueur.retirerBambousPanda(Couleur.JAUNE);
+                    return 4;
+                }
+            } else {
+                if(identifiant>=40 && identifiant <43){
+                    if (nbrBambousRosePanda >= 2) {
+                        plateauDeJoueur.retirerBambousPanda(Couleur.ROSE);
+                        plateauDeJoueur.retirerBambousPanda(Couleur.ROSE);
+                        return 5;
+                    }
+                } else {
+                    if(identifiant>=43 && identifiant <=45){
+                        if (nbrBambousVertPanda >= 1 && nbrBambousJaunePanda >= 1 && nbrBambousRosePanda >= 1){
+                            plateauDeJoueur.retirerBambousPanda(Couleur.VERT);
+                            plateauDeJoueur.retirerBambousPanda(Couleur.JAUNE);
+                            plateauDeJoueur.retirerBambousPanda(Couleur.ROSE);
+                            return 5;
+                        }
+                    }
+                }
+            }
         }
         return 0;
     }
 
-
     @Override
     public String toString() {
-
-        switch (identifiant) {
-            case 31:
+            if(identifiant>=31 && identifiant <36)
                 return "Objectif " + identifiant + " : Deux bambous vert mangés par le panda, Points: 3";
-            case 32:
+            if(identifiant>=36 && identifiant <40)
                 return "Objectif " + identifiant + " : Deux bambous jaune mangés par le panda, Points: 4";
-
-            case 33:
+            if(identifiant>=40 && identifiant <43)
                 return "Objectif " + identifiant + " : Deux bambous rose mangés par le panda, Points: 5";
-
-            case 34:
+            if(identifiant>=43 && identifiant<=45)
                 return "Objectif " + identifiant + " : trois bambous de couleurs différents mangés par le panda, Points: 6";
 
-
-        }
-        return " ";
+            return "";
     }
 
 

@@ -68,6 +68,21 @@ public class PlateauDeJoueur {
     public void reserverBambousPanda(Bambou bambou){
         this.bambousPanda.add(bambou);
     }
+    public void retirerBambousPanda(Couleur couleur){
+        boolean trouver =false;
+        int i=0;
+        int j=-1;
+        while(i<bambousPanda.size() && !trouver){
+            if(bambousPanda.get(i).getCouleur()==Couleur.VERT){
+               j=i;
+               trouver=true;
+            }
+            i++;
+        }
+        if(j!=-1){
+            bambousPanda.remove(j);
+        }
+    }
     public List<Bambou> getBambousPanda(){return this.bambousPanda;}
 
     public void afficherObjectifsPioches(){
