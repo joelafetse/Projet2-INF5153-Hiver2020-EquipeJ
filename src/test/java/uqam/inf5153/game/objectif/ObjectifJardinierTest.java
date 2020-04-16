@@ -3,6 +3,7 @@ package uqam.inf5153.game.objectif;
 import org.junit.Test;
 import uqam.inf5153.game.Jeu;
 import uqam.inf5153.game.actions.PlaceParcelle;
+import uqam.inf5153.game.joueur.Joueur;
 import uqam.inf5153.game.plateau.PlateauDeJeu;
 import uqam.inf5153.game.tuile.ComposantParcelle;
 import uqam.inf5153.game.tuile.amenagement.AmenagementBassin;
@@ -257,5 +258,13 @@ public class ObjectifJardinierTest {
         p1.fairePousserBambou();
         ObjectifJardinier objectif =new ObjectifJardinier(30);
         assertEquals(objectif.appliquerObjectif(plateau), 3);
+    }
+
+    @Test
+    public void testAppliquerObjectif_31() {
+        //Identifiant n'existe pas
+        PlateauDeJeu plateau =new PlateauDeJeu();
+        ObjectifJardinier objectif =new ObjectifJardinier(31);
+        assertEquals(objectif.appliquerObjectif(plateau), 0);
     }
 }

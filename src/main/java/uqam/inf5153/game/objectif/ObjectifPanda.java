@@ -47,7 +47,7 @@ public class ObjectifPanda extends Objectif {
                             plateauDeJoueur.retirerBambousPanda(Couleur.VERT);
                             plateauDeJoueur.retirerBambousPanda(Couleur.JAUNE);
                             plateauDeJoueur.retirerBambousPanda(Couleur.ROSE);
-                            return 5;
+                            return 6;
                         }
                     }
                 }
@@ -59,13 +59,13 @@ public class ObjectifPanda extends Objectif {
     @Override
     public String toString() {
             if(identifiant>=31 && identifiant <36)
-                return "Objectif " + identifiant + " : Deux bambous vert mangés par le panda, Points: 3";
+                return "Objectif " + identifiant + " : Deux bambous verts mangés par le panda, Points: 3";
             if(identifiant>=36 && identifiant <40)
-                return "Objectif " + identifiant + " : Deux bambous jaune mangés par le panda, Points: 4";
+                return "Objectif " + identifiant + " : Deux bambous jaunes mangés par le panda, Points: 4";
             if(identifiant>=40 && identifiant <43)
-                return "Objectif " + identifiant + " : Deux bambous rose mangés par le panda, Points: 5";
+                return "Objectif " + identifiant + " : Deux bambous roses mangés par le panda, Points: 5";
             if(identifiant>=43 && identifiant<=45)
-                return "Objectif " + identifiant + " : trois bambous de couleurs différents mangés par le panda, Points: 6";
+                return "Objectif " + identifiant + " : trois bambous de couleurs différentes mangés par le panda, Points: 6";
 
             return "";
     }
