@@ -107,6 +107,7 @@ package uqam.inf5153.game{
 
         ComposantParcelle <|.. Parcelle
         ComposantParcelle <|..  Amenagement
+        Amenagement *--> ComposantParcelle
         Amenagement  <|-- AmenagementBassin
         Amenagement  <|-- AmenagementEngrais
         Amenagement  <|-- AmenagementEnclos

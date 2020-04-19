@@ -74,6 +74,8 @@ public class DeplaceJardinier implements Action {
             estDeplace = effectuerActionDeplacerJardinier(x, y, numJoueur);
         }
         System.out.println("Le Jardinier est bien déplacé à la position (" + x + "," + y + ").");
+        System.out.println("Après déplacement du jardinier, Afficher les parcelles du plateau :             \n");
+        jeu.afficherParcellesDansPlateau();
 
         return estDeplace;
     }
