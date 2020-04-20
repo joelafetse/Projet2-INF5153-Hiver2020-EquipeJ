@@ -35,10 +35,10 @@ public class DeplaceJardinierTest {
         p2.setCoordonnees(c2);
         Figurine jardinier = new Jardinier(p1);
         assertFalse(jardinier.estDeplaceableSur(p2));
-        Jeu jeu = new Jeu(2);
+        /*Jeu jeu = new Jeu(2);
         Action dp = new DeplaceJardinier(jeu);
         ComposantParcelle cp = new ParcelleVerte();
-        //assertFalse(dp.executer(1));
+        assertFalse(dp.executer(1));*/
 
 
 

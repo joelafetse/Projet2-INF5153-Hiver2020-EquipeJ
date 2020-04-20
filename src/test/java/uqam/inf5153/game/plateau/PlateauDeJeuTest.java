@@ -52,7 +52,7 @@ public class PlateauDeJeuTest {
 
     }
 
-    //---------- f
+
     @Test
     public void testEstPositionOccupee() {
         PlateauDeJeu plateau = new PlateauDeJeu();
@@ -60,7 +60,7 @@ public class PlateauDeJeuTest {
         Coordonnees c1 = new Coordonnees(2,0);
         p.setCoordonnees(c1);
         plateau.ajouterParcelle(p);
-        Coordonnees c2 = new Coordonnees(2,1); //pas ajouter dans le parcelles
+        Coordonnees c2 = new Coordonnees(2,1); //n'a pas été ajouté dans le parcelles
         p.setCoordonnees(c1);
         plateau.ajouterParcelle(p);
         assertTrue(plateau.estPositionOccupee(c1));

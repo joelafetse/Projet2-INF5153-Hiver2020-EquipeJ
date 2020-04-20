@@ -23,7 +23,7 @@ public class IrrigationTest {
         Coordonnees c1 = new Coordonnees(2, 1);
         Parcelle p1 = new ParcelleVerte();
         p1.setCoordonnees(c1);
-        Coordonnees c2 = new Coordonnees(2, 2);
+        Coordonnees c2 = new Coordonnees(0, 2);
         Parcelle p2 = new ParcelleVerte();
         p2.setCoordonnees(c2);
         Irrigation irr1 = new Irrigation(p1, p2);
