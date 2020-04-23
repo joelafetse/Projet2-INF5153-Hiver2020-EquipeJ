@@ -141,7 +141,8 @@ public class PlaceIrrigation  implements  Action {
             estPlacee = effectuerActionPlacerIrrigation( x1, y1, x2, y2, numJoueur);
         }
         System.out.println("L'irrigation est bien placée entre les parcelles de coordonnées ("+ x1 +","+y1+") et ("+ x2 +"," + y2 +").");
-
+        System.out.println("Après placement de cet irrigation, Afficher les parcelles du plateau :             \n");
+        jeu.afficherParcellesDansPlateau();
         return estPlacee;
     }
 

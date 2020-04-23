@@ -60,6 +60,8 @@ public class PlaceParcelle implements Action {
             estPlacee = effectuerActionPlacerParcelleDansPlateau(pSelectionnee, x, y,  numJoueur);
         }
         System.out.println("\nLa parcelle est bien placée ");
+        System.out.println("Après placement de cette parcelle, Afficher les parcelles du plateau :             \n");
+        jeu.afficherParcellesDansPlateau();
 
         return estPlacee;
     }

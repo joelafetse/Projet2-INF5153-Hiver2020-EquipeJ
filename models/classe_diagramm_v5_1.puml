@@ -238,16 +238,6 @@ package uqam.inf5153.game{
     Pioche <|-- PiocheObjectifs
     Pioche <|-- PiocheParcelles
 
-  
-
-  
-  
-  
-
-
-
-
-
 }
 
 
