@@ -19,11 +19,24 @@ public class IrrigationTest {
     }
 
     @Test
-    public void testEquals() {
+    public void testEquals1() {
         Coordonnees c1 = new Coordonnees(2, 1);
         Parcelle p1 = new ParcelleVerte();
         p1.setCoordonnees(c1);
         Coordonnees c2 = new Coordonnees(0, 2);
+        Parcelle p2 = new ParcelleVerte();
+        p2.setCoordonnees(c2);
+        Irrigation irr1 = new Irrigation(p1, p2);
+        Irrigation irr2 = new Irrigation(p1, p2);
+        assertEquals(irr1, irr2);
+    }
+
+    @Test
+    public void testEquals2() {
+        Coordonnees c1 = new Coordonnees(2, 1);
+        Parcelle p1 = new ParcelleVerte();
+        p1.setCoordonnees(c1);
+        Coordonnees c2 = new Coordonnees(4, 0);
         Parcelle p2 = new ParcelleVerte();
         p2.setCoordonnees(c2);
         Irrigation irr1 = new Irrigation(p1, p2);
